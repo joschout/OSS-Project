@@ -17,5 +17,7 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
+
 sonar-polymorphic-views/**/.classpath
 sonar-polymorphic-views/**/.project
+.metadata/
