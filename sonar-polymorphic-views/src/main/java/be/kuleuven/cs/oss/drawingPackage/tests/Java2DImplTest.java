@@ -14,7 +14,7 @@ import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 public class Java2DImplTest {
 
 	public static void main(String[] args){
-		test3();
+		test5();
 	}
 
 	public static void test1() {
@@ -37,7 +37,7 @@ public class Java2DImplTest {
 				40, 20, //int width, int heigth
 				0, 255, 255, //int redBorder, int greenBorder, int blueBorder -> cyan
 				255, 127, 0, //redFill, int greenFill, int blueFill -> orange
-				5 // borderWidth
+				2 // borderWidth
 				);
 		
 		BufferedImage bi = impl.getBufferedImage();
@@ -58,13 +58,34 @@ public class Java2DImplTest {
 				40, 20, //int width, int heigth
 				0, 255, 255, //int redBorder, int greenBorder, int blueBorder -> cyan
 				255, 127, 0, //redFill, int greenFill, int blueFill -> orange
-				5 // borderWidth
+				2 // borderWidth
 				);
 		
 		BufferedImage bi = impl.getBufferedImage();
 		output(bi);
 	}
 	
+	public static void test4() {
+		Java2DImpl impl = new Java2DImpl(400, 100);
+
+		impl.drawText(
+				"Sweet baby Jesus", 
+				60, 60, 
+				-90, 
+				255, 127, 0);
+		
+		BufferedImage bi = impl.getBufferedImage();
+		output(bi);
+	}
+	
+	public static void test5() {
+		Java2DImpl impl = new Java2DImpl(400, 100);
+
+		impl.drawStraightLine(10, 10, 50, 50, 255, 172, 0, 2);
+		
+		BufferedImage bi = impl.getBufferedImage();
+		output(bi);
+	}
 	
 	
 	
