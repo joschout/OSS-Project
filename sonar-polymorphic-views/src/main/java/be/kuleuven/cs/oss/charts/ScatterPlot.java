@@ -2,9 +2,11 @@ package be.kuleuven.cs.oss.charts;
 
 import java.awt.image.BufferedImage;
 import java.util.List;
+import java.util.Map;
 
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.Box;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxResourceVisualizationFactory;
@@ -15,16 +17,16 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlot extends Chart{
 
-	public ScatterPlot(List<Resource> resources, ResourceVisualizationFactory RVF, List<ResourceProperty> resourceProps, SonarFacade sonarF) {
-		super(resources, RVF, sonarF);
+	public ScatterPlot(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager) {
+		super(resources, rvf, sonarF, propManager);
 	}
 
 	@Override
 	public BufferedImage draw(IDraw drawInterface) {
-		fillResourceVisualizations;
-		for(ResourceVisualization rv: RVs){
-			rv.draw(IDraw);
-			IDraw.getBufferedImage();
+		fillResourceVisualizations();
+		for(ResourceVisualization rv: rvs){
+			rv.draw(drawInterface);
+			drawInterface.getBufferedImage();
 		}
 			
 		return null;
@@ -32,7 +34,7 @@ public class ScatterPlot extends Chart{
 	
 	private void fillResourceVisualizations(){
 		for(Resource resource: resources){
-			Map<string, Double> properties = super.getResourcePropertyValues(resource);
+			Map<String, Double> properties = super.getResourcePropertyValues(resource);
 			Position position = new Position(properties.get("xcoordinate"), properties.get("ycoordinate"));
 			Box box = BoxResourceVisualizationFactory.create(position, properties.get("width"), properties.get("height"), properties.get("color"));
 			this.rvs.add(box);
