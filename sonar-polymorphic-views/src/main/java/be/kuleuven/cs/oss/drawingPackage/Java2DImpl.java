@@ -3,6 +3,7 @@ package be.kuleuven.cs.oss.drawingPackage;
 import java.awt.BasicStroke;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
@@ -11,28 +12,35 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 
+import org.sonar.plugins.java.Java;
+
 public class Java2DImpl implements IDraw{
 	
+	// white
+	public static final  int DEFAULT_WHITE_R = 255;
+	public static final  int DEFAULT_WHITE_G = 255;
+	public static final  int DEFAULT_WHITE_B = 255;
 	
-	public static final  int DEFAULT_FILL_R = 255;
-	public static final  int DEFAULT_FILL_G = 255;
-	public static final  int DEFAULT_FILL_B = 255;
-	
-	public static final  int DEFAULT_BORDER_R = 0;
-	public static final  int DEFAULT_BORDER_G = 0;
-	public static final  int DEFAULT_BORDER_B = 0;
+	public static final  int DEFAULT_BLACK_R = 0;
+	public static final  int DEFAULT_BLACK_G = 0;
+	public static final  int DEFAULT_BLACK_B = 0;
 	
 	public static final  int DEFAULT_BORDER_WIDTH = 3;
 	public static final  int DEFAULT_LINE_WIDTH = 3;
+	public static final  int DEFAULT_TRIANGLE_WIDTH = 3;
 	
-	public static final  int DEFAULT_LINE_R = 0;
-	public static final  int DEFAULT_LINE_G = 0;
-	public static final  int DEFAULT_LINE_B = 0;
+//	public static final  int DEFAULT_LINE_R = 0;
+//	public static final  int DEFAULT_LINE_G = 0;
+//	public static final  int DEFAULT_LINE_B = 0;
 	
 	public static final  int DEFAULT_TEXT_ORIENTATION_DEGREES = 0;
-	public static final  int DEFAULT_TEXT_R = 0;
-	public static final  int DEFAULT_TEXT_G = 0;
-	public static final  int DEFAULT_TEXT_B = 0;
+//	public static final  int DEFAULT_TEXT_R = 0;
+//	public static final  int DEFAULT_TEXT_G = 0;
+//	public static final  int DEFAULT_TEXT_B = 0;
+	
+	public static final int DEFAULT_TRIANGLE_BASE = 7;
+	public static final int DEFAULT_TRIANGLE_ALTITUDE = 7;
+	
 	
 	public BufferedImage im;
 
@@ -64,8 +72,8 @@ public class Java2DImpl implements IDraw{
 			){
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
-				Java2DImpl.DEFAULT_BORDER_R, Java2DImpl.DEFAULT_BORDER_G, Java2DImpl.DEFAULT_BORDER_B,
-				Java2DImpl.DEFAULT_FILL_R, Java2DImpl.DEFAULT_FILL_G, Java2DImpl.DEFAULT_FILL_B,
+				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,
+				Java2DImpl.DEFAULT_WHITE_R, Java2DImpl.DEFAULT_WHITE_G, Java2DImpl.DEFAULT_WHITE_B,
 				Java2DImpl.DEFAULT_BORDER_WIDTH);
 		
 	}
@@ -76,7 +84,7 @@ public class Java2DImpl implements IDraw{
 			){
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
-				Java2DImpl.DEFAULT_BORDER_R, Java2DImpl.DEFAULT_BORDER_G, Java2DImpl.DEFAULT_BORDER_B,
+				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,
 				redFill, greenFill, blueFill,
 				Java2DImpl.DEFAULT_BORDER_WIDTH);
 		
@@ -138,7 +146,7 @@ public class Java2DImpl implements IDraw{
 		drawText(textToDraw, 
 				xCoord, yCoord, 
 				Java2DImpl.DEFAULT_TEXT_ORIENTATION_DEGREES, 
-				Java2DImpl.DEFAULT_TEXT_R, Java2DImpl.DEFAULT_TEXT_G, Java2DImpl.DEFAULT_TEXT_B);
+				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B);
 		
 	}
 	
@@ -170,7 +178,7 @@ public class Java2DImpl implements IDraw{
 			) {
 		
 		drawStraightLine(x1, y1, x2, y2,
-				Java2DImpl.DEFAULT_LINE_R, Java2DImpl.DEFAULT_LINE_G, DEFAULT_BORDER_B,
+				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, DEFAULT_BLACK_B,
 				Java2DImpl.DEFAULT_LINE_WIDTH
 				);
 		
@@ -189,6 +197,81 @@ public class Java2DImpl implements IDraw{
 		g2d.setStroke(stroke);
 		g2d.draw(line);	
 	}
+	
+	public void drawTriangle(int x1, int y1,
+			int x2, int y2,
+			int x3, int y3
+			){
+		drawTriangle(
+				x1, y1, 
+				x2, y2, 
+				x3, y3, 
+				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B, 
+				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B, 
+				Java2DImpl.DEFAULT_TRIANGLE_WIDTH);
+		
+	}
+	
+	
+	public void drawTriangle(
+			int x1, int y1,
+			int x2, int y2,
+			int x3, int y3,
+			int redBorder, int greenBorder, int blueBorder,
+			int redFill, int greenFill, int blueFill,
+			int borderWidth
+			){
+		
+		Graphics2D g2d = getBufferedImage().createGraphics();
+		int[] xArray   = new int[3];
+		xArray[0] = x1;
+		xArray[1] = x2;
+		xArray[2] = x3;
+		
+		int[] yArray = new int[3];
+		yArray[0] = y1;
+		yArray[1] = y2;
+		yArray[2] = y3;
+		Polygon pol = new Polygon( xArray, yArray, 3);
+				
+		g2d.setColor(new Color(redFill, greenFill, blueFill));
+		g2d.fill(pol);
+		
+		BasicStroke stroke = new BasicStroke(borderWidth);
+		g2d.setStroke(stroke);
+		g2d.setColor(new Color(redBorder, greenBorder, blueBorder));
+		g2d.draw(pol);
+	}
+	
+	/**
+	 * PRECONDITION: the x-values should be equal
+	 * 
+	 * @param lineEndArrowX
+	 * @param lineEndArrowY
+	 * @param lineEndX
+	 * @param lineEndY
+	 */
+	public void drawArrowUp(
+			int lineEndX, int lineEndY,
+			int lineLength
+			){
+		drawStraightLine(lineEndX, lineEndY- lineLength, lineEndX, lineEndY );
+		drawTriangle(lineEndX, lineEndY - lineLength -DEFAULT_TRIANGLE_ALTITUDE,
+				lineEndX - DEFAULT_TRIANGLE_BASE/2, lineEndY- lineLength,
+				lineEndX + DEFAULT_TRIANGLE_BASE/2, lineEndY- lineLength);
+	}
+	
+	public void drawArrowRight(
+			int lineEndX, int lineEndY,
+			int lineLength
+			){
+		drawStraightLine(lineEndX, lineEndY, lineEndX + lineLength, lineEndY);
+		drawTriangle(lineEndX + lineLength + DEFAULT_TRIANGLE_ALTITUDE, lineEndY,
+				lineEndX + lineLength , lineEndY- DEFAULT_TRIANGLE_BASE/2,
+				lineEndX + lineLength , lineEndY+ DEFAULT_TRIANGLE_BASE/2);
+	}
+	
+	
 	
 
 
