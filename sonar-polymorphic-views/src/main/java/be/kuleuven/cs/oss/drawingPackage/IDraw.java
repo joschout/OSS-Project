@@ -16,8 +16,11 @@ public interface IDraw {
 	 * 
 	 * @return
 	 */
-	BufferedImage createEmptyImage(int width, int heigth);
+	public void createEmptyImage(int width, int heigth);
 
+	public BufferedImage getBufferedImage();
+	
+	
 	/**
 	 * 
 	 * @param im
@@ -30,10 +33,13 @@ public interface IDraw {
 	 * @param blue
 	 * @return
 	 */
-	BufferedImage drawBox(BufferedImage im, 
+	public void drawBox(
 			int xCoord, int yCoord,
 			int width, int heigth,
-			int red, int green, int blue);
+			int redBorder, int greenBorder, int blueBorder,
+			int redFill, int greenFill, int blueFill,
+			int borderWidth
+			);
 	/**
 	 * 
 	 * @param im
@@ -46,10 +52,13 @@ public interface IDraw {
 	 * @param blue
 	 * @return
 	 */
-	BufferedImage drawCircle(BufferedImage im, 
+	public void drawCircle( 
 			int xCoord, int yCoord,
 			int width, int heigth,
-			int red, int green, int blue);
+			int redBorder, int greenBorder, int blueBorder,
+			int redFill, int greenFill, int blueFill,
+			int borderWidth
+			);
 	/**
 	 * 
 	 * @param im
@@ -62,9 +71,33 @@ public interface IDraw {
 	 * @param blue
 	 * @return
 	 */
-	BufferedImage drawText(BufferedImage im ,
+	public void drawText(
 			String textToDraw,
 			int xCoord, int yCoord,
 			int orientationAngle,
 			int red, int green, int blue);
+	
+	
+	
+	/**
+	 * 
+	 * @param im
+	 * @param x1
+	 * @param y1
+	 * @param x2
+	 * @param y2
+	 * @param red
+	 * @param green
+	 * @param blue
+	 * @param width
+	 * @return
+	 */
+	public void drawStraightLine(
+			int x1, int y1,
+			int x2, int y2,
+			int red, int green, int blue,
+			int width);
+	
+	
+	
 } 
