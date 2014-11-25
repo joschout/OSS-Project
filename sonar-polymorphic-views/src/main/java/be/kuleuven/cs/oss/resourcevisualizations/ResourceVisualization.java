@@ -55,6 +55,18 @@ public interface ResourceVisualization {
 	 */
 	public void setColor(Color c);
 	
+	/**
+	 * gets the name of this RV
+	 * @return the name of the RV
+	 */
+	public String getName();
+	
+	/**
+	 * Sets the name of this RV
+	 * @param name The name to be set
+	 */
+	public void setName(String name);
+	
 	
 	public void draw(IDraw d);
 	//TODO make the IDraw interface
