@@ -14,16 +14,20 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
  */
 public class Box implements ResourceVisualization{
 	
+	private static final int TEXT_OFFSET = 5;
+	
 	private Position p;
 	private int width;
 	private int height;
 	private Color color;
+	private String name;
 	
-	public Box(Position p, int width, int height, Color c) throws IllegalArgumentException{
+	public Box(Position p, int width, int height, Color c, String name) throws IllegalArgumentException{
 		setPosition(p);
 		setWidth(width);
 		setHeight(height);
 		setColor(color);
+		setName(name);
 	}
 
 	
@@ -96,11 +100,24 @@ public class Box implements ResourceVisualization{
 	public void setColor(Color c) {
 		this.color = c;
 	}
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
+
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+		
+	}
 	
 	@Override
 	public void draw(IDraw d){
 		d.drawBox(p.getX(), p.getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
-		
+		d.drawText(getName(), p.getX(), p.getY()+ getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0)
 	}
+
 	
 }
