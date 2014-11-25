@@ -21,7 +21,7 @@ public class SystemComplexity extends Chart {
 		return null;
 	}
 
-	public void getResourcePropertyValues(Resource resource) {
-	}
+	
+	
 	
 }

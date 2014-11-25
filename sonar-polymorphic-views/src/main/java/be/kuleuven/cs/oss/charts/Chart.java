@@ -2,6 +2,7 @@ package be.kuleuven.cs.oss.charts;
 
 import java.awt.image.BufferedImage;
 import java.util.List;
+import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
@@ -26,6 +27,10 @@ public abstract class Chart {
 		this.sonarF = sonarF;
 		this.propManager = propManager;
 		
+	}
+	
+	public Map<String, Double> getResourcePropertyValues(Resource r){
+		return propManager.getPropertyValues(r);
 	}
 	
 	
