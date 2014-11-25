@@ -14,13 +14,14 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	private static final int DEFAULT_HEIGHT = 20;
 	private static final Position DEFAULT_POSITION = new Position(0, 0);
 	private static final Color DEFAULT_COLOR = new Color(255);
+	private static final String DEFAULT_NAME = "";
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Box create() {
-		Box out = new Box(DEFAULT_POSITION, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_COLOR);
+		Box out = new Box(DEFAULT_POSITION, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_COLOR, DEFAULT_NAME);
 		return out;
 	}
 
@@ -29,7 +30,7 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	 */
 	@Override
 	public Box create(Position p) {
-		Box out = new Box(p, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_COLOR);
+		Box out = new Box(p, DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_COLOR, DEFAULT_NAME);
 		return out;
 	}
 
@@ -38,7 +39,7 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	 */
 	@Override
 	public Box create(Position p, int width, int height) throws IllegalArgumentException{
-		Box out = new Box(p, width, height, DEFAULT_COLOR); 
+		Box out = new Box(p, width, height, DEFAULT_COLOR, DEFAULT_NAME); 
 		return out;
 	}
 	
@@ -47,7 +48,16 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	 */
 	@Override
 	public Box create(Position p, int width, int height, Color c) throws IllegalArgumentException{
-		Box out = new Box(p, width, height, c); 
+		Box out = new Box(p, width, height, c, DEFAULT_NAME); 
+		return out;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Box create(Position p, int width, int height, Color c, String name) throws IllegalArgumentException{
+		Box out = new Box(p, width, height, c, name); 
 		return out;
 	}
 	
