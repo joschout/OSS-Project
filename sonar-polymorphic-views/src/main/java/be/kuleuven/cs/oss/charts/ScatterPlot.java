@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 import java.util.Map;
 
+import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
@@ -36,7 +37,8 @@ public class ScatterPlot extends Chart{
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
 			Position position = new Position(properties.get("xcoordinate"), properties.get("ycoordinate"));
-			Box box = BoxResourceVisualizationFactory.create(position, properties.get("width"), properties.get("height"), properties.get("color"));
+			Color color = new Color(properties.get("colorR"),properties.get("colorB"),properties.get("colorG"));
+			Box box = BoxResourceVisualizationFactory.create(position, properties.get("width"), properties.get("height"), color, resource.getName() );
 			this.rvs.add(box);
 		}
 	}
