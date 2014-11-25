@@ -20,7 +20,7 @@ public abstract class Chart {
 	protected SonarFacade sonarF;
 	protected ResourcePropertiesManager propManager;
 	
-	//TODO LineFactory has tob e one of the arguments
+	//TODO LineFactory has to be one of the arguments
 	public Chart(List<Resource> resources, ResourceVisualizationFactory RVF, SonarFacade sonarF, ResourcePropertiesManager propManager) {
 		this.resources = resources;
 		this.RVF = RVF;
