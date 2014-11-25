@@ -46,7 +46,7 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	 * {@inheritDoc}
 	 */
 	@Override
-	public ResourceVisualization create(Position p, int width, int height, Color c) throws IllegalArgumentException{
+	public Box create(Position p, int width, int height, Color c) throws IllegalArgumentException{
 		Box out = new Box(p, width, height, c); 
 		return out;
 	}
