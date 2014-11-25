@@ -14,16 +14,16 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public abstract class Chart {
 
-	protected List<ResourceVisualization> RVs;
+	protected List<ResourceVisualization> rvs;
 	protected List<Resource> resources;
-	protected ResourceVisualizationFactory RVF;
+	protected ResourceVisualizationFactory rvf;
 	protected SonarFacade sonarF;
 	protected ResourcePropertiesManager propManager;
 	
 	//TODO LineFactory has to be one of the arguments
-	public Chart(List<Resource> resources, ResourceVisualizationFactory RVF, SonarFacade sonarF, ResourcePropertiesManager propManager) {
+	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager) {
 		this.resources = resources;
-		this.RVF = RVF;
+		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
 		
