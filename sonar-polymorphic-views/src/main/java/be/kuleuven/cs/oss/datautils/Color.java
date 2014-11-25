@@ -1,5 +1,13 @@
 package be.kuleuven.cs.oss.datautils;
 
+/**
+ * Class representing colors.
+ * Can be constructed in grayscale or with RGB arguments.
+ * Internally grayscale is represented the same way as RGB.
+ * @author Lennart De Graef
+ *
+ */
+
 public class Color {
 	private int r;
 	private int g;
@@ -10,37 +18,37 @@ public class Color {
 	}
 	
 	public Color(int r, int g, int b) throws IllegalArgumentException{
-		setR(r);
-		setG(g);
-		setB(b);
+		setRed(r);
+		setGreen(g);
+		setBlue(b);
 	}
 
-	public int getR() {
+	public int getRed() {
 		return r;
 	}
 
-	public void setR(int r) throws IllegalArgumentException{
+	public void setRed(int r) throws IllegalArgumentException{
 		if(r < 0) throw new IllegalArgumentException("Can't set a color value less than zero");
 		if(r > 255) throw new IllegalArgumentException("Can't set color value above 255");
 		
 		this.r = r;
 	}
 
-	public int getG() {
+	public int getGreen() {
 		return g;
 	}
 
-	public void setG(int g) throws IllegalArgumentException{
+	public void setGreen(int g) throws IllegalArgumentException{
 		if(g < 0) throw new IllegalArgumentException("Can't set a color value less than zero");
 		if(g > 255) throw new IllegalArgumentException("Can't set color value above 255");
 		this.g = g;
 	}
 
-	public int getB() {
+	public int getBlue() {
 		return b;
 	}
 
-	public void setB(int b) throws IllegalArgumentException {
+	public void setBlue(int b) throws IllegalArgumentException {
 		if(b < 0) throw new IllegalArgumentException("Can't set a color value less than zero");
 		if(b > 255) throw new IllegalArgumentException("Can't set color value above 255");
 		this.b = b;

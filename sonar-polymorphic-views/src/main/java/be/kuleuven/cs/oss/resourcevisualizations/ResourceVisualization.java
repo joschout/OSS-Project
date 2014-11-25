@@ -1,6 +1,10 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
+import java.awt.image.BufferedImage;
+
+import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
 public interface ResourceVisualization {
 	
@@ -39,8 +43,20 @@ public interface ResourceVisualization {
 	 */
 	public void setHeight(int h) throws IllegalArgumentException;
 	
+	/**
+	 * Get the color of this RV
+	 * @return Color of the RV
+	 */
+	public Color getColor();
 	
-	public void draw();
+	/**
+	 * set the color of this RV
+	 * @param c Color to be set
+	 */
+	public void setColor(Color c);
+	
+	
+	public BufferedImage draw(BufferedImage im, IDraw d);
 	//TODO make the IDraw interface
 	
 	
