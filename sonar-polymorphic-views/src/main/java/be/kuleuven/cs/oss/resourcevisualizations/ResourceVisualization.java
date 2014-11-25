@@ -56,7 +56,7 @@ public interface ResourceVisualization {
 	public void setColor(Color c);
 	
 	
-	public BufferedImage draw(BufferedImage im, IDraw d);
+	public void draw(IDraw d);
 	//TODO make the IDraw interface
 	
 	

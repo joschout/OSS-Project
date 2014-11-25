@@ -97,19 +97,10 @@ public class Box implements ResourceVisualization{
 		this.color = c;
 	}
 	
-	public BufferedImage draw(IDraw d, BufferedImage im){
-		BufferedImage out  = d.drawBox(im, p.getX(), p.getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
-		return out;
-	}
-
-
-	
-
-
 	@Override
-	public BufferedImage draw(BufferedImage im, IDraw d) {
-		// TODO Auto-generated method stub
-		return null;
+	public void draw(IDraw d){
+		d.drawBox(p.getX(), p.getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
+		
 	}
 	
 }
