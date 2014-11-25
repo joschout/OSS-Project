@@ -116,7 +116,7 @@ public class Box implements ResourceVisualization{
 	@Override
 	public void draw(IDraw d){
 		d.drawBox(p.getX(), p.getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
-		d.drawText(getName(), p.getX(), p.getY()+ getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0)
+		d.drawText(getName(), p.getX(), p.getY()+ getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0);
 	}
 
 	

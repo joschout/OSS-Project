@@ -20,8 +20,7 @@ public Line(Position orig, Position dest, int w, Color c){
 	this.color = c;
 }
 
-public BufferedImage draw(IDraw d){
+public void draw(IDraw d){
 	//TODO
-	return new BufferedImage(null, null, false, null);
 }
 }
