@@ -13,7 +13,7 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	private static final int DEFAULT_WIDTH = 20;
 	private static final int DEFAULT_HEIGHT = 20;
 	private static final Position DEFAULT_POSITION = new Position(0, 0);
-	private static final Color DEFAULT_COLOR = new Color(0);
+	private static final Color DEFAULT_COLOR = new Color(255);
 
 	/**
 	 * {@inheritDoc}
@@ -46,7 +46,7 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	 * {@inheritDoc}
 	 */
 	@Override
-	public ResourceVisualization create(Position p, int width, int height, Color c) throws IllegalArgumentException{
+	public Box create(Position p, int width, int height, Color c) throws IllegalArgumentException{
 		Box out = new Box(p, width, height, c); 
 		return out;
 	}
