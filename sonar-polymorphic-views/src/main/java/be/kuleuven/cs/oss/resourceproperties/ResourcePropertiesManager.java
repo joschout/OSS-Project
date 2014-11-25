@@ -7,18 +7,38 @@ import java.util.Map.Entry;
 
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
+/**
+ * @author Milan
+ *
+ * 
+ *
+ */
 public class ResourcePropertiesManager {
 
+	
 	private Map<String, ResourceProperty> properties;
 
+	/**
+	 * 
+	 */
 	public ResourcePropertiesManager() {
 		properties = new HashMap<String, ResourceProperty>();
 	}
 
+	/**
+	 * 
+	 * @param name
+	 * @param prop
+	 */
 	public void addProperty(String name, ResourceProperty prop) {
 		properties.put(name, prop);
 	}
 
+	/**
+	 * 
+	 * @param resource
+	 * @return
+	 */
 	public Map<String, Double> getPropertyValues(Resource resource) {
 		Map<String, Double> toReturn = new HashMap<String, Double>();
 
