@@ -13,7 +13,7 @@ public class BoxResourceVisualizationFactory implements ResourceVisualizationFac
 	private static final int DEFAULT_WIDTH = 20;
 	private static final int DEFAULT_HEIGHT = 20;
 	private static final Position DEFAULT_POSITION = new Position(0, 0);
-	private static final Color DEFAULT_COLOR = new Color(0);
+	private static final Color DEFAULT_COLOR = new Color(255);
 
 	/**
 	 * {@inheritDoc}
