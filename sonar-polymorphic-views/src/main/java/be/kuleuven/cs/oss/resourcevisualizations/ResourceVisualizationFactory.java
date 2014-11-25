@@ -1,5 +1,6 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
+import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
 /**
@@ -31,4 +32,14 @@ public interface ResourceVisualizationFactory {
 	 * @return ResourceVisualization with the given parameters.
 	 */
 	public ResourceVisualization create(Position p, int width, int height);
+	
+	/**
+	 * Creates a ResourceVisualization with the given position, width and height and color
+	 * @param p Position to be set
+	 * @param width Width to be set
+	 * @param height Height to be set
+	 * @param c Color to be set
+	 * @return ResourceVisualization with given parameters
+	 */
+	public ResourceVisualization create(Position p, int width, int height, Color c);
 }

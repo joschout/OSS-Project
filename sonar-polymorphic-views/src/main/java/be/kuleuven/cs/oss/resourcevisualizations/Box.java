@@ -1,5 +1,6 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
+import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
 
@@ -14,17 +15,12 @@ public class Box implements ResourceVisualization{
 	private int width;
 	private int height;
 	
-	public Box(Position p, int width, int height, int red, int green, int blue){
+	public Box(Position p, int width, int height, Color c) throws IllegalArgumentException{
 		setPosition(p);
 		setWidth(width);
 		setHeight(height);
 	}
-	
-	public Box(Position p, int width, int height, int gray){
-		setPosition(p);
-		setWidth(width);
-		setHeight(height);
-	}
+
 	
 	/**
 	 * {@inheritDoc}
@@ -54,7 +50,7 @@ public class Box implements ResourceVisualization{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void setWidth(int w) {
+	public void setWidth(int w) throws IllegalArgumentException{
 		if(w <= 0) 
 			throw new IllegalArgumentException("Width of a resource cannot be less than or equal to zero");
 		this.width = w;
@@ -72,7 +68,7 @@ public class Box implements ResourceVisualization{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void setHeight(int h) {
+	public void setHeight(int h) throws IllegalArgumentException{
 		if(h <= 0) 
 			throw new IllegalArgumentException("Height of a resource cannot be less than or equal to zero");
 		this.height = h;
