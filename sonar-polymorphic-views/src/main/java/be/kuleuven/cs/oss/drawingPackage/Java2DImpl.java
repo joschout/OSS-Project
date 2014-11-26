@@ -14,6 +14,14 @@ import java.awt.Color;
 
 import org.sonar.plugins.java.Java;
 
+/**
+ * Java2DImpl implements the IDraw interface using the Java2D library.
+ * An instantiation of the class has a BufferedImage as an instance variable,
+ *  which contains a partial rendering of a chart.
+ * 
+ * @author Jonas
+ *
+ */
 public class Java2DImpl implements IDraw{
 	
 	// white
@@ -44,7 +52,11 @@ public class Java2DImpl implements IDraw{
 	
 	public BufferedImage im;
 
-	
+	/**
+	 * Constucts an object of Java2DImpl which contains of the given dimensions
+	 * @param width the width of the image
+	 * @param height the height of the image
+	 */
 	public Java2DImpl(int width, int height){
 		createEmptyImage(width, height);
 	}
@@ -57,6 +69,12 @@ public class Java2DImpl implements IDraw{
 		this.im = im;
 	}
 
+	/**
+	 * Creates an empty image in the instance variable of the Java2DImpl object. 
+	 * This empty image represents the background of the chart 
+	 * @param width the width of the image
+	 * @param height the height of the image
+	 */
 	@Override
 	public void createEmptyImage(int width, int height) {
 		BufferedImage im = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
@@ -66,7 +84,13 @@ public class Java2DImpl implements IDraw{
 		setBufferedImage(im);
 	}
 
-	
+	/**
+	 * 
+	 * @param xCoord
+	 * @param yCoord
+	 * @param width
+	 * @param heigth
+	 */
 	public void drawBox(int xCoord, int yCoord,
 			int width, int heigth
 			){
@@ -77,7 +101,16 @@ public class Java2DImpl implements IDraw{
 				Java2DImpl.DEFAULT_BORDER_WIDTH);
 		
 	}
-	
+	/**
+	 * 
+	 * @param xCoord
+	 * @param yCoord
+	 * @param width
+	 * @param heigth
+	 * @param redFill
+	 * @param greenFill
+	 * @param blueFill
+	 */
 	public void drawBox(int xCoord, int yCoord,
 			int width, int heigth,
 			int redFill, int greenFill, int blueFill
@@ -90,7 +123,7 @@ public class Java2DImpl implements IDraw{
 		
 	}
 	
-		
+	
 	@Override
 	public void drawBox(
 			int xCoord, int yCoord,
