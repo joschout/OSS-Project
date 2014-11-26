@@ -40,15 +40,11 @@ public ResourceVisualization getDestination() {
  * @param lf
  */
 public void draw(IDraw d, LineFactory lf){
-<<<<<<< Updated upstream
-	Double startPointYOffset = -origin.getHeight()/2;
-	Position startPoint = new Position(origin.getPosition().getX(),origin.getPosition().getY()+startPointYOffset);
-	Double endPointYOffset = destination.getHeight()/2;
-=======
+
 	int startPointYOffset = -origin.getHeight()/2;
 	Position startPoint = new Position(origin.getPosition().getX(),origin.getPosition().getY()+startPointYOffset);
 	int endPointYOffset = destination.getHeight()/2;
->>>>>>> Stashed changes
+
 	Position endPoint = new Position(destination.getPosition().getX(),destination.getPosition().getY()+endPointYOffset);
 	Line line = lf.create(startPoint, endPoint);
 	line.draw(d); //Adjusted by Lennart De Graef
