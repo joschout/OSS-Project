@@ -28,14 +28,14 @@ public class ScatterPlot extends Chart{
 	@Override
 	public BufferedImage draw(IDraw drawInterface) {
 		fillResourceVisualizations();
-		
+		ScatterPlotDrawing drawer = new ScatterPlotDrawing();
 		
 		for(ResourceVisualization rv: rvs){
 			rv.draw(drawInterface);	
 		}
 		drawInterface.getBufferedImage();	
 		
-		return null;
+		return ;
 	}
 	
 	private void fillResourceVisualizations(){

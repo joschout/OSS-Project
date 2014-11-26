@@ -25,32 +25,32 @@ import org.sonar.plugins.java.Java;
 public class Java2DImpl implements IDraw{
 	
 	// white
-	public static final  int DEFAULT_WHITE_R = 255;
-	public static final  int DEFAULT_WHITE_G = 255;
-	public static final  int DEFAULT_WHITE_B = 255;
+	private static final  int DEFAULT_WHITE_R = 255;
+	private static final  int DEFAULT_WHITE_G = 255;
+	private static final  int DEFAULT_WHITE_B = 255;
 	
-	public static final  int DEFAULT_BLACK_R = 0;
-	public static final  int DEFAULT_BLACK_G = 0;
-	public static final  int DEFAULT_BLACK_B = 0;
+	private static final  int DEFAULT_BLACK_R = 0;
+	private static final  int DEFAULT_BLACK_G = 0;
+	private static final  int DEFAULT_BLACK_B = 0;
 	
-	public static final  int DEFAULT_BORDER_WIDTH = 3;
-	public static final  int DEFAULT_LINE_WIDTH = 3;
-	public static final  int DEFAULT_TRIANGLE_WIDTH = 3;
+	private static final  int DEFAULT_BORDER_WIDTH = 3;
+	private static final  int DEFAULT_LINE_WIDTH = 3;
+	private static final  int DEFAULT_TRIANGLE_WIDTH = 3;
 	
 //	public static final  int DEFAULT_LINE_R = 0;
 //	public static final  int DEFAULT_LINE_G = 0;
 //	public static final  int DEFAULT_LINE_B = 0;
 	
-	public static final  int DEFAULT_TEXT_ORIENTATION_DEGREES = 0;
+	private static final  int DEFAULT_TEXT_ORIENTATION_DEGREES = 0;
 //	public static final  int DEFAULT_TEXT_R = 0;
 //	public static final  int DEFAULT_TEXT_G = 0;
 //	public static final  int DEFAULT_TEXT_B = 0;
 	
-	public static final int DEFAULT_TRIANGLE_BASE = 7;
-	public static final int DEFAULT_TRIANGLE_ALTITUDE = 7;
+	private static final int DEFAULT_TRIANGLE_BASE = 7;
+	private static final int DEFAULT_TRIANGLE_ALTITUDE = 7;
 	
 	
-	public BufferedImage im;
+	private BufferedImage im;
 
 	/**
 	 * Constucts an object of Java2DImpl which contains of the given dimensions
