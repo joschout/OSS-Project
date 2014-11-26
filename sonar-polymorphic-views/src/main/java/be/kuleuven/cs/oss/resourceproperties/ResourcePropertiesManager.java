@@ -58,5 +58,10 @@ public class ResourcePropertiesManager {
 
 		return toReturn;
 	}
+	
+	public Double getPropertyValue(String name, Resource resource){
+		ResourceProperty property = properties.get(name);
+		return property.getValue(resource);
+	}
 
 }

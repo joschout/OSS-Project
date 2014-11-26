@@ -2,6 +2,7 @@ package be.kuleuven.cs.oss.resourcevisualizations;
 
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.datautils.Size;
 
 /**
  * Interface representing a Resource Visualization Factory
@@ -31,7 +32,7 @@ public interface ResourceVisualizationFactory {
 	 * @param height Height to be set
 	 * @return ResourceVisualization with the given parameters.
 	 */
-	public ResourceVisualization create(Position p, double width, double height) throws IllegalArgumentException;
+	public ResourceVisualization create(Position p, Size size) throws IllegalArgumentException;
 	
 	/**
 	 * Creates a ResourceVisualization with the given position, width and height and color
@@ -41,7 +42,7 @@ public interface ResourceVisualizationFactory {
 	 * @param c Color to be set
 	 * @return ResourceVisualization with given parameters
 	 */
-	public ResourceVisualization create(Position p, double width, double height, Color c) throws IllegalArgumentException;
+	public ResourceVisualization create(Position p, Size sizet, Color c) throws IllegalArgumentException;
 
-	Box create(Position p, double width, double height, Color c, String name);
+	Box create(Position p, Size size, Color c, String name);
 }

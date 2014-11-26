@@ -18,28 +18,35 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlot extends Chart{
 
-	public ScatterPlot(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager) {
+	public ScatterPlot(List<Resource> resources, 
+			ResourceVisualizationFactory rvf, 
+			SonarFacade sonarF, 
+			ResourcePropertiesManager propManager) {
 		super(resources, rvf, sonarF, propManager);
 	}
 
 	@Override
 	public BufferedImage draw(IDraw drawInterface) {
 		fillResourceVisualizations();
+		ScatterPlotDrawing drawer = new ScatterPlotDrawing();
+		drawer.
+		
+		
 		for(ResourceVisualization rv: rvs){
-			rv.draw(drawInterface);
-			drawInterface.getBufferedImage();
+			rv.draw(drawInterface);	
 		}
-			
-		return null;
+		drawInterface.getBufferedImage();	
+		
+		return ;
 	}
 	
 	private void fillResourceVisualizations(){
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
 			Position position = new Position(properties.get("xcoordinate"), properties.get("ycoordinate"));
-			Color color = new Color(properties.get("colorR"),properties.get("colorB"),properties.get("colorG"));
-			Box box = BoxResourceVisualizationFactory.create(position, properties.get("width"), properties.get("height"), color, resource.getName() );
-			this.rvs.add(box);
+			Color color = new Color(properties.get("colorR").intValue(),properties.get("colorB").intValue(),properties.get("colorG").intValue());
+			ResourceVisualization rv = rvf.create(position, properties.get("width"), properties.get("height"), color, resource.getName() );
+			this.rvs.add(rv);
 		}
 	}
 

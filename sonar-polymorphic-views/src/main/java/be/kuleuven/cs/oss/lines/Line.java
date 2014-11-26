@@ -6,7 +6,12 @@ import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
-public class Line {
+/**
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
+public abstract class Line {
 	
 protected final Position origin;
 protected final Position destination;
@@ -20,7 +25,11 @@ public Line(Position orig, Position dest, int w, Color c){
 	this.color = c;
 }
 
+/**
+ * Draw the line with its given characteristics
+ * @param d
+ */
 public void draw(IDraw d){
-	//TODO
+	d.drawStraightLine(origin.getX(), origin.getY(), destination.getX(), destination.getY(), color.getRed(), color.getGreen(), color.getBlue(), width);
 }
 }
