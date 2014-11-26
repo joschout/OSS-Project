@@ -18,7 +18,10 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlot extends Chart{
 
-	public ScatterPlot(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager) {
+	public ScatterPlot(List<Resource> resources, 
+			ResourceVisualizationFactory rvf, 
+			SonarFacade sonarF, 
+			ResourcePropertiesManager propManager) {
 		super(resources, rvf, sonarF, propManager);
 	}
 
@@ -28,10 +31,10 @@ public class ScatterPlot extends Chart{
 		
 		
 		for(ResourceVisualization rv: rvs){
-			rv.draw(drawInterface);
-			drawInterface.getBufferedImage();
+			rv.draw(drawInterface);	
 		}
-			
+		drawInterface.getBufferedImage();	
+		
 		return null;
 	}
 	

@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
 
@@ -17,15 +18,13 @@ public class Box implements ResourceVisualization{
 	private static final int TEXT_OFFSET = 5;
 	
 	private Position p;
-	private double width;
-	private double height;
+	private Size size;
 	private Color color;
 	private String name;
 	
-	public Box(Position p, double width, double height, Color c, String name) throws IllegalArgumentException{
+	public Box(Position p, Size size, Color c, String name) throws IllegalArgumentException{
 		setPosition(p);
-		setWidth(width);
-		setHeight(height);
+		setSize(size);
 		setColor(color);
 		setName(name);
 	}
@@ -46,42 +45,42 @@ public class Box implements ResourceVisualization{
 	public void setPosition(Position p) {
 		this.p = p;
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public double getWidth() {
-		return this.width;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setWidth(double w) throws IllegalArgumentException{
-		if(w <= 0) 
-			throw new IllegalArgumentException("Width of a resource cannot be less than or equal to zero");
-		this.width = w;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public double getHeight() {
-		return this.height;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setHeight(double h) throws IllegalArgumentException{
-		if(h <= 0) 
-			throw new IllegalArgumentException("Height of a resource cannot be less than or equal to zero");
-		this.height = h;
-	}
+//
+//	/**
+//	 * {@inheritDoc}
+//	 */
+//	@Override
+//	public double getWidth() {
+//		return this.width;
+//	}
+//	
+//	/**
+//	 * {@inheritDoc}
+//	 */
+//	@Override
+//	public void setWidth(double w) throws IllegalArgumentException{
+//		if(w <= 0) 
+//			throw new IllegalArgumentException("Width of a resource cannot be less than or equal to zero");
+//		this.width = w;
+//	}
+//	
+//	/**
+//	 * {@inheritDoc}
+//	 */
+//	@Override
+//	public double getHeight() {
+//		return this.height;
+//	}
+//	
+//	/**
+//	 * {@inheritDoc}
+//	 */
+//	@Override
+//	public void setHeight(double h) throws IllegalArgumentException{
+//		if(h <= 0) 
+//			throw new IllegalArgumentException("Height of a resource cannot be less than or equal to zero");
+//		this.height = h;
+//	}
 	
 	/**
 	 * {@inheritDoc}
@@ -118,6 +117,31 @@ public class Box implements ResourceVisualization{
 		//TODO zet overloading ook in interface
 		d.drawBox((int)p.getX(), (int)p.getY(), (int)getWidth(), (int)getHeight(), color.getRed(), color.getGreen(), color.getBlue());
 		d.drawText(getName(), (int)p.getX(), (int)p.getY()+ (int)getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0);
+	}
+
+
+	@Override
+	public Size getSize() {
+		return this.size;
+	}
+
+
+	@Override
+	public void setSize(Size size) {
+		this.size = size;
+		
+	}
+
+
+	@Override
+	public double getWidth() {
+		return getSize().getWidth();
+	}
+
+
+	@Override
+	public double getHeight() {
+		return getSize().getHeight();
 	}
 
 	
