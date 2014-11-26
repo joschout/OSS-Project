@@ -11,41 +11,54 @@ import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.DependencyType;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
+import be.kuleuven.cs.oss.trees.TreeNode;
 
 public class SystemComplexity extends Chart {
 	
-	private List<Dependency> dependencies;
+	private TreeNode inheritanceTree;
+	
 	
 	public SystemComplexity(List<Resource> resources, ResourceVisualizationFactory RVF, SonarFacade sonarF, ResourcePropertiesManager propManager) {
 		super(resources, RVF, sonarF, propManager);
-		this.dependencies = findDependencies();
+		
+		this.inheritanceTree = makeTree();
 	}
+
+	
+
+	private TreeNode makeTree() {
+		List<Resource> parentResources = new ArrayList<Resource>();
+		
+		for(Resource resource: resources) {
+			boolean parentResource = true;
+			List<Dependency> dependencies = sonarF.findIncomingDependencies(resource);
+			
+			for(Dependency dependency: dependencies) {
+				
+				if(dependency.getType() == DependencyType.EXTENDS) {
+					parentResource = false;
+					break;
+				}
+			}
+			
+			if(parentResource) {
+				parentResources.add(resource);
+			}
+		}
+		
+		TreeNode treeNode = new TreeNode(parentResources, sonarF);
+		return treeNode;
+	}
+
 
 	@Override
 	public BufferedImage draw(IDraw drawInterface) {
-		// TODO Auto-generated method stub
+		SystemComplexityDrawing drawing = new SystemComplexityDrawing(inheritanceTree);
+		
 		return null;
 	}
 	
-	public List<Dependency> getDependencies() {
-		return dependencies;
-	}
 	
-	private List<Dependency> findDependencies() {
-		List<Dependency> dependencies = new ArrayList<Dependency>();
-		
-		for(Resource resource: resources) {
-			List<Dependency> dependenciesTemp = sonarF.findOutgoingDependencies(resource);
-			
-			for(Dependency dependency: dependenciesTemp) {
-				
-				if(dependency.getType() == DependencyType.EXTENDS) {
-					dependencies.add(dependency);
-				}
-			}
-		}
-		return dependencies;
-	}
 	
 	
 	

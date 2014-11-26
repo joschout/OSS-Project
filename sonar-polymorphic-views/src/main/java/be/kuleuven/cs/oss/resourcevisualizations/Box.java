@@ -12,7 +12,7 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
  * @author Lennart De Graef
  *
  */
-public class Box implements ResourceVisualization{
+public class Box implements ResourceVisualization{                     
 	
 	private static final int TEXT_OFFSET = 5;
 	

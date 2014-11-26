@@ -6,14 +6,26 @@ import java.util.List;
 import be.kuleuven.cs.oss.datautils.Connection;
 import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
+import be.kuleuven.cs.oss.trees.TreeNode;
 
 public class SystemComplexityDrawing {
 	
 	private List<Connection> connections;
 	
-	public SystemComplexityDrawing() {
+	public SystemComplexityDrawing(TreeNode inheritanceTree) {
+		
+		
+		
+		
+		
+		
+		
+		
 		connections = new ArrayList<Connection>();
 	}
+	
+	
+	
 	
 	private void createConnections() {
 		for(Resource resource: resources) {
