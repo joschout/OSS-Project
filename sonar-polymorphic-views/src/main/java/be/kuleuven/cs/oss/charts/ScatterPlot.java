@@ -29,6 +29,8 @@ public class ScatterPlot extends Chart{
 	public BufferedImage draw(IDraw drawInterface) {
 		fillResourceVisualizations();
 		ScatterPlotDrawing drawer = new ScatterPlotDrawing();
+		drawer.
+		
 		
 		for(ResourceVisualization rv: rvs){
 			rv.draw(drawInterface);	

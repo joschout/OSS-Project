@@ -1,8 +1,8 @@
 package be.kuleuven.cs.oss.datautils;
 
 public class Size {
-	private double width;
-	private double height;
+	private int width;
+	private int height;
 	
 	/**
 	 * 
@@ -10,27 +10,27 @@ public class Size {
 	 * @param height
 	 * @throws IllegalArgumentException
 	 */
-	public Size(double width, double height){
+	public Size(int width, int height){
 		this.width = width;
 		this.height = height;
 	}
 	
-	public double getWidth() {
+	public int getWidth() {
 		return width;
 	}
 	
 	
-	public void setWidth(double w) throws IllegalArgumentException{
+	public void setWidth(int w) throws IllegalArgumentException{
 		if(w <= 0) 
 			throw new IllegalArgumentException("Width of a size cannot be less than or equal to zero");
 		this.width = w;
 	}
 
-	public double getHeight() {
+	public int getHeight() {
 		return height;
 	}
 	
-	public void setHeight(double h) throws IllegalArgumentException{
+	public void setHeight(int h) throws IllegalArgumentException{
 		if(h <= 0) 
 			throw new IllegalArgumentException("Height of a size cannot be less than or equal to zero");
 		this.height = h;

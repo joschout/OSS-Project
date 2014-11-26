@@ -134,13 +134,13 @@ public class Box implements ResourceVisualization{
 
 
 	@Override
-	public double getWidth() {
+	public int getWidth() {
 		return getSize().getWidth();
 	}
 
 
 	@Override
-	public double getHeight() {
+	public int getHeight() {
 		return getSize().getHeight();
 	}
 

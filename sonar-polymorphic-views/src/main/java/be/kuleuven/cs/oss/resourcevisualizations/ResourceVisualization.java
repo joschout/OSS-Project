@@ -22,9 +22,9 @@ public interface ResourceVisualization {
 	
 	
 	
-	public double getWidth();
+	public int getWidth();
 	
-	public double getHeight();
+	public int getHeight();
 	
 	/**
 	 * Gets the Size of this RV
