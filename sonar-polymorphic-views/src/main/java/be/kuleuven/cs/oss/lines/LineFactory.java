@@ -3,6 +3,11 @@ package be.kuleuven.cs.oss.lines;
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
+/**
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public interface LineFactory {
 
 	public Line create();

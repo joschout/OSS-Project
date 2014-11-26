@@ -5,11 +5,20 @@ import be.kuleuven.cs.oss.lines.Line;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 
+/**
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class Connection {
 	
-//parent	
+/**
+ * parent
+ */
 private final ResourceVisualization origin;
-//child
+/**
+ * child
+ */
 private final ResourceVisualization destination;
 
 public Connection(ResourceVisualization orig, ResourceVisualization dest){
@@ -25,10 +34,21 @@ public ResourceVisualization getDestination() {
 	return destination;
 }
 
+/**
+ * Create a new line between the two resource visualizations that define this connection and draw this line
+ * @param d
+ * @param lf
+ */
 public void draw(IDraw d, LineFactory lf){
+<<<<<<< Updated upstream
 	Double startPointYOffset = -origin.getHeight()/2;
 	Position startPoint = new Position(origin.getPosition().getX(),origin.getPosition().getY()+startPointYOffset);
 	Double endPointYOffset = destination.getHeight()/2;
+=======
+	int startPointYOffset = -origin.getHeight()/2;
+	Position startPoint = new Position(origin.getPosition().getX(),origin.getPosition().getY()+startPointYOffset);
+	int endPointYOffset = destination.getHeight()/2;
+>>>>>>> Stashed changes
 	Position endPoint = new Position(destination.getPosition().getX(),destination.getPosition().getY()+endPointYOffset);
 	Line line = lf.create(startPoint, endPoint);
 	line.draw(d); //Adjusted by Lennart De Graef

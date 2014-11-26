@@ -3,6 +3,11 @@ package be.kuleuven.cs.oss.lines;
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
+/**
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class StraightLineFactory implements LineFactory {
 	
 	private static final Position DEFAULT_POSITION = new Position(0,0);
