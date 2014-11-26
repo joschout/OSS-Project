@@ -23,25 +23,25 @@ public interface ResourceVisualization {
 	 * Gets the width of this RV
 	 * @return Width of the RV
 	 */
-	public int getWidth();	
+	public double getWidth();	
 	/**
 	 * Sets the width of this RV, needs to be larger than zero
 	 * @param w the new width of the RV, larger than zero
 	 * @throws IllegalArgumentException throws exception when trying to set width lower or equal to zero
 	 */
-	public void setWidth(int w) throws IllegalArgumentException;
+	public void setWidth(double w) throws IllegalArgumentException;
 	
 	/**
 	 * gets the height of the RV
 	 * @return Height of the RV
 	 */
-	public int getHeight();
+	public double getHeight();
 	/**
 	 * Sets the height of this RV, needs to be larger than zero
 	 * @param h the new height of the RV, larger than zero
 	 * @throws IllegalArgumentException throws exception when trying to set height lower or equal to zero
 	 */
-	public void setHeight(int h) throws IllegalArgumentException;
+	public void setHeight(double h) throws IllegalArgumentException;
 	
 	/**
 	 * Get the color of this RV

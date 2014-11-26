@@ -17,12 +17,12 @@ public class Box implements ResourceVisualization{
 	private static final int TEXT_OFFSET = 5;
 	
 	private Position p;
-	private int width;
-	private int height;
+	private double width;
+	private double height;
 	private Color color;
 	private String name;
 	
-	public Box(Position p, int width, int height, Color c, String name) throws IllegalArgumentException{
+	public Box(Position p, double width, double height, Color c, String name) throws IllegalArgumentException{
 		setPosition(p);
 		setWidth(width);
 		setHeight(height);
@@ -51,7 +51,7 @@ public class Box implements ResourceVisualization{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int getWidth() {
+	public double getWidth() {
 		return this.width;
 	}
 	
@@ -59,7 +59,7 @@ public class Box implements ResourceVisualization{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void setWidth(int w) throws IllegalArgumentException{
+	public void setWidth(double w) throws IllegalArgumentException{
 		if(w <= 0) 
 			throw new IllegalArgumentException("Width of a resource cannot be less than or equal to zero");
 		this.width = w;
@@ -69,7 +69,7 @@ public class Box implements ResourceVisualization{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int getHeight() {
+	public double getHeight() {
 		return this.height;
 	}
 	
@@ -77,7 +77,7 @@ public class Box implements ResourceVisualization{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void setHeight(int h) throws IllegalArgumentException{
+	public void setHeight(double h) throws IllegalArgumentException{
 		if(h <= 0) 
 			throw new IllegalArgumentException("Height of a resource cannot be less than or equal to zero");
 		this.height = h;
@@ -115,8 +115,9 @@ public class Box implements ResourceVisualization{
 	
 	@Override
 	public void draw(IDraw d){
-		d.drawBox(p.getX(), p.getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
-		d.drawText(getName(), p.getX(), p.getY()+ getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0);
+		//TODO zet overloading ook in interface
+		d.drawBox((int)p.getX(), (int)p.getY(), (int)getWidth(), (int)getHeight(), color.getRed(), color.getGreen(), color.getBlue());
+		d.drawText(getName(), (int)p.getX(), (int)p.getY()+ (int)getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0);
 	}
 
 	
