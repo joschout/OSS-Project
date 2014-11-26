@@ -91,11 +91,11 @@ public class TreeNodeRV {
 		return null;
 	}
 	
-	private int getMaxRight() {
+	public int getMaxRight() {
 		return maxRight;
 	}
 
-	private ResourceVisualization getRv() {
+	public ResourceVisualization getRv() {
 		return rv;
 	}
 
@@ -103,5 +103,12 @@ public class TreeNodeRV {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public List<Connection> getConnections() {
+		return connections;
+	}
+	
+	
+	
 
 }
