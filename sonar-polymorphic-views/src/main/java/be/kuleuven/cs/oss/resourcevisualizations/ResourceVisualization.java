@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
 public interface ResourceVisualization {
@@ -19,30 +20,24 @@ public interface ResourceVisualization {
 	 */
 	public void setPosition(Position p);
 	
+	
+	
+	public double getWidth();
+	
+	public double getHeight();
+	
 	/**
-	 * Gets the width of this RV
+	 * Gets the Size of this RV
 	 * @return Width of the RV
 	 */
-	public double getWidth();	
-	/**
-	 * Sets the width of this RV, needs to be larger than zero
-	 * @param w the new width of the RV, larger than zero
-	 * @throws IllegalArgumentException throws exception when trying to set width lower or equal to zero
-	 */
-	public void setWidth(double w) throws IllegalArgumentException;
+	public Size getSize();
 	
 	/**
-	 * gets the height of the RV
-	 * @return Height of the RV
+	 * Sets the Size of this RV, which contains a width and a height
+	 * @param size the new size of the RV
 	 */
-	public double getHeight();
-	/**
-	 * Sets the height of this RV, needs to be larger than zero
-	 * @param h the new height of the RV, larger than zero
-	 * @throws IllegalArgumentException throws exception when trying to set height lower or equal to zero
-	 */
-	public void setHeight(double h) throws IllegalArgumentException;
-	
+	public void setSize(Size size);
+		
 	/**
 	 * Get the color of this RV
 	 * @return Color of the RV
@@ -66,8 +61,7 @@ public interface ResourceVisualization {
 	 * @param name The name to be set
 	 */
 	public void setName(String name);
-	
-	
+		
 	public void draw(IDraw d);
 	//TODO make the IDraw interface
 	
