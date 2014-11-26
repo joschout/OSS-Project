@@ -7,8 +7,9 @@ import java.awt.image.BufferedImage;
 
 
 /**
+ * @invar  The upper left corner is the origin of the image plane.
  * @author Jonas
- *
+ * 
  */
 public interface IDraw {
 
