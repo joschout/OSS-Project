@@ -31,7 +31,7 @@ public interface ResourceVisualizationFactory {
 	 * @param height Height to be set
 	 * @return ResourceVisualization with the given parameters.
 	 */
-	public ResourceVisualization create(Position p, int width, int height) throws IllegalArgumentException;
+	public ResourceVisualization create(Position p, double width, double height) throws IllegalArgumentException;
 	
 	/**
 	 * Creates a ResourceVisualization with the given position, width and height and color
@@ -41,7 +41,7 @@ public interface ResourceVisualizationFactory {
 	 * @param c Color to be set
 	 * @return ResourceVisualization with given parameters
 	 */
-	public ResourceVisualization create(Position p, int width, int height, Color c) throws IllegalArgumentException;
+	public ResourceVisualization create(Position p, double width, double height, Color c) throws IllegalArgumentException;
 
-	Box create(Position p, int width, int height, Color c, String name);
+	Box create(Position p, double width, double height, Color c, String name);
 }
