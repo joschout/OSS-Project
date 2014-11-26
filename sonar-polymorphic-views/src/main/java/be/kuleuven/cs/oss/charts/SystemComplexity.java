@@ -23,7 +23,7 @@ public class SystemComplexity extends Chart {
 
 	@Override
 	public BufferedImage draw(IDraw drawInterface) {
-		// TODO Auto-generated method stub
+		SystemComplexityDrawing draw = new SystemComplexityDrawing(drawInterface);
 		return null;
 	}
 	

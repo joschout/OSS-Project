@@ -1,27 +1,29 @@
 package be.kuleuven.cs.oss.charts;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import be.kuleuven.cs.oss.datautils.Connection;
-import be.kuleuven.cs.oss.sonarfacade.Dependency;
-import be.kuleuven.cs.oss.sonarfacade.Resource;
+import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
+import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 public class SystemComplexityDrawing {
 	
-	private List<Connection> connections;
+	private IDraw drawInterface;
 	
-	public SystemComplexityDrawing() {
-		connections = new ArrayList<Connection>();
+	public SystemComplexityDrawing(IDraw drawInterface) {
+		this.drawInterface = drawInterface;
 	}
 	
-	private void createConnections() {
-		for(Resource resource: resources) {
-			List<Dependency> dependencies = sonarF.findOutgoingDependencies(resource);
-			for(Dependency dependency: dependencies) {
-				Connection connection = new Connection()
-			}
+	
+	public void drawTreeRV(TreeNodeRV tree) {
+		List<ResourceVisualization> rvs = tree.getAllRvs();
+		
+		for(ResourceVisualization rv: rvs) {
+			rv.draw(drawInterface);
 		}
 	}
+
+
+	
 
 }
