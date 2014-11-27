@@ -19,6 +19,7 @@ public class Java2DImplTest {
 
 	public static void testBackground() {
 		Java2DImpl impl = new Java2DImpl(400, 100);
+		impl.createEmptyImage(400, 100);
 		BufferedImage bi = impl.getBufferedImage();
 		output(bi);
 	}
