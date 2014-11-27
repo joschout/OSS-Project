@@ -65,5 +65,11 @@ public interface ResourceVisualization {
 	public void draw(IDraw d);
 	//TODO make the IDraw interface
 	
+	public int getX();
+	
+	public int getY();
+	
+	
+	
 	
 }

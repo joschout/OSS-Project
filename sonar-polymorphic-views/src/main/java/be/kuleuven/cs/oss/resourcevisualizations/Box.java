@@ -144,5 +144,17 @@ public class Box implements ResourceVisualization{
 		return getSize().getHeight();
 	}
 
+
+	@Override
+	public int getX() {
+		return getPosition().getX();
+	}
+
+
+	@Override
+	public int getY() {
+		return getPosition().getY();
+	}
+
 	
 }
