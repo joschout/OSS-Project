@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
@@ -27,6 +28,7 @@ public abstract class Chart {
 	protected ResourceVisualizationFactory rvf;
 	protected SonarFacade sonarF;
 	protected ResourcePropertiesManager propManager;
+	protected IDraw d;
 	
 	//TODO LineFactory has to be one of the arguments
 	/**
@@ -42,7 +44,8 @@ public abstract class Chart {
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
-		
+		setIDrawInstantiation(new Java2DImpl());
+	
 	}
 	
 	public List<ResourceVisualization> getResourceVisualizations() {
@@ -80,7 +83,13 @@ public abstract class Chart {
 		return propManager.getPropertyValues(resource);
 	}
 	
-	
+	public IDraw getIDrawInstantiation() {
+		return d;
+	}
+
+	public void setIDrawInstantiation(IDraw d) {
+		this.d = d;
+	}
 	public abstract BufferedImage draw(IDraw drawInterface);
 	
 	

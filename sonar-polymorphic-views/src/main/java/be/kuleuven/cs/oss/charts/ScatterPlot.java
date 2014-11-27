@@ -11,8 +11,6 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
-import be.kuleuven.cs.oss.resourcevisualizations.Box;
-import be.kuleuven.cs.oss.resourcevisualizations.BoxResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -27,7 +25,7 @@ public class ScatterPlot extends Chart{
 
 	private int xMax;
 	private int yMax;
-	private IDraw d;
+	
 
 
 
@@ -41,8 +39,6 @@ public class ScatterPlot extends Chart{
 		setHeight(height);
 		setXMax(0);
 		setYMax(0);
-		IDraw d = new Java2DImpl(width, height);
-		setIDrawInstantiation(d);
 	}
 
 
@@ -90,14 +86,7 @@ public class ScatterPlot extends Chart{
 	}
 
 
-	public IDraw getIDrawInstantiation() {
-		return d;
-	}
 
-
-	public void setIDrawInstantiation(IDraw d) {
-		this.d = d;
-	}
 
 
 	@Override
@@ -127,8 +116,8 @@ public class ScatterPlot extends Chart{
 		double maxYCoordUpUntilNow = 0;
 		
 		for(Resource resource : resources){		
-			double xCoord = getResourcePropertyValues(resource).get("xcoordinate");
-			double yCoord = getResourcePropertyValues(resource).get("ycoordinate");
+			double xCoord = getResourcePropertyValues(resource).get("xmetric");
+			double yCoord = getResourcePropertyValues(resource).get("ymetric");
 			
 			if(xCoord > maxXCoordUpUntilNow){
 				maxXCoordUpUntilNow = xCoord;
@@ -145,8 +134,8 @@ public class ScatterPlot extends Chart{
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
 			
-			int xCoord = convertX(properties.get("xcoordinate"), getXMax());
-			int yCoord = convertY(properties.get("ycoordinate"), getYMax());
+			int xCoord = convertX(properties.get("xmetric"), getXMax());
+			int yCoord = convertY(properties.get("ymetric"), getYMax());
 			Position position = new Position(xCoord, yCoord);
 			
 			Color color = new Color(properties.get("colorR").intValue(),properties.get("colorB").intValue(),properties.get("colorG").intValue());
