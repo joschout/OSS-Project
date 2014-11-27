@@ -23,8 +23,16 @@ public class Position {
 	public int getY() {
 		return y;
 	}
+	
+    public void setX(int x) {
+		this.x = x;
+	}
 
-    /**
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	/**
      * @param   other
      * @return  result == ((other != null) && (getClass() == other.getClass()) && (getX() == (Position other).getX()) && (getY() == (Position other).getY())
      */

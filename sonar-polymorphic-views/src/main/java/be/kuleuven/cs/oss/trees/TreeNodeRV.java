@@ -26,7 +26,7 @@ public class TreeNodeRV {
 	private TreeMap<String, TreeNodeRV> children;
 
 	private int maxRight;
-	private int level; //TODO
+	private int level = 0;
 
 	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode, ResourcePropertiesManager manager) {
 		this.rvf = rvf;
@@ -41,11 +41,12 @@ public class TreeNodeRV {
 
 	private void createChildren() {
 		TreeMap<String, TreeNode> children = treeNode.getChildren();
-
+		
 		for(Map.Entry<String, TreeNode> entry : children.entrySet()) {
 			TreeNode treeNode = entry.getValue();
 
 			TreeNodeRV child = new TreeNodeRV(rvf, treeNode, manager);
+			child.setLevel(this.level++);
 			//maxRight = maxRight + child.getMaxRight() + OFFSET; // Hier moet geen maxRight ook nog eens bij denk ik
 			this.children.put(entry.getKey(), child); //Add the child to the internal children list
 		}
@@ -150,5 +151,67 @@ public class TreeNodeRV {
 		return treeNode.isRoot();
 	}
 	
+	public void setLevel(int level){
+		this.level = level;
+	}
+	
+	public int getLevel(){
+		return this.level;
+	}
+	
+	public Map<Integer, Integer> getMaxHeightPerLevel(Map<Integer, Integer> currentMaxHeights){
+		int level = getLevel();
+		int height = rv.getHeight();
+		
+		if(currentMaxHeights.containsKey(level)){
+			int currentMaxHeight = currentMaxHeights.get(level);
+			if(height>currentMaxHeight){
+				currentMaxHeights.put(level, height);
+			}
+	
+		}else{
+			currentMaxHeights.put(level, height);
+		}
+		
+		
+		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){
+			currentMaxHeights = entry.getValue().getMaxHeightPerLevel(currentMaxHeights);	
+		}
+		
+		return currentMaxHeights;
+	}
+	
+	public void updateYPositions(Map<Integer, Integer> maxHeights){
+		int level = getLevel();
+		if(level == 0){ //In case the node is the root, height doens't get set
+			for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){
+				ResourceVisualization childRV = entry.getValue().getRv();
+				
+				int y = 0 + childRV.getHeight()/2;
+				childRV.getPosition().setY(y);
+				
+				entry.getValue().updateYPositions(maxHeights);
+			}
+		}
+		else{
+			for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){
+				ResourceVisualization childRV = entry.getValue().getRv();
+				calcYPositionChild(level, maxHeights, childRV);
+				
+				entry.getValue().updateYPositions(maxHeights);
+			}
+			
+		}
+		
+	}
+	
+	private Position calcYPositionChild(int level, Map<Integer, Integer> maxHeights, ResourceVisualization childRV) {
+		int maxHeight = maxHeights.get(level);
+		Position position = childRV.getPosition();
+		int y = rv.getPosition().getY() - rv.getHeight()/2 + maxHeight + OFFSET + childRV.getHeight()/2;
+		
+		position.setY(y);
+		return position;
+	}
 
 }
