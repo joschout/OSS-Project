@@ -18,14 +18,15 @@ public class Java2DImplTest {
 	}
 
 	public static void testBackground() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
 		impl.createEmptyImage(400, 100);
 		BufferedImage bi = impl.getBufferedImage();
 		output(bi);
 	}
 	
 	public static void testDrawBox2() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawBox(
 				10, 10, //int xCoord, int yCoord
 				40, 20, //int width, int heigth
@@ -39,7 +40,8 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawCircle() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawCircle(
 				10, 10, //int xCoord, int yCoord
 				40, 20, //int width, int heigth
@@ -53,7 +55,8 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawText() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawText(
 				"Sweet baby Jesus", 
 				60, 60, 
@@ -65,14 +68,16 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawStraightLine() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawStraightLine(10, 10, 50, 50, 255, 172, 0, 2);
 		BufferedImage bi = impl.getBufferedImage();
 		output(bi);
 	}
 	
 	public static void testDrawTriangle() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawTriangle(
 				10, 10, //int x1, int y1,
 				10, 20, //int x2,int y2,
@@ -87,7 +92,8 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawTriangle2() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawTriangle(10, 10, 5, 20, 15, 20);
 		
 		BufferedImage bi = impl.getBufferedImage();
@@ -95,7 +101,8 @@ public class Java2DImplTest {
 	}
 	
 	public static void testArrowUp() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawArrowUp(10, 60, 30);
 		
 		BufferedImage bi = impl.getBufferedImage();
@@ -103,7 +110,8 @@ public class Java2DImplTest {
 	}
 	
 	public static void testArrowRight() {
-		Java2DImpl impl = new Java2DImpl(400, 100);
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
 		impl.drawArrowRight(20, 20, 30);
 		
 		BufferedImage bi = impl.getBufferedImage();
