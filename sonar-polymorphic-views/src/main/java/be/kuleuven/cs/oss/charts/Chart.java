@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
@@ -28,6 +29,8 @@ public abstract class Chart {
 	protected SonarFacade sonarF;
 	protected ResourcePropertiesManager propManager;
 	
+	protected IDraw drawer;
+	
 	//TODO LineFactory has to be one of the arguments
 	/**
 	 * Declare the different fields which are used to store data about different charts
@@ -42,7 +45,7 @@ public abstract class Chart {
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
-		
+	
 	}
 	
 	public List<ResourceVisualization> getResourceVisualizations() {
