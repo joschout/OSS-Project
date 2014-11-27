@@ -10,6 +10,10 @@ import java.util.Map;
 
 
 
+
+
+import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
@@ -64,6 +68,10 @@ public class ScatterPlot extends Chart{
 		setYMin(Integer.MAX_VALUE);
 		setWidthMin(Integer.MAX_VALUE);
 		setHeightMin(Integer.MAX_VALUE);
+		minRVHeight= minRVScalingFactor*getHeight();
+		maxRVHeight = maxRVScalingFactor*getHeight();
+		maxRVWidth = maxRVScalingFactor*getWidth();
+		minRVWidth = minRVScalingFactor*getWidth();
 	}
 
 
@@ -213,45 +221,53 @@ public class ScatterPlot extends Chart{
 
 
 	@Override
-	public BufferedImage draw(IDraw d) {
+	public BufferedImage draw() {
 
 		// 1) create an empty image
-		d.createEmptyImage(getWidth(), getHeight());
+		getIDrawInstantiation().createEmptyImage(getWidth(), getHeight());
 
 		// 2) draw the axises on the image
-		drawAxises(d);
+		drawAxises(getIDrawInstantiation());
+		
+		
+		setDefaultRVSizes();
 		
 		// 3) create the ResourceVsiualizations
 		createResourceVisualizations();
-		
-		// 4) calculate min max rvsize
-		setExtremeRVSizes();
-		
+			
 		// 5) rescale the ResourceVsiualizations
 		rescaleResourceVisualizations();
 		
 		// 6) draw the ResourceVisualizations
 		drawResourceVisualizations();
 		
-		return d.getBufferedImage();
+		return getIDrawInstantiation().getBufferedImage();
 	}
 
-	private void setExtremeRVSizes() {
-		this.minRVHeight= minRVScalingFactor*getHeight();
-		((BoxFactory)this.rvf).;
-		this.maxRVHeight = maxRVScalingFactor*getHeight();
-		this.maxRVWidth = maxRVScalingFactor*getWidth();
-		this.minRVWidth = minRVScalingFactor*getWidth();
+	private void setDefaultRVSizes() { //Hacky code. Change requested.
+		((BoxFactory)this.rvf).setDefaultHeight((int)((maxRVScalingFactor+minRVScalingFactor)/2*(getHeight()-2*getAxisOffset())));
+		((BoxFactory)this.rvf).setDefaultWidth((int)((maxRVScalingFactor+minRVScalingFactor)/2*(getWidth()-2*getAxisOffset())));
 	}
-
-
 
 	
 	private void rescaleResourceVisualizations(){
+
+		
 //		setMedians();
 		setExtremeValues();	
-		List<ResourceVisualization> visualizations = this.getResourceVisualizations();
-		
+		for (ResourceVisualization rv : this.getResourceVisualizations()){
+			rv.setPosition(new Position(convertX(rv.getX()), convertY(rv.getY())));
+			int widthpx = getWidthMin();
+			int heightpx = getHeightMin();
+			if(getWidthMin() != getWidthMax()){
+				widthpx = convertWidth(rv.getWidth());
+			}
+			if(getHeightMin()!=getHeightMax()){
+				heightpx = convertHeight(rv.getHeight());
+			}
+			rv.setSize(new Size(widthpx, heightpx));
+			
+		}
 		
 		
 	}
@@ -434,7 +450,7 @@ public class ScatterPlot extends Chart{
 	 * @return the x coordinate in the image plane
 	 */
 	private int convertX(double xCoord){
-		return (int) (getAxisOffset() + (width-2*getAxisOffset())* xCoord/getXMax());	
+		return (int) (getAxisOffset() + (width-2*getAxisOffset())* (xCoord-getXMin())/(getXMax()-getXMin()));	
 	}
 
 	/**
@@ -462,7 +478,14 @@ public class ScatterPlot extends Chart{
 	 * @return the y coordinate in the image plane
 	 */
 	private int convertY(double yCoord){
-		return (int) (getHeight()-getAxisOffset()+(2*getAxisOffset()-getHeight())*yCoord/getYMax());
+		return (int) (getHeight()-getAxisOffset()+(2*getAxisOffset()-getHeight())*(yCoord-getYMin())/(getYMax()-getYMin()));
+	}
+	
+	private int convertWidth(double width){
+		return (int) (minRVWidth+(maxRVWidth-minRVWidth)*(width-getWidthMin())/(getWidthMax()-getWidthMin()));
 	}
 
+	private int convertHeight(double height){
+		return (int) (minRVHeight+(maxRVHeight-minRVHeight)*(height-getHeightMin())/(getHeightMax()-getHeightMin()));
+	}
 }
