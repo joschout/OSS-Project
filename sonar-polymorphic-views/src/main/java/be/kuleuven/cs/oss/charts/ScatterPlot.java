@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
@@ -45,10 +46,10 @@ public class ScatterPlot extends Chart{
 	/**
 	 * constructor 
 	 * 
-	 * @param resources
-	 * @param rvf
-	 * @param sonarF
-	 * @param propManager
+	 * @param resources: The classes or packages to appear on the plot
+	 * @param rvf: The ResourceVisualisationFactory which makes a ResourceVisualisation for each resource (such as a Box)
+	 * @param sonarF: Inherited. We don't actually need it. Can be used to ask Sonar the values of extra metrics.
+	 * @param propManager: Inherited
 	 * @param width: width of the image frame
 	 * @param height: height of the image frame
 	 */
@@ -57,9 +58,13 @@ public class ScatterPlot extends Chart{
 			SonarFacade sonarF, 
 			ResourcePropertiesManager propManager,
 			int width, int height) {
+		
 		super(resources, rvf, sonarF, propManager);
+		
 		this.width=width;
 		this.height = height;
+		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(width, height);
+		
 		this.xMax = 0;
 		this.yMax = 0;
 		this.widthMax = 0;
@@ -69,8 +74,6 @@ public class ScatterPlot extends Chart{
 		this.xMin = Integer.MAX_VALUE;
 		this.yMin = Integer.MAX_VALUE;
 		
-		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(width, height);
-		
 		minRVHeight= minRVScalingFactor*height;
 		maxRVHeight = maxRVScalingFactor*height;
 		maxRVWidth = maxRVScalingFactor*width;
@@ -78,37 +81,76 @@ public class ScatterPlot extends Chart{
 	}
 
 
-
+	/**
+	 * The draw method goes through several steps
+	 * 1. create an empty image
+	 * 2. draw the axes on the image
+	 * 3. based on the size of the image, calculate a default resource visualisation size (e.g.boxwidth and boxheight)
+	 * 4. create the resource visualisations (such as boxes)
+	 * 5. modify/scale the values of resource visualisations in order to make the resource visualisation ready to be drawn
+	 * 		(the values are now expressed in pixels)
+	 * 6. draw the resource visualisations
+	 * @return the buffered image of the plot
+	 */
 	@Override
 	public BufferedImage draw() {
-
-		// 1) create an empty image
+		
+		//1
 		getIDrawInstantiation().createEmptyImage(width, height);
-
-		// 2) draw the axises on the image
+		//2
 		drawAxises(getIDrawInstantiation());
-		
-		// 
+		//3
 		setDefaultRVSizes();
-		
-		// 3) create the ResourceVsiualizations
+		//4
 		createResourceVisualizations();
-			
-		// 5) rescale the ResourceVsiualizations
+		//5
 		rescaleResourceVisualizations();
-		
-		// 6) draw the ResourceVisualizations
+		//6
 		drawResourceVisualizations();
 		
 		return getIDrawInstantiation().getBufferedImage();
 	}
 
-	private void setDefaultRVSizes() { //Hacky code. Change requested.
+	/**
+	 * Draws the axes of the scatter plot. The axes consist of 2 arrows, 
+	 * one pointing up and one pointing right, like a normal carthesian coordinate system.
+	 * 
+	 * @param d : IDraw
+	 */
+	private void drawAxises(IDraw d){
+		d.drawArrowRight( (int)axisOffset, 
+						  (int)(height - axisOffset) , 
+						  (int)(width - 2*axisOffset));
+		d.drawArrowUp( (int)axisOffset,
+					   (int)(height - axisOffset),
+					   (int)(height - 2*axisOffset));
+	}
+
+	/**
+	 * Before the resource visualisations are made, the default values for its dimensions are set.
+	 * Here we choose for the average of the minimum and maximum size for a resource visualisation.
+	 */
+	private void setDefaultRVSizes() { //Hacky code. Change requested. No casting wanted.
 		((BoxFactory)this.rvf).setDefaultHeight((int)((maxRVScalingFactor+minRVScalingFactor)/2*(height-2*axisOffset)));
 		((BoxFactory)this.rvf).setDefaultWidth((int)((maxRVScalingFactor+minRVScalingFactor)/2*(width-2*axisOffset)));
 	}
 
-	
+	/**
+	 * Get the measures for the given metrics and put them in a resource visualisation.
+	 * If there are no metrics for a certain property of the resource visualisation, it gets the default value.
+	 */
+	private void createResourceVisualizations(){
+		for(Resource resource: resources){
+			Map<String, Double> properties = super.getResourcePropertyValues(resource);
+			ResourceVisualization rv = rvf.create(properties);
+			this.getResourceVisualizations().add(rv);
+		}
+	}
+
+	/**
+	 * Using interpolation, the resource visualisation gets new values in order to fit in the image.
+	 * If the min and max value for a property are the same, it means that this metric has the default value. It doesn't need rescaling then.
+	 */
 	private void rescaleResourceVisualizations(){
 		setExtremeValues();	
 		for (ResourceVisualization rv : this.getResourceVisualizations()){
@@ -126,7 +168,9 @@ public class ScatterPlot extends Chart{
 	}
 	
 
-	
+	/**
+	 * For each property, find the maximum and minimum value of all the resources.
+	 */
 	private void setExtremeValues(){	
 		for(ResourceVisualization rv : rvs){		
 			double xCoord = rv.getX();
@@ -163,35 +207,15 @@ public class ScatterPlot extends Chart{
 		}
 	}
 	
-	private void createResourceVisualizations(){
-		for(Resource resource: resources){
-			Map<String, Double> properties = super.getResourcePropertyValues(resource);
-			ResourceVisualization rv = rvf.create(properties);
-			this.getResourceVisualizations().add(rv);
-		}
-	}
-	
+	/**
+	 * Let the resource visualisations draw themselves.
+	 */
 	private void drawResourceVisualizations(){
 		for(ResourceVisualization rv: getResourceVisualizations()){
 			rv.draw(getIDrawInstantiation());
 		}
 	}
 
-
-	/**
-	 * Draws the axises of the scatter plot. The axises consist of 2 arrows, 
-	 * one pointing up and one pointing right, like a normal carthesian coordinate system.
-	 * 
-	 * @param d
-	 */
-	private void drawAxises(IDraw d){
-		d.drawArrowRight( (int)axisOffset, 
-						  (int)(height-axisOffset) , 
-						  (int)(width-2*axisOffset));
-		d.drawArrowUp( (int)axisOffset,
-					   (int)(height -  axisOffset),
-					   (int)(height- 2*axisOffset));
-	}
 
 	/**
 	 * Converts the given x-coordinate relative to the axises of the scatter plot
@@ -249,10 +273,21 @@ public class ScatterPlot extends Chart{
 		return (int) (height-axisOffset+(2*axisOffset-height)*(yCoord-yMin)/(yMax-yMin));
 	}
 	
+	/**
+	 * Using interpolation, let the width of a resource visualisation be between the minimum and maximum width for a resource visualisation, 
+	 * proportionally to the minimum and maximum value for the metric represented by the width. 
+	 * @param width: The value of the metric represented by the width to be converted.
+	 * @return the converted width (in pixels)
+	 */
 	private int convertWidth(double width){
 		return (int) (minRVWidth+(maxRVWidth-minRVWidth)*(width-widthMin)/(widthMax-widthMin));
 	}
-
+	/**
+	 * Using interpolation, let the height of a resource visualisation be between the minimum and maximum height for a resource visualisation, 
+	 * proportionally to the minimum and maximum value for the metric represented by the height. 
+	 * @param width: The value of the metric represented by the height to be converted.
+	 * @return the converted height (in pixels)
+	 */
 	private int convertHeight(double height){
 		return (int) (minRVHeight+(maxRVHeight-minRVHeight)*(height-heightMin)/(heightMax-heightMin));
 	}
