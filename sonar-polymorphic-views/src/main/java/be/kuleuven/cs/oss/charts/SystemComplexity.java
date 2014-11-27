@@ -56,9 +56,9 @@ public class SystemComplexity extends Chart {
 
 
 	@Override
-	public BufferedImage draw(IDraw drawInterface) {
-		SystemComplexityDrawing sysComDraw = new SystemComplexityDrawing(drawInterface, lf);
-		TreeNodeRV treeNodeRV = new TreeNodeRV(rvf, inheritanceTree, propManager, lf);
+	public BufferedImage draw() {
+		SystemComplexityDrawing sysComDraw = new SystemComplexityDrawing(iDrawImpl, lf);
+		TreeNodeRV treeNodeRV = new TreeNodeRV(rvf, inheritanceTree, propManager);
 		BufferedImage out = sysComDraw.drawTreeRV(treeNodeRV);
 		return out;
 	}
