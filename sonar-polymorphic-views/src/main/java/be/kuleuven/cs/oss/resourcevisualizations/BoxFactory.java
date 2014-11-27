@@ -24,11 +24,43 @@ public class BoxFactory implements ResourceVisualizationFactory {
 	public BoxFactory() {
 	}
 	 
+	public int getDefaultXCoord() {
+		return defaultXCoord;
+	}
+
+	public void setDefaultXCoord(int defaultXCoord) {
+		this.defaultXCoord = defaultXCoord;
+	}
+
+	public int getDefaultYCoord() {
+		return defaultYCoord;
+	}
+
+	public void setDefaultYCoord(int defaultYCoord) {
+		this.defaultYCoord = defaultYCoord;
+	}
+
+	public int getDefaultWidth() {
+		return defaultWidth;
+	}
+
+	public void setDefaultWidth(int defaultWidth) {
+		this.defaultWidth = defaultWidth;
+	}
+
+	public int getDefaultHeight() {
+		return defaultHeight;
+	}
+
+	public void setDefaultHeight(int defaultHeight) {
+		this.defaultHeight = defaultHeight;
+	}
+
 	@Override
 	public ResourceVisualization create(Map<String, Double> map) {
 		
-		Position position = new Position(DEFAULT_XCOORD, DEFAULT_YCOORD);
-		Size size = new Size(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+		Position position = new Position(defaultXCoord, defaultYCoord);
+		Size size = new Size(defaultWidth, defaultHeight);
 		Box box = new Box(position, size, DEFAULT_COLOR, DEFAULT_NAME);
 		
 		for(String property: map.keySet()){

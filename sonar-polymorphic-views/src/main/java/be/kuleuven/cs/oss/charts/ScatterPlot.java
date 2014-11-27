@@ -14,6 +14,7 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory; //eventually to remove
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -38,8 +39,10 @@ public class ScatterPlot extends Chart{
 	private int yMin;
 	private int widthMin;
 	private int heightMin;
-	private double minRVSize;
-	private double maxRVSize;
+	private double minRVHeight;
+	private double maxRVHeight;
+	private double maxRVWidth;
+	private double minRVWidth;
 	
 	private static final double minRVScalingFactor = 0.05;
 	private static final double maxRVScalingFactor = 0.20;
@@ -221,8 +224,8 @@ public class ScatterPlot extends Chart{
 		// 3) create the ResourceVsiualizations
 		createResourceVisualizations();
 		
-		// 4) calculate min max boxsize
-		computeExtremeBoxSizes();
+		// 4) calculate min max rvsize
+		setExtremeRVSizes();
 		
 		// 5) rescale the ResourceVsiualizations
 		rescaleResourceVisualizations();
@@ -233,9 +236,12 @@ public class ScatterPlot extends Chart{
 		return d.getBufferedImage();
 	}
 
-	private void computeExtremeBoxSizes() {
-		this.minRVSize = Math.min(minRVScalingFactor*getWidth(), minRVScalingFactor*getHeight());
-		this.maxRVSize = Math.max(maxRVScalingFactor*getWidth(), maxRVScalingFactor*getHeight());
+	private void setExtremeRVSizes() {
+		this.minRVHeight= minRVScalingFactor*getHeight();
+		((BoxFactory)this.rvf).;
+		this.maxRVHeight = maxRVScalingFactor*getHeight();
+		this.maxRVWidth = maxRVScalingFactor*getWidth();
+		this.minRVWidth = minRVScalingFactor*getWidth();
 	}
 
 
