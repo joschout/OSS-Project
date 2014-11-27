@@ -38,9 +38,8 @@ public class PolymorphicViewsChart implements Chart {
 			return chart.draw();
 		}
 		catch(Exception e){
-			
+			return null;
 		}
-		return null;
 	}
 	
 	public SonarFacade getSonar() {

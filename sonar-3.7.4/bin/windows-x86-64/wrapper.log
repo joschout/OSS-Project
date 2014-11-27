@@ -1,5 +1,0 @@
-STATUS | wrapper  | 2014/11/10 17:29:39 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/10 17:29:39 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/10 17:29:39 | Error: Could not find or load main class org.tanukisoftware.wrapper.WrapperSimpleApp
-INFO   | jvm 1    | 2014/11/10 17:29:39 | Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=128m; support was removed in 8.0
-ERROR  | wrapper  | 2014/11/10 17:29:39 | JVM exited while loading the application.
