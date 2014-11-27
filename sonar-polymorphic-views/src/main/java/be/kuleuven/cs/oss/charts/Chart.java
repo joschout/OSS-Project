@@ -39,12 +39,12 @@ public abstract class Chart {
 	 * @param SonarFacade sonarF
 	 * @param ResourcePropertiesManager propManager
 	 */
-	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager, IDraw draw) {
+	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager) {
 		this.resources = resources;
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
-		setIDrawInstantiation(draw);
+		setIDrawInstantiation(new Java2DImpl());
 
 	
 	}
