@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.Chart;
 import org.sonar.api.charts.ChartParameters;
 
+import be.kuleuven.cs.oss.control.Controller;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
@@ -28,9 +29,17 @@ public class PolymorphicViewsChart implements Chart {
 	}
 
 	@Override
-	public BufferedImage generateImage(ChartParameters params) {
+	public BufferedImage generateImage(ChartParameters params){
 		LOG.info("PolymorphicViewsChart generateImage() called!");
-		// TODO: implement
+		try{
+			Controller c = new Controller(params,sonar);
+			be.kuleuven.cs.oss.charts.Chart chart = c.createChart();
+			//TODO parameters van draw aanpassen voor consistentie: aanmaken in controller of niet?
+			return chart.draw();
+		}
+		catch(Exception e){
+			
+		}
 		return null;
 	}
 	

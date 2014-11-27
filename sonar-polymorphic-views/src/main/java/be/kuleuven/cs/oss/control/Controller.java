@@ -10,6 +10,8 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
+import be.kuleuven.cs.oss.lines.LineFactory;
+import be.kuleuven.cs.oss.lines.StraightLineFactory;
 import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
@@ -35,7 +37,7 @@ public class Controller {
 	private static final String DEFAULT_CHART_TYPE = "scatter";
 		
 	
-	Controller(ChartParameters p, SonarFacade sf) throws Exception{
+	public Controller(ChartParameters p, SonarFacade sf) throws Exception{
 		this.rawParams = p;
 		this.sf = sf;
 		this.parent = retrieveParent();
@@ -61,6 +63,14 @@ public class Controller {
 	 */
 	public ResourceVisualizationFactory createRVFactory(){
 		return new BoxFactory();
+	}
+	
+	/**
+	 * Create a new line factory (currently, only straight lines are supported)
+	 * @return a new line factory
+	 */
+	public LineFactory createLineFactory(){
+		return new StraightLineFactory();
 	}
 	
 	/**
@@ -204,9 +214,9 @@ public class Controller {
 				}
 			}
 			else throw new Exception("Color not recognized");
-			rpm.addProperty("boxcolorR", result.get(0));
-			rpm.addProperty("boxcolorG", result.get(1));
-			rpm.addProperty("boxcolorB", result.get(2));
+			rpm.addProperty("colorR", result.get(0));
+			rpm.addProperty("colorG", result.get(1));
+			rpm.addProperty("colorB", result.get(2));
 		}
 		catch(Exception e){
 			throw new Exception("Failed to create resource properties for color");
@@ -315,7 +325,7 @@ public class Controller {
 			throw new Exception("Failed to create resource properties for additional scatterplot metrics");
 		}
 	}
-	
+		
 	/**
 	 * Check if the chartparameters define a valid scatterplot
 	 * @return True if the chartparameters define a valid scatterplot
@@ -365,7 +375,8 @@ public class Controller {
 			case "syscomp": 
 				if(!isValidSyscomp())
 					throw new Exception("Invalid system complexity parameters");
-				return new SystemComplexity(resources, rvf, sf, rpm);
+				LineFactory lf = createLineFactory();
+				return new SystemComplexity(resources, rvf, sf, rpm,lf);
 			default:
 				throw new Exception();
 			}
