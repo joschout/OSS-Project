@@ -52,13 +52,9 @@ public class Java2DImpl implements IDraw{
 	
 	private BufferedImage im;
 
-	/**
-	 * Constucts an object of Java2DImpl which contains of the given dimensions
-	 * @param width the width of the image
-	 * @param height the height of the image
-	 */
-	public Java2DImpl(int width, int height){
-		createEmptyImage(width, height);
+
+	public Java2DImpl(){
+		super();
 	}
 	
 	public BufferedImage getBufferedImage() {

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.DependencyType;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -17,16 +19,20 @@ public class TreeNode {
 	
 	Resource resource;
 	SonarFacade sonarF;
+	ResourceVisualizationFactory rvf;
+	ResourceVisualization rv;
 	
 	TreeMap<String, TreeNode> children;
 	
 	
 
-	public TreeNode(Resource resource, SonarFacade sonarFacade) {
+	public TreeNode(Resource resource, ResourceVisualizationFactory rvf,  SonarFacade sonarFacade) {
 		this.sonarF = sonarFacade;
 		this.resource = resource;
 		this.children = new TreeMap<String, TreeNode>();
+		this.rvf = rvf;
 		
+		createRV();
 		createChildren();
 	}
 	
@@ -76,6 +82,12 @@ public class TreeNode {
 	
 	public Resource getResource() {
 		return resource;
+	}
+	
+	private void createRV(){
+		if(!isRoot){
+			rv = rvf.
+		}
 	}
 	
 	

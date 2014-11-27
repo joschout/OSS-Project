@@ -28,6 +28,7 @@ public abstract class Chart {
 	protected ResourceVisualizationFactory rvf;
 	protected SonarFacade sonarF;
 	protected ResourcePropertiesManager propManager;
+	protected IDraw d;
 	
 	protected IDraw drawer;
 	
@@ -45,6 +46,10 @@ public abstract class Chart {
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
+<<<<<<< HEAD
+=======
+		setIDrawInstantiation(new Java2DImpl());
+>>>>>>> 224d4ae82bbbe160c84e381dc7590dc15a4f8804
 	
 	}
 	
@@ -83,7 +88,13 @@ public abstract class Chart {
 		return propManager.getPropertyValues(resource);
 	}
 	
-	
+	public IDraw getIDrawInstantiation() {
+		return d;
+	}
+
+	public void setIDrawInstantiation(IDraw d) {
+		this.d = d;
+	}
 	public abstract BufferedImage draw(IDraw drawInterface);
 	
 	
