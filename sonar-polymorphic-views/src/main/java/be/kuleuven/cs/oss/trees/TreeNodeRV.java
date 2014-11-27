@@ -1,14 +1,17 @@
 package be.kuleuven.cs.oss.trees;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 import be.kuleuven.cs.oss.datautils.Connection;
 import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 public class TreeNodeRV {
 
@@ -16,26 +19,25 @@ public class TreeNodeRV {
 	
 	private ResourceVisualizationFactory rvf;
 	private TreeNode treeNode;
+	private ResourcePropertiesManager manager;
 
-	private ResourceVisualization rv;
+	private ResourceVisualization rv = null;
 	private List<Connection> connections;
 	private TreeMap<String, TreeNodeRV> children;
 
 	private int maxRight;
+	private int level; //TODO
 
-	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode, int maxRight) {
+	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode, ResourcePropertiesManager manager) {
 		this.rvf = rvf;
 		this.treeNode = treeNode;
-		this.maxRight = maxRight;
+		this.manager = manager;
 		
-		this.rv = makeRv();
+		makeRv();
 		createChildren();
-		this.connections = createConnections();
+		createConnections();
 		
 	}
-
-	
-	
 
 	private void createChildren() {
 		TreeMap<String, TreeNode> children = treeNode.getChildren();
@@ -43,16 +45,20 @@ public class TreeNodeRV {
 		for(Map.Entry<String, TreeNode> entry : children.entrySet()) {
 			TreeNode treeNode = entry.getValue();
 
-			TreeNodeRV child = new TreeNodeRV(rvf, treeNode, maxRight);
-			maxRight = maxRight + child.getMaxRight() + OFFSET; // Hier moet geen maxRight ook nog eens bij denk ik
-
+			TreeNodeRV child = new TreeNodeRV(rvf, treeNode, manager);
+			//maxRight = maxRight + child.getMaxRight() + OFFSET; // Hier moet geen maxRight ook nog eens bij denk ik
+			this.children.put(entry.getKey(), child); //Add the child to the internal children list
 		}
+	
 		
-		if(children.size() == 0) {
-			maxRight = maxRight + rv.getWidth(); //BOX moet in ints en max moet er denk weer niet bij
-		}
+		//The position will have to be determined after all the scaling of the resources has been done.
 		
-		calculateXPositionRv();
+		
+//		if(children.size() == 0) {
+//			maxRight = maxRight + rv.getWidth(); //BOX moet in ints en max moet er denk weer niet bij
+//		}
+//		
+//		calculateXPositionRv();
 		
 
 	}
@@ -68,7 +74,7 @@ public class TreeNodeRV {
 		
 	}
 	
-	private List<Connection> createConnections() {
+	private void createConnections() {
 		List<Connection> connections = new ArrayList<Connection>();
 		
 		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()) {
@@ -78,17 +84,18 @@ public class TreeNodeRV {
 			
 			Connection connection = new Connection(rv, rvChild);
 			connections.add(connection);
-		}
-		
-		return connections;
+		}	
 	}
 
 
 	
 
-	private ResourceVisualization makeRv() {
-		// TODO Auto-generated method stub
-		return null;
+	private void makeRv() {
+		if(!isRoot()){
+			Resource res = treeNode.getResource();
+			HashMap<String, Double> resPropertyValues = manager.getPropertyValues(res);
+			rv =  rvf.create(resPropertyValues);
+		}
 	}
 	
 	public int getMaxRight() {
@@ -100,15 +107,48 @@ public class TreeNodeRV {
 	}
 
 	public List<ResourceVisualization> getAllRvs() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<ResourceVisualization> rvs = new ArrayList<ResourceVisualization>();
+		//rv is null if this is the root node
+		if(rv != null) rvs.add(rv);		
+		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){
+			rvs.addAll(entry.getValue().getAllRvs());
+		}
+		return rvs;
+	}
+	
+	public List<Connection> getAllConnections(){
+		ArrayList<Connection> cons = new ArrayList<Connection>();
+		cons.addAll(connections);
+		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){
+			cons.addAll(entry.getValue().getAllConnections());
+		}
+		return cons;
 	}
 	
 	public List<Connection> getConnections() {
 		return connections;
 	}
 	
+	public TreeNodeRV updateXPosition(int maxRight){
+		this.maxRight = maxRight + rv.getWidth() + OFFSET;
+		
+		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){			
+			TreeNodeRV child = entry.getValue().updateXPosition(maxRight);
+			int childMaxRight = child.getMaxRight();
+			if (this.maxRight >= childMaxRight){
+				this.maxRight = childMaxRight;
+			}			
+		}
+		
+		calculateXPositionRv();
+		
+		return this;
+		
+	}
 	
+	public boolean isRoot(){
+		return treeNode.isRoot();
+	}
 	
 
 }

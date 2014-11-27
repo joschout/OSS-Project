@@ -30,6 +30,8 @@ public abstract class Chart {
 	protected ResourcePropertiesManager propManager;
 	protected IDraw d;
 	
+	protected IDraw drawer;
+	
 	//TODO LineFactory has to be one of the arguments
 	/**
 	 * Declare the different fields which are used to store data about different charts
@@ -44,7 +46,7 @@ public abstract class Chart {
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
-		setIDrawInstantiation(new Java2DImpl());
+
 	
 	}
 	
