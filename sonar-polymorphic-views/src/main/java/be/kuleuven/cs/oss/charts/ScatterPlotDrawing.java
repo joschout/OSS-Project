@@ -37,10 +37,8 @@ public class ScatterPlotDrawing {
 
 	public BufferedImage draw(IDraw d, List<ResourceVisualization> rvs){
 		d.createEmptyImage(getWidth(), getHeight());
-	
 		return d.getBufferedImage();
-		
-		
+			
 	}
 	
 	public double getAxisOffset() {
@@ -59,11 +57,10 @@ public class ScatterPlotDrawing {
 	/**
 	 * Converts the given x-coordinate relative to the axises of the scatterplot
 	 *  to an x-coordinate in the plane of the image.
-	 *  The 
 	 *  
 	 * @param xCoord
 	 * @param xMax
-	 * @return
+	 * @return 
 	 */
 	private int convertX(double xCoord, double xMax){
 		return (int) (getAxisOffset() + (width-2*getAxisOffset())* xCoord/xMax);	
