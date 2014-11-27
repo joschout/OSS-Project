@@ -28,9 +28,7 @@ public abstract class Chart {
 	protected ResourceVisualizationFactory rvf;
 	protected SonarFacade sonarF;
 	protected ResourcePropertiesManager propManager;
-	protected IDraw d;
-	
-	protected IDraw drawer;
+	protected IDraw iDrawImpl;
 	
 	//TODO LineFactory has to be one of the arguments
 	/**
@@ -46,6 +44,7 @@ public abstract class Chart {
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
+		setIDrawInstantiation(new Java2DImpl());
 
 	
 	}
@@ -86,13 +85,14 @@ public abstract class Chart {
 	}
 	
 	public IDraw getIDrawInstantiation() {
-		return d;
+		return iDrawImpl;
 	}
 
 	public void setIDrawInstantiation(IDraw d) {
-		this.d = d;
+		this.iDrawImpl = d;
 	}
-	public abstract BufferedImage draw(IDraw drawInterface);
+	
+	public abstract BufferedImage draw();
 	
 	
 }

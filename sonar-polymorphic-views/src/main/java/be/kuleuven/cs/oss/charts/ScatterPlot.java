@@ -1,16 +1,17 @@
 package be.kuleuven.cs.oss.charts;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import be.kuleuven.cs.oss.datautils.Color;
-import be.kuleuven.cs.oss.datautils.Position;
-import be.kuleuven.cs.oss.datautils.Size;
+
+
+
+
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
-import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
-import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -19,16 +20,31 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 public class ScatterPlot extends Chart{
 
 	private double axisOffset; 
-	private static final double OFFSET_SCALE = 0.1;
 	private int width;
 	private int height;
+	
+	private double xMedian;
+	private double yMedian;
+	private double widthMedian;
+	private double heightMedian;
+	
+	
 
 	private int xMax;
 	private int yMax;
+	private int widthMax;
+	private int heightMax;
+	private int xMin;
+	private int yMin;
+	private int widthMin;
+	private int heightMin;
+	private double minRVSize;
+	private double maxRVSize;
 	
-
-
-
+	private static final double minRVScalingFactor = 0.05;
+	private static final double maxRVScalingFactor = 0.20;
+	
+	
 	public ScatterPlot(List<Resource> resources, 
 			ResourceVisualizationFactory rvf, 
 			SonarFacade sonarF, 
@@ -39,6 +55,113 @@ public class ScatterPlot extends Chart{
 		setHeight(height);
 		setXMax(0);
 		setYMax(0);
+		setWidthMax(0);
+		setHeightMax(0);
+		setXMin(Integer.MAX_VALUE);
+		setYMin(Integer.MAX_VALUE);
+		setWidthMin(Integer.MAX_VALUE);
+		setHeightMin(Integer.MAX_VALUE);
+	}
+
+
+	public double getxMedian() {
+		
+		return xMedian;
+	}
+
+
+	public void setxMedian(double xMedian) {
+		this.xMedian = xMedian;
+	}
+
+
+	public double getyMedian() {
+		return yMedian;
+	}
+
+
+	public void setyMedian(double yMedian) {
+		this.yMedian = yMedian;
+	}
+
+
+	public double getWidthMedian() {
+		return widthMedian;
+	}
+
+
+	public void setWidthMedian(double widthMedian) {
+		this.widthMedian = widthMedian;
+	}
+
+
+	public double getHeightMedian() {
+		return heightMedian;
+	}
+
+
+	public void setHeightMedian(double heightMedian) {
+		this.heightMedian = heightMedian;
+	}
+
+
+	public int getXMin() {
+		//TODO overal fouten gaan opvangen. <0 => exception
+		return xMin;
+	}
+
+
+	public void setXMin(int xMin) {
+		this.xMin = xMin;
+	}
+
+
+	public int getYMin() {
+		return yMin;
+	}
+
+
+	public void setYMin(int yMin) {
+		this.yMin = yMin;
+	}
+
+
+	public int getWidthMax() {
+		return widthMax;
+	}
+
+
+	public void setWidthMax(int widthMax) {
+		this.widthMax = widthMax;
+	}
+
+
+	public int getHeightMax() {
+		return heightMax;
+	}
+
+
+	public void setHeightMax(int heightMax) {
+		this.heightMax = heightMax;
+	}
+	
+	public int getWidthMin() {
+		return widthMin;
+	}
+
+
+	public void setWidthMin(int widthMin) {
+		this.widthMin = widthMin;
+	}
+
+
+	public int getHeightMin() {
+		return heightMin;
+	}
+
+
+	public void setHeightMin(int heightMin) {
+		this.heightMin = heightMin;
 	}
 
 
@@ -86,9 +209,6 @@ public class ScatterPlot extends Chart{
 	}
 
 
-
-
-
 	@Override
 	public BufferedImage draw(IDraw d) {
 
@@ -98,50 +218,166 @@ public class ScatterPlot extends Chart{
 		// 2) draw the axises on the image
 		drawAxises(d);
 		
-		// 3) calculate the scale
-		computeScale();
-		
-		// 4) create the ResourceVsiualizations
+		// 3) create the ResourceVsiualizations
 		createResourceVisualizations();
 		
-		// 5) draw the ResourceVisualizations
+		// 4) calculate min max boxsize
+		computeExtremeBoxSizes();
+		
+		// 5) rescale the ResourceVsiualizations
+		rescaleResourceVisualizations();
+		
+		// 6) draw the ResourceVisualizations
 		drawResourceVisualizations();
 		
 		return d.getBufferedImage();
 	}
 
+	private void computeExtremeBoxSizes() {
+		this.minRVSize = Math.min(minRVScalingFactor*getWidth(), minRVScalingFactor*getHeight());
+		this.maxRVSize = Math.max(maxRVScalingFactor*getWidth(), maxRVScalingFactor*getHeight());
+	}
+
+
+
 	
-	public void computeScale(){	
-		double maxXCoordUpUntilNow = 0;
-		double maxYCoordUpUntilNow = 0;
+	private void rescaleResourceVisualizations(){
+//		setMedians();
+		setExtremeValues();	
+		List<ResourceVisualization> visualizations = this.getResourceVisualizations();
 		
-		for(Resource resource : resources){		
-			double xCoord = getResourcePropertyValues(resource).get("xmetric");
-			double yCoord = getResourcePropertyValues(resource).get("ymetric");
+		
+		
+	}
+	
+//	private void setMedians(){
+//		List<ResourceVisualization> visualizations = this.getResourceVisualizations();
+//		
+//		ArrayList<Integer> xList = new ArrayList<Integer>();
+//		ArrayList<Integer> yList = new ArrayList<Integer>() ;
+//		ArrayList<Integer> widthList = new ArrayList<Integer>() ;
+//		ArrayList<Integer> heightList = new ArrayList<Integer>() ;
+//		
+//		for(ResourceVisualization visualization : visualizations){		
+//			xList.add(visualization.getX());
+//			yList.add(visualization.getY());
+//			widthList.add(visualization.getWidth());
+//			heightList.add(visualization.getHeight());
+//		}
+		
+//		int xMedian = getMedian(xList);
+//		int yMedian = getMedian(yList);
+//		int widthMedian = getMedian(widthList);
+//		int heightMedian = getMedian(heightList);
+		
+		
+//		Collections.sort(xList);
+//		Collections.sort(yList);
+//		Collections.sort(widthList);
+//		Collections.sort(heightList);
+//		
+//		int listSize = xList.size()/2;
+		
+		
+		
 			
-			if(xCoord > maxXCoordUpUntilNow){
-				maxXCoordUpUntilNow = xCoord;
+			
+//			
+//			if (xCoord != null){
+//				xList.add(xCoord);
+//			}
+//			if (yCoord != null){
+//				yList.add(yCoord);
+//			}
+//			if (width != null){
+//				widthList.add(width);
+//			}
+//			if (height != null){
+//				widthList.add(height);
+//			}		
+//			
+//			if(xList.size() != 0){
+//				xList.sort(null);
+//			}
+	
+		
+//	}
+	
+	
+//	private int getMedian(ArrayList<Integer> list) {
+//		Collections.sort(list);
+//		
+//		int middle = list.size() /2;
+//		if((list.size() % 2) == 1){
+//			return list.get(middle);
+//		}else{
+//			return list.
+//		}
+//		
+//		
+//	}
+//
+//
+//	public static double median(double[] m) {
+//	   // int middle = m.length/2;
+//	    if (m.length%2 == 1) {
+//	        return m[middle];
+//	    } else {
+//	        return (m[middle-1] + m[middle]) / 2.0;
+//	    }
+//	}
+	
+	private void setExtremeValues(){	
+		for(ResourceVisualization rv : rvs){		
+			double xCoord = rv.getX();
+			double yCoord = rv.getY();
+			double width = rv.getWidth();
+			double height = rv.getHeight();
+			
+			if(xCoord > getXMax() ){
+				setXMax((int)xCoord);
 			}
-			if(yCoord > maxYCoordUpUntilNow){
-				maxYCoordUpUntilNow = yCoord;
+			if(yCoord > getYMax()){
+				setYMax((int)yCoord);;
 			}			
+			if(width > getWidthMax()){
+				setWidth((int)width);
+			}	
+			if(height > getHeightMax()){
+				setHeight((int)height);
+			}
+			
+			
+			if(xCoord < getXMin() ){
+				setXMax((int)xCoord);
+			}
+			if(yCoord < getYMin()){
+				setYMin((int)yCoord);;
+			}			
+			if(width < getWidthMin()){
+				setWidthMin((int)width);
+			}	
+			if(height < getHeightMin()){
+				setHeightMin((int)height);
+			}	
 		}
-		setXMax((int)maxXCoordUpUntilNow);
-		setYMax((int)maxYCoordUpUntilNow);	
 	}
 	
 	private void createResourceVisualizations(){
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
+			//DERP
+//			int xCoord = convertX(properties.get("xmetric"));
+//			int yCoord = convertY(properties.get("ymetric"));
+//			Position position = new Position(xCoord, yCoord);
+//			
+//			Color color = new Color(properties.get("colorR").intValue(),properties.get("colorB").intValue(),properties.get("colorG").intValue());
+//			Size size = new Size(properties.get("width").intValue(), properties.get("height").intValue());
+//			
+//			Map<String,Double> map = new HashMap<String,Double>();
 			
-			int xCoord = convertX(properties.get("xmetric"), getXMax());
-			int yCoord = convertY(properties.get("ymetric"), getYMax());
-			Position position = new Position(xCoord, yCoord);
-			
-			Color color = new Color(properties.get("colorR").intValue(),properties.get("colorB").intValue(),properties.get("colorG").intValue());
-			Size size = new Size(properties.get("width").intValue(), properties.get("height").intValue());
-			ResourceVisualization rv = rvf.create(position, size, color, resource.getName() );
-			this.rvs.add(rv);
+			ResourceVisualization rv = rvf.create(properties);
+			this.getResourceVisualizations().add(rv);
 		}
 	}
 	
@@ -191,8 +427,8 @@ public class ScatterPlot extends Chart{
 	 * @param xMax
 	 * @return the x coordinate in the image plane
 	 */
-	private int convertX(double xCoord, double xMax){
-		return (int) (getAxisOffset() + (width-2*getAxisOffset())* xCoord/xMax);	
+	private int convertX(double xCoord){
+		return (int) (getAxisOffset() + (width-2*getAxisOffset())* xCoord/getXMax());	
 	}
 
 	/**
@@ -219,8 +455,8 @@ public class ScatterPlot extends Chart{
 	 * @param yMax
 	 * @return the y coordinate in the image plane
 	 */
-	private int convertY(double yCoord, double yMax){
-		return (int) (getHeight()-getAxisOffset()+(2*getAxisOffset()-getHeight())*yCoord/yMax);
+	private int convertY(double yCoord){
+		return (int) (getHeight()-getAxisOffset()+(2*getAxisOffset()-getHeight())*yCoord/getYMax());
 	}
 
 }
