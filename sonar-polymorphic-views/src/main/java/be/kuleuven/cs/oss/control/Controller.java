@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
@@ -12,6 +14,7 @@ import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
@@ -24,6 +27,8 @@ import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class Controller {
+	
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 
 	private final ChartParameters rawParams;
 	private final SonarFacade sf;
@@ -38,6 +43,7 @@ public class Controller {
 		
 	
 	public Controller(ChartParameters p, SonarFacade sf) throws Exception{
+		LOG.info("Constructor Controller called");
 		this.rawParams = p;
 		this.sf = sf;
 		this.parent = retrieveParent();
@@ -62,6 +68,7 @@ public class Controller {
 	 * @return a new visualization factory
 	 */
 	public ResourceVisualizationFactory createRVFactory(){
+		LOG.info("create RVF");
 		return new BoxFactory();
 	}
 	
@@ -70,6 +77,7 @@ public class Controller {
 	 * @return a new line factory
 	 */
 	public LineFactory createLineFactory(){
+		LOG.info("create LF");
 		return new StraightLineFactory();
 	}
 	
@@ -84,6 +92,7 @@ public class Controller {
 			return sf.findResource(parent);
 		}
 		catch(Exception e){
+			LOG.info("parent not retrieved");
 			throw new Exception("Parent not valid");
 		}
 	}
@@ -105,6 +114,7 @@ public class Controller {
 			}
 		}
 		catch(Exception e){
+			LOG.info("resources not retrieved");
 			throw new Exception("Resources could not be retrieved");
 		}
 	}
@@ -124,6 +134,7 @@ public class Controller {
 			return result;
 		}
 		catch(Exception e){
+			LOG.info("x and/or y metric not valid");
 			throw new Exception("X and/or Y metrics not valid");
 		}
 	}
@@ -139,6 +150,7 @@ public class Controller {
 			return parseSize(size);
 		}
 		catch(Exception e){
+			LOG.info("size not valid");
 			throw new Exception("Size not valid");
 		}
 	}
@@ -155,6 +167,7 @@ public class Controller {
 			return parseStringsToInts(split);
 		}
 		catch(Exception e){
+			LOG.info("size not parsed");
 			throw new Exception("Size cannot be parsed");
 		}
 	}
@@ -219,6 +232,7 @@ public class Controller {
 			rpm.addProperty("colorB", result.get(2));
 		}
 		catch(Exception e){
+			LOG.info("create RP of color failed");
 			throw new Exception("Failed to create resource properties for color");
 		}
 	}
@@ -241,6 +255,7 @@ public class Controller {
 			rpm.addProperty(dimension, rp);
 		}
 		catch(Exception e){
+			LOG.info("create RP of "+dimension+"failed");
 			throw new Exception("Failed to create resource property for "+dimension);
 		}
 	}
@@ -257,6 +272,7 @@ public class Controller {
 		return parseStringsToInts(split.subList(1, split.size()));
 		}
 		catch(Exception e){
+			LOG.info("RGB not valid");
 			throw new Exception("RGB not valid");
 		}
 	}
@@ -273,6 +289,7 @@ public class Controller {
 		return parseStringsToFloats(split.subList(1, split.size()-2));
 		}
 		catch(Exception e){
+			LOG.info("Grayscale float not valid");
 			throw new Exception("Grayscale not valid");
 		}
 	}
@@ -289,6 +306,7 @@ public class Controller {
 		return split.get(split.size()-1);
 		}
 		catch(Exception e){
+			LOG.info("Grayscale key not valid");
 			throw new Exception("Grayscale not valid");
 		}
 	}
@@ -298,8 +316,14 @@ public class Controller {
 	 * @param key The given parameter key
 	 * @return the retrieved parameter value
 	 */
-	private String retrieveValue(String key){
-		return this.rawParams.getValue(key);
+	private String retrieveValue(String key) throws Exception{
+		try{
+			return this.rawParams.getValue(key);
+		}
+		catch(Exception e){
+			LOG.info("value not retrieved");
+			throw new Exception("value not retrieved");
+		}
 	}
 	
 	/**
@@ -307,8 +331,14 @@ public class Controller {
 	 * @param key The given parameter key
 	 * @return the retrieved parameter value
 	 */
-	private String retrieveValueWithDefault(String key, String def){
-		return this.rawParams.getValue(key, def, false);
+	private String retrieveValueWithDefault(String key, String def) throws Exception{
+		try{
+			return this.rawParams.getValue(key, def, false);
+		}
+		catch(Exception e){
+			LOG.info("value with default not retrieved");
+			throw new Exception("value with default not retrieved");
+		}
 	}
 	
 	/**
@@ -322,6 +352,7 @@ public class Controller {
 		rpm.addProperty("ymetric", new SonarResourceProperty(sf, xym.get(1)));
 		}
 		catch(Exception e){
+			LOG.info("Additional RP scatter failed");
 			throw new Exception("Failed to create resource properties for additional scatterplot metrics");
 		}
 	}
@@ -347,12 +378,18 @@ public class Controller {
 	 * @throws Exception if the creation of these resource properties failed
 	 */
 	private void createCommonResourceProperties() throws Exception{
-		String boxdimension;
-		boxdimension = "boxwidth";
-		createBoxDimensionRP(boxdimension);
-		boxdimension = "boxheight";
-		createBoxDimensionRP(boxdimension);
-		createColorRPs();
+		try{
+			String boxdimension;
+			boxdimension = "boxwidth";
+			createBoxDimensionRP(boxdimension);
+			boxdimension = "boxheight";
+			createBoxDimensionRP(boxdimension);
+			createColorRPs();
+		}
+		catch(Exception e){
+			LOG.info("common RP creation failed");
+			throw new Exception("Creation of common properties failed");
+		}
 	}
 	
 	/**
@@ -382,6 +419,7 @@ public class Controller {
 			}
 		}
 		catch(Exception e){
+			LOG.info("chart creation failed");
 			throw new Exception("Chart creation failed");
 		}
 	}

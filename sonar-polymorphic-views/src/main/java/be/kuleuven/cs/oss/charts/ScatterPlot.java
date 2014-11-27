@@ -6,9 +6,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
@@ -42,6 +46,8 @@ public class ScatterPlot extends Chart{
 	private double minRVWidth;
 	private static final double minRVScalingFactor = 0.05;
 	private static final double maxRVScalingFactor = 0.15;
+	
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 	
 	/**
 	 * constructor 
@@ -78,6 +84,7 @@ public class ScatterPlot extends Chart{
 		maxRVHeight = maxRVScalingFactor*height;
 		maxRVWidth = maxRVScalingFactor*width;
 		minRVWidth = minRVScalingFactor*width;
+		LOG.info("ScatterPlot constructed");
 	}
 
 
@@ -94,19 +101,25 @@ public class ScatterPlot extends Chart{
 	 */
 	@Override
 	public BufferedImage draw() {
-		
+		LOG.info("In draw method in ScatterPlot");
 		//1
 		getIDrawInstantiation().createEmptyImage(width, height);
+		LOG.info("empty frame made");
 		//2
 		drawAxises(getIDrawInstantiation());
+		LOG.info("Axes drawn on frame");
 		//3
 		setDefaultRVSizes();
+		LOG.info("defaultRVSizes set");
 		//4
 		createResourceVisualizations();
+		LOG.info("RVs created");
 		//5
 		rescaleResourceVisualizations();
+		LOG.info("RVs scaled");
 		//6
 		drawResourceVisualizations();
+		LOG.info("RVs drawn");
 		
 		return getIDrawInstantiation().getBufferedImage();
 	}
