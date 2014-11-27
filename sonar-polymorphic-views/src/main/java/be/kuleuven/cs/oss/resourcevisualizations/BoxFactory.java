@@ -7,11 +7,6 @@ import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 
 public class BoxFactory implements ResourceVisualizationFactory {
-//
-//	private static final int DEFAULT_XCOORD = 0;
-//	private static final int DEFAULT_YCOORD = 0;
-//	private static final int DEFAULT_WIDTH = 5;
-//	private static final int DEFAULT_HEIGHT = 5;
 
 	private int defaultXCoord;
 	private int defaultYCoord;
