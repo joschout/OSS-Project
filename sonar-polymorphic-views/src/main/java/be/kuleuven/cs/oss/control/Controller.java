@@ -15,9 +15,8 @@ import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
-import be.kuleuven.cs.oss.resourcevisualizations.BoxResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
-import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -61,7 +60,7 @@ public class Controller {
 	 * @return a new visualization factory
 	 */
 	public ResourceVisualizationFactory createRVFactory(){
-		return new BoxResourceVisualizationFactory();
+		return new BoxFactory();
 	}
 	
 	/**
@@ -318,16 +317,16 @@ public class Controller {
 	}
 	
 	/**
-	 * Check if the chart is a valid scatterplot
-	 * @return True if the chart is a valid scatterplot
+	 * Check if the chartparameters define a valid scatterplot
+	 * @return True if the chartparameters define a valid scatterplot
 	 */
 	private boolean isValidScatter(){
 		return true;
 	}
 	
 	/**
-	 * Check if the chart is a valid system complexity view
-	 * @return True if the chart is a valid system complexity view
+	 * Check if the chartparameters define a valid system complexity view
+	 * @return True if the chartparameters define a valid system complexity view
 	 */
 	private boolean isValidSyscomp(){
 		return (getResourceType() == "classes");
