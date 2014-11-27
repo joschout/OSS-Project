@@ -39,8 +39,8 @@ public class ResourcePropertiesManager {
 	 * @param resource
 	 * @return
 	 */
-	public Map<String, Double> getPropertyValues(Resource resource) {
-		Map<String, Double> toReturn = new HashMap<String, Double>();
+	public HashMap<String, Double> getPropertyValues(Resource resource) {
+		HashMap<String, Double> toReturn = new HashMap<String, Double>();
 
 		Iterator<Entry<String, ResourceProperty>> it = properties.entrySet().iterator();
 		while (it.hasNext()) {

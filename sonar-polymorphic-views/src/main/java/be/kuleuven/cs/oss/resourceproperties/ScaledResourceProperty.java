@@ -6,8 +6,8 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScaledResourceProperty implements ResourceProperty {
 	
-	private int minScale;
-	private int maxScale;
+	private float minScale;
+	private float maxScale;
 	
 	private int minValue;
 	private int maxValue;
@@ -15,7 +15,7 @@ public class ScaledResourceProperty implements ResourceProperty {
 	private SonarFacade f;
 	private Metric m;
 	
-	public ScaledResourceProperty(int minScale, int maxScale, int minValue, int maxValue, SonarFacade f, Metric m) {
+	public ScaledResourceProperty(float minScale, float maxScale, int minValue, int maxValue, SonarFacade f, Metric m) {
 		this.minScale = minScale;
 		this.maxScale = maxScale;
 		

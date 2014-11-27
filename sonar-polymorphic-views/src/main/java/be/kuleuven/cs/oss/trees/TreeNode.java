@@ -15,24 +15,20 @@ public class TreeNode {
 	
 	//TODO TESTKLASSE MAKEN
 	
-	boolean isRoot = false;
+	private boolean isRoot = false;
 	
-	Resource resource;
-	SonarFacade sonarF;
-	ResourceVisualizationFactory rvf;
-	ResourceVisualization rv;
+	private Resource resource;
+	private SonarFacade sonarF;
 	
-	TreeMap<String, TreeNode> children;
+	private TreeMap<String, TreeNode> children;
 	
 	
 
-	public TreeNode(Resource resource, ResourceVisualizationFactory rvf,  SonarFacade sonarFacade) {
+	public TreeNode(Resource resource,  SonarFacade sonarFacade) {
 		this.sonarF = sonarFacade;
 		this.resource = resource;
 		this.children = new TreeMap<String, TreeNode>();
-		this.rvf = rvf;
 		
-		createRV();
 		createChildren();
 	}
 	
@@ -80,16 +76,14 @@ public class TreeNode {
 		isRoot = true;
 	}
 	
+	public boolean isRoot(){
+		return isRoot;
+	}
+	
 	public Resource getResource() {
 		return resource;
 	}
-	
-	private void createRV(){
-		if(!isRoot){
-			rv = rvf.
-		}
-	}
-	
+
 	
 	public TreeMap<String, TreeNode> getChildren() {
 		return new TreeMap<>(children);

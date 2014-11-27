@@ -46,10 +46,7 @@ public abstract class Chart {
 		this.rvf = rvf;
 		this.sonarF = sonarF;
 		this.propManager = propManager;
-<<<<<<< HEAD
-=======
-		setIDrawInstantiation(new Java2DImpl());
->>>>>>> 224d4ae82bbbe160c84e381dc7590dc15a4f8804
+
 	
 	}
 	
