@@ -53,10 +53,12 @@ public class SystemComplexity extends Chart {
 
 	@Override
 	public BufferedImage draw(IDraw drawInterface) {
-		SystemComplexityDrawing drawing = new SystemComplexityDrawing(inheritanceTree);
-		
+		SystemComplexityDrawing draw = new SystemComplexityDrawing(drawInterface);
+
 		return null;
 	}
+	
+	
 	
 	
 	
