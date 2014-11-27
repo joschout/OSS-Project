@@ -6,12 +6,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
-import be.kuleuven.cs.oss.datautils.Color;
-
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
@@ -24,331 +18,159 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScatterPlot extends Chart{
 
+	//Image frame properties
 	private double axisOffset; 
 	private int width;
 	private int height;
 	
-	private double xMedian;
-	private double yMedian;
-	private double widthMedian;
-	private double heightMedian;
-	
-	
-
+	//global maxvalues over all resources
 	private int xMax;
 	private int yMax;
 	private int widthMax;
 	private int heightMax;
+	//global minvalues over all resources
 	private int xMin;
 	private int yMin;
 	private int widthMin;
 	private int heightMin;
+	
+	//the values for the dimensions of the smallest and largest box in the plot
+	//each value is calculated by multiplying the width or height of the frame with the factors
 	private double minRVHeight;
 	private double maxRVHeight;
 	private double maxRVWidth;
 	private double minRVWidth;
-	
 	private static final double minRVScalingFactor = 0.05;
-	private static final double maxRVScalingFactor = 0.20;
+	private static final double maxRVScalingFactor = 0.15;
 	
-	
+	/**
+	 * constructor 
+	 * 
+	 * @param resources: The classes or packages to appear on the plot
+	 * @param rvf: The ResourceVisualisationFactory which makes a ResourceVisualisation for each resource (such as a Box)
+	 * @param sonarF: Inherited. We don't actually need it. Can be used to ask Sonar the values of extra metrics.
+	 * @param propManager: Inherited
+	 * @param width: width of the image frame
+	 * @param height: height of the image frame
+	 */
 	public ScatterPlot(List<Resource> resources, 
 			ResourceVisualizationFactory rvf, 
 			SonarFacade sonarF, 
 			ResourcePropertiesManager propManager,
 			int width, int height) {
-		super(resources, rvf, sonarF, propManager);
-		setWidth(width);
-		setHeight(height);
-		setXMax(0);
-		setYMax(0);
-		setWidthMax(0);
-		setHeightMax(0);
-		setXMin(Integer.MAX_VALUE);
-		setYMin(Integer.MAX_VALUE);
-		setWidthMin(Integer.MAX_VALUE);
-		setHeightMin(Integer.MAX_VALUE);
-		minRVHeight= minRVScalingFactor*getHeight();
-		maxRVHeight = maxRVScalingFactor*getHeight();
-		maxRVWidth = maxRVScalingFactor*getWidth();
-		minRVWidth = minRVScalingFactor*getWidth();
-	}
-
-
-	public double getxMedian() {
 		
-		return xMedian;
-	}
-
-
-	public void setxMedian(double xMedian) {
-		this.xMedian = xMedian;
-	}
-
-
-	public double getyMedian() {
-		return yMedian;
-	}
-
-
-	public void setyMedian(double yMedian) {
-		this.yMedian = yMedian;
-	}
-
-
-	public double getWidthMedian() {
-		return widthMedian;
-	}
-
-
-	public void setWidthMedian(double widthMedian) {
-		this.widthMedian = widthMedian;
-	}
-
-
-	public double getHeightMedian() {
-		return heightMedian;
-	}
-
-
-	public void setHeightMedian(double heightMedian) {
-		this.heightMedian = heightMedian;
-	}
-
-
-	public int getXMin() {
-		//TODO overal fouten gaan opvangen. <0 => exception
-		return xMin;
-	}
-
-
-	public void setXMin(int xMin) {
-		this.xMin = xMin;
-	}
-
-
-	public int getYMin() {
-		return yMin;
-	}
-
-
-	public void setYMin(int yMin) {
-		this.yMin = yMin;
-	}
-
-
-	public int getWidthMax() {
-		return widthMax;
-	}
-
-
-	public void setWidthMax(int widthMax) {
-		this.widthMax = widthMax;
-	}
-
-
-	public int getHeightMax() {
-		return heightMax;
-	}
-
-
-	public void setHeightMax(int heightMax) {
-		this.heightMax = heightMax;
-	}
-	
-	public int getWidthMin() {
-		return widthMin;
-	}
-
-
-	public void setWidthMin(int widthMin) {
-		this.widthMin = widthMin;
-	}
-
-
-	public int getHeightMin() {
-		return heightMin;
-	}
-
-
-	public void setHeightMin(int heightMin) {
-		this.heightMin = heightMin;
-	}
-
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
+		super(resources, rvf, sonarF, propManager);
+		
+		this.width=width;
 		this.height = height;
-	}
-
-	public int getWidth() {
-		return width;
-	}
-
-	public void setWidth(int width) {
-		this.width = width;
-	}
-
-	public double getAxisOffset() {
-		return axisOffset;
-	}
-
-	public void setAxisOffset(double axisOffset) {
-		this.axisOffset = axisOffset;
-	}
-
-	public int getXMax() {
-		return xMax;
+		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(width, height);
+		
+		this.xMax = 0;
+		this.yMax = 0;
+		this.widthMax = 0;
+		this.heightMax = 0;
+		this.widthMin = Integer.MAX_VALUE;
+		this.heightMin = Integer.MAX_VALUE;
+		this.xMin = Integer.MAX_VALUE;
+		this.yMin = Integer.MAX_VALUE;
+		
+		minRVHeight= minRVScalingFactor*height;
+		maxRVHeight = maxRVScalingFactor*height;
+		maxRVWidth = maxRVScalingFactor*width;
+		minRVWidth = minRVScalingFactor*width;
 	}
 
 
-	public void setXMax(int xMax) {
-		this.xMax = xMax;
-	}
-
-
-	public int getYMax() {
-		return yMax;
-	}
-
-
-	public void setYMax(int yMax) {
-		this.yMax = yMax;
-	}
-
-
+	/**
+	 * The draw method goes through several steps
+	 * 1. create an empty image
+	 * 2. draw the axes on the image
+	 * 3. based on the size of the image, calculate a default resource visualisation size (e.g.boxwidth and boxheight)
+	 * 4. create the resource visualisations (such as boxes)
+	 * 5. modify/scale the values of resource visualisations in order to make the resource visualisation ready to be drawn
+	 * 		(the values are now expressed in pixels)
+	 * 6. draw the resource visualisations
+	 * @return the buffered image of the plot
+	 */
 	@Override
 	public BufferedImage draw() {
-
-		// 1) create an empty image
-		getIDrawInstantiation().createEmptyImage(getWidth(), getHeight());
-
-		// 2) draw the axises on the image
+		
+		//1
+		getIDrawInstantiation().createEmptyImage(width, height);
+		//2
 		drawAxises(getIDrawInstantiation());
-		
-		
+		//3
 		setDefaultRVSizes();
-		
-		// 3) create the ResourceVsiualizations
+		//4
 		createResourceVisualizations();
-			
-		// 5) rescale the ResourceVsiualizations
+		//5
 		rescaleResourceVisualizations();
-		
-		// 6) draw the ResourceVisualizations
+		//6
 		drawResourceVisualizations();
 		
 		return getIDrawInstantiation().getBufferedImage();
 	}
 
-	private void setDefaultRVSizes() { //Hacky code. Change requested.
-		((BoxFactory)this.rvf).setDefaultHeight((int)((maxRVScalingFactor+minRVScalingFactor)/2*(getHeight()-2*getAxisOffset())));
-		((BoxFactory)this.rvf).setDefaultWidth((int)((maxRVScalingFactor+minRVScalingFactor)/2*(getWidth()-2*getAxisOffset())));
+	/**
+	 * Draws the axes of the scatter plot. The axes consist of 2 arrows, 
+	 * one pointing up and one pointing right, like a normal carthesian coordinate system.
+	 * 
+	 * @param d : IDraw
+	 */
+	private void drawAxises(IDraw d){
+		d.drawArrowRight( (int)axisOffset, 
+						  (int)(height - axisOffset) , 
+						  (int)(width - 2*axisOffset));
+		d.drawArrowUp( (int)axisOffset,
+					   (int)(height - axisOffset),
+					   (int)(height - 2*axisOffset));
 	}
 
-	
-	private void rescaleResourceVisualizations(){
+	/**
+	 * Before the resource visualisations are made, the default values for its dimensions are set.
+	 * Here we choose for the average of the minimum and maximum size for a resource visualisation.
+	 */
+	private void setDefaultRVSizes() { //Hacky code. Change requested. No casting wanted.
+		((BoxFactory)this.rvf).setDefaultHeight((int)((maxRVScalingFactor+minRVScalingFactor)/2*(height-2*axisOffset)));
+		((BoxFactory)this.rvf).setDefaultWidth((int)((maxRVScalingFactor+minRVScalingFactor)/2*(width-2*axisOffset)));
+	}
 
-		
-//		setMedians();
+	/**
+	 * Get the measures for the given metrics and put them in a resource visualisation.
+	 * If there are no metrics for a certain property of the resource visualisation, it gets the default value.
+	 */
+	private void createResourceVisualizations(){
+		for(Resource resource: resources){
+			Map<String, Double> properties = super.getResourcePropertyValues(resource);
+			ResourceVisualization rv = rvf.create(properties);
+			this.getResourceVisualizations().add(rv);
+		}
+	}
+
+	/**
+	 * Using interpolation, the resource visualisation gets new values in order to fit in the image.
+	 * If the min and max value for a property are the same, it means that this metric has the default value. It doesn't need rescaling then.
+	 */
+	private void rescaleResourceVisualizations(){
 		setExtremeValues();	
 		for (ResourceVisualization rv : this.getResourceVisualizations()){
 			rv.setPosition(new Position(convertX(rv.getX()), convertY(rv.getY())));
-			int widthpx = getWidthMin();
-			int heightpx = getHeightMin();
-			if(getWidthMin() != getWidthMax()){
+			int widthpx = widthMin;
+			int heightpx = heightMin;
+			if(widthMin != widthMax){
 				widthpx = convertWidth(rv.getWidth());
 			}
-			if(getHeightMin()!=getHeightMax()){
+			if(heightMin != heightMax){
 				heightpx = convertHeight(rv.getHeight());
 			}
 			rv.setSize(new Size(widthpx, heightpx));
-			
-		}
-		
-		
+		}	
 	}
 	
-//	private void setMedians(){
-//		List<ResourceVisualization> visualizations = this.getResourceVisualizations();
-//		
-//		ArrayList<Integer> xList = new ArrayList<Integer>();
-//		ArrayList<Integer> yList = new ArrayList<Integer>() ;
-//		ArrayList<Integer> widthList = new ArrayList<Integer>() ;
-//		ArrayList<Integer> heightList = new ArrayList<Integer>() ;
-//		
-//		for(ResourceVisualization visualization : visualizations){		
-//			xList.add(visualization.getX());
-//			yList.add(visualization.getY());
-//			widthList.add(visualization.getWidth());
-//			heightList.add(visualization.getHeight());
-//		}
-		
-//		int xMedian = getMedian(xList);
-//		int yMedian = getMedian(yList);
-//		int widthMedian = getMedian(widthList);
-//		int heightMedian = getMedian(heightList);
-		
-		
-//		Collections.sort(xList);
-//		Collections.sort(yList);
-//		Collections.sort(widthList);
-//		Collections.sort(heightList);
-//		
-//		int listSize = xList.size()/2;
-		
-		
-		
-			
-			
-//			
-//			if (xCoord != null){
-//				xList.add(xCoord);
-//			}
-//			if (yCoord != null){
-//				yList.add(yCoord);
-//			}
-//			if (width != null){
-//				widthList.add(width);
-//			}
-//			if (height != null){
-//				widthList.add(height);
-//			}		
-//			
-//			if(xList.size() != 0){
-//				xList.sort(null);
-//			}
-	
-		
-//	}
-	
-	
-//	private int getMedian(ArrayList<Integer> list) {
-//		Collections.sort(list);
-//		
-//		int middle = list.size() /2;
-//		if((list.size() % 2) == 1){
-//			return list.get(middle);
-//		}else{
-//			return list.
-//		}
-//		
-//		
-//	}
-//
-//
-//	public static double median(double[] m) {
-//	   // int middle = m.length/2;
-//	    if (m.length%2 == 1) {
-//	        return m[middle];
-//	    } else {
-//	        return (m[middle-1] + m[middle]) / 2.0;
-//	    }
-//	}
-	
+
+	/**
+	 * For each property, find the maximum and minimum value of all the resources.
+	 */
 	private void setExtremeValues(){	
 		for(ResourceVisualization rv : rvs){		
 			double xCoord = rv.getX();
@@ -356,74 +178,44 @@ public class ScatterPlot extends Chart{
 			double width = rv.getWidth();
 			double height = rv.getHeight();
 			
-			if(xCoord > getXMax() ){
-				setXMax((int)xCoord);
+			if(xCoord > xMax ){
+				xMax = ((int)xCoord);
 			}
-			if(yCoord > getYMax()){
-				setYMax((int)yCoord);;
+			if(yCoord > yMax){
+				yMax = ((int)yCoord);
 			}			
-			if(width > getWidthMax()){
-				setWidth((int)width);
+			if(width > widthMax){
+				width = ((int)width);
 			}	
-			if(height > getHeightMax()){
-				setHeight((int)height);
+			if(height > heightMax){
+				height = ((int)height);
 			}
 			
 			
-			if(xCoord < getXMin() ){
-				setXMax((int)xCoord);
+			if(xCoord < xMin){
+				xMax = ((int)xCoord);
 			}
-			if(yCoord < getYMin()){
-				setYMin((int)yCoord);;
+			if(yCoord < yMin){
+				yMin = ((int)yCoord);;
 			}			
-			if(width < getWidthMin()){
-				setWidthMin((int)width);
+			if(width < widthMin){
+				widthMin = ((int)width);
 			}	
-			if(height < getHeightMin()){
-				setHeightMin((int)height);
+			if(height < heightMin){
+				heightMin = ((int)height);
 			}	
 		}
 	}
 	
-	private void createResourceVisualizations(){
-		for(Resource resource: resources){
-			Map<String, Double> properties = super.getResourcePropertyValues(resource);
-			//DERP
-//			int xCoord = convertX(properties.get("xmetric"));
-//			int yCoord = convertY(properties.get("ymetric"));
-//			Position position = new Position(xCoord, yCoord);
-//			
-//			Color color = new Color(properties.get("colorR").intValue(),properties.get("colorB").intValue(),properties.get("colorG").intValue());
-//			Size size = new Size(properties.get("width").intValue(), properties.get("height").intValue());
-//			
-//			Map<String,Double> map = new HashMap<String,Double>();
-			
-			ResourceVisualization rv = rvf.create(properties);
-			this.getResourceVisualizations().add(rv);
-		}
-	}
-	
+	/**
+	 * Let the resource visualisations draw themselves.
+	 */
 	private void drawResourceVisualizations(){
 		for(ResourceVisualization rv: getResourceVisualizations()){
 			rv.draw(getIDrawInstantiation());
 		}
 	}
 
-
-	/**
-	 * Draws the axises of the scatter plot. The axises consist of 2 arrows, 
-	 * one pointing up and one pointing right, like a normal carthesian coordinate system.
-	 * 
-	 * @param d
-	 */
-	private void drawAxises(IDraw d){
-		d.drawArrowRight( (int)getAxisOffset(), 
-						  (int)(getHeight()-getAxisOffset()) , 
-						  (int)(getWidth() -2*getAxisOffset()));
-		d.drawArrowUp( (int)getAxisOffset(),
-					   (int)(getHeight()- getAxisOffset()),
-					   (int)(getHeight()- 2*getAxisOffset()));
-	}
 
 	/**
 	 * Converts the given x-coordinate relative to the axises of the scatter plot
@@ -450,7 +242,7 @@ public class ScatterPlot extends Chart{
 	 * @return the x coordinate in the image plane
 	 */
 	private int convertX(double xCoord){
-		return (int) (getAxisOffset() + (width-2*getAxisOffset())* (xCoord-getXMin())/(getXMax()-getXMin()));	
+		return (int) (axisOffset + (width-2*axisOffset)* (xCoord-xMin)/(xMax-xMin));	
 	}
 
 	/**
@@ -478,14 +270,25 @@ public class ScatterPlot extends Chart{
 	 * @return the y coordinate in the image plane
 	 */
 	private int convertY(double yCoord){
-		return (int) (getHeight()-getAxisOffset()+(2*getAxisOffset()-getHeight())*(yCoord-getYMin())/(getYMax()-getYMin()));
+		return (int) (height-axisOffset+(2*axisOffset-height)*(yCoord-yMin)/(yMax-yMin));
 	}
 	
+	/**
+	 * Using interpolation, let the width of a resource visualisation be between the minimum and maximum width for a resource visualisation, 
+	 * proportionally to the minimum and maximum value for the metric represented by the width. 
+	 * @param width: The value of the metric represented by the width to be converted.
+	 * @return the converted width (in pixels)
+	 */
 	private int convertWidth(double width){
-		return (int) (minRVWidth+(maxRVWidth-minRVWidth)*(width-getWidthMin())/(getWidthMax()-getWidthMin()));
+		return (int) (minRVWidth+(maxRVWidth-minRVWidth)*(width-widthMin)/(widthMax-widthMin));
 	}
-
+	/**
+	 * Using interpolation, let the height of a resource visualisation be between the minimum and maximum height for a resource visualisation, 
+	 * proportionally to the minimum and maximum value for the metric represented by the height. 
+	 * @param width: The value of the metric represented by the height to be converted.
+	 * @return the converted height (in pixels)
+	 */
 	private int convertHeight(double height){
-		return (int) (minRVHeight+(maxRVHeight-minRVHeight)*(height-getHeightMin())/(getHeightMax()-getHeightMin()));
+		return (int) (minRVHeight+(maxRVHeight-minRVHeight)*(height-heightMin)/(heightMax-heightMin));
 	}
 }
