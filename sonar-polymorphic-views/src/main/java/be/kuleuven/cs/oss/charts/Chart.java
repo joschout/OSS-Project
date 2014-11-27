@@ -45,6 +45,30 @@ public abstract class Chart {
 		
 	}
 	
+	public List<ResourceVisualization> getResourceVisualizations() {
+		return rvs;
+	}
+
+	public void setResourceVisualizations(List<ResourceVisualization> rvs) {
+		this.rvs = rvs;
+	}
+
+	public List<Resource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<Resource> resources) {
+		this.resources = resources;
+	}
+
+	public ResourceVisualizationFactory getResourceVisualizationFactory() {
+		return rvf;
+	}
+
+	public void setResourceVisualizationFactory(ResourceVisualizationFactory rvf) {
+		this.rvf = rvf;
+	}
+
 	/**
 	 * 
 	 * gets the different values for each metric for a certain resource
