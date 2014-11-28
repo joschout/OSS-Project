@@ -14,6 +14,7 @@ import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
+import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory; //eventually to remove
@@ -131,12 +132,22 @@ public class ScatterPlot extends Chart{
 	 * @param d : IDraw
 	 */
 	private void drawAxises(IDraw d){
+		ResourceProperty xprop = propManager.getResourceProperty("xmetric");
+		String xname = xprop.getPropertyName();
+		ResourceProperty yprop = propManager.getResourceProperty("ymetric");
+		String yname = yprop.getPropertyName();
+		
 		d.drawArrowRight( (int)axisOffset, 
 						  (int)(height - axisOffset) , 
 						  (int)(width - 2*axisOffset));
+		d.drawText("" +xMax, (int)(width- axisOffset/2), (int)(height - axisOffset/2));
+		d.drawText(xname, (int)(axisOffset + width/2), (int)(height - axisOffset/2));
+		
 		d.drawArrowUp( (int)axisOffset,
 					   (int)(height - axisOffset),
 					   (int)(height - 2*axisOffset));
+		d.drawText("" +yMax, (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
+		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + height/2), -90, 0, 0, 0);
 	}
 
 	/**

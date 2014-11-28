@@ -15,7 +15,7 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
  */
 public class Box implements ResourceVisualization{                     
 	
-	private static final int TEXT_OFFSET = 5;
+	private static final int TEXT_OFFSET = 2;
 	
 	private Position p;
 	private Size size;
