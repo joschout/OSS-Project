@@ -93,7 +93,7 @@ public class Controller {
 			return sf.findResource(parent);
 		}
 		catch(Exception e){
-			LOG.info("parent not retrieved");
+			LOG.info("retrieve parent failed");
 			throw new Exception("Parent not valid");
 		}
 	}
@@ -115,7 +115,7 @@ public class Controller {
 			}
 		}
 		catch(Exception e){
-			LOG.info("resources not retrieved");
+			LOG.info("retrieve resources failed");
 			throw new Exception("Resources could not be retrieved");
 		}
 	}
@@ -123,10 +123,10 @@ public class Controller {
 	private void createAxisMetricProperty(String axis){
 		try{
 			String aMetric = retrieveValue(axis);
-			rpm.addProperty(axis, new SonarResourceProperty(sf,sf.findMetric(axis)));
+			rpm.addProperty(axis, new SonarResourceProperty(sf,sf.findMetric(aMetric)));
 		}
 		catch(Exception e){
-			LOG.info(axis+" not valid, set to default");
+			LOG.info(axis+" not given to rpm");
 		}
 	}
 	
@@ -146,7 +146,7 @@ public class Controller {
 			return parseSize(size);
 		}
 		catch(Exception e){
-			LOG.info("size not valid, set to default");
+			LOG.info("retrieve size failed, set to default ("+DEFAULT_SIZE.get(0)+"x"+DEFAULT_SIZE.get(1));
 			return DEFAULT_SIZE;
 		}
 	}
@@ -163,7 +163,7 @@ public class Controller {
 			return parseStringsToInts(split);
 		}
 		catch(Exception e){
-			LOG.info("size not parsed");
+			LOG.info("parse size failed");
 			throw new Exception("Size cannot be parsed");
 		}
 	}
@@ -228,7 +228,7 @@ public class Controller {
 			rpm.addProperty("colorB", result.get(2));
 		}
 		catch(Exception e){
-			LOG.info("create RP of color failed");
+			LOG.info("RP of color not given to rpm");
 		}
 	}
 	
@@ -250,7 +250,7 @@ public class Controller {
 			rpm.addProperty(dimension, rp);
 		}
 		catch(Exception e){
-			LOG.info("create RP of "+dimension+"failed");
+			LOG.info("RP of "+dimension+" not given to rpm");
 		}
 	}
 	
@@ -266,7 +266,7 @@ public class Controller {
 		return parseStringsToInts(split.subList(1, split.size()));
 		}
 		catch(Exception e){
-			LOG.info("RGB not valid");
+			LOG.info("parse RGB failed");
 			throw new Exception("RGB not valid");
 		}
 	}
@@ -283,7 +283,7 @@ public class Controller {
 		return parseStringsToFloats(split.subList(1, split.size()-2));
 		}
 		catch(Exception e){
-			LOG.info("Grayscale float not valid");
+			LOG.info("parse Grayscale float failed");
 			throw new Exception("Grayscale not valid");
 		}
 	}
@@ -300,7 +300,7 @@ public class Controller {
 		return split.get(split.size()-1);
 		}
 		catch(Exception e){
-			LOG.info("Grayscale key not valid");
+			LOG.info("parse Grayscale key failed");
 			throw new Exception("Grayscale not valid");
 		}
 	}
@@ -315,7 +315,7 @@ public class Controller {
 			return this.rawParams.getValue(key);
 		}
 		catch(Exception e){
-			LOG.info("value not retrieved");
+			LOG.info("retrieve value failed");
 			throw new Exception("value not retrieved");
 		}
 	}
@@ -330,7 +330,7 @@ public class Controller {
 			return this.rawParams.getValue(key, def, false);
 		}
 		catch(Exception e){
-			LOG.info("value with default not retrieved");
+			LOG.info("retrieve value with default failed");
 			throw new Exception("value with default not retrieved");
 		}
 	}

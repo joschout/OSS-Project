@@ -34,11 +34,9 @@ public class PolymorphicViewsChart implements Chart {
 		try{
 			Controller c = new Controller(params,sonar);
 			be.kuleuven.cs.oss.charts.Chart chart = c.createChart();
-			//TODO parameters van draw aanpassen voor consistentie: aanmaken in controller of niet?
 			return chart.draw();
 		}
 		catch(Exception e){
-
 			return null;
 		}
 	}
