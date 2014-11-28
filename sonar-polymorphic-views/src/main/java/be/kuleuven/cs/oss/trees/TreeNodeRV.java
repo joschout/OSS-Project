@@ -54,6 +54,7 @@ public class TreeNodeRV {
 		
 		for(Map.Entry<String, TreeNode> entry : children.entrySet()) {
 			TreeNode treeNode = entry.getValue();
+			LOG.info(entry.getKey());
 
 			TreeNodeRV child = new TreeNodeRV(rvf, treeNode, manager);
 			child.setLevel(this.level++);
@@ -104,8 +105,10 @@ public class TreeNodeRV {
 	private void makeRv() {
 		if(!isRoot()){
 			Resource res = treeNode.getResource();
+			LOG.info("RESOURCE: "+ res.toString());
 			HashMap<String, Double> resPropertyValues = manager.getPropertyValues(res);
 			rv =  rvf.create(resPropertyValues);
+			LOG.info("RV: " + rv.toString());
 			rv.setName(res.getName());
 		}
 	}
