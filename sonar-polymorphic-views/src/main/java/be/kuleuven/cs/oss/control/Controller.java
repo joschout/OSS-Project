@@ -40,6 +40,7 @@ public class Controller {
 
 	private static final String DEFAULT_RESOURCE_TYPE = "classes";
 	private static final String DEFAULT_CHART_TYPE = "scatter";
+	private static final List<Integer> DEFAULT_SIZE = Arrays.asList(800,600);
 		
 	
 	public Controller(ChartParameters p, SonarFacade sf) throws Exception{
@@ -119,24 +120,19 @@ public class Controller {
 		}
 	}
 	
-	/**
-	 * Retrieve the x metric and the y metric
-	 * @return a list containing both x and y metric
-	 * @throws Exception if at least one of the metrics cannot be found
-	 */
-	private List<Metric> retrieveXYMetrics() throws Exception{
+	private void createAxisMetricProperty(String axis){
 		try{
-			List<Metric> result = new ArrayList<Metric>();
-			String xm = retrieveValue("xmetric");
-			result.add(sf.findMetric(xm));
-			String ym = retrieveValue("ymetric");
-			result.add(sf.findMetric(ym));
-			return result;
+			String aMetric = retrieveValue(axis);
+			rpm.addProperty(axis, new SonarResourceProperty(sf,sf.findMetric(axis)));
 		}
 		catch(Exception e){
-			LOG.info("x and/or y metric not valid");
-			throw new Exception("X and/or Y metrics not valid");
+			LOG.info(axis+" not valid, set to default");
 		}
+	}
+	
+	private void createXYMetricProperties(){
+		createAxisMetricProperty("xmetric");
+		createAxisMetricProperty("ymetric");
 	}
 	
 	/**
@@ -150,8 +146,8 @@ public class Controller {
 			return parseSize(size);
 		}
 		catch(Exception e){
-			LOG.info("size not valid");
-			throw new Exception("Size not valid");
+			LOG.info("size not valid, set to default");
+			return DEFAULT_SIZE;
 		}
 	}
 	
@@ -206,7 +202,7 @@ public class Controller {
 	 * Create new resource properties for the boxcolor and add it to the resource property manager
 	 * @throws Exception if the creation of the resource properties fails
 	 */
-	private void createColorRPs() throws Exception{
+	private void createColorRPs(){
 		try{
 			String colorValue = retrieveValue("boxcolor");
 			List<ResourceProperty> result = new ArrayList<ResourceProperty>();
@@ -233,7 +229,6 @@ public class Controller {
 		}
 		catch(Exception e){
 			LOG.info("create RP of color failed");
-			throw new Exception("Failed to create resource properties for color");
 		}
 	}
 	
@@ -242,7 +237,7 @@ public class Controller {
 	 * @param dimension The given box dimension (currently, only boxwidth and boxheight are supported)
 	 * @throws Exception if the creation of the resource property fails
 	 */
-	private void createBoxDimensionRP(String dimension) throws Exception{
+	private void createBoxDimensionRP(String dimension){
 		try{
 			String dimensionValue = retrieveValue(dimension);
 			ResourceProperty rp;
@@ -256,7 +251,6 @@ public class Controller {
 		}
 		catch(Exception e){
 			LOG.info("create RP of "+dimension+"failed");
-			throw new Exception("Failed to create resource property for "+dimension);
 		}
 	}
 	
@@ -341,20 +335,9 @@ public class Controller {
 		}
 	}
 	
-	/**
-	 * Create extra resource properties for the scatterplot and add them to the resource property manager
-	 * @throws Exception if the creation of the resource properties fails
-	 */
-	private void createExtraResourcePropertiesForScatter() throws Exception{
-		try{
-		List<Metric> xym = retrieveXYMetrics();
-		rpm.addProperty("xmetric", new SonarResourceProperty(sf, xym.get(0)));
-		rpm.addProperty("ymetric", new SonarResourceProperty(sf, xym.get(1)));
-		}
-		catch(Exception e){
-			LOG.info("Additional RP scatter failed");
-			throw new Exception("Failed to create resource properties for additional scatterplot metrics");
-		}
+	private void createExtraResourcePropertiesForScatter(){
+		LOG.info("create extra RPs for scatter");
+		createXYMetricProperties();
 	}
 		
 	/**
@@ -373,23 +356,14 @@ public class Controller {
 		return (getResourceType() == "classes");
 	}
 	
-	/**
-	 * Create all resource properties that are common for all chart types and add them to the resource properties manager
-	 * @throws Exception if the creation of these resource properties failed
-	 */
-	private void createCommonResourceProperties() throws Exception{
-		try{
-			String boxdimension;
-			boxdimension = "boxwidth";
-			createBoxDimensionRP(boxdimension);
-			boxdimension = "boxheight";
-			createBoxDimensionRP(boxdimension);
-			createColorRPs();
-		}
-		catch(Exception e){
-			LOG.info("common RP creation failed");
-			throw new Exception("Creation of common properties failed");
-		}
+	private void createCommonResourceProperties(){
+		LOG.info("create common RPs");
+		String boxdimension;
+		boxdimension = "boxwidth";
+		createBoxDimensionRP(boxdimension);
+		boxdimension = "boxheight";
+		createBoxDimensionRP(boxdimension);
+		createColorRPs();
 	}
 	
 	/**
@@ -404,14 +378,18 @@ public class Controller {
 			createCommonResourceProperties();
 			switch(getChartType()){
 			case "scatter": 
-				if(!isValidScatter())
+				if(!isValidScatter()){
+					LOG.info("invalid scatter params");
 					throw new Exception("Invalid scatterplot parameters");
+				}
 				createExtraResourcePropertiesForScatter();
 				List<Integer> size = retrieveSize();
 				return new ScatterPlot(resources, rvf, sf, rpm, size.get(0), size.get(1));
 			case "syscomp": 
-				if(!isValidSyscomp())
+				if(!isValidSyscomp()){
+					LOG.info("invalid syscomp params");
 					throw new Exception("Invalid system complexity parameters");
+				}
 				LineFactory lf = createLineFactory();
 				return new SystemComplexity(resources, rvf, sf, rpm,lf);
 			default:
