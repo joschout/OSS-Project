@@ -6,8 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import be.kuleuven.cs.oss.datautils.Connection;
 import be.kuleuven.cs.oss.datautils.Position;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
@@ -27,6 +31,8 @@ public class TreeNodeRV {
 
 	private int maxRight;
 	private int level = 0;
+	
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 
 	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode, ResourcePropertiesManager manager) {
 		this.rvf = rvf;
@@ -34,8 +40,11 @@ public class TreeNodeRV {
 		this.manager = manager;
 		
 		makeRv();
+		LOG.info("MADE RV OF NODE");
 		createChildren();
+		LOG.info("MADE CHILDREN");
 		createConnections();
+		LOG.info("MADE CONNECTIONS");
 		
 	}
 

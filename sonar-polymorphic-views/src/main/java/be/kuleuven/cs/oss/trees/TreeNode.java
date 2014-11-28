@@ -72,7 +72,7 @@ public class TreeNode {
 		
 	}
 	
-	private void setRootNode() {
+	public void setRootNode() {
 		isRoot = true;
 	}
 	

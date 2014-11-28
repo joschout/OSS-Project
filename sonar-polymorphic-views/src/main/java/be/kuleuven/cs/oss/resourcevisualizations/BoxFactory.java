@@ -17,10 +17,10 @@ import be.kuleuven.cs.oss.datautils.Size;
 public class BoxFactory implements ResourceVisualizationFactory {
 
 	
-	private int defaultXCoord;
-	private int defaultYCoord;
-	private int defaultWidth;
-	private int defaultHeight;
+	private int defaultXCoord = 0;
+	private int defaultYCoord = 0;
+	private int defaultWidth = 10;
+	private int defaultHeight = 10;
 	
 	// default color of a Box is White ( = RGB 255,255,255)
 	private static final Color DEFAULT_COLOR = new Color(255, 255, 255);

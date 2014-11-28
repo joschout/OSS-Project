@@ -57,6 +57,7 @@ public class SystemComplexity extends Chart {
 		}
 		
 		TreeNode treeNode = new TreeNode(parentResources, sonarF);
+		treeNode.setRootNode();
 		
 		LOG.info("Ended making a Tree in SysCom");
 		return treeNode;
