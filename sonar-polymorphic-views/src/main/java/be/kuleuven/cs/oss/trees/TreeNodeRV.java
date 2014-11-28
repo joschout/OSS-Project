@@ -96,6 +96,7 @@ public class TreeNodeRV {
 			Resource res = treeNode.getResource();
 			HashMap<String, Double> resPropertyValues = manager.getPropertyValues(res);
 			rv =  rvf.create(resPropertyValues);
+			rv.setName(res.getName());
 		}
 	}
 	
