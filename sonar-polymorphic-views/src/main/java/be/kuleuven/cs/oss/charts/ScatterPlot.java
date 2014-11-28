@@ -157,9 +157,9 @@ public class ScatterPlot extends Chart{
 		LOG.info(resources.toString());
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
-			LOG.info(properties.toString());
+			LOG.info("MAP PROPERIES: " + properties.toString());
 			ResourceVisualization rv = rvf.create(properties);
-			LOG.info(rv.toString());
+			LOG.info("RV: " + rv.toString());
 			this.getResourceVisualizations().add(rv);
 		}
 	}
