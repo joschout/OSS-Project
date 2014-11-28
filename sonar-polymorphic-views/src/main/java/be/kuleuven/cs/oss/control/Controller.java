@@ -311,13 +311,12 @@ public class Controller {
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValue(String key) throws Exception{
-		try{
-			return this.rawParams.getValue(key);
-		}
-		catch(Exception e){
+		String result = this.rawParams.getValue(key);
+		if(result == ""){
 			LOG.info("retrieve value failed");
 			throw new Exception("value not retrieved");
 		}
+		return result;
 	}
 	
 	/**
@@ -326,13 +325,12 @@ public class Controller {
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValueWithDefault(String key, String def) throws Exception{
-		try{
-			return this.rawParams.getValue(key, def, false);
-		}
-		catch(Exception e){
+		String result = this.rawParams.getValue(key, def, false);
+		if(result == ""){
 			LOG.info("retrieve value with default failed");
 			throw new Exception("value with default not retrieved");
 		}
+		return result;
 	}
 	
 	private void createExtraResourcePropertiesForScatter(){
