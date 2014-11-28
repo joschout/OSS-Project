@@ -232,7 +232,7 @@ public class Controller {
 			rpm.addProperty("colorB", result.get(2));
 		}
 		catch(Exception e){
-			LOG.info("create RP of color failed");
+			LOG.info("create RP of color failed " +e.getLocalizedMessage());
 			throw new Exception("Failed to create resource properties for color");
 		}
 	}

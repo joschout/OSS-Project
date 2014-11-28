@@ -4,8 +4,11 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import be.kuleuven.cs.oss.lines.LineFactory;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Dependency;
@@ -16,6 +19,8 @@ import be.kuleuven.cs.oss.trees.TreeNode;
 import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 public class SystemComplexity extends Chart {
+	
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 	
 	private TreeNode inheritanceTree;
 	private LineFactory lf;
@@ -31,6 +36,7 @@ public class SystemComplexity extends Chart {
 	
 
 	private TreeNode makeTree() {
+		LOG.info("Started making a Tree in SysCom");
 		List<Resource> parentResources = new ArrayList<Resource>();
 		
 		for(Resource resource: resources) {
@@ -51,6 +57,8 @@ public class SystemComplexity extends Chart {
 		}
 		
 		TreeNode treeNode = new TreeNode(parentResources, sonarF);
+		
+		LOG.info("Ended making a Tree in SysCom");
 		return treeNode;
 	}
 
