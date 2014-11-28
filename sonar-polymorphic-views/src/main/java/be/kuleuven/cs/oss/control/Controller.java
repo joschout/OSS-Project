@@ -230,7 +230,7 @@ public class Controller {
 			rpm.addProperty("colorB", result.get(2));
 		}
 		catch(Exception e){
-			LOG.info("RP of color not given to rpm");
+			LOG.info(e.getMessage());
 		}
 	}
 	
@@ -354,7 +354,7 @@ public class Controller {
 	 * @return True if the chartparameters define a valid system complexity view
 	 */
 	private boolean isValidSyscomp(){
-		return (getResourceType() == "classes");
+		return (getResourceType().equals("classes"));
 	}
 	
 	private void createCommonResourceProperties(){
