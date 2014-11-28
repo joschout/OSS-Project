@@ -68,7 +68,7 @@ public class Controller {
 	 * Create a new visualization factory (currently, only boxes are supported)
 	 * @return a new visualization factory
 	 */
-	public ResourceVisualizationFactory createRVFactory(){
+	private ResourceVisualizationFactory createRVFactory(){
 		LOG.info("create RVF");
 		return new BoxFactory();
 	}
@@ -77,7 +77,7 @@ public class Controller {
 	 * Create a new line factory (currently, only straight lines are supported)
 	 * @return a new line factory
 	 */
-	public LineFactory createLineFactory(){
+	private LineFactory createLineFactory(){
 		LOG.info("create LF");
 		return new StraightLineFactory();
 	}
