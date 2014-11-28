@@ -63,7 +63,6 @@ public interface ResourceVisualization {
 	public void setName(String name);
 		
 	public void draw(IDraw d);
-	//TODO make the IDraw interface
 	
 	public int getX();
 	
