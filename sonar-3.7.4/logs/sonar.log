@@ -10403,3 +10403,767 @@ java.lang.IllegalArgumentException: Null 'image' argument.
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
 	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
+STATUS | wrapper  | 2014/11/28 04:41:22 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/28 04:41:22 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/28 04:41:22 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/28 04:41:22 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/28 04:41:22 | 
+INFO   | jvm 1    | 2014/11/28 04:41:22 | 2014-11-28 04:41:22.620:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.28 04:41:24 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:24 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.28 04:41:24 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.11.28 04:41:24 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.11.28 04:41:25 INFO  org.sonar.INFO  Install plugins...
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 04:41:25 INFO  org.sonar.INFO  Install plugins done: 577 ms
+2014.11.28 04:41:25 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.28 04:41:25 INFO  org.sonar.INFO  Start components...
+2014.11.28 04:41:25 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.28 04:41:27 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.28 04:41:27 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.28 04:41:27 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.28 04:41:27 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.28 04:41:27 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.28 04:41:27 INFO  org.sonar.INFO  Deploy GWT plugins done: 576 ms
+2014.11.28 04:41:27 INFO  org.sonar.INFO  Load metrics...
+2014.11.28 04:41:27 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.28 04:41:27 INFO  org.sonar.INFO  Load metrics done: 278 ms
+2014.11.28 04:41:28 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.28 04:41:28 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 313 ms
+2014.11.28 04:41:28 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.28 04:41:28 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 257 ms
+2014.11.28 04:41:28 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [pmd/java] done: 414 ms
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 17 ms
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [squid/java] done: 109 ms
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.28 04:41:29 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
+2014.11.28 04:41:29 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.28 04:41:29 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 982 ms
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 2 ms
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 2 ms
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 9 ms
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.28 04:41:30 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.11.28 04:41:30 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.28 04:41:30 INFO  org.sonar.INFO  Start components done: 4873 ms
+2014.11.28 04:41:30 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_60) [Windows 8.1-amd64-java]
+2014.11.28 04:41:30 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/28 04:41:33 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/28 04:41:33 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/28 04:41:38 | 2014-11-28 04:41:38.391:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/28 04:41:38 | 2014-11-28 04:41:38.438:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create common RPs
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of boxwidth not given to rpm
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of boxheight not given to rpm
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create LF
+2014.11.28 04:41:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Started making a Tree in SysCom
+2014.11.28 04:41:47 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PARENTRESOURCES: [WSResource[id: 74, key: java:chess:jchess.core.Chessboard, qualifier: CLA], WSResource[id: 75, key: java:chess:jchess.core.Clock, qualifier: CLA], WSResource[id: 76, key: java:chess:jchess.core.Colors, qualifier: CLA], WSResource[id: 77, key: java:chess:jchess.core.Game, qualifier: CLA], WSResource[id: 78, key: java:chess:jchess.core.GameClock, qualifier: CLA], WSResource[id: 80, key: java:chess:jchess.core.moves.Castling, qualifier: CLA], WSResource[id: 81, key: java:chess:jchess.core.moves.Move, qualifier: CLA], WSResource[id: 82, key: java:chess:jchess.core.moves.Moves, qualifier: CLA], WSResource[id: 84, key: java:chess:jchess.core.pieces.implementation.Bishop, qualifier: CLA], WSResource[id: 85, key: java:chess:jchess.core.pieces.implementation.King, qualifier: CLA], WSResource[id: 86, key: java:chess:jchess.core.pieces.implementation.Knight, qualifier: CLA], WSResource[id: 87, key: java:chess:jchess.core.pieces.implementation.Pawn, qualifier: CLA], WSResource[id: 88, key: java:chess:jchess.core.pieces.implementation.Queen, qualifier: CLA], WSResource[id: 89, key: java:chess:jchess.core.pieces.implementation.Rook, qualifier: CLA], WSResource[id: 91, key: java:chess:jchess.core.pieces.Piece, qualifier: CLA], WSResource[id: 93, key: java:chess:jchess.core.pieces.traits.behaviors.Behavior, qualifier: CLA], WSResource[id: 95, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.BishopBehavior, qualifier: CLA], WSResource[id: 96, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KingBehavior, qualifier: CLA], WSResource[id: 97, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KnightBehavior, qualifier: CLA], WSResource[id: 98, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.LongRangePieceBehavior, qualifier: CLA], WSResource[id: 99, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.PawnBehavior, qualifier: CLA], WSResource[id: 100, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.RookBehavior, qualifier: CLA], WSResource[id: 101, key: java:chess:jchess.core.Player, qualifier: CLA], WSResource[id: 102, key: java:chess:jchess.core.Square, qualifier: CLA], WSResource[id: 104, key: java:chess:jchess.display.panels.LocalSettingsView, qualifier: CLA], WSResource[id: 106, key: java:chess:jchess.display.views.chessboard.ChessboardMouseView, qualifier: CLA], WSResource[id: 107, key: java:chess:jchess.display.views.chessboard.ChessboardView, qualifier: CLA], WSResource[id: 109, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Chessboard2D, qualifier: CLA], WSResource[id: 110, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Pieces2D, qualifier: CLA], WSResource[id: 112, key: java:chess:jchess.display.windows.DrawLocalSettings, qualifier: CLA], WSResource[id: 113, key: java:chess:jchess.display.windows.DrawNetworkSettings, qualifier: CLA], WSResource[id: 114, key: java:chess:jchess.display.windows.JChessAboutBox, qualifier: CLA], WSResource[id: 115, key: java:chess:jchess.display.windows.JChessTabbedPane, qualifier: CLA], WSResource[id: 116, key: java:chess:jchess.display.windows.PawnPromotionWindow, qualifier: CLA], WSResource[id: 117, key: java:chess:jchess.display.windows.ThemeChooseWindow, qualifier: CLA], WSResource[id: 119, key: java:chess:jchess.JChessApp, qualifier: CLA], WSResource[id: 120, key: java:chess:jchess.JChessView, qualifier: CLA], WSResource[id: 122, key: java:chess:jchess.network.Chat, qualifier: CLA], WSResource[id: 123, key: java:chess:jchess.network.Client, qualifier: CLA], WSResource[id: 124, key: java:chess:jchess.network.Server, qualifier: CLA], WSResource[id: 125, key: java:chess:jchess.NewGameWindow, qualifier: CLA], WSResource[id: 127, key: java:chess:jchess.server.Connection_info, qualifier: CLA], WSResource[id: 128, key: java:chess:jchess.server.Console, qualifier: CLA], WSResource[id: 129, key: java:chess:jchess.server.SClient, qualifier: CLA], WSResource[id: 130, key: java:chess:jchess.server.Server, qualifier: CLA], WSResource[id: 131, key: java:chess:jchess.server.Table, qualifier: CLA], WSResource[id: 133, key: java:chess:jchess.utils.GUI, qualifier: CLA], WSResource[id: 134, key: java:chess:jchess.utils.MD5, qualifier: CLA], WSResource[id: 135, key: java:chess:jchess.utils.Settings, qualifier: CLA]]
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Ended making a Tree in SysCom
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MADE RV OF NODE
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Behavior
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RESOURCE: WSResource[id: 93, key: java:chess:jchess.core.pieces.traits.behaviors.Behavior, qualifier: CLA]
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 10 10 COLOR: 255 255 255
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@11879b58
+2014.11.28 04:41:48 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MADE RV OF NODE
+2014.11.28 04:41:48 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+java.lang.IllegalArgumentException: Null 'image' argument.
+	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
+	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
+	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create common RPs
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of boxwidth not given to rpm
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of boxheight not given to rpm
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create extra RPs for scatter
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve size failed, set to default (800x600)
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  ScatterPlot constructed
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  In draw method in ScatterPlot
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  empty frame made
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Axes drawn on frame
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  defaultRVSizes set
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Starting creation of RVs
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=87.0, colorB=0.0, xmetric=719.0}
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@64192a44
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=22.0, colorB=0.0, xmetric=128.0}
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:17 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@29019824
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=42.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@a6b797d
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=65.0, colorB=0.0, xmetric=765.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3323551c
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=37.0, colorB=0.0, xmetric=271.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7f8b0db3
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=31.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1d82a7ff
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=99.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2f80e0ab
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=77.0, colorB=0.0, xmetric=627.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@e30d21e
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=53.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3a678371
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=31.0, colorB=0.0, xmetric=170.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@49e263c
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=4.0, colorB=0.0, xmetric=40.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@68752676
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=38.0, colorB=0.0, xmetric=89.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@67872515
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=55.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@493b518e
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=16.0, colorB=0.0, xmetric=74.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1c7f8a84
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=45.0, colorB=0.0, xmetric=289.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@722dd396
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=10.0, colorB=0.0, xmetric=79.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@75ed6668
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=7.0, colorB=0.0, xmetric=52.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@34ff3ad9
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=25.0, colorB=0.0, xmetric=148.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@15b4233e
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=22.0, colorB=0.0, xmetric=84.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2283fb68
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=10.0, colorB=0.0, xmetric=80.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@12b7c618
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=24.0, colorB=0.0, xmetric=134.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3e38a280
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=3.0, colorB=0.0, xmetric=52.0}
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:18 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1075fc87
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=17.0, colorB=0.0, xmetric=110.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7cc47d54
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=14.0, colorB=0.0, xmetric=111.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@18fcb912
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=133.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@21f2ef9b
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=2.0, colorB=0.0, xmetric=21.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@44c92656
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=18.0, colorB=0.0, xmetric=158.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@10c46ca
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=27.0, colorB=0.0, xmetric=376.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@6da5c87d
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=5.0, colorB=0.0, xmetric=188.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@26000617
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=52.0, colorB=0.0, xmetric=306.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@27c708b3
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=27.0, colorB=0.0, xmetric=377.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2a9b0f9f
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=37.0, colorB=0.0, xmetric=185.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@cf15eb4
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=7.0, colorB=0.0, xmetric=238.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1a7d185d
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=14.0, colorB=0.0, xmetric=111.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1a2a08fe
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=5.0, colorB=0.0, xmetric=160.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@364773d9
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=9.0, colorB=0.0, xmetric=89.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3518b11e
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=79.0, colorB=0.0, xmetric=654.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@6ad4f640
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=12.0, colorB=0.0, xmetric=137.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@32d2431f
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=41.0, colorB=0.0, xmetric=460.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@58036daf
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=41.0, colorB=0.0, xmetric=557.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@61c9833d
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=97.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2ef451df
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=3.0, colorB=0.0, xmetric=62.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@531adfc3
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=10.0, colorB=0.0, xmetric=144.0}
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:19 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3a79526c
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=7.0, colorB=0.0, xmetric=106.0}
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1a34d581
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=12.0, colorB=0.0, xmetric=209.0}
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@11caeba0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=19.0, colorB=0.0, xmetric=335.0}
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@a04a093
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=165.0}
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@6943aab0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=3.0, colorB=0.0, xmetric=49.0}
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@6a6a5677
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=22.0, colorB=0.0, xmetric=232.0}
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@903eee7
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RVs created
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 719.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 128.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 42.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 765.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 271.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 31.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 99.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 627.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 53.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 170.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 40.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 89.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 55.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 74.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 289.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 79.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 52.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 148.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 84.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 80.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 134.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 52.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 110.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 111.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 133.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 21.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 158.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 376.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 188.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 306.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 377.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 185.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 238.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 111.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 160.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 89.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 654.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 137.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 460.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 557.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 97.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 62.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 144.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 106.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 209.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 335.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 165.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 49.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 232.0
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RVs scaled
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:20 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RVs drawn
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create common RPs
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of boxwidth not given to rpm
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of boxheight not given to rpm
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create extra RPs for scatter
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve value failed
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve size failed, set to default (800x600)
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  ScatterPlot constructed
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  In draw method in ScatterPlot
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  empty frame made
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Axes drawn on frame
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  defaultRVSizes set
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Starting creation of RVs
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=87.0, colorB=0.0, xmetric=719.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@cbb5300
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=22.0, colorB=0.0, xmetric=128.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@755724f3
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=42.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@676e4e1c
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=65.0, colorB=0.0, xmetric=765.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3574d9f1
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=37.0, colorB=0.0, xmetric=271.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7de2c95e
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=31.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@5ccbdd86
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=99.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@18b25a3d
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=77.0, colorB=0.0, xmetric=627.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@447ab5fe
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=53.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@49141e64
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=31.0, colorB=0.0, xmetric=170.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2f9dae2
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=4.0, colorB=0.0, xmetric=40.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@3dca6f9f
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=38.0, colorB=0.0, xmetric=89.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@c42dd57
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=55.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@27d62c64
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=16.0, colorB=0.0, xmetric=74.0}
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:22 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@42f95421
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=45.0, colorB=0.0, xmetric=289.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@66899ab3
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=10.0, colorB=0.0, xmetric=79.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@5cdf911e
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=7.0, colorB=0.0, xmetric=52.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@69b636d1
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=25.0, colorB=0.0, xmetric=148.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@4c14fe71
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=22.0, colorB=0.0, xmetric=84.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@5cc4a6a1
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=10.0, colorB=0.0, xmetric=80.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@721f2b18
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=24.0, colorB=0.0, xmetric=134.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@154c04a4
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=3.0, colorB=0.0, xmetric=52.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@11ffd860
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=17.0, colorB=0.0, xmetric=110.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7eb81e4e
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=14.0, colorB=0.0, xmetric=111.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@22da4a37
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=1.0, colorB=0.0, xmetric=133.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2e980200
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=2.0, colorB=0.0, xmetric=21.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@632a6df2
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=18.0, colorB=0.0, xmetric=158.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@185c2e4
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=27.0, colorB=0.0, xmetric=376.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7f79933d
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=5.0, colorB=0.0, xmetric=188.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1ef60ea0
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=52.0, colorB=0.0, xmetric=306.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@692720cb
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=27.0, colorB=0.0, xmetric=377.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@318ac7ec
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=37.0, colorB=0.0, xmetric=185.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1d6393c6
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=7.0, colorB=0.0, xmetric=238.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@585719f
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=14.0, colorB=0.0, xmetric=111.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@13e3f6cd
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=5.0, colorB=0.0, xmetric=160.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@46ddf1ca
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=9.0, colorB=0.0, xmetric=89.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@4e1fca43
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=79.0, colorB=0.0, xmetric=654.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@1bf61549
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=12.0, colorB=0.0, xmetric=137.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@eaf81a5
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=41.0, colorB=0.0, xmetric=460.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@2b295827
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=41.0, colorB=0.0, xmetric=557.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7079a92
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=97.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@334901ad
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=3.0, colorB=0.0, xmetric=62.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@4c0ccc66
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=10.0, colorB=0.0, xmetric=144.0}
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@7d7e1cb4
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=7.0, colorB=0.0, xmetric=106.0}
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@431b3911
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=12.0, colorB=0.0, xmetric=209.0}
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@591a0429
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=19.0, colorB=0.0, xmetric=335.0}
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@351b710f
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=15.0, colorB=0.0, xmetric=165.0}
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@5bcae695
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=3.0, colorB=0.0, xmetric=49.0}
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@576b243a
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {colorG=0.0, colorR=255.0, ymetric=22.0, colorB=0.0, xmetric=232.0}
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  CREATING BOX WITH SIZE: 68 48 COLOR: 255 255 255
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@30187870
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RVs created
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 719.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 128.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 42.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 765.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 271.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 31.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 99.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 627.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 53.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 170.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 40.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 89.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 55.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 74.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 289.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 79.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 52.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 148.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 84.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 80.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 134.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 52.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 110.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 111.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 133.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 21.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 158.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 376.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 188.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 306.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 377.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 185.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 238.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 111.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 160.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 89.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 654.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 137.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 460.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 557.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 97.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 62.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 144.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 106.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 209.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 335.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 165.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 49.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  xCoord: 232.0
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RVs scaled
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DRAWING BOX IN IDRAW IMPL
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  DREW ONE RV
+2014.11.28 04:42:24 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RVs drawn

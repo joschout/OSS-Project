@@ -51,6 +51,7 @@ public class TreeNodeRV {
 
 	private void createChildren() {
 		TreeMap<String, TreeNode> children = treeNode.getChildren();
+		LOG.info("Children: " + children.toString());
 		
 		for(Map.Entry<String, TreeNode> entry : children.entrySet()) {
 			TreeNode treeNode = entry.getValue();
