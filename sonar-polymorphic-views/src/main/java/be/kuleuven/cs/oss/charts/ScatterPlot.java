@@ -153,9 +153,13 @@ public class ScatterPlot extends Chart{
 	 * If there are no metrics for a certain property of the resource visualisation, it gets the default value.
 	 */
 	private void createResourceVisualizations(){
+		LOG.info("Starting creation of RVs");
+		LOG.info(resources.toString());
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
+			LOG.info(properties.toString());
 			ResourceVisualization rv = rvf.create(properties);
+			LOG.info(rv.toString());
 			this.getResourceVisualizations().add(rv);
 		}
 	}
