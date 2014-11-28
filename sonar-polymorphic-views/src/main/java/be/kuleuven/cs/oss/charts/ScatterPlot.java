@@ -126,7 +126,7 @@ public class ScatterPlot extends Chart{
 
 	/**
 	 * Draws the axes of the scatter plot. The axes consist of 2 arrows, 
-	 * one pointing up and one pointing right, like a normal carthesian coordinate system.
+	 * one pointing up and one pointing right, like a normal Cartesian coordinate system.
 	 * 
 	 * @param d : IDraw
 	 */
@@ -140,7 +140,7 @@ public class ScatterPlot extends Chart{
 	}
 
 	/**
-	 * Before the resource visualisations are made, the default values for its dimensions are set.
+	 * Before the resource visualizations are made, the default values for its dimensions are set.
 	 * Here we choose for the average of the minimum and maximum size for a resource visualisation.
 	 */
 	private void setDefaultRVSizes() { //Hacky code. Change requested. No casting wanted.
@@ -164,7 +164,7 @@ public class ScatterPlot extends Chart{
 	}
 
 	/**
-	 * Using interpolation, the resource visualisation gets new values in order to fit in the image.
+	 * Using interpolation, the resource visualization gets new values in order to fit in the image.
 	 * If the min and max value for a property are the same, it means that this metric has the default value. It doesn't need rescaling then.
 	 */
 	private void rescaleResourceVisualizations(){
@@ -209,7 +209,7 @@ public class ScatterPlot extends Chart{
 			
 			
 			if(xCoord < xMin){
-				xMax = ((int)xCoord);
+				xMin = ((int)xCoord);
 			}
 			if(yCoord < yMin){
 				yMin = ((int)yCoord);;
@@ -235,7 +235,7 @@ public class ScatterPlot extends Chart{
 
 
 	/**
-	 * Converts the given x-coordinate relative to the axises of the scatter plot
+	 * Converts the given x-coordinate relative to the axes of the scatter plot
 	 *  to an x-coordinate in the plane of the image.
 	 *  
 	 *  This method makes use of the following convention:
@@ -250,7 +250,7 @@ public class ScatterPlot extends Chart{
 	 *  		 imageHeight - axisOffset +(2*axisOffset - imageHeight )* yCoord/yMax )
 	 *  		relative to the coordinate system of the image plane
 	 *  
-	 * In this conversion, axisOffset denotes the offset between the border of image and the axises.
+	 * In this conversion, axisOffset denotes the offset between the border of image and the axes.
 	 * xMax and yMax are the maximal values relative to the coordinate system of the scatter plot 
 	 *  	that have to be drawn on the image.
 	 *  
@@ -259,11 +259,12 @@ public class ScatterPlot extends Chart{
 	 * @return the x coordinate in the image plane
 	 */
 	private int convertX(double xCoord){
+		LOG.info("xCoord: " + xCoord);
 		return (int) (axisOffset + (width-2*axisOffset)* (xCoord-xMin)/(xMax-xMin));	
 	}
 
 	/**
-	 * Converts the given y-coordinate relative to the axises of the scatter plot
+	 * Converts the given y-coordinate relative to the axes of the scatter plot
 	 *  to an y-coordinate in the plane of the image.
 	 *   
 	 *  This method makes use of the following convention:
@@ -278,7 +279,7 @@ public class ScatterPlot extends Chart{
 	 *  		 imageHeight - axisOffset +(2*axisOffset - imageHeight )* yCoord/yMax )
 	 *  		relative to the coordinate system of the image plane
 	 *  
-	 * In this conversion, axisOffset denotes the offset between the border of image and the axises.
+	 * In this conversion, axisOffset denotes the offset between the border of image and the axes.
 	 * xMax and yMax are the maximal values relative to the coordinate system of the scatter plot 
 	 *  	that have to be drawn on the image.
 	 *  

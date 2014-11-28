@@ -15,7 +15,7 @@ import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 public class Java2DImplTest {
 
 	public static void main(String[] args){
-		testArrowRight();
+		testArrowRight2();
 	}
 
 	public static void testBackground() {
@@ -118,6 +118,18 @@ public class Java2DImplTest {
 		BufferedImage bi = impl.getBufferedImage();
 		output(bi);
 	}
+	
+	
+	
+	public static void testArrowRight2() {
+		Java2DImpl impl = new Java2DImpl();
+		impl.createEmptyImage(400, 100);
+		impl.drawArrowRight(0,0, 30);
+		
+		BufferedImage bi = impl.getBufferedImage();
+		output(bi);
+	}
+	
 	
 	public static void output(BufferedImage bi){
 		try {

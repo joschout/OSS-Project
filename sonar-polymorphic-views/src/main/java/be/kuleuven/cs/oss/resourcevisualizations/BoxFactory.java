@@ -1,23 +1,35 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
 import java.util.Map;
-
-
-
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 
+/**
+ *  The class BoxFactory is a specific implementation of the ResourceVisualizationFactory class.
+ *  It creates a ResourceVisualization in the form of a Box object for one specific resource,
+ *   based on the given map of ResourcePropert names and their values,
+ *    which it gets as an argument in its create method.
+ *    
+ * @author Jonas
+ *
+ */
 public class BoxFactory implements ResourceVisualizationFactory {
 
+	
 	private int defaultXCoord;
 	private int defaultYCoord;
 	private int defaultWidth;
 	private int defaultHeight;
 	
+	// default color of a Box is White ( = RGB 255,255,255)
 	private static final Color DEFAULT_COLOR = new Color(255, 255, 255);
+	// default name of a Box is the empty string
 	private static final String DEFAULT_NAME = "";
 	
+	/**
+	 * Empty constuctor.
+	 */
 	public BoxFactory() {
 	}
 	 
@@ -53,6 +65,10 @@ public class BoxFactory implements ResourceVisualizationFactory {
 		this.defaultHeight = defaultHeight;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public ResourceVisualization create(Map<String, Double> map) {
 		

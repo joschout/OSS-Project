@@ -13,9 +13,11 @@ import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 /**
- * @author Milan
- *
  * 
+ * 
+ * 
+ * 
+ * @author Milan
  *
  */
 public class ResourcePropertiesManager {
