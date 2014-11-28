@@ -1,6 +1,7 @@
 package be.kuleuven.cs.oss.charts;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -58,6 +59,7 @@ public abstract class Chart {
 		this.sonarF = sonarF;
 		this.propManager = propManager;
 		setIDrawInstantiation(new Java2DImpl());
+		this.rvs = new ArrayList<ResourceVisualization>();
 
 	
 	}

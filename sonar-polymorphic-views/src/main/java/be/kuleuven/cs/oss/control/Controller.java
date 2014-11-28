@@ -312,7 +312,10 @@ public class Controller {
 	 */
 	private String retrieveValue(String key) throws Exception{
 		try{
-			return this.rawParams.getValue(key);
+			LOG.info("GET READY FOR ERROR, KEY HERE IS: " + key);
+			String out = this.rawParams.getValue(key);
+			LOG.info("OUT: " + out);
+			return out;
 		}
 		catch(Exception e){
 			LOG.info("retrieve value failed");

@@ -154,7 +154,6 @@ public class ScatterPlot extends Chart{
 	 */
 	private void createResourceVisualizations(){
 		LOG.info("Starting creation of RVs");
-		LOG.info(resources.toString());
 		for(Resource resource: resources){
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
 			LOG.info("MAP PROPERIES: " + properties.toString());

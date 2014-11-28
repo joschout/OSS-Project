@@ -45,16 +45,17 @@ public class ResourcePropertiesManager {
 	 * @return
 	 */
 	public HashMap<String, Double> getPropertyValues(Resource resource) {
+		LOG.info("RPM MAP: " + properties.toString());
+		
 		HashMap<String, Double> toReturn = new HashMap<String, Double>();
 		for(Map.Entry<String, ResourceProperty> entry : properties.entrySet()){
 			
 			String name = entry.getKey();
-			LOG.info(name);
+			LOG.info("NAME " +name);
 			ResourceProperty resourceProperty = entry.getValue();
-			LOG.info(resourceProperty.toString());
 			
 			double value = resourceProperty.getValue(resource);
-			LOG.info(Double.toString(value));
+			LOG.info("VALUE " + Double.toString(value));
 			toReturn.put(name, value);
 		}
 
