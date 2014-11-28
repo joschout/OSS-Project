@@ -116,7 +116,7 @@ public class Box implements ResourceVisualization{
 	public void draw(IDraw d){
 		//TODO zet overloading ook in interface
 		d.drawBox((int)p.getX(), (int)p.getY(), (int)getWidth(), (int)getHeight(), color.getRed(), color.getGreen(), color.getBlue());
-		d.drawText(getName(), (int)p.getX(), (int)p.getY()+ (int)getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0);
+		d.drawText(getName(), p.getX(), p.getY()- getHeight()/2 - TEXT_OFFSET, 0, 0, 0, 0);
 	}
 
 
