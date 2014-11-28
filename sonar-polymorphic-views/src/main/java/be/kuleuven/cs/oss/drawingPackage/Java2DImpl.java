@@ -12,7 +12,11 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.Color;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.sonar.plugins.java.Java;
+
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 
 /**
  * Java2DImpl implements the IDraw interface using the Java2D library.
@@ -49,6 +53,8 @@ public class Java2DImpl implements IDraw{
 	private static final int DEFAULT_TRIANGLE_BASE = 7;
 	private static final int DEFAULT_TRIANGLE_ALTITUDE = 7;
 	
+
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 	
 	private BufferedImage im;
 
@@ -111,6 +117,7 @@ public class Java2DImpl implements IDraw{
 			int width, int heigth,
 			int redFill, int greenFill, int blueFill
 			){
+		LOG.info("DRAWING BOX IN IDRAW IMPL");
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
 				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,

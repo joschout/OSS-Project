@@ -282,7 +282,7 @@ public class Controller {
 	private List<Float> parseGrayScaleFloats(String gs) throws Exception{
 		try{
 		List<String> split = Arrays.asList(gs.split("[(min)(max)(key)]"));
-		return parseStringsToFloats(split.subList(1, split.size()-2));
+		return parseStringsToFloats(split.subList(1, split.size()-1));
 		}
 		catch(Exception e){
 			LOG.info("parse Grayscale float failed");
@@ -315,7 +315,7 @@ public class Controller {
 	private String retrieveValue(String key) throws Exception{
 
 		String result = this.rawParams.getValue(key);
-		if(result == ""){
+		if(result.equals("")){
 			LOG.info("retrieve value failed");
 			throw new Exception("value not retrieved");
 		}
@@ -329,7 +329,7 @@ public class Controller {
 	 */
 	private String retrieveValueWithDefault(String key, String def) throws Exception{
 		String result = this.rawParams.getValue(key, def, false);
-		if(result == ""){
+		if(result.equals("")){
 			LOG.info("retrieve value with default failed");
 			throw new Exception("value with default not retrieved");
 		}

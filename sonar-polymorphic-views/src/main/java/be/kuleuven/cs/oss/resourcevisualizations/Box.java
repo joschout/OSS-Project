@@ -2,10 +2,14 @@ package be.kuleuven.cs.oss.resourcevisualizations;
 
 import java.awt.image.BufferedImage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 
 
 /**
@@ -17,6 +21,8 @@ public class Box implements ResourceVisualization{
 	
 	private static final int TEXT_OFFSET = 2;
 	
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
+	
 	private Position p;
 	private Size size;
 	private Color color;
@@ -24,9 +30,12 @@ public class Box implements ResourceVisualization{
 	
 	public Box(Position p, Size size, Color c, String name) throws IllegalArgumentException{
 		setPosition(p);
+		
 		setSize(size);
-		setColor(color);
+		setColor(c);
 		setName(name);
+		
+		LOG.info("CREATING BOX WITH SIZE: " + getWidth() + " " + getHeight()  + " COLOR: " + color.getRed() + " " + color.getGreen() + " " + color.getBlue());
 	}
 
 	
@@ -114,9 +123,11 @@ public class Box implements ResourceVisualization{
 	
 	@Override
 	public void draw(IDraw d){
+
 		//TODO zet overloading ook in interface
 		d.drawBox((int)p.getX(), (int)p.getY(), (int)getWidth(), (int)getHeight(), color.getRed(), color.getGreen(), color.getBlue());
 		d.drawText(getName(), p.getX(), p.getY()- getHeight()/2 - TEXT_OFFSET, 0, 0, 0, 0);
+
 	}
 
 

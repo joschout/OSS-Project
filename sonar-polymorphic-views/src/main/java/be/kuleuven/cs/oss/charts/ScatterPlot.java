@@ -242,6 +242,7 @@ public class ScatterPlot extends Chart{
 	private void drawResourceVisualizations(){
 		for(ResourceVisualization rv: getResourceVisualizations()){
 			rv.draw(getIDrawInstantiation());
+			LOG.info("DREW ONE RV");
 		}
 	}
 
