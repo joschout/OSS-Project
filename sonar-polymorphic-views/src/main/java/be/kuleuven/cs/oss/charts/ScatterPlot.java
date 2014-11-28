@@ -121,10 +121,27 @@ public class ScatterPlot extends Chart{
 		//6
 		drawResourceVisualizations();
 		LOG.info("RVs drawn");
+		//7
+		drawAxesLabels(getIDrawInstantiation());
+		LOG.info("Axes's labels drawn");
 		
 		return getIDrawInstantiation().getBufferedImage();
 	}
 
+	private void drawAxesLabels(IDraw d){
+		ResourceProperty xprop = propManager.getResourceProperty("xmetric");
+		String xname = xprop.getPropertyName();
+		ResourceProperty yprop = propManager.getResourceProperty("ymetric");
+		String yname = yprop.getPropertyName();
+		
+		d.drawText("" +xMax, (int)(width- axisOffset/2), (int)(height - axisOffset/2));
+		d.drawText(xname, (int)(axisOffset + width/2), (int)(height - axisOffset/2));
+		
+		d.drawText("" +yMax, (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
+		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + height/2), -90, 0, 0, 0);
+	}
+	
+	
 	/**
 	 * Draws the axes of the scatter plot. The axes consist of 2 arrows, 
 	 * one pointing up and one pointing right, like a normal Cartesian coordinate system.
@@ -132,22 +149,12 @@ public class ScatterPlot extends Chart{
 	 * @param d : IDraw
 	 */
 	private void drawAxises(IDraw d){
-		ResourceProperty xprop = propManager.getResourceProperty("xmetric");
-		String xname = xprop.getPropertyName();
-		ResourceProperty yprop = propManager.getResourceProperty("ymetric");
-		String yname = yprop.getPropertyName();
-		
 		d.drawArrowRight( (int)axisOffset, 
 						  (int)(height - axisOffset) , 
 						  (int)(width - 2*axisOffset));
-		d.drawText("" +xMax, (int)(width- axisOffset/2), (int)(height - axisOffset/2));
-		d.drawText(xname, (int)(axisOffset + width/2), (int)(height - axisOffset/2));
-		
 		d.drawArrowUp( (int)axisOffset,
 					   (int)(height - axisOffset),
 					   (int)(height - 2*axisOffset));
-		d.drawText("" +yMax, (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
-		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + height/2), -90, 0, 0, 0);
 	}
 
 	/**
