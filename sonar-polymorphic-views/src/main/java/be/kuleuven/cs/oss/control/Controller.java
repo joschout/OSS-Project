@@ -68,7 +68,7 @@ public class Controller {
 	 * Create a new visualization factory (currently, only boxes are supported)
 	 * @return a new visualization factory
 	 */
-	public ResourceVisualizationFactory createRVFactory(){
+	private ResourceVisualizationFactory createRVFactory(){
 		LOG.info("create RVF");
 		return new BoxFactory();
 	}
@@ -77,7 +77,7 @@ public class Controller {
 	 * Create a new line factory (currently, only straight lines are supported)
 	 * @return a new line factory
 	 */
-	public LineFactory createLineFactory(){
+	private LineFactory createLineFactory(){
 		LOG.info("create LF");
 		return new StraightLineFactory();
 	}
@@ -311,16 +311,13 @@ public class Controller {
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValue(String key) throws Exception{
-		try{
-			LOG.info("GET READY FOR ERROR, KEY HERE IS: " + key);
-			String out = this.rawParams.getValue(key);
-			LOG.info("OUT: " + out);
-			return out;
-		}
-		catch(Exception e){
+
+		String result = this.rawParams.getValue(key);
+		if(result == ""){
 			LOG.info("retrieve value failed");
 			throw new Exception("value not retrieved");
 		}
+		return result;
 	}
 	
 	/**
@@ -329,13 +326,12 @@ public class Controller {
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValueWithDefault(String key, String def) throws Exception{
-		try{
-			return this.rawParams.getValue(key, def, false);
-		}
-		catch(Exception e){
+		String result = this.rawParams.getValue(key, def, false);
+		if(result == ""){
 			LOG.info("retrieve value with default failed");
 			throw new Exception("value with default not retrieved");
 		}
+		return result;
 	}
 	
 	private void createExtraResourcePropertiesForScatter(){
