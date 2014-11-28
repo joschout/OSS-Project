@@ -42,6 +42,7 @@ public class TreeNodeRV {
 		makeRv();
 		LOG.info("MADE RV OF NODE");
 		createChildren();
+		LOG.info("CHILDREN: " + this.children.toString());
 		LOG.info("MADE CHILDREN");
 		createConnections();
 		LOG.info("MADE CONNECTIONS");
