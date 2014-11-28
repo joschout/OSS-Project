@@ -155,9 +155,11 @@ public class ScatterPlot extends Chart{
 	private void createResourceVisualizations(){
 		LOG.info("Starting creation of RVs");
 		for(Resource resource: resources){
+			String name = resource.getName();
 			Map<String, Double> properties = super.getResourcePropertyValues(resource);
 			LOG.info("MAP PROPERIES: " + properties.toString());
 			ResourceVisualization rv = rvf.create(properties);
+			rv.setName(name);
 			LOG.info("RV: " + rv.toString());
 			this.getResourceVisualizations().add(rv);
 		}
@@ -288,7 +290,7 @@ public class ScatterPlot extends Chart{
 	 * @return the y coordinate in the image plane
 	 */
 	private int convertY(double yCoord){
-		return (int) (height-axisOffset+(2*axisOffset-height)*(yCoord-yMin)/(yMax-yMin));
+		return (int) (height-axisOffset + (2*axisOffset-height) *(yCoord-yMin)/(yMax-yMin));
 	}
 	
 	/**
