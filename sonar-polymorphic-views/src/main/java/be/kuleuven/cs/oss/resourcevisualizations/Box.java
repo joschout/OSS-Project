@@ -19,7 +19,7 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
  */
 public class Box implements ResourceVisualization{                     
 	
-	private static final int TEXT_OFFSET = 5;
+	private static final int TEXT_OFFSET = 2;
 	
 	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 	
