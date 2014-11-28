@@ -15,7 +15,7 @@ import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
 public class Java2DImplTest {
 
 	public static void main(String[] args){
-		testArrowRight2();
+		testDrawText();
 	}
 
 	public static void testBackground() {
@@ -58,6 +58,12 @@ public class Java2DImplTest {
 	public static void testDrawText() {
 		Java2DImpl impl = new Java2DImpl();
 		impl.createEmptyImage(400, 100);
+		
+		impl.drawText(
+				"Sweet baby Jesus", 
+				60, 60, 
+				0, 
+				255, 127, 0);
 		impl.drawText(
 				"Sweet baby Jesus", 
 				60, 60, 

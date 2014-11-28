@@ -123,11 +123,11 @@ public class Box implements ResourceVisualization{
 	
 	@Override
 	public void draw(IDraw d){
-		LOG.info("DRAWING BOX ON: " + p.getX() + " " + p.getY() + "COLOR: " + color.getRed() + " " + color.getGreen() + " " + color.getBlue());
-		//TODO zet overloading  ook in interface
-		d.drawBox(p.getX(), p.getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
-		LOG.info("DONE DRAWING BOX, DRAWING TEXT");
-		d.drawText(getName(), p.getX(), p.getY()+ getHeight()/2 + TEXT_OFFSET, 0, 0, 0, 0);
+
+		//TODO zet overloading ook in interface
+		d.drawBox((int)p.getX(), (int)p.getY(), (int)getWidth(), (int)getHeight(), color.getRed(), color.getGreen(), color.getBlue());
+		d.drawText(getName(), p.getX(), p.getY()- getHeight()/2 - TEXT_OFFSET, 0, 0, 0, 0);
+
 	}
 
 
