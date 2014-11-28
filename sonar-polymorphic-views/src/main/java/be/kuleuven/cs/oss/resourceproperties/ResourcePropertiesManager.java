@@ -8,9 +8,11 @@ import java.util.Map.Entry;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 /**
- * @author Milan
- *
  * 
+ * 
+ * 
+ * 
+ * @author Milan
  *
  */
 public class ResourcePropertiesManager {
