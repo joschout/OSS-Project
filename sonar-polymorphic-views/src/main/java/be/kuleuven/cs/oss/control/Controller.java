@@ -12,6 +12,7 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
+import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
@@ -40,7 +41,7 @@ public class Controller {
 
 	private static final String DEFAULT_RESOURCE_TYPE = "classes";
 	private static final String DEFAULT_CHART_TYPE = "scatter";
-	private static final List<Integer> DEFAULT_SIZE = Arrays.asList(800,600);
+	private static final Size DEFAULT_SIZE = new Size(800,600);
 		
 	
 	public Controller(ChartParameters p, SonarFacade sf) throws Exception{
@@ -68,7 +69,7 @@ public class Controller {
 	 * Create a new visualization factory (currently, only boxes are supported)
 	 * @return a new visualization factory
 	 */
-	public ResourceVisualizationFactory createRVFactory(){
+	private ResourceVisualizationFactory createRVFactory(){
 		LOG.info("create RVF");
 		return new BoxFactory();
 	}
@@ -77,7 +78,7 @@ public class Controller {
 	 * Create a new line factory (currently, only straight lines are supported)
 	 * @return a new line factory
 	 */
-	public LineFactory createLineFactory(){
+	private LineFactory createLineFactory(){
 		LOG.info("create LF");
 		return new StraightLineFactory();
 	}
@@ -140,13 +141,13 @@ public class Controller {
 	 * @return a list containing both dimensions of the size
 	 * @throws Exception if the size cannot be found
 	 */
-	private List<Integer> retrieveSize() throws Exception{
+	private Size retrieveSize() throws Exception{
 		try{
 			String size = retrieveValue("size");
 			return parseSize(size);
 		}
 		catch(Exception e){
-			LOG.info("retrieve size failed, set to default ("+DEFAULT_SIZE.get(0)+"x"+DEFAULT_SIZE.get(1));
+			LOG.info("retrieve size failed, set to default ("+DEFAULT_SIZE.getWidth()+"x"+DEFAULT_SIZE.getHeight()+")");
 			return DEFAULT_SIZE;
 		}
 	}
@@ -157,10 +158,11 @@ public class Controller {
 	 * @return a list containing both dimensions of the size
 	 * @throws Exception if the size cannot be parsed
 	 */
-	private List<Integer> parseSize(String s) throws Exception{
+	private Size parseSize(String s) throws Exception{
 		try{
 			List<String> split = Arrays.asList(s.split("x"));
-			return parseStringsToInts(split);
+			List<Integer> ints = parseStringsToInts(split);
+			return new Size(ints.get(0),ints.get(1));
 		}
 		catch(Exception e){
 			LOG.info("parse size failed");
@@ -311,13 +313,13 @@ public class Controller {
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValue(String key) throws Exception{
-		try{
-			return this.rawParams.getValue(key);
-		}
-		catch(Exception e){
+
+		String result = this.rawParams.getValue(key);
+		if(result == ""){
 			LOG.info("retrieve value failed");
 			throw new Exception("value not retrieved");
 		}
+		return result;
 	}
 	
 	/**
@@ -326,13 +328,12 @@ public class Controller {
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValueWithDefault(String key, String def) throws Exception{
-		try{
-			return this.rawParams.getValue(key, def, false);
-		}
-		catch(Exception e){
+		String result = this.rawParams.getValue(key, def, false);
+		if(result == ""){
 			LOG.info("retrieve value with default failed");
 			throw new Exception("value with default not retrieved");
 		}
+		return result;
 	}
 	
 	private void createExtraResourcePropertiesForScatter(){
@@ -383,8 +384,8 @@ public class Controller {
 					throw new Exception("Invalid scatterplot parameters");
 				}
 				createExtraResourcePropertiesForScatter();
-				List<Integer> size = retrieveSize();
-				return new ScatterPlot(resources, rvf, sf, rpm, size.get(0), size.get(1));
+				Size size = retrieveSize();
+				return new ScatterPlot(resources, rvf, sf, rpm, size.getWidth(), size.getHeight());
 			case "syscomp": 
 				if(!isValidSyscomp()){
 					LOG.info("invalid syscomp params");

@@ -5,7 +5,12 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
+import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 /**
  * 
@@ -19,7 +24,7 @@ public class ResourcePropertiesManager {
 
 	
 	private Map<String, ResourceProperty> properties;
-
+	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 	/**
 	 * 
 	 */
@@ -42,20 +47,18 @@ public class ResourcePropertiesManager {
 	 * @return
 	 */
 	public HashMap<String, Double> getPropertyValues(Resource resource) {
+		LOG.info("RPM MAP: " + properties.toString());
+		
 		HashMap<String, Double> toReturn = new HashMap<String, Double>();
-
-		Iterator<Entry<String, ResourceProperty>> it = properties.entrySet().iterator();
-		while (it.hasNext()) {
-			Entry<String, ResourceProperty> pairs = it.next();
+		for(Map.Entry<String, ResourceProperty> entry : properties.entrySet()){
 			
-			String name = pairs.getKey();
-			ResourceProperty resourceProperty = pairs.getValue();
+			String name = entry.getKey();
+			LOG.info("NAME " +name);
+			ResourceProperty resourceProperty = entry.getValue();
 			
 			double value = resourceProperty.getValue(resource);
-			
+			LOG.info("VALUE " + Double.toString(value));
 			toReturn.put(name, value);
-			
-			it.remove(); // avoids a ConcurrentModificationException
 		}
 
 		return toReturn;

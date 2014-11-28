@@ -1,507 +1,131 @@
-STATUS | wrapper  | 2014/11/27 23:24:32 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/27 23:24:32 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/27 23:24:32 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/27 23:24:32 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/27 23:24:32 | 
-INFO   | jvm 1    | 2014/11/27 23:24:33 | 2014-11-27 23:24:33.222:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.27 23:24:38 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:39 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:24:39 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\data
-2014.11.27 23:24:39 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
-2014.11.27 23:24:39 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:24:40 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4
-2014.11.27 23:24:40 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy
-2014.11.27 23:24:40 INFO  org.sonar.INFO  Install plugins...
-2014.11.27 23:24:40 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:40 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:40 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:40 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:24:41 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:24:41 INFO  org.sonar.INFO  Install plugins done: 1472 ms
-2014.11.27 23:24:41 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.27 23:24:41 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
-2014.11.27 23:24:41 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/27 23:24:46 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/27 23:24:46 | gem install jruby-openssl for full support.
-2014.11.27 23:24:52 INFO  o.s.s.d.m.DatabaseMigrator  Create database
-2014.11.27 23:24:52 INFO  org.sonar.INFO  Start components...
-2014.11.27 23:24:52 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.27 23:24:53 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.27 23:24:53 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.27 23:24:53 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.27 23:24:53 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:24:54 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:24:54 INFO  org.sonar.INFO  Deploy GWT plugins done: 828 ms
-2014.11.27 23:24:54 INFO  org.sonar.INFO  Load metrics...
-2014.11.27 23:24:55 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Load metrics done: 724 ms
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [pmd/java] done: 447 ms
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 22 ms
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [squid/java] done: 124 ms
-2014.11.27 23:24:55 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.27 23:24:57 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 1099 ms
-2014.11.27 23:24:57 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.27 23:24:57 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 645 ms
-2014.11.27 23:24:57 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.27 23:24:57 INFO  org.sonar.INFO  Register rules [common-java/java] done: 5 ms
-2014.11.27 23:24:57 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.27 23:24:57 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.27 23:24:58 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way
-2014.11.27 23:24:58 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way with Findbugs
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewProfiles  Set default java profile: Sonar way
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1308 ms
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: Projects
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: My favourites
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 18 ms
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Dashboard
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Home
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Hotspots
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Issues
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: TimeMachine
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 80 ms
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterPermissionTemplates  Set default permission template: default_template
-2014.11.27 23:24:59 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 18 ms
-2014.11.27 23:24:59 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.27 23:24:59 INFO  org.sonar.INFO  Start components done: 6980 ms
-INFO   | jvm 1    | 2014/11/27 23:24:59 | 2014-11-27 23:24:59.635:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/getting-started-sandbox/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/getting-started-sandbox/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/27 23:24:59 | 2014-11-27 23:24:59.888:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
-STATUS | wrapper  | 2014/11/27 23:31:25 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/27 23:31:26 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/27 23:31:26 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/27 23:31:26 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/27 23:31:26 | 
-INFO   | jvm 1    | 2014/11/27 23:31:26 | 2014-11-27 23:31:26.383:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.27 23:31:27 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:31:30 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:31:30 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\data
-2014.11.27 23:31:30 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
-2014.11.27 23:31:30 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:31:31 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4
-2014.11.27 23:31:31 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy
-2014.11.27 23:31:31 INFO  org.sonar.INFO  Install plugins...
-2014.11.27 23:31:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-STATUS | wrapper  | 2014/11/27 23:48:02 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/27 23:48:02 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/27 23:48:02 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/27 23:48:02 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/27 23:48:02 | 
-INFO   | jvm 1    | 2014/11/27 23:48:03 | 2014-11-27 23:48:03.153:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.27 23:48:04 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:07 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:48:07 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\data
-2014.11.27 23:48:07 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
-2014.11.27 23:48:07 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:48:07 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4
-2014.11.27 23:48:07 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy
-2014.11.27 23:48:07 INFO  org.sonar.INFO  Install plugins...
-2014.11.27 23:48:07 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:48:08 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:48:08 INFO  org.sonar.INFO  Install plugins done: 491 ms
-2014.11.27 23:48:08 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.27 23:48:08 INFO  org.sonar.INFO  Start components...
-2014.11.27 23:48:08 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.27 23:48:09 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.27 23:48:09 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.27 23:48:09 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.27 23:48:09 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:48:09 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\getting-started-sandbox\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Deploy GWT plugins done: 670 ms
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Load metrics...
-2014.11.27 23:48:10 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Load metrics done: 242 ms
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Register rules [pmd/java] done: 365 ms
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 8 ms
-2014.11.27 23:48:10 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [squid/java] done: 73 ms
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 635 ms
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 333 ms
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.27 23:48:11 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
-2014.11.27 23:48:11 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.27 23:48:12 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 865 ms
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 5 ms
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 8 ms
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.27 23:48:13 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
-2014.11.27 23:48:13 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.27 23:48:13 INFO  org.sonar.INFO  Start components done: 4696 ms
-2014.11.27 23:48:13 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
-2014.11.27 23:48:13 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/27 23:48:16 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/27 23:48:16 | gem install jruby-openssl for full support.
-INFO   | jvm 1    | 2014/11/27 23:48:21 | 2014-11-27 23:48:21.070:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/getting-started-sandbox/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/getting-started-sandbox/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/27 23:48:21 | 2014-11-27 23:48:21.175:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
-STATUS | wrapper  | 2014/11/27 23:49:13 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/27 23:49:13 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/27 23:49:13 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/27 23:49:13 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/27 23:49:13 | 
-INFO   | jvm 1    | 2014/11/27 23:49:13 | 2014-11-27 23:49:13.933:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.27 23:49:16 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:18 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:49:18 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\data
-2014.11.27 23:49:18 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
-2014.11.27 23:49:18 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:49:19 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
-2014.11.27 23:49:19 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
-2014.11.27 23:49:19 INFO  org.sonar.INFO  Install plugins...
-2014.11.27 23:49:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:49:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:49:20 INFO  org.sonar.INFO  Install plugins done: 568 ms
-2014.11.27 23:49:20 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.27 23:49:20 INFO  org.sonar.INFO  Start components...
-2014.11.27 23:49:20 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.27 23:49:21 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.27 23:49:21 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.27 23:49:21 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.27 23:49:21 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:49:21 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Deploy GWT plugins done: 602 ms
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Load metrics...
-2014.11.27 23:49:22 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Load metrics done: 231 ms
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [pmd/java] done: 317 ms
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 9 ms
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [squid/java] done: 72 ms
-2014.11.27 23:49:22 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.27 23:49:23 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 598 ms
-2014.11.27 23:49:23 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.27 23:49:23 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 364 ms
-2014.11.27 23:49:23 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.27 23:49:23 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
-2014.11.27 23:49:23 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.27 23:49:24 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.27 23:49:24 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 812 ms
-2014.11.27 23:49:24 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.27 23:49:24 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
-2014.11.27 23:49:25 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.27 23:49:25 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
-2014.11.27 23:49:25 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.27 23:49:25 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 12 ms
-2014.11.27 23:49:25 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.27 23:49:25 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
-2014.11.27 23:49:25 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.27 23:49:25 INFO  org.sonar.INFO  Start components done: 4705 ms
-2014.11.27 23:49:25 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
-2014.11.27 23:49:25 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/27 23:49:30 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/27 23:49:30 | gem install jruby-openssl for full support.
-INFO   | jvm 1    | 2014/11/27 23:49:38 | 2014-11-27 23:49:38.852:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/27 23:49:39 | 2014-11-27 23:49:39.083:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
-STATUS | wrapper  | 2014/11/27 23:50:20 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/27 23:50:21 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/27 23:50:21 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/27 23:50:21 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/27 23:50:21 | 
-INFO   | jvm 1    | 2014/11/27 23:50:21 | 2014-11-27 23:50:21.402:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.27 23:50:22 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:25 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:50:25 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\data
-2014.11.27 23:50:25 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
-2014.11.27 23:50:25 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:50:26 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
-2014.11.27 23:50:26 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
-2014.11.27 23:50:26 INFO  org.sonar.INFO  Install plugins...
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:50:26 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:50:26 INFO  org.sonar.INFO  Install plugins done: 553 ms
-2014.11.27 23:50:26 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.27 23:50:26 INFO  org.sonar.INFO  Start components...
-2014.11.27 23:50:26 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.27 23:50:27 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.27 23:50:27 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.27 23:50:27 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.27 23:50:27 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:50:28 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:50:28 INFO  org.sonar.INFO  Deploy GWT plugins done: 729 ms
-2014.11.27 23:50:28 INFO  org.sonar.INFO  Load metrics...
-2014.11.27 23:50:28 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.27 23:50:28 INFO  org.sonar.INFO  Load metrics done: 242 ms
-2014.11.27 23:50:28 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.27 23:50:29 INFO  org.sonar.INFO  Register rules [pmd/java] done: 374 ms
-2014.11.27 23:50:29 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.27 23:50:29 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 10 ms
-2014.11.27 23:50:29 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.27 23:50:29 INFO  org.sonar.INFO  Register rules [squid/java] done: 76 ms
-2014.11.27 23:50:29 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.27 23:50:30 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 603 ms
-2014.11.27 23:50:30 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.27 23:50:30 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 362 ms
-2014.11.27 23:50:30 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.27 23:50:30 INFO  org.sonar.INFO  Register rules [common-java/java] done: 1 ms
-2014.11.27 23:50:30 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.27 23:50:30 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 770 ms
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 2 ms
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 8 ms
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.27 23:50:31 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
-2014.11.27 23:50:31 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.27 23:50:31 INFO  org.sonar.INFO  Start components done: 4629 ms
-2014.11.27 23:50:31 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
-2014.11.27 23:50:31 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/27 23:50:34 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/27 23:50:34 | gem install jruby-openssl for full support.
-INFO   | jvm 1    | 2014/11/27 23:50:39 | 2014-11-27 23:50:39.241:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/27 23:50:39 | 2014-11-27 23:50:39.370:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
-2014.11.27 23:51:02 ERROR o.s.s.ui.JRubyFacade  Fail to render: http://localhost:9000/dashboard/configure?did=5
-undefined method `map' for nil:NilClass
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/dashboard_controller.rb:213:in `load_widget_definitions'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/app/controllers/dashboard_controller.rb:46:in `configure'
-	org/jruby/RubyKernel.java:2105:in `send'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:1333:in `perform_action'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:617:in `call_filters'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/benchmark.rb:308:in `realtime'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/core_ext/benchmark.rb:17:in `ms'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/flash.rb:151:in `perform_action_with_flash'
-	org/jruby/RubyKernel.java:2105:in `send'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:532:in `process'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/filters.rb:606:in `process_with_filters'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:391:in `process'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/base.rb:386:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/routing/route_set.rb:438:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:87:in `dispatch'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:121:in `_call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
-	org/jruby/RubyProc.java:270:in `call'
-	org/jruby/RubyProc.java:220:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:29:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:9:in `cache'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/query_cache.rb:28:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/string_coercion.rb:25:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/params_parser.rb:15:in `call'
-	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/session_store.rb:70:in `context'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/rack-1.1.3/lib/rack/session/abstract/id.rb:58:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/failsafe.rb:26:in `call'
-	C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/actionpack-2.3.15/lib/action_controller/dispatcher.rb:106:in `call'
-	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:34:in `serve_rails'
-	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
-	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
-
-STATUS | wrapper  | 2014/11/27 23:58:13 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/27 23:58:14 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/27 23:58:16 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/27 23:58:16 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/27 23:58:16 | 
-INFO   | jvm 1    | 2014/11/27 23:58:16 | 2014-11-27 23:58:16.786:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.27 23:58:18 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:21 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:58:21 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\data
-2014.11.27 23:58:21 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
-2014.11.27 23:58:21 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
-2014.11.27 23:58:23 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
-2014.11.27 23:58:23 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
-2014.11.27 23:58:23 INFO  org.sonar.INFO  Install plugins...
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.27 23:58:23 INFO  org.sonar.INFO  Install plugins done: 608 ms
-2014.11.27 23:58:23 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.27 23:58:24 INFO  org.sonar.INFO  Start components...
-2014.11.27 23:58:24 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.27 23:58:25 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.27 23:58:25 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.27 23:58:25 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.27 23:58:25 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:58:25 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.27 23:58:25 INFO  org.sonar.INFO  Deploy GWT plugins done: 615 ms
-2014.11.27 23:58:25 INFO  org.sonar.INFO  Load metrics...
-2014.11.27 23:58:26 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.27 23:58:26 INFO  org.sonar.INFO  Load metrics done: 248 ms
-2014.11.27 23:58:26 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.27 23:58:26 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 540 ms
-2014.11.27 23:58:26 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 265 ms
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [pmd/java] done: 415 ms
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 18 ms
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [squid/java] done: 109 ms
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.27 23:58:27 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
-2014.11.27 23:58:27 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.27 23:58:27 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.27 23:58:28 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1078 ms
-2014.11.27 23:58:28 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.27 23:58:28 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
-2014.11.27 23:58:29 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.27 23:58:29 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
-2014.11.27 23:58:29 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.27 23:58:29 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 9 ms
-2014.11.27 23:58:29 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.27 23:58:29 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
-2014.11.27 23:58:29 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.27 23:58:29 INFO  org.sonar.INFO  Start components done: 5166 ms
-2014.11.27 23:58:29 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_60) [Windows 8.1-amd64-java]
-2014.11.27 23:58:29 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/27 23:58:33 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/27 23:58:33 | gem install jruby-openssl for full support.
-INFO   | jvm 1    | 2014/11/27 23:58:37 | 2014-11-27 23:58:37.569:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/27 23:58:37 | 2014-11-27 23:58:37.646:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
-STATUS | wrapper  | 2014/11/28 00:07:10 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/28 00:07:11 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/28 00:07:11 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/28 00:07:11 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/28 00:07:11 | 
-INFO   | jvm 1    | 2014/11/28 00:07:11 | 2014-11-28 00:07:11.699:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.28 00:07:13 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:13 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
-2014.11.28 00:07:14 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
-2014.11.28 00:07:14 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
-2014.11.28 00:07:14 INFO  org.sonar.INFO  Install plugins...
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:14 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:15 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:07:15 INFO  org.sonar.INFO  Install plugins done: 785 ms
-2014.11.28 00:07:15 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.28 00:07:15 INFO  org.sonar.INFO  Start components...
-2014.11.28 00:07:15 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.28 00:07:16 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.28 00:07:16 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.28 00:07:16 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.28 00:07:16 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.28 00:07:17 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.28 00:07:17 INFO  org.sonar.INFO  Deploy GWT plugins done: 574 ms
-2014.11.28 00:07:17 INFO  org.sonar.INFO  Load metrics...
-2014.11.28 00:07:17 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.28 00:07:17 INFO  org.sonar.INFO  Load metrics done: 297 ms
-2014.11.28 00:07:17 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 327 ms
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 277 ms
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [pmd/java] done: 461 ms
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 18 ms
-2014.11.28 00:07:18 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.28 00:07:19 INFO  org.sonar.INFO  Register rules [squid/java] done: 111 ms
-2014.11.28 00:07:19 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.28 00:07:19 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
-2014.11.28 00:07:19 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.28 00:07:19 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1018 ms
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 2 ms
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 9 ms
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.28 00:07:20 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
-2014.11.28 00:07:20 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.28 00:07:20 INFO  org.sonar.INFO  Start components done: 5152 ms
-2014.11.28 00:07:20 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_60) [Windows 8.1-amd64-java]
-2014.11.28 00:07:20 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/28 00:07:24 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/28 00:07:24 | gem install jruby-openssl for full support.
-INFO   | jvm 1    | 2014/11/28 00:07:29 | 2014-11-28 00:07:29.385:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/28 00:07:29 | 2014-11-28 00:07:29.436:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
-2014.11.28 00:08:23 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
-2014.11.28 00:08:23 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+STATUS | wrapper  | 2014/11/28 02:21:17 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/28 02:21:17 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/28 02:21:17 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/28 02:21:17 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/28 02:21:17 | 
+INFO   | jvm 1    | 2014/11/28 02:21:17 | 2014-11-28 02:21:17.733:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.28 02:21:19 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:19 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.28 02:21:20 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.11.28 02:21:20 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.11.28 02:21:20 INFO  org.sonar.INFO  Install plugins...
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:21:20 INFO  org.sonar.INFO  Install plugins done: 573 ms
+2014.11.28 02:21:20 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.28 02:21:20 INFO  org.sonar.INFO  Start components...
+2014.11.28 02:21:20 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.28 02:21:22 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.28 02:21:22 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.28 02:21:22 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.28 02:21:22 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.28 02:21:22 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.28 02:21:22 INFO  org.sonar.INFO  Deploy GWT plugins done: 588 ms
+2014.11.28 02:21:22 INFO  org.sonar.INFO  Load metrics...
+2014.11.28 02:21:23 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.28 02:21:23 INFO  org.sonar.INFO  Load metrics done: 279 ms
+2014.11.28 02:21:23 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.28 02:21:23 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 324 ms
+2014.11.28 02:21:23 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.28 02:21:23 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 261 ms
+2014.11.28 02:21:23 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [pmd/java] done: 417 ms
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 17 ms
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [squid/java] done: 110 ms
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.28 02:21:24 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
+2014.11.28 02:21:24 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.28 02:21:24 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1011 ms
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 2 ms
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 9 ms
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.28 02:21:25 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.11.28 02:21:25 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.28 02:21:25 INFO  org.sonar.INFO  Start components done: 5021 ms
+2014.11.28 02:21:26 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_60) [Windows 8.1-amd64-java]
+2014.11.28 02:21:26 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/28 02:21:29 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/28 02:21:29 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/28 02:21:33 | 2014-11-28 02:21:33.220:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/28 02:21:33 | 2014-11-28 02:21:33.258:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
+2014.11.28 02:21:44 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.28 02:21:44 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
+2014.11.28 02:21:44 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.28 02:21:44 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create common RPs
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create common RPs
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of color not given to rpm
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create extra RPs for scatter
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  parse size failed
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve size failed, set to default (800x600
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  ScatterPlot constructed
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  In draw method in ScatterPlot
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of color not given to rpm
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create extra RPs for scatter
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  empty frame made
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Axes drawn on frame
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  defaultRVSizes set
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Starting creation of RVs
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  [WSResource[id: 74, key: java:chess:jchess.core.Chessboard, qualifier: CLA], WSResource[id: 75, key: java:chess:jchess.core.Clock, qualifier: CLA], WSResource[id: 76, key: java:chess:jchess.core.Colors, qualifier: CLA], WSResource[id: 77, key: java:chess:jchess.core.Game, qualifier: CLA], WSResource[id: 78, key: java:chess:jchess.core.GameClock, qualifier: CLA], WSResource[id: 80, key: java:chess:jchess.core.moves.Castling, qualifier: CLA], WSResource[id: 81, key: java:chess:jchess.core.moves.Move, qualifier: CLA], WSResource[id: 82, key: java:chess:jchess.core.moves.Moves, qualifier: CLA], WSResource[id: 84, key: java:chess:jchess.core.pieces.implementation.Bishop, qualifier: CLA], WSResource[id: 85, key: java:chess:jchess.core.pieces.implementation.King, qualifier: CLA], WSResource[id: 86, key: java:chess:jchess.core.pieces.implementation.Knight, qualifier: CLA], WSResource[id: 87, key: java:chess:jchess.core.pieces.implementation.Pawn, qualifier: CLA], WSResource[id: 88, key: java:chess:jchess.core.pieces.implementation.Queen, qualifier: CLA], WSResource[id: 89, key: java:chess:jchess.core.pieces.implementation.Rook, qualifier: CLA], WSResource[id: 91, key: java:chess:jchess.core.pieces.Piece, qualifier: CLA], WSResource[id: 93, key: java:chess:jchess.core.pieces.traits.behaviors.Behavior, qualifier: CLA], WSResource[id: 95, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.BishopBehavior, qualifier: CLA], WSResource[id: 96, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KingBehavior, qualifier: CLA], WSResource[id: 97, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KnightBehavior, qualifier: CLA], WSResource[id: 98, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.LongRangePieceBehavior, qualifier: CLA], WSResource[id: 99, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.PawnBehavior, qualifier: CLA], WSResource[id: 100, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.RookBehavior, qualifier: CLA], WSResource[id: 101, key: java:chess:jchess.core.Player, qualifier: CLA], WSResource[id: 102, key: java:chess:jchess.core.Square, qualifier: CLA], WSResource[id: 104, key: java:chess:jchess.display.panels.LocalSettingsView, qualifier: CLA], WSResource[id: 106, key: java:chess:jchess.display.views.chessboard.ChessboardMouseView, qualifier: CLA], WSResource[id: 107, key: java:chess:jchess.display.views.chessboard.ChessboardView, qualifier: CLA], WSResource[id: 109, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Chessboard2D, qualifier: CLA], WSResource[id: 110, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Pieces2D, qualifier: CLA], WSResource[id: 112, key: java:chess:jchess.display.windows.DrawLocalSettings, qualifier: CLA], WSResource[id: 113, key: java:chess:jchess.display.windows.DrawNetworkSettings, qualifier: CLA], WSResource[id: 114, key: java:chess:jchess.display.windows.JChessAboutBox, qualifier: CLA], WSResource[id: 115, key: java:chess:jchess.display.windows.JChessTabbedPane, qualifier: CLA], WSResource[id: 116, key: java:chess:jchess.display.windows.PawnPromotionWindow, qualifier: CLA], WSResource[id: 117, key: java:chess:jchess.display.windows.ThemeChooseWindow, qualifier: CLA], WSResource[id: 119, key: java:chess:jchess.JChessApp, qualifier: CLA], WSResource[id: 120, key: java:chess:jchess.JChessView, qualifier: CLA], WSResource[id: 122, key: java:chess:jchess.network.Chat, qualifier: CLA], WSResource[id: 123, key: java:chess:jchess.network.Client, qualifier: CLA], WSResource[id: 124, key: java:chess:jchess.network.Server, qualifier: CLA], WSResource[id: 125, key: java:chess:jchess.NewGameWindow, qualifier: CLA], WSResource[id: 127, key: java:chess:jchess.server.Connection_info, qualifier: CLA], WSResource[id: 128, key: java:chess:jchess.server.Console, qualifier: CLA], WSResource[id: 129, key: java:chess:jchess.server.SClient, qualifier: CLA], WSResource[id: 130, key: java:chess:jchess.server.Server, qualifier: CLA], WSResource[id: 131, key: java:chess:jchess.server.Table, qualifier: CLA], WSResource[id: 133, key: java:chess:jchess.utils.GUI, qualifier: CLA], WSResource[id: 134, key: java:chess:jchess.utils.MD5, qualifier: CLA], WSResource[id: 135, key: java:chess:jchess.utils.Settings, qualifier: CLA]]
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RPM MAP: {boxwidth=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@287d7953, boxheight=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@45a84ce9, ymetric=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@2c5178b9, xmetric=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@18ccd06a}
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME boxwidth
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@287d7953
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  parse size failed
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve size failed, set to default (800x600
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  ScatterPlot constructed
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  In draw method in ScatterPlot
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  empty frame made
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Axes drawn on frame
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  defaultRVSizes set
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Starting creation of RVs
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  [WSResource[id: 74, key: java:chess:jchess.core.Chessboard, qualifier: CLA], WSResource[id: 75, key: java:chess:jchess.core.Clock, qualifier: CLA], WSResource[id: 76, key: java:chess:jchess.core.Colors, qualifier: CLA], WSResource[id: 77, key: java:chess:jchess.core.Game, qualifier: CLA], WSResource[id: 78, key: java:chess:jchess.core.GameClock, qualifier: CLA], WSResource[id: 80, key: java:chess:jchess.core.moves.Castling, qualifier: CLA], WSResource[id: 81, key: java:chess:jchess.core.moves.Move, qualifier: CLA], WSResource[id: 82, key: java:chess:jchess.core.moves.Moves, qualifier: CLA], WSResource[id: 84, key: java:chess:jchess.core.pieces.implementation.Bishop, qualifier: CLA], WSResource[id: 85, key: java:chess:jchess.core.pieces.implementation.King, qualifier: CLA], WSResource[id: 86, key: java:chess:jchess.core.pieces.implementation.Knight, qualifier: CLA], WSResource[id: 87, key: java:chess:jchess.core.pieces.implementation.Pawn, qualifier: CLA], WSResource[id: 88, key: java:chess:jchess.core.pieces.implementation.Queen, qualifier: CLA], WSResource[id: 89, key: java:chess:jchess.core.pieces.implementation.Rook, qualifier: CLA], WSResource[id: 91, key: java:chess:jchess.core.pieces.Piece, qualifier: CLA], WSResource[id: 93, key: java:chess:jchess.core.pieces.traits.behaviors.Behavior, qualifier: CLA], WSResource[id: 95, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.BishopBehavior, qualifier: CLA], WSResource[id: 96, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KingBehavior, qualifier: CLA], WSResource[id: 97, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KnightBehavior, qualifier: CLA], WSResource[id: 98, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.LongRangePieceBehavior, qualifier: CLA], WSResource[id: 99, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.PawnBehavior, qualifier: CLA], WSResource[id: 100, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.RookBehavior, qualifier: CLA], WSResource[id: 101, key: java:chess:jchess.core.Player, qualifier: CLA], WSResource[id: 102, key: java:chess:jchess.core.Square, qualifier: CLA], WSResource[id: 104, key: java:chess:jchess.display.panels.LocalSettingsView, qualifier: CLA], WSResource[id: 106, key: java:chess:jchess.display.views.chessboard.ChessboardMouseView, qualifier: CLA], WSResource[id: 107, key: java:chess:jchess.display.views.chessboard.ChessboardView, qualifier: CLA], WSResource[id: 109, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Chessboard2D, qualifier: CLA], WSResource[id: 110, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Pieces2D, qualifier: CLA], WSResource[id: 112, key: java:chess:jchess.display.windows.DrawLocalSettings, qualifier: CLA], WSResource[id: 113, key: java:chess:jchess.display.windows.DrawNetworkSettings, qualifier: CLA], WSResource[id: 114, key: java:chess:jchess.display.windows.JChessAboutBox, qualifier: CLA], WSResource[id: 115, key: java:chess:jchess.display.windows.JChessTabbedPane, qualifier: CLA], WSResource[id: 116, key: java:chess:jchess.display.windows.PawnPromotionWindow, qualifier: CLA], WSResource[id: 117, key: java:chess:jchess.display.windows.ThemeChooseWindow, qualifier: CLA], WSResource[id: 119, key: java:chess:jchess.JChessApp, qualifier: CLA], WSResource[id: 120, key: java:chess:jchess.JChessView, qualifier: CLA], WSResource[id: 122, key: java:chess:jchess.network.Chat, qualifier: CLA], WSResource[id: 123, key: java:chess:jchess.network.Client, qualifier: CLA], WSResource[id: 124, key: java:chess:jchess.network.Server, qualifier: CLA], WSResource[id: 125, key: java:chess:jchess.NewGameWindow, qualifier: CLA], WSResource[id: 127, key: java:chess:jchess.server.Connection_info, qualifier: CLA], WSResource[id: 128, key: java:chess:jchess.server.Console, qualifier: CLA], WSResource[id: 129, key: java:chess:jchess.server.SClient, qualifier: CLA], WSResource[id: 130, key: java:chess:jchess.server.Server, qualifier: CLA], WSResource[id: 131, key: java:chess:jchess.server.Table, qualifier: CLA], WSResource[id: 133, key: java:chess:jchess.utils.GUI, qualifier: CLA], WSResource[id: 134, key: java:chess:jchess.utils.MD5, qualifier: CLA], WSResource[id: 135, key: java:chess:jchess.utils.Settings, qualifier: CLA]]
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RPM MAP: {boxwidth=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@185e9713, boxheight=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@6a106ce4, ymetric=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@5c5d2322, xmetric=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@66adbc8d}
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME boxwidth
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@185e9713
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME boxheight
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME boxheight
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@6a106ce4
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@45a84ce9
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME ymetric
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@2c5178b9
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME ymetric
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@5c5d2322
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 87.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME xmetric
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@18ccd06a
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 87.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME xmetric
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@66adbc8d
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {boxwidth=719.0, boxheight=719.0, ymetric=87.0, xmetric=719.0}
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@317dd0e8
+2014.11.28 02:21:45 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
 java.lang.IllegalArgumentException: Null 'image' argument.
 	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
 	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
@@ -549,8 +173,10 @@ java.lang.IllegalArgumentException: Null 'image' argument.
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
 	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
-2014.11.28 00:08:42 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
-2014.11.28 00:08:42 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {boxwidth=719.0, boxheight=719.0, ymetric=87.0, xmetric=719.0}
+2014.11.28 02:21:45 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@70a8927c
+2014.11.28 02:21:45 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
 java.lang.IllegalArgumentException: Null 'image' argument.
 	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
 	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
@@ -598,235 +224,107 @@ java.lang.IllegalArgumentException: Null 'image' argument.
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
 	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
-2014.11.28 00:12:55 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
-2014.11.28 00:12:55 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
-java.lang.IllegalArgumentException: Null 'image' argument.
-	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
-	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
-	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
-2014.11.28 00:44:47 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
-2014.11.28 00:44:48 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
-java.lang.IllegalArgumentException: Null 'image' argument.
-	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
-	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
-	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
-STATUS | wrapper  | 2014/11/28 00:45:25 | --> Wrapper Started as Console
-STATUS | wrapper  | 2014/11/28 00:45:25 | Launching a JVM...
-INFO   | jvm 1    | 2014/11/28 00:45:26 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
-INFO   | jvm 1    | 2014/11/28 00:45:26 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
-INFO   | jvm 1    | 2014/11/28 00:45:26 | 
-INFO   | jvm 1    | 2014/11/28 00:45:26 | 2014-11-28 00:45:26.268:INFO:oejs.Server:jetty-7.6.11.v20130520
-2014.11.28 00:45:27 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:27 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
-2014.11.28 00:45:28 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
-2014.11.28 00:45:28 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
-2014.11.28 00:45:28 INFO  org.sonar.INFO  Install plugins...
-2014.11.28 00:45:28 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
-2014.11.28 00:45:29 INFO  org.sonar.INFO  Install plugins done: 684 ms
-2014.11.28 00:45:29 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
-2014.11.28 00:45:29 INFO  org.sonar.INFO  Start components...
-2014.11.28 00:45:29 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
-2014.11.28 00:45:31 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
-2014.11.28 00:45:31 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
-2014.11.28 00:45:31 INFO  org.sonar.INFO  Deploy GWT plugins...
-2014.11.28 00:45:31 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.28 00:45:31 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
-2014.11.28 00:45:32 INFO  org.sonar.INFO  Deploy GWT plugins done: 709 ms
-2014.11.28 00:45:32 INFO  org.sonar.INFO  Load metrics...
-2014.11.28 00:45:32 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
-2014.11.28 00:45:32 INFO  org.sonar.INFO  Load metrics done: 307 ms
-2014.11.28 00:45:32 INFO  org.sonar.INFO  Register rules [findbugs/java]...
-2014.11.28 00:45:32 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 329 ms
-2014.11.28 00:45:32 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 273 ms
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [pmd/java]...
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [pmd/java] done: 410 ms
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 18 ms
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [squid/java]...
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [squid/java] done: 117 ms
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [common-java/java]...
-2014.11.28 00:45:33 INFO  org.sonar.INFO  Register rules [common-java/java] done: 3 ms
-2014.11.28 00:45:33 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
-2014.11.28 00:45:33 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
-2014.11.28 00:45:34 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1041 ms
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 2 ms
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 4 ms
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 21 ms
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
-2014.11.28 00:45:35 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
-2014.11.28 00:45:35 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
-2014.11.28 00:45:35 INFO  org.sonar.INFO  Start components done: 5676 ms
-2014.11.28 00:45:35 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_60) [Windows 8.1-amd64-java]
-2014.11.28 00:45:35 INFO  jruby.rack  using a shared (threadsafe!) runtime
-INFO   | jvm 1    | 2014/11/28 00:45:39 | JRuby limited openssl loaded. http://jruby.org/openssl
-INFO   | jvm 1    | 2014/11/28 00:45:39 | gem install jruby-openssl for full support.
-INFO   | jvm 1    | 2014/11/28 00:45:44 | 2014-11-28 00:45:44.614:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
-INFO   | jvm 1    | 2014/11/28 00:45:44 | 2014-11-28 00:45:44.695:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
-2014.11.28 00:45:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
-2014.11.28 00:45:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
-2014.11.28 00:45:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
-2014.11.28 00:45:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RP of color failed
-2014.11.28 00:45:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  common RP creation failed
-2014.11.28 00:45:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  chart creation failed
-2014.11.28 00:45:58 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
-java.lang.IllegalArgumentException: Null 'image' argument.
-	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
-	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
-	at org.sonar.server.charts.ChartsServlet.doGet(ChartsServlet.java:66) ~[classes/:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) [javax.servlet-2.5.0.v201103041518.jar:na]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820) [javax.servlet-2.5.0.v201103041518.jar:na]
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:652) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1320) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.jruby.rack.RackFilter.doFilterInternal(RackFilter.java:78) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.UnmappedRackFilter.isDoDispatch(UnmappedRackFilter.java:106) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.AbstractFilter.isDoDispatch(AbstractFilter.java:107) [jruby-rack-1.1.10.jar:na]
-	at org.jruby.rack.AbstractFilter.doFilter(AbstractFilter.java:65) [jruby-rack-1.1.10.jar:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.platform.MasterServletFilter.doFilter(MasterServletFilter.java:80) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.user.UserSessionFilter.doFilter(UserSessionFilter.java:40) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.sonar.server.ui.DatabaseSessionFilter.doFilter(DatabaseSessionFilter.java:36) [classes/:na]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:82) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:294) [jetty-servlets-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.continuation.ContinuationFilter.doFilter(ContinuationFilter.java:137) [jetty-continuation-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1291) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:443) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:556) [jetty-security-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:227) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1044) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:372) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:189) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:978) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.Server.handle(Server.java:369) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:486) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:933) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:995) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:668) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52) [jetty-io-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
-	at java.lang.Thread.run(Unknown Source) [na:1.7.0_60]
-2014.11.28 00:46:03 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
-2014.11.28 00:46:03 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
-2014.11.28 00:46:03 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
-2014.11.28 00:46:03 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RP of color failed
-2014.11.28 00:46:03 INFO  b.k.c.o.p.p.PolymorphicViewsChart  common RP creation failed
-2014.11.28 00:46:03 INFO  b.k.c.o.p.p.PolymorphicViewsChart  chart creation failed
-2014.11.28 00:46:03 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
+STATUS | wrapper  | 2014/11/28 02:30:27 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/28 02:30:27 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/28 02:30:28 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/28 02:30:28 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/28 02:30:28 | 
+INFO   | jvm 1    | 2014/11/28 02:30:28 | 2014-11-28 02:30:28.314:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.28 02:30:29 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:29 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.11.28 02:30:30 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.11.28 02:30:30 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.11.28 02:30:30 INFO  org.sonar.INFO  Install plugins...
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:30 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Polymorphic Views / 1.0-SNAPSHOT
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:31 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.28 02:30:31 INFO  org.sonar.INFO  Install plugins done: 473 ms
+2014.11.28 02:30:31 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.28 02:30:31 INFO  org.sonar.INFO  Start components...
+2014.11.28 02:30:31 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.28 02:30:32 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.28 02:30:32 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.28 02:30:32 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.28 02:30:32 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.28 02:30:33 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.11.28 02:30:33 INFO  org.sonar.INFO  Deploy GWT plugins done: 588 ms
+2014.11.28 02:30:33 INFO  org.sonar.INFO  Load metrics...
+2014.11.28 02:30:33 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.28 02:30:33 INFO  org.sonar.INFO  Load metrics done: 277 ms
+2014.11.28 02:30:33 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 317 ms
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 262 ms
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [pmd/java] done: 428 ms
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 17 ms
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [squid/java] done: 111 ms
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.28 02:30:34 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
+2014.11.28 02:30:34 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.28 02:30:35 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 995 ms
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 2 ms
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 9 ms
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.28 02:30:36 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.11.28 02:30:36 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.28 02:30:36 INFO  org.sonar.INFO  Start components done: 5077 ms
+2014.11.28 02:30:36 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.7.0_60) [Windows 8.1-amd64-java]
+2014.11.28 02:30:36 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/28 02:30:39 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/28 02:30:39 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/28 02:30:43 | 2014-11-28 02:30:43.567:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/11/28 02:30:43 | 2014-11-28 02:30:43.608:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
+2014.11.28 02:30:57 INFO  b.k.c.o.p.p.PolymorphicViewsChart  PolymorphicViewsChart generateImage() called!
+2014.11.28 02:30:57 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Constructor Controller called
+2014.11.28 02:30:57 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create RVF
+2014.11.28 02:30:57 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create common RPs
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RP of color not given to rpm
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  create extra RPs for scatter
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  parse size failed
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  retrieve size failed, set to default (800x600
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  ScatterPlot constructed
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  In draw method in ScatterPlot
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  empty frame made
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Axes drawn on frame
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  defaultRVSizes set
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  Starting creation of RVs
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  [WSResource[id: 74, key: java:chess:jchess.core.Chessboard, qualifier: CLA], WSResource[id: 75, key: java:chess:jchess.core.Clock, qualifier: CLA], WSResource[id: 76, key: java:chess:jchess.core.Colors, qualifier: CLA], WSResource[id: 77, key: java:chess:jchess.core.Game, qualifier: CLA], WSResource[id: 78, key: java:chess:jchess.core.GameClock, qualifier: CLA], WSResource[id: 80, key: java:chess:jchess.core.moves.Castling, qualifier: CLA], WSResource[id: 81, key: java:chess:jchess.core.moves.Move, qualifier: CLA], WSResource[id: 82, key: java:chess:jchess.core.moves.Moves, qualifier: CLA], WSResource[id: 84, key: java:chess:jchess.core.pieces.implementation.Bishop, qualifier: CLA], WSResource[id: 85, key: java:chess:jchess.core.pieces.implementation.King, qualifier: CLA], WSResource[id: 86, key: java:chess:jchess.core.pieces.implementation.Knight, qualifier: CLA], WSResource[id: 87, key: java:chess:jchess.core.pieces.implementation.Pawn, qualifier: CLA], WSResource[id: 88, key: java:chess:jchess.core.pieces.implementation.Queen, qualifier: CLA], WSResource[id: 89, key: java:chess:jchess.core.pieces.implementation.Rook, qualifier: CLA], WSResource[id: 91, key: java:chess:jchess.core.pieces.Piece, qualifier: CLA], WSResource[id: 93, key: java:chess:jchess.core.pieces.traits.behaviors.Behavior, qualifier: CLA], WSResource[id: 95, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.BishopBehavior, qualifier: CLA], WSResource[id: 96, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KingBehavior, qualifier: CLA], WSResource[id: 97, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.KnightBehavior, qualifier: CLA], WSResource[id: 98, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.LongRangePieceBehavior, qualifier: CLA], WSResource[id: 99, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.PawnBehavior, qualifier: CLA], WSResource[id: 100, key: java:chess:jchess.core.pieces.traits.behaviors.implementation.RookBehavior, qualifier: CLA], WSResource[id: 101, key: java:chess:jchess.core.Player, qualifier: CLA], WSResource[id: 102, key: java:chess:jchess.core.Square, qualifier: CLA], WSResource[id: 104, key: java:chess:jchess.display.panels.LocalSettingsView, qualifier: CLA], WSResource[id: 106, key: java:chess:jchess.display.views.chessboard.ChessboardMouseView, qualifier: CLA], WSResource[id: 107, key: java:chess:jchess.display.views.chessboard.ChessboardView, qualifier: CLA], WSResource[id: 109, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Chessboard2D, qualifier: CLA], WSResource[id: 110, key: java:chess:jchess.display.views.chessboard.implementation.graphic2D.Pieces2D, qualifier: CLA], WSResource[id: 112, key: java:chess:jchess.display.windows.DrawLocalSettings, qualifier: CLA], WSResource[id: 113, key: java:chess:jchess.display.windows.DrawNetworkSettings, qualifier: CLA], WSResource[id: 114, key: java:chess:jchess.display.windows.JChessAboutBox, qualifier: CLA], WSResource[id: 115, key: java:chess:jchess.display.windows.JChessTabbedPane, qualifier: CLA], WSResource[id: 116, key: java:chess:jchess.display.windows.PawnPromotionWindow, qualifier: CLA], WSResource[id: 117, key: java:chess:jchess.display.windows.ThemeChooseWindow, qualifier: CLA], WSResource[id: 119, key: java:chess:jchess.JChessApp, qualifier: CLA], WSResource[id: 120, key: java:chess:jchess.JChessView, qualifier: CLA], WSResource[id: 122, key: java:chess:jchess.network.Chat, qualifier: CLA], WSResource[id: 123, key: java:chess:jchess.network.Client, qualifier: CLA], WSResource[id: 124, key: java:chess:jchess.network.Server, qualifier: CLA], WSResource[id: 125, key: java:chess:jchess.NewGameWindow, qualifier: CLA], WSResource[id: 127, key: java:chess:jchess.server.Connection_info, qualifier: CLA], WSResource[id: 128, key: java:chess:jchess.server.Console, qualifier: CLA], WSResource[id: 129, key: java:chess:jchess.server.SClient, qualifier: CLA], WSResource[id: 130, key: java:chess:jchess.server.Server, qualifier: CLA], WSResource[id: 131, key: java:chess:jchess.server.Table, qualifier: CLA], WSResource[id: 133, key: java:chess:jchess.utils.GUI, qualifier: CLA], WSResource[id: 134, key: java:chess:jchess.utils.MD5, qualifier: CLA], WSResource[id: 135, key: java:chess:jchess.utils.Settings, qualifier: CLA]]
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RPM MAP: {boxwidth=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@580e703f, boxheight=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@1beb6543, ymetric=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@7b452006, xmetric=be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@7739a923}
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME boxwidth
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@580e703f
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME boxheight
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@1beb6543
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME ymetric
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@7b452006
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 87.0
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  NAME xmetric
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP RP be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty@7739a923
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  VALUE 719.0
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  MAP PROPERIES: {boxwidth=719.0, boxheight=719.0, ymetric=87.0, xmetric=719.0}
+2014.11.28 02:30:58 INFO  b.k.c.o.p.p.PolymorphicViewsChart  RV: be.kuleuven.cs.oss.resourcevisualizations.Box@63476f5f
+2014.11.28 02:30:58 ERROR o.s.s.c.ChartsServlet  Generating chart be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart
 java.lang.IllegalArgumentException: Null 'image' argument.
 	at org.jfree.chart.encoders.KeypointPNGEncoderAdapter.encode(KeypointPNGEncoderAdapter.java:132) ~[jfreechart-1.0.9.jar:na]
 	at org.sonar.server.charts.ChartsServlet.exportAsPNG(ChartsServlet.java:92) ~[classes/:na]
