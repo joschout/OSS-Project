@@ -392,7 +392,7 @@ public class Controller {
 					throw new Exception("Invalid system complexity parameters");
 				}
 				LineFactory lf = createLineFactory();
-				return new SystemComplexity(resources, rvf, sf, rpm,lf);
+				return new SystemComplexity(resources, rvf, sf, rpm, lf);
 			default:
 				throw new Exception();
 			}
