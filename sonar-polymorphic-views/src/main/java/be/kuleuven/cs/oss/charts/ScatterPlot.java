@@ -13,7 +13,6 @@ import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
-import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
@@ -63,10 +62,9 @@ public class ScatterPlot extends Chart{
 	public ScatterPlot(List<Resource> resources, 
 			ResourceVisualizationFactory rvf, 
 			SonarFacade sonarF, 
-			ResourcePropertiesManager propManager,
 			int width, int height) {
 		
-		super(resources, rvf, sonarF, propManager);
+		super(resources, rvf, sonarF);
 		
 		this.width=width;
 		this.height = height;
