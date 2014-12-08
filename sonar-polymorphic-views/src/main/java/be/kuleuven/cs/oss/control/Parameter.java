@@ -111,9 +111,29 @@ public enum Parameter {
 
 	private SonarFacade sf;
 
-	public Parameter forString(String input, SonarFacade sf) {
+	public Parameter forString(String input, SonarFacade sf) throws IllegalArgumentException {
 		this.sf = sf;
-		return null;
+
+		switch(input) {
+		case "parent":
+			return Parameter.PARENT;
+		case "classes":
+			return Parameter.CLASSES;
+		case "packages":
+			return Parameter.PACKAGES;
+		case "xmetric":
+			return Parameter.XMETRIC;
+		case "ymetric":
+			return Parameter.YMETRIC;
+		case "size":
+			return Parameter.SIZE;
+		case "boxcolor":
+			return Parameter.BOXCOLOR;
+		case "dimension":
+			return Parameter.DIMENSION;
+		default:
+			throw new IllegalArgumentException();
+		}
 	}
 	
 	public SonarFacade getSonarFacade() {
