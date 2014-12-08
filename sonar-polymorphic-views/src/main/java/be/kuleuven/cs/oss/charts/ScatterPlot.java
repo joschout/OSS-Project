@@ -27,6 +27,10 @@ public class ScatterPlot extends Chart{
 	private int width;
 	private int height;
 	
+	//ResourceProperties specific for this chart
+	private ResourceProperty xMetric;
+	private ResourceProperty yMetric;
+	
 	//global maxvalues over all resources
 	private int xMax;
 	private int yMax;
@@ -62,14 +66,21 @@ public class ScatterPlot extends Chart{
 	public ScatterPlot(List<Resource> resources, 
 			ResourceVisualizationFactory rvf, 
 			SonarFacade sonarF, 
-			int width, int height) {
+			int width, int height,
+			ResourceProperty xMetric, ResourceProperty yMetric) {
 		
 		super(resources, rvf, sonarF);
 		
 		this.width=width;
 		this.height = height;
+		
+		this.xMetric = xMetric;
+		this.yMetric = yMetric;
+		
 		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(width, height);
 		
+		
+		//Variables for scaling
 		this.xMax = 0;
 		this.yMax = 0;
 		this.widthMax = 0;
@@ -107,9 +118,6 @@ public class ScatterPlot extends Chart{
 		//2
 		drawAxises(getIDrawInstantiation());
 		LOG.info("Axes drawn on frame");
-		//3
-		setDefaultRVSizes();
-		LOG.info("defaultRVSizes set");
 		//4
 		createResourceVisualizations();
 		LOG.info("RVs created");
@@ -127,10 +135,8 @@ public class ScatterPlot extends Chart{
 	}
 
 	private void drawAxesLabels(IDraw d){
-		ResourceProperty xprop = propManager.getResourceProperty("xmetric");
-		String xname = xprop.getPropertyName();
-		ResourceProperty yprop = propManager.getResourceProperty("ymetric");
-		String yname = yprop.getPropertyName();
+		String xname = xMetric.getPropertyName();
+		String yname = yMetric.getPropertyName();
 		
 		d.drawText("" +xMax, (int)(width- axisOffset/2), (int)(height - axisOffset/2));
 		d.drawText(xname, (int)(axisOffset + width/2), (int)(height - axisOffset/2));
@@ -155,28 +161,18 @@ public class ScatterPlot extends Chart{
 					   (int)(height - 2*axisOffset));
 	}
 
-	/**
-	 * Before the resource visualizations are made, the default values for its dimensions are set.
-	 * Here we choose for the average of the minimum and maximum size for a resource visualisation.
-	 */
-	private void setDefaultRVSizes() { //Hacky code. Change requested. No casting wanted.
-		((BoxFactory)this.rvf).setDefaultHeight((int)((maxRVScalingFactor+minRVScalingFactor)/2*(height-2*axisOffset)));
-		((BoxFactory)this.rvf).setDefaultWidth((int)((maxRVScalingFactor+minRVScalingFactor)/2*(width-2*axisOffset)));
-	}
+
 
 	/**
-	 * Get the measures for the given metrics and put them in a resource visualisation.
-	 * If there are no metrics for a certain property of the resource visualisation, it gets the default value.
+	 * Creates the resourceVisualizations with the factory
+	 * This also sets the values for the x and y position
 	 */
 	private void createResourceVisualizations(){
-		LOG.info("Starting creation of RVs");
 		for(Resource resource: resources){
-			String name = resource.getName();
-			Map<String, Double> properties = super.getResourcePropertyValues(resource);
-			LOG.info("MAP PROPERIES: " + properties.toString());
-			ResourceVisualization rv = rvf.create(properties);
-			rv.setName(name);
-			LOG.info("RV: " + rv.toString());
+			ResourceVisualization rv = rvf.create(resource);
+			//These will be the values of the properties that govern the position of the box. To be rescaled!
+			Position metricsPosition = new Position(xMetric.getValue(resource).intValue(), yMetric.getValue(resource).intValue());
+			rv.setPosition(metricsPosition);
 			this.getResourceVisualizations().add(rv);
 		}
 	}
@@ -247,7 +243,6 @@ public class ScatterPlot extends Chart{
 	private void drawResourceVisualizations(){
 		for(ResourceVisualization rv: getResourceVisualizations()){
 			rv.draw(getIDrawInstantiation());
-			LOG.info("DREW ONE RV");
 		}
 	}
 
