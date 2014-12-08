@@ -7,7 +7,6 @@ import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
-import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -32,7 +31,6 @@ public abstract class Chart {
 	protected List<Resource> resources;
 	protected ResourceVisualizationFactory rvf;
 	protected SonarFacade sonarF;
-	protected ResourcePropertiesManager propManager;
 	protected IDraw iDrawImpl;
 	
 	
@@ -53,11 +51,10 @@ public abstract class Chart {
 	 * @param SonarFacade sonarF: a facade to the sonar database
 	 * @param ResourcePropertiesManager propManager: manages the properties of each resource
 	 */
-	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF, ResourcePropertiesManager propManager) {
+	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF) {
 		this.resources = resources;
 		this.rvf = rvf;
 		this.sonarF = sonarF;
-		this.propManager = propManager;
 		setIDrawInstantiation(new Java2DImpl());
 		this.rvs = new ArrayList<ResourceVisualization>();
 
@@ -116,17 +113,6 @@ public abstract class Chart {
 		this.rvf = rvf;
 	}
 
-	/**
-	 * 
-	 * gets the different values for each metric for a certain resource
-	 * 
-	 * @param Resource resource  
-	 * @return Map<String, Double> with the values for different metrics for a certain resource
-	 */
-	public Map<String, Double> getResourcePropertyValues(Resource resource){
-		return propManager.getPropertyValues(resource);
-	}
-	
 	
 	/**
 	 *  Returns an instantiation of the IDraw interface. This interface is used to actually draw the chart to an image.

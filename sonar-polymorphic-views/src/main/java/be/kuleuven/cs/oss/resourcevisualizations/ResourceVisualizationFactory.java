@@ -2,6 +2,8 @@ package be.kuleuven.cs.oss.resourcevisualizations;
 
 import java.util.Map;
 
+import be.kuleuven.cs.oss.sonarfacade.Resource;
+
 
 /**
  * ResourceVisualizationFactory is an interface which should be implemented by all classes, whose instantiations act as factories for a specific kind of ResourceVisualization objects.
@@ -23,6 +25,6 @@ public interface ResourceVisualizationFactory {
 	 * @param map: maps the names of resource properties for one specific resource to their values
 	 * @return the ResourceVisualization for one specific resource
 	 */
-	public ResourceVisualization create(Map<String,Double> map);
+	public ResourceVisualization create(Resource resource);
 
 }

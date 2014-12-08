@@ -25,7 +25,7 @@ public interface ResourceVisualization {
 	public int getWidth();
 	
 	public int getHeight();
-	
+
 	/**
 	 * Gets the Size of this RV
 	 * @return Width of the RV

@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import be.kuleuven.cs.oss.datautils.Connection;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
-import be.kuleuven.cs.oss.resourceproperties.ResourcePropertiesManager;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -23,7 +22,6 @@ public class TreeNodeRV {
 	
 	private ResourceVisualizationFactory rvf;
 	private TreeNode treeNode;
-	private ResourcePropertiesManager manager;
 
 	private ResourceVisualization rv = null;
 	private List<Connection> connections;
@@ -34,14 +32,14 @@ public class TreeNodeRV {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
 
-	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode, ResourcePropertiesManager manager) {
+	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode) {
 		this.rvf = rvf;
 		this.treeNode = treeNode;
-		this.manager = manager;
 		
 		makeRv();
 		LOG.info("MADE RV OF NODE");
 		createChildren();
+		LOG.info("CHILDREN: " + this.children.toString());
 		LOG.info("MADE CHILDREN");
 		createConnections();
 		LOG.info("MADE CONNECTIONS");
@@ -50,11 +48,13 @@ public class TreeNodeRV {
 
 	private void createChildren() {
 		TreeMap<String, TreeNode> children = treeNode.getChildren();
+		LOG.info("Children: " + children.toString());
 		
 		for(Map.Entry<String, TreeNode> entry : children.entrySet()) {
 			TreeNode treeNode = entry.getValue();
+			LOG.info(entry.getKey());
 
-			TreeNodeRV child = new TreeNodeRV(rvf, treeNode, manager);
+			TreeNodeRV child = new TreeNodeRV(rvf, treeNode);
 			child.setLevel(this.level++);
 			//maxRight = maxRight + child.getMaxRight() + OFFSET; // Hier moet geen maxRight ook nog eens bij denk ik
 			this.children.put(entry.getKey(), child); //Add the child to the internal children list
@@ -103,9 +103,7 @@ public class TreeNodeRV {
 	private void makeRv() {
 		if(!isRoot()){
 			Resource res = treeNode.getResource();
-			HashMap<String, Double> resPropertyValues = manager.getPropertyValues(res);
-			rv =  rvf.create(resPropertyValues);
-			rv.setName(res.getName());
+			rv =  rvf.create(res);
 		}
 	}
 	
