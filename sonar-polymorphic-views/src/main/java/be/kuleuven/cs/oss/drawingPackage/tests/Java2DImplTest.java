@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
+import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 
 public class Java2DImplTest {
 
@@ -19,14 +19,14 @@ public class Java2DImplTest {
 	}
 
 	public static void testBackground() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		BufferedImage bi = impl.getBufferedImage();
 		output(bi);
 	}
 	
 	public static void testDrawBox2() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawBox(
 				10, 10, //int xCoord, int yCoord
@@ -41,7 +41,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawCircle() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawCircle(
 				10, 10, //int xCoord, int yCoord
@@ -56,7 +56,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawText() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		
 		impl.drawText(
@@ -75,7 +75,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawStraightLine() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawStraightLine(10, 10, 50, 50, 255, 172, 0, 2);
 		BufferedImage bi = impl.getBufferedImage();
@@ -83,7 +83,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawTriangle() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawTriangle(
 				10, 10, //int x1, int y1,
@@ -99,7 +99,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testDrawTriangle2() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawTriangle(10, 10, 5, 20, 15, 20);
 		
@@ -108,7 +108,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testArrowUp() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawArrowUp(10, 60, 30);
 		
@@ -117,7 +117,7 @@ public class Java2DImplTest {
 	}
 	
 	public static void testArrowRight() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawArrowRight(20, 20, 30);
 		
@@ -128,7 +128,7 @@ public class Java2DImplTest {
 	
 	
 	public static void testArrowRight2() {
-		Java2DImpl impl = new Java2DImpl();
+		Java2DFacade impl = new Java2DFacade();
 		impl.createEmptyImage(400, 100);
 		impl.drawArrowRight(0,0, 30);
 		

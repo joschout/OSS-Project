@@ -38,9 +38,9 @@ public class SystemComplexity extends Chart {
 		LOG.info("Started making a Tree in SysCom");
 		List<Resource> parentResources = new ArrayList<Resource>();
 		
-		for(Resource resource: resources) {
+		for(Resource resource: getResources()) {
 			boolean parentResource = true;
-			List<Dependency> dependencies = sonarF.findIncomingDependencies(resource);
+			List<Dependency> dependencies = getSonarFacade().findIncomingDependencies(resource);
 			
 			for(Dependency dependency: dependencies) {
 				
@@ -55,7 +55,7 @@ public class SystemComplexity extends Chart {
 			}
 		}
 		LOG.info("PARENTRESOURCES: " + parentResources.toString());
-		TreeNode treeNode = new TreeNode(parentResources, sonarF);
+		TreeNode treeNode = new TreeNode(parentResources, getSonarFacade());
 		treeNode.setRootNode();
 		
 		LOG.info("Ended making a Tree in SysCom");
@@ -65,8 +65,8 @@ public class SystemComplexity extends Chart {
 
 	@Override
 	public BufferedImage draw() {
-		SystemComplexityDrawing sysComDraw = new SystemComplexityDrawing(iDrawImpl, lf);
-		TreeNodeRV treeNodeRV = new TreeNodeRV(rvf, inheritanceTree);
+		SystemComplexityDrawing sysComDraw = new SystemComplexityDrawing(getIDrawInstantiation(), lf);
+		TreeNodeRV treeNodeRV = new TreeNodeRV(getResourceVisualizationFactory(), inheritanceTree);
 		BufferedImage out = sysComDraw.drawTreeRV(treeNodeRV);
 		return out;
 	}

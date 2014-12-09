@@ -168,8 +168,8 @@ public class ScatterPlot extends Chart{
 	 * This also sets the values for the x and y position
 	 */
 	private void createResourceVisualizations(){
-		for(Resource resource: resources){
-			ResourceVisualization rv = rvf.create(resource);
+		for(Resource resource: getResources()){
+			ResourceVisualization rv = getResourceVisualizationFactory().create(resource);
 			//These will be the values of the properties that govern the position of the box. To be rescaled!
 			Position metricsPosition = new Position(xMetric.getValue(resource).intValue(), yMetric.getValue(resource).intValue());
 			rv.setPosition(metricsPosition);
@@ -202,7 +202,7 @@ public class ScatterPlot extends Chart{
 	 * For each property, find the maximum and minimum value of all the resources.
 	 */
 	private void setExtremeValues(){	
-		for(ResourceVisualization rv : rvs){		
+		for(ResourceVisualization rv : getResourceVisualizations()){		
 			double xCoord = rv.getX();
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
