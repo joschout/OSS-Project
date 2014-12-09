@@ -121,21 +121,6 @@ public class Controller {
 		}
 	}
 	
-	private void createAxisMetricProperty(String axis){
-		try{
-			String aMetric = retrieveValue(axis);
-			rpm.addProperty(axis, new SonarResourceProperty(sf,sf.findMetric(aMetric)));
-		}
-		catch(Exception e){
-			LOG.info(axis+" not given to rpm");
-		}
-	}
-	
-	private void createXYMetricProperties(){
-		createAxisMetricProperty("xmetric");
-		createAxisMetricProperty("ymetric");
-	}
-	
 	/**
 	 * Retrieve the requested size of the chart
 	 * @return a list containing both dimensions of the size
@@ -171,70 +156,6 @@ public class Controller {
 	}
 	
 	/**
-	 * Parse a given list of strings to a list of integers
-	 * @param s List of strings
-	 * @return a list containing the respective parsed integers
-	 * @throws Exception if at least one of the strings cannot be parsed
-	 */
-	private static List<Integer> parseStringsToInts(List<String> s) throws Exception{
-		List<Integer> result = new ArrayList<Integer>();
-		Iterator<String> it = s.iterator();
-		while (it.hasNext()){
-			result.add(Integer.parseInt(it.next()));
-		}
-		return result;
-	}
-	
-	/**
-	 * Parse the given list of strings to a list of floats
-	 * @param s List of strings
-	 * @return a list containing the respective parsed floats
-	 * @throws Exception if at least one of the strings cannot be parsed
-	 */
-	private List<Float> parseStringsToFloats(List<String> s) throws Exception{
-		List<Float> result = new ArrayList<Float>();
-		Iterator<String> it = s.iterator();
-		while (it.hasNext()){
-			result.add(Float.parseFloat(it.next()));
-		}
-		return result;
-	}
-	
-	/**
-	 * Create new resource properties for the boxcolor and add it to the resource property manager
-	 * @throws Exception if the creation of the resource properties fails
-	 */
-	private void createColorRPs(){
-		try{
-			String colorValue = retrieveValue("boxcolor");
-			List<ResourceProperty> result = new ArrayList<ResourceProperty>();
-			if(colorValue.matches("r[0-9]{1,3}g[0-9]{1,3}b[0-9]{1,3}")){
-				List<Integer> rgb = parseRGB(colorValue);
-				Iterator<Integer> it = rgb.iterator();
-				while(it.hasNext()){
-					result.add(new ConstantResourceProperty(it.next()));
-				}
-			}
-			else if(colorValue.matches("min[0-9]+(\\.[0-9]+)*max[0-9]+(\\.[0-9]+)*key(.)+")){
-				List<Float> gsFloats = parseGrayScaleFloats(colorValue);
-				String gsKey = parseGrayScaleKey(colorValue);
-				Metric gsMetric = sf.findMetric(gsKey);
-				ResourceProperty rp = new ScaledResourceProperty(gsFloats.get(0), gsFloats.get(1), 255, 0, sf, gsMetric);
-				for(int i=0;i<3;++i){
-					result.add(rp);
-				}
-			}
-			else throw new Exception("Color not recognized");
-			rpm.addProperty("colorR", result.get(0));
-			rpm.addProperty("colorG", result.get(1));
-			rpm.addProperty("colorB", result.get(2));
-		}
-		catch(Exception e){
-			LOG.info(e.getMessage());
-		}
-	}
-	
-	/**
 	 * Create a new resource property for the given box dimension and add it to the resource property manager
 	 * @param dimension The given box dimension (currently, only boxwidth and boxheight are supported)
 	 * @throws Exception if the creation of the resource property fails
@@ -256,57 +177,6 @@ public class Controller {
 		}
 	}
 	
-	/**
-	 * Parse the given RGB color
-	 * @param rgb Textual representation of the given RGB color
-	 * @return a list containing the respective integers representing each RGB component
-	 * @throws Exception if the given RGB color cannot be parsed
-	 */
-	private List<Integer> parseRGB(String rgb) throws Exception{
-		try{
-		List<String> split = Arrays.asList(rgb.split("[rgb]"));
-		return parseStringsToInts(split.subList(1, split.size()));
-		}
-		catch(Exception e){
-			LOG.info("parse RGB failed");
-			throw new Exception("RGB not valid");
-		}
-	}
-	
-	/**
-	 * Parse the floats contained in the given gray scale
-	 * @param gs Textual representation of the given gray scale
-	 * @return a list containing the respective floats representing each gray scale component
-	 * @throws Exception if the given gray scale cannot be parsed
-	 */
-	private List<Float> parseGrayScaleFloats(String gs) throws Exception{
-		try{
-		List<String> split = Arrays.asList(gs.split("[(min)(max)(key)]"));
-		return parseStringsToFloats(split.subList(1, split.size()-1));
-		}
-		catch(Exception e){
-			LOG.info("parse Grayscale float failed");
-			throw new Exception("Grayscale not valid");
-		}
-	}
-	
-	/**
-	 * Parse the key contained in the given gray scale
-	 * @param gs Textual representation of the given gray scale
-	 * @return the key contained in the gray scale
-	 * @throws Exception if the given gray scale cannot be parsed
-	 */
-	private String parseGrayScaleKey(String gs) throws Exception{
-		try{
-		List<String> split = Arrays.asList(gs.split("[(min)(max)(key)]"));
-		return split.get(split.size()-1);
-		}
-		catch(Exception e){
-			LOG.info("parse Grayscale key failed");
-			throw new Exception("Grayscale not valid");
-		}
-	}
-			
 	/**
 	 * Retrieve a parameter value for the given parameter key
 	 * @param key The given parameter key
@@ -401,5 +271,135 @@ public class Controller {
 			LOG.info("chart creation failed");
 			throw new Exception("Chart creation failed");
 		}
+	}
+
+	/**
+	 * Parse a given list of strings to a list of integers
+	 * @param s List of strings
+	 * @return a list containing the respective parsed integers
+	 * @throws Exception if at least one of the strings cannot be parsed
+	 */
+	private static List<Integer> parseStringsToInts(List<String> s) throws Exception{
+		List<Integer> result = new ArrayList<Integer>();
+		Iterator<String> it = s.iterator();
+		while (it.hasNext()){
+			result.add(Integer.parseInt(it.next()));
+		}
+		return result;
+	}
+
+	/**
+	 * Parse the given list of strings to a list of floats
+	 * @param s List of strings
+	 * @return a list containing the respective parsed floats
+	 * @throws Exception if at least one of the strings cannot be parsed
+	 */
+	private List<Float> parseStringsToFloats(List<String> s) throws Exception{
+		List<Float> result = new ArrayList<Float>();
+		Iterator<String> it = s.iterator();
+		while (it.hasNext()){
+			result.add(Float.parseFloat(it.next()));
+		}
+		return result;
+	}
+
+	/**
+	 * Create new resource properties for the boxcolor and add it to the resource property manager
+	 * @throws Exception if the creation of the resource properties fails
+	 */
+	private void createColorRPs(){
+		try{
+			String colorValue = retrieveValue("boxcolor");
+			List<ResourceProperty> result = new ArrayList<ResourceProperty>();
+			if(colorValue.matches("r[0-9]{1,3}g[0-9]{1,3}b[0-9]{1,3}")){
+				List<Integer> rgb = parseRGB(colorValue);
+				Iterator<Integer> it = rgb.iterator();
+				while(it.hasNext()){
+					result.add(new ConstantResourceProperty(it.next()));
+				}
+			}
+			else if(colorValue.matches("min[0-9]+(\\.[0-9]+)*max[0-9]+(\\.[0-9]+)*key(.)+")){
+				List<Float> gsFloats = parseGrayScaleFloats(colorValue);
+				String gsKey = parseGrayScaleKey(colorValue);
+				Metric gsMetric = sf.findMetric(gsKey);
+				ResourceProperty rp = new ScaledResourceProperty(gsFloats.get(0), gsFloats.get(1), 255, 0, sf, gsMetric);
+				for(int i=0;i<3;++i){
+					result.add(rp);
+				}
+			}
+			else throw new Exception("Color not recognized");
+			rpm.addProperty("colorR", result.get(0));
+			rpm.addProperty("colorG", result.get(1));
+			rpm.addProperty("colorB", result.get(2));
+		}
+		catch(Exception e){
+			LOG.info(e.getMessage());
+		}
+	}
+
+	/**
+	 * Parse the given RGB color
+	 * @param rgb Textual representation of the given RGB color
+	 * @return a list containing the respective integers representing each RGB component
+	 * @throws Exception if the given RGB color cannot be parsed
+	 */
+	private List<Integer> parseRGB(String rgb) throws Exception{
+		try{
+		List<String> split = Arrays.asList(rgb.split("[rgb]"));
+		return parseStringsToInts(split.subList(1, split.size()));
+		}
+		catch(Exception e){
+			LOG.info("parse RGB failed");
+			throw new Exception("RGB not valid");
+		}
+	}
+
+	/**
+	 * Parse the floats contained in the given gray scale
+	 * @param gs Textual representation of the given gray scale
+	 * @return a list containing the respective floats representing each gray scale component
+	 * @throws Exception if the given gray scale cannot be parsed
+	 */
+	private List<Float> parseGrayScaleFloats(String gs) throws Exception{
+		try{
+		List<String> split = Arrays.asList(gs.split("[(min)(max)(key)]"));
+		return parseStringsToFloats(split.subList(1, split.size()-1));
+		}
+		catch(Exception e){
+			LOG.info("parse Grayscale float failed");
+			throw new Exception("Grayscale not valid");
+		}
+	}
+
+	/**
+	 * Parse the key contained in the given gray scale
+	 * @param gs Textual representation of the given gray scale
+	 * @return the key contained in the gray scale
+	 * @throws Exception if the given gray scale cannot be parsed
+	 */
+	private String parseGrayScaleKey(String gs) throws Exception{
+		try{
+		List<String> split = Arrays.asList(gs.split("[(min)(max)(key)]"));
+		return split.get(split.size()-1);
+		}
+		catch(Exception e){
+			LOG.info("parse Grayscale key failed");
+			throw new Exception("Grayscale not valid");
+		}
+	}
+
+	private void createAxisMetricProperty(String axis){
+		try{
+			String aMetric = retrieveValue(axis);
+			rpm.addProperty(axis, new SonarResourceProperty(sf,sf.findMetric(aMetric)));
+		}
+		catch(Exception e){
+			LOG.info(axis+" not given to rpm");
+		}
+	}
+
+	private void createXYMetricProperties(){
+		createAxisMetricProperty("xmetric");
+		createAxisMetricProperty("ymetric");
 	}
 }
