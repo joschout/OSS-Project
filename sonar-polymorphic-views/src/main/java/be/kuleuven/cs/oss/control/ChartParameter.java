@@ -10,7 +10,7 @@ import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 
-public class ChartHandler {
+public class ChartParameter {
 	
 	private static final String DEFAULT_CHART_TYPE = "scatter";
 	
@@ -19,11 +19,11 @@ public class ChartHandler {
 	private String chartType1 = "scatter";
 	private String chartType2 = "syscomp";
 	
-	private final static Logger LOG = LoggerFactory.getLogger(ChartHandler.class);
+	private final static Logger LOG = LoggerFactory.getLogger(ChartParameter.class);
 	
 	private ChartParameters params;
 
-	public ChartHandler(ChartParameters params) {
+	public ChartParameter(ChartParameters params) {
 		this.params = params;
 	}
 

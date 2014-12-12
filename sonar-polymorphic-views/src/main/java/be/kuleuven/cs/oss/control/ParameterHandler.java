@@ -3,7 +3,6 @@ package be.kuleuven.cs.oss.control;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public interface ParameterHandler {
 
