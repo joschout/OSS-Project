@@ -24,8 +24,6 @@ public class BoxFactory implements ResourceVisualizationFactory {
 	private ResourceProperty blueProperty;
 	
 	
-	 
-	
 
 	public BoxFactory(ResourceProperty widthProperty,
 			ResourceProperty heightProperty, ResourceProperty redProperty,

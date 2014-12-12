@@ -17,116 +17,27 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
  * @author Lennart De Graef
  *
  */
-public class Box implements ResourceVisualization{                     
+public class Box extends ResourceVisualization{                     
 	
 	private static final int TEXT_OFFSET = 1;
 	
 	
-	private Position p;
-	private Size size;
-	private Color color;
-	private String name;
-	
-	public Box(Position p, Size size, Color c, String name) throws IllegalArgumentException{
-		setPosition(p);
-		
-		setSize(size);
-		setColor(c);
-		setName(name);
+	public Box(Position position, Size size, Color color, String name) throws IllegalArgumentException{
+		super(position, size, color, name);
 	}
 
 	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Position getPosition() {
-		return this.p;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void setPosition(Position p) {
-		this.p = p;
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 * 
-	 */
-	@Override
-	public Color getColor() {
-		return this.color;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 */
-	@Override
-	public void setColor(Color c) {
-		this.color = c;
-	}
-
-	@Override
-	public String getName() {
-		return this.name;
-	}
-
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
-		
-	}
 	
 	@Override
 	public void draw(IDraw d){
 
 		//TODO zet overloading ook in interface
-		d.drawBox(getX(), getY(), getWidth(), getHeight(), color.getRed(), color.getGreen(), color.getBlue());
+		d.drawBox(getX(), getY(), getWidth(), getHeight(), getColor().getRed(), getColor().getGreen(), getColor().getBlue());
 		d.drawText(getName(), getX(), getY()- getHeight()/2 - TEXT_OFFSET, 0, 0, 0, 0);
 
 	}
 
 
-	@Override
-	public Size getSize() {
-		return this.size;
-	}
-
-
-	@Override
-	public void setSize(Size size) {
-		this.size = size;
-		
-	}
-
-
-	@Override
-	public int getWidth() {
-		return getSize().getWidth();
-	}
-
-
-	@Override
-	public int getHeight() {
-		return getSize().getHeight();
-	}
-
-
-	@Override
-	public int getX() {
-		return getPosition().getX();
-	}
-
-
-	@Override
-	public int getY() {
-		return getPosition().getY();
-	}
-
+	
 	
 }
