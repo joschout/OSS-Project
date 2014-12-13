@@ -19,7 +19,7 @@ public class Circle extends ResourceVisualization{
 
 	@Override
 	public void draw(IDraw d) {
-		d.drawCircle(getX(), getY(), getWidth(), getHeight(),  getColor().getRed(), getColor().getGreen(), getColor().getBlue());
+		d.drawCircle(getX(), getY(), getRadius(),  getColor().getRed(), getColor().getGreen(), getColor().getBlue());
 		d.drawText(getName(), getX(), getY()- getHeight()/2 - TEXT_OFFSET, 0, 0, 0, 0);
 	}
 
