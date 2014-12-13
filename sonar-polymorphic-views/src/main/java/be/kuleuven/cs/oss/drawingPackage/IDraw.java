@@ -71,7 +71,13 @@ public interface IDraw {
 				int redFill, int greenFill, int blueFill,
 				int borderWidth
 				) ;
-
+		
+		public void drawCircle(
+				int xCoord, int yCoord,
+				int width, int heigth, 
+				int redFill, int greenFill, int blueFill
+				) ;
+		
 		public void drawText(
 				String textToDraw,
 				int xCoord, int yCoord

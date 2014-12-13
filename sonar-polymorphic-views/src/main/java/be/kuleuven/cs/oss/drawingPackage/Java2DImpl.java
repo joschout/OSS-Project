@@ -150,6 +150,7 @@ public class Java2DImpl implements IDraw{
 		
 	}
 
+	//xcoor and ycoord are the upper left corner of the bounding box
 	@Override
 	public void drawCircle(
 			int xCoord, int yCoord,
@@ -160,21 +161,29 @@ public class Java2DImpl implements IDraw{
 			) {
 		
 		Graphics2D g2d = getBufferedImage().createGraphics();
-		Ellipse2D rect = new Ellipse2D.Double(xCoord, yCoord, width, heigth);
+		Ellipse2D ellipse = new Ellipse2D.Double(xCoord, yCoord, width, heigth);
 		
 		g2d.setColor(new Color(redFill, greenFill, blueFill));
-		g2d.fill(rect);
+		g2d.fill(ellipse);
 		
 		BasicStroke stroke = new BasicStroke(borderWidth);
 		g2d.setStroke(stroke);
 		g2d.setColor(new Color(redBorder, greenBorder, blueBorder));
-		g2d.draw(rect);
-		
-		
-		
-		
+		g2d.draw(ellipse);	
 	}
 
+	@Override
+	public void drawCircle(
+			int xCoord, int yCoord,
+			int width, int heigth, 
+			int redFill, int greenFill, int blueFill
+			) {
+		drawCircle(xCoord, yCoord, width, heigth, Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,
+				redFill, greenFill, blueFill,
+				Java2DImpl.DEFAULT_BORDER_WIDTH);
+	}
+	
+	
 	public void drawText(
 			String textToDraw,
 			int xCoord, int yCoord

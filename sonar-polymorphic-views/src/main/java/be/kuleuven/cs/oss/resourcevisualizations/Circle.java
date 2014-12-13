@@ -9,10 +9,11 @@ public class Circle extends ResourceVisualization{
 
 
 	private static final int TEXT_OFFSET = 1;
+	private int radius;
 
-
-	public Circle(Position position, Size size, Color color, String name) throws IllegalArgumentException {
-		super(position, size, color, name);
+	public Circle(Position position, int radius, Color color, String name) throws IllegalArgumentException {
+		super(position, new Size(radius*2, radius*2), color, name);
+		this.radius = radius;
 	}
 
 
@@ -22,6 +23,10 @@ public class Circle extends ResourceVisualization{
 		d.drawText(getName(), getX(), getY()- getHeight()/2 - TEXT_OFFSET, 0, 0, 0, 0);
 	}
 
+
+	public int getRadius() {
+		return getWidth()/2;
+	}
 
 
 }

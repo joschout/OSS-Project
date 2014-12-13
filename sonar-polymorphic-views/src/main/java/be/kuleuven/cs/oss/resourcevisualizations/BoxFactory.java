@@ -48,7 +48,6 @@ public class BoxFactory implements ResourceVisualizationFactory {
 		Size size = new Size( widthProperty.getValue(res).intValue(), heightProperty.getValue(res).intValue());
 		Color color = new Color(redProperty.getValue(res).intValue(), greenProperty.getValue(res).intValue(), blueProperty.getValue(res).intValue());
 		Box box = new Box(position, size, color, res.getName());
-		
 		return box;
 	}
 
