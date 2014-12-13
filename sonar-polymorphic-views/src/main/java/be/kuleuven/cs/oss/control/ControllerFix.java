@@ -29,7 +29,7 @@ public class ControllerFix {
 	
 	
 	private Chart getChartType(ChartParameters params) {
-		ChartHandler chartHandler = new ChartHandler(params);
+		ChartParameter chartHandler = new ChartParameter(params);
 		Chart chart = chartHandler.getChart();
 		return chart;
 	}
