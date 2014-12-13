@@ -63,10 +63,7 @@ public class ScatterPlot extends Chart{
 	 * @param width: width of the image frame
 	 * @param height: height of the image frame
 	 */
-	public ScatterPlot(List<Resource> resources, 
-			ResourceVisualizationFactory rvf, 
-			SonarFacade sonarF, 
-			int width, int height) {
+	public ScatterPlot(int width, int height) {
 		
 		super();
 		
