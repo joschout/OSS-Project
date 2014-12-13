@@ -3,7 +3,6 @@ package be.kuleuven.cs.oss.charts;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
@@ -26,24 +25,12 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public abstract class Chart {
 
-	
-	
-	public SonarFacade getSonarFacade() {
-		return sonarF;
-	}
-
-	public void setSonarFacade(SonarFacade sonarF) {
-		this.sonarF = sonarF;
-	}
-
-
 	private List<ResourceVisualization> rvs;
 	private List<Resource> resources;
 	private ResourceVisualizationFactory rvf;
 	private SonarFacade sonarF;
 	private IDraw iDrawFacade;
-	
-	
+
 	//TODO LineFactory has to be one of the arguments
 	/**
 	 *  Constructs an instantiation of a chart.
@@ -61,16 +48,20 @@ public abstract class Chart {
 	 * @param SonarFacade sonarF: a facade to the sonar database
 	 * @param ResourcePropertiesManager propManager: manages the properties of each resource
 	 */
-	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF) {
-		this.resources = resources;
-		this.rvf = rvf;
-		this.sonarF = sonarF;
+	public Chart() {
 		setIDrawInstantiation(new Java2DFacade());
 		this.rvs = new ArrayList<ResourceVisualization>();
-
-	
 	}
-	
+
+	public SonarFacade getSonarFacade() {
+		return sonarF;
+	}
+
+	public void setSonarFacade(SonarFacade sonarF) {
+		this.sonarF = sonarF;
+	}
+
+
 	/**
 	 * Returns a list of visualizations for the resources of the graph
 	 * 
@@ -89,7 +80,7 @@ public abstract class Chart {
 		this.rvs = rvs;
 	}
 
-	
+
 	/**
 	 * Returns a list of the resources this chart visualizes
 	 */
@@ -123,7 +114,7 @@ public abstract class Chart {
 		this.rvf = rvf;
 	}
 
-	
+
 	/**
 	 *  Returns an instantiation of the IDraw interface. This interface is used to actually draw the chart to an image.
 	 */
@@ -138,8 +129,8 @@ public abstract class Chart {
 	public void setIDrawInstantiation(IDraw d) {
 		this.iDrawFacade = d;
 	}
-	
-	
+
+
 	/**
 	 * Creates an actual image of the chart represented by an object of this class. 
 	 * Returns this image as a BufferedImage.
@@ -147,8 +138,8 @@ public abstract class Chart {
 	 * @return BufferedImage: returns a drawing of the actual image represented by this chart object
 	 */
 	public abstract BufferedImage draw();
-	
-	
+
+
 }
-	
-	
+
+

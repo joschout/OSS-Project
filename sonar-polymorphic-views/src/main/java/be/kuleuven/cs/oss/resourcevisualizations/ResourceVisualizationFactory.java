@@ -1,6 +1,5 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
-import java.util.Map;
 
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 

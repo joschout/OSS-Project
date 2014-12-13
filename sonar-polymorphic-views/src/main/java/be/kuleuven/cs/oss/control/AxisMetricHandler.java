@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
-import be.kuleuven.cs.oss.charts.SystemComplexity;
+import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -34,16 +34,18 @@ public class AxisMetricHandler implements ParameterHandler {
 
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
-		if (chart instanceof SystemComplexity) {
+		if (!(chart instanceof ScatterPlot)) {
 			return;
 		}
 
 		ResourceProperty xProperty = createAxisMetricProperty(keyX, params);
 		ResourceProperty yProperty = createAxisMetricProperty(keyY, params);
 		
-		chart.setAxisProperties();
+		((ScatterPlot) chart).setAxisMetrics(xProperty, yProperty);
 		
-		next.handleRequest(chart, params);
+		if(next != null) {
+			next.handleRequest(chart, params);
+		}
 
 	}
 

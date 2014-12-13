@@ -6,17 +6,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
-import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
+import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class BoxDimensionHandler implements ParameterHandler {
+public class BoxDimensionHandler implements ResourceVisualizationFactoryHandler {
 
 	private final static Logger LOG = LoggerFactory.getLogger(BoxDimensionHandler.class);
 
-	private ParameterHandler next;
+	private ResourceVisualizationFactoryHandler next;
 
 	private String keyWidth = "boxwidth";
 	private String keyHeight = "boxheight";
@@ -29,19 +30,21 @@ public class BoxDimensionHandler implements ParameterHandler {
 	}
 
 	@Override
-	public void setNext(ParameterHandler handler) {
+	public void setNext(ResourceVisualizationFactoryHandler handler) {
 		this.next = handler;
 	}
 
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
 		ResourceProperty widthProperty = createBoxDimensionRP(keyWidth, params);
 		ResourceProperty heightProperty = createBoxDimensionRP(keyHeight, params);
 		
-		chart.setWidthProperty(widthProperty);
-		chart.setHeightProperty(heightProperty);
+		((BoxFactory) rvf).setWidthProperty(widthProperty);
+		((BoxFactory) rvf).setHeightProperty(heightProperty);
 		
-		next.handleRequest(chart, params);
+		if(next != null) {
+			next.handleRequest(rvf, params);
+		}
 
 	}
 

@@ -29,15 +29,17 @@ public class LineFactoryHandler implements ParameterHandler {
 	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
-		if (chart instanceof ScatterPlot) {
+		if (!(chart instanceof SystemComplexity)) {
 			return;
 		}
 		
 		LineFactory factory = new StraightLineFactory();
 		
-		chart.setLineFactory(factory);
+		((SystemComplexity) chart).setLineFactory(factory);
 		
-		next.handleRequest(chart, params);
+		if(next != null) {
+			next.handleRequest(chart, params);
+		}
 		
 	}
 

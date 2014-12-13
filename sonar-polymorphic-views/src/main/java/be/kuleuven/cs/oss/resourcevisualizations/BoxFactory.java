@@ -25,17 +25,37 @@ public class BoxFactory implements ResourceVisualizationFactory {
 	
 	
 
-	public BoxFactory(ResourceProperty widthProperty,
-			ResourceProperty heightProperty, ResourceProperty redProperty,
-			ResourceProperty greenProperty, ResourceProperty blueProperty) {
+	public BoxFactory() {
+		
+	}
+
+	public void setWidthProperty(ResourceProperty widthProperty) {
 		this.widthProperty = widthProperty;
-		this.heightProperty = heightProperty;
-		this.redProperty = redProperty;
-		this.greenProperty = greenProperty;
-		this.blueProperty = blueProperty;
 	}
 
 
+
+	public void setHeightProperty(ResourceProperty heightProperty) {
+		this.heightProperty = heightProperty;
+	}
+
+
+
+	public void setRedProperty(ResourceProperty redProperty) {
+		this.redProperty = redProperty;
+	}
+
+
+
+	public void setGreenProperty(ResourceProperty greenProperty) {
+		this.greenProperty = greenProperty;
+	}
+
+
+
+	public void setBlueProperty(ResourceProperty blueProperty) {
+		this.blueProperty = blueProperty;
+	}
 
 	/**
 	 * {@inheritDoc}

@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
+import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -44,7 +45,7 @@ public class SizeHandler implements ParameterHandler {
 	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
-		if (chart instanceof SystemComplexity) {
+		if (!(chart instanceof ScatterPlot)) {
 			return;
 		}
 
@@ -57,9 +58,11 @@ public class SizeHandler implements ParameterHandler {
 			size = DEFAULT_SIZE;
 		}
 
-		chart.setSize(size);
+		((ScatterPlot) chart).setSize(size);
 		
-		next.handleRequest(chart, params);
+		if(next != null) {
+			next.handleRequest(chart, params);
+		}
 
 	}
 

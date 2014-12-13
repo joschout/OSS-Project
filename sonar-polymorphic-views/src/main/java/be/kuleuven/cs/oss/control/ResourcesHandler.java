@@ -49,7 +49,9 @@ public class ResourcesHandler implements ParameterHandler {
 		
 		chart.setResources(resources);
 		
-		next.handleRequest(chart, params);
+		if(next != null) {
+			next.handleRequest(chart, params);
+		}
 
 	}
 

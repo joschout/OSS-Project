@@ -13,22 +13,32 @@ public class Controller {
 
 	private final ChartParameters params;
 	private final SonarFacade sf;
-	private final Chart chart;
+	private Chart chart;
 	
 	public Controller(ChartParameters p, SonarFacade sf) throws Exception{
 		this.params = p;
 		this.sf = sf;
-		this.chart = getChartType(p);
-		createProcessor();
 	}
 	
-	private void createProcessor() {
+	/**
+	 * Create a new chart based on the available chart parameters
+	 * @return a new chart (currently, only scatterplot and system complexity view are supported)
+	 * @throws Exception if the creation of the chart failed
+	 */
+	public Chart createChart() {
+		this.chart = getChartType(params);
+		
+		chart.setSonarFacade(sf);
+		startProcess();
+		
+		return chart;
+	}
+	
+	private void startProcess() {
 		ParameterProcessor processor = new ParameterProcessor();
 		
 		processor.addHandler(new ResourcesHandler(sf));
-		processor.addHandler(new RVFactoryHandler());
-		processor.addHandler(new BoxDimensionHandler(sf));
-		processor.addHandler(new ColorHandler(sf));
+		processor.addHandler(new RVFactoryHandler(sf));
 		processor.addHandler(new AxisMetricHandler(sf));
 		processor.addHandler(new SizeHandler(sf));
 		processor.addHandler(new LineFactoryHandler());

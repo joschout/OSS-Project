@@ -1,6 +1,5 @@
 package be.kuleuven.cs.oss.control;
 
-import javax.persistence.NoResultException;
 
 import org.sonar.api.charts.ChartParameters;
 

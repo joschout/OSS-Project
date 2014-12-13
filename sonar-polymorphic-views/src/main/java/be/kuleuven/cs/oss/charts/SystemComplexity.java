@@ -9,11 +9,9 @@ import org.slf4j.LoggerFactory;
 
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.DependencyType;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 import be.kuleuven.cs.oss.trees.TreeNode;
 import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
@@ -25,11 +23,10 @@ public class SystemComplexity extends Chart {
 	private LineFactory lf;
 	
 	
-	public SystemComplexity(List<Resource> resources, ResourceVisualizationFactory RVF, SonarFacade sonarF, LineFactory lf) {
-		super(resources, RVF, sonarF);
+	public SystemComplexity() {
+		super();
 		
 		this.inheritanceTree = makeTree();
-		this.lf = lf;
 	}
 
 	
@@ -69,6 +66,13 @@ public class SystemComplexity extends Chart {
 		TreeNodeRV treeNodeRV = new TreeNodeRV(getResourceVisualizationFactory(), inheritanceTree);
 		BufferedImage out = sysComDraw.drawTreeRV(treeNodeRV);
 		return out;
+	}
+
+
+
+	public void setLineFactory(LineFactory factory) {
+		this.lf = factory;
+		
 	}
 	
 	

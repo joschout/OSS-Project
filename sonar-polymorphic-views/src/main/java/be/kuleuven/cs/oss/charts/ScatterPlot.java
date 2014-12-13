@@ -66,16 +66,14 @@ public class ScatterPlot extends Chart{
 	public ScatterPlot(List<Resource> resources, 
 			ResourceVisualizationFactory rvf, 
 			SonarFacade sonarF, 
-			int width, int height,
-			ResourceProperty xMetric, ResourceProperty yMetric) {
+			int width, int height) {
 		
-		super(resources, rvf, sonarF);
+		super();
 		
 		this.width=width;
 		this.height = height;
 		
-		this.xMetric = xMetric;
-		this.yMetric = yMetric;
+		
 		
 		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(width, height);
 		
@@ -95,6 +93,11 @@ public class ScatterPlot extends Chart{
 		maxRVWidth = maxRVScalingFactor*width;
 		minRVWidth = minRVScalingFactor*width;
 		LOG.info("ScatterPlot constructed");
+	}
+	
+	public void setAxisMetrics(ResourceProperty xMetric, ResourceProperty yMetric) {
+		this.xMetric = xMetric;
+		this.yMetric = yMetric;
 	}
 
 
