@@ -53,8 +53,7 @@ public class Trapezoid extends ResourceVisualization {
 
 	@Override
 	public void draw(IDraw d) {
-		//TODO is nog niet gemerged met propmanremove? In idraw staat er nog geen methode om te tekenen, maar die is wel al gemaakt denk ik
-		make error here to be noticed
+		d.drawTrapezoid(getX(), getY(), getLeftLine(), getBaseLine(), getRightLine(), getColor().getRed(), getColor().getGreen(), getColor().getBlue());
 	}
 
 }
