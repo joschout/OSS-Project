@@ -4,7 +4,6 @@ import java.awt.BasicStroke;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
-import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
@@ -14,19 +13,17 @@ import java.awt.Color;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.sonar.plugins.java.Java;
 
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 
 /**
- * Java2DImpl implements the IDraw interface using the Java2D library.
+ * Java2DFacade implements the IDraw interface using the Java2D library.
  * An instantiation of the class has a BufferedImage as an instance variable,
  *  which contains a partial rendering of a chart.
  * 
  * @author Jonas
  *
  */
-public class Java2DImpl implements IDraw{
+public class Java2DFacade implements IDraw{
 	
 	// white
 	private static final  int DEFAULT_WHITE_R = 255;
@@ -54,12 +51,12 @@ public class Java2DImpl implements IDraw{
 	private static final int DEFAULT_TRIANGLE_ALTITUDE = 7;
 	
 
-	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
+	private final static Logger LOG = LoggerFactory.getLogger(Java2DFacade.class);
 	
 	private BufferedImage im;
 
 
-	public Java2DImpl(){
+	public Java2DFacade(){
 		super();
 	}
 	
@@ -72,7 +69,7 @@ public class Java2DImpl implements IDraw{
 	}
 
 	/**
-	 * Creates an empty image in the instance variable of the Java2DImpl object. 
+	 * Creates an empty image in the instance variable of the Java2DFacade object. 
 	 * This empty image represents the background of the chart 
 	 * @param width the width of the image
 	 * @param height the height of the image
@@ -98,9 +95,9 @@ public class Java2DImpl implements IDraw{
 			){
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
-				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,
-				Java2DImpl.DEFAULT_WHITE_R, Java2DImpl.DEFAULT_WHITE_G, Java2DImpl.DEFAULT_WHITE_B,
-				Java2DImpl.DEFAULT_BORDER_WIDTH);
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
+				Java2DFacade.DEFAULT_WHITE_R, Java2DFacade.DEFAULT_WHITE_G, Java2DFacade.DEFAULT_WHITE_B,
+				Java2DFacade.DEFAULT_BORDER_WIDTH);
 		
 	}
 	/**
@@ -120,9 +117,9 @@ public class Java2DImpl implements IDraw{
 		LOG.info("DRAWING BOX IN IDRAW IMPL");
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
-				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
 				redFill, greenFill, blueFill,
-				Java2DImpl.DEFAULT_BORDER_WIDTH);
+				Java2DFacade.DEFAULT_BORDER_WIDTH);
 		
 	}
 	
@@ -152,7 +149,7 @@ public class Java2DImpl implements IDraw{
 
 	//xcoor and ycoord are the upper left corner of the bounding box
 	@Override
-	public void drawCircle(
+	public void drawEllipse(
 			int xCoord, int yCoord,
 			int width, int heigth, 
 			int redBorder, int greenBorder, int blueBorder,
@@ -169,18 +166,27 @@ public class Java2DImpl implements IDraw{
 		BasicStroke stroke = new BasicStroke(borderWidth);
 		g2d.setStroke(stroke);
 		g2d.setColor(new Color(redBorder, greenBorder, blueBorder));
-		g2d.draw(ellipse);	
+		g2d.draw(ellipse);
+	}
+	
+	public void drawCircle(
+			int xCoord, int yCoord,
+			int radius,
+			int redBorder, int greenBorder, int blueBorder,
+			int redFill, int greenFill, int blueFill,
+			int borderWidth){
+		drawEllipse(xCoord, yCoord, radius, radius, redBorder, greenBorder, blueBorder, redFill, greenFill, blueFill, borderWidth);
 	}
 
 	@Override
 	public void drawCircle(
 			int xCoord, int yCoord,
-			int width, int heigth, 
+			int radius,
 			int redFill, int greenFill, int blueFill
 			) {
-		drawCircle(xCoord, yCoord, width, heigth, Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B,
+		drawCircle(xCoord, yCoord, radius, Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
 				redFill, greenFill, blueFill,
-				Java2DImpl.DEFAULT_BORDER_WIDTH);
+				Java2DFacade.DEFAULT_BORDER_WIDTH);
 	}
 	
 	
@@ -190,8 +196,8 @@ public class Java2DImpl implements IDraw{
 			) {
 		drawText(textToDraw, 
 				xCoord, yCoord, 
-				Java2DImpl.DEFAULT_TEXT_ORIENTATION_DEGREES, 
-				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B);
+				Java2DFacade.DEFAULT_TEXT_ORIENTATION_DEGREES, 
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B);
 		
 	}
 	
@@ -223,8 +229,8 @@ public class Java2DImpl implements IDraw{
 			) {
 		
 		drawStraightLine(x1, y1, x2, y2,
-				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, DEFAULT_BLACK_B,
-				Java2DImpl.DEFAULT_LINE_WIDTH
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, DEFAULT_BLACK_B,
+				Java2DFacade.DEFAULT_LINE_WIDTH
 				);
 		
 	}
@@ -251,9 +257,9 @@ public class Java2DImpl implements IDraw{
 				x1, y1, 
 				x2, y2, 
 				x3, y3, 
-				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B, 
-				Java2DImpl.DEFAULT_BLACK_R, Java2DImpl.DEFAULT_BLACK_G, Java2DImpl.DEFAULT_BLACK_B, 
-				Java2DImpl.DEFAULT_TRIANGLE_WIDTH);
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B, 
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B, 
+				Java2DFacade.DEFAULT_TRIANGLE_WIDTH);
 		
 	}
 	
@@ -315,6 +321,42 @@ public class Java2DImpl implements IDraw{
 				lineEndX + lineLength , lineEndY- DEFAULT_TRIANGLE_BASE/2,
 				lineEndX + lineLength , lineEndY+ DEFAULT_TRIANGLE_BASE/2);
 	}
+	
+	public void drawTrapezoid(	
+			int xCoord, int yCoord,
+			int trap1, int trap2, int trap3,
+			int redBorder, int greenBorder, int blueBorder,
+			int redFill, int greenFill, int blueFill,
+			int borderWidth){
+		
+		Graphics2D g2d = getBufferedImage().createGraphics();
+		int[] xArray   = new int[4];
+		
+		
+		//begin linksonderhoek en draai tegen de klok in
+		xArray[0] = xCoord;
+		xArray[1] = xCoord + trap2;
+		xArray[2] = xCoord + trap2;
+		xArray[3] = xCoord;
+		
+		int[] yArray = new int[4];
+		yArray[0] = yCoord;
+		yArray[1] = yCoord;
+		yArray[2] = yCoord + trap3;
+		yArray[3] = yCoord + trap1;
+		Polygon pol = new Polygon( xArray, yArray, 4);
+				
+		g2d.setColor(new Color(redFill, greenFill, blueFill));
+		g2d.fill(pol);
+		
+		BasicStroke stroke = new BasicStroke(borderWidth);
+		g2d.setStroke(stroke);
+		g2d.setColor(new Color(redBorder, greenBorder, blueBorder));
+		g2d.draw(pol);
+		
+	}
+	
+	
 	
 	
 	

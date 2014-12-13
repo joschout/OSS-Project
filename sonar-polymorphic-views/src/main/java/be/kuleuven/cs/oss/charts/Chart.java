@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
-import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
+import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -27,11 +27,21 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 public abstract class Chart {
 
 	
-	protected List<ResourceVisualization> rvs;
-	protected List<Resource> resources;
-	protected ResourceVisualizationFactory rvf;
-	protected SonarFacade sonarF;
-	protected IDraw iDrawImpl;
+	
+	public SonarFacade getSonarFacade() {
+		return sonarF;
+	}
+
+	public void setSonarFacade(SonarFacade sonarF) {
+		this.sonarF = sonarF;
+	}
+
+
+	private List<ResourceVisualization> rvs;
+	private List<Resource> resources;
+	private ResourceVisualizationFactory rvf;
+	private SonarFacade sonarF;
+	private IDraw iDrawFacade;
 	
 	
 	//TODO LineFactory has to be one of the arguments
@@ -55,7 +65,7 @@ public abstract class Chart {
 		this.resources = resources;
 		this.rvf = rvf;
 		this.sonarF = sonarF;
-		setIDrawInstantiation(new Java2DImpl());
+		setIDrawInstantiation(new Java2DFacade());
 		this.rvs = new ArrayList<ResourceVisualization>();
 
 	
@@ -118,7 +128,7 @@ public abstract class Chart {
 	 *  Returns an instantiation of the IDraw interface. This interface is used to actually draw the chart to an image.
 	 */
 	public IDraw getIDrawInstantiation() {
-		return iDrawImpl;
+		return iDrawFacade;
 	}
 
 	/**
@@ -126,7 +136,7 @@ public abstract class Chart {
 	 * @param d: the instantiation of the IDraw interface that will be used to draw the image of the chart object.
 	 */
 	public void setIDrawInstantiation(IDraw d) {
-		this.iDrawImpl = d;
+		this.iDrawFacade = d;
 	}
 	
 	
