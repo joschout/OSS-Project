@@ -63,7 +63,7 @@ public class BoxFactory implements ResourceVisualizationFactory {
 	 */
 	@Override
 	public ResourceVisualization create(Resource res) {
-		
+		System.out.println("RV create");
 		Position position = new Position(0, 0);
 		Size size = new Size( widthProperty.getValue(res).intValue(), heightProperty.getValue(res).intValue());
 		Color color = new Color(redProperty.getValue(res).intValue(), greenProperty.getValue(res).intValue(), blueProperty.getValue(res).intValue());

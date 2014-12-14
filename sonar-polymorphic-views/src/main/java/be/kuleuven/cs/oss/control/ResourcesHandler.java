@@ -8,9 +8,9 @@ import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class ResourcesHandler implements ParameterHandler {
+public class ResourcesHandler implements IHandler<Chart> {
 	
-	private ParameterHandler next;
+	private IHandler<Chart> next;
 	
 	private String resourceType1 = "classes";
 	private String resourceType2 = "packages";
@@ -22,7 +22,7 @@ public class ResourcesHandler implements ParameterHandler {
 	}
 
 	@Override
-	public void setNext(ParameterHandler handler) {
+	public void setNext(IHandler<Chart> handler) {
 		this.next = handler;
 	}
 

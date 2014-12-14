@@ -13,12 +13,14 @@ import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
+// mockito, how does it work?  http://fruzenshtein.com/junit-and-mockito/
 public class BoxFactoryTest {
 
 	@Test
 	public void test() {
 		
 		ResourceProperty rp = mock(ResourceProperty.class);
+		
 		when(rp.getValue(any(Resource.class)))
 		.thenReturn((double) 5)
 		.thenReturn((double) 6)
@@ -35,9 +37,10 @@ public class BoxFactoryTest {
 		Size size = new Size (5,6);
 		Color color = new Color(7,8,9);
 		Box box = new Box(pos, size, color,"SweetBabyJesus");
-		System.out.println(box.getX() + " " + box.getWidth() );
+		System.out.println(box.getX() + " - box 1 - " + box.getWidth() );
+		//geraakt hier niet in omdat die geen resource heeft?
 		Box box2 = (Box) bf.create(res);
-		System.out.println(box2.getX() + "" + box2.getWidth());
+		System.out.println(box2.getX() + " - box 2 - " + box2.getWidth());
 		assertEquals(box, box2);
 	}
 

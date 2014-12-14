@@ -35,7 +35,7 @@ public class Controller {
 	}
 	
 	private void startProcess() {
-		ParameterProcessor processor = new ParameterProcessor();
+		Processor<Chart> processor = new Processor<Chart>();
 		
 		processor.addHandler(new ResourcesHandler(sf));
 		processor.addHandler(new RVFactoryHandler(sf));

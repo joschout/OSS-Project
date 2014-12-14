@@ -18,11 +18,11 @@ import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class ColorHandler implements ResourceVisualizationFactoryHandler {
+public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(ColorHandler.class);
 
-	private ResourceVisualizationFactoryHandler next;
+	private IHandler<ResourceVisualizationFactory> next;
 
 	private String key = "boxcolor";
 
@@ -33,7 +33,7 @@ public class ColorHandler implements ResourceVisualizationFactoryHandler {
 	}
 
 	@Override
-	public void setNext(ResourceVisualizationFactoryHandler handler) {
+	public void setNext(IHandler<ResourceVisualizationFactory> handler) {
 		this.next = handler;
 	}
 
