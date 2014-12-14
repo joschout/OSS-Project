@@ -8,6 +8,7 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -27,9 +28,9 @@ public abstract class Chart {
 
 	private List<ResourceVisualization> rvs;
 	private List<Resource> resources;
-	private ResourceVisualizationFactory rvf;
 	private SonarFacade sonarF;
 	private IDraw iDrawFacade;
+	private ShapeDecider shapeDecider;
 
 	//TODO LineFactory has to be one of the arguments
 	/**
@@ -97,23 +98,6 @@ public abstract class Chart {
 		this.resources = resources;
 	}
 
-	/**
-	 * 
-	 * Returns the ResourceVisualizationFactory used to create ResourceVisualizations
-	 */
-	public ResourceVisualizationFactory getResourceVisualizationFactory() {
-		return rvf;
-	}
-
-	/**
-	 *  Sets the ResourceVisualizationFactory used to visualize resources
-	 *  
-	 * @param rvf: the factory used to created visualizations of resources
-	 */
-	public void setResourceVisualizationFactory(ResourceVisualizationFactory rvf) {
-		this.rvf = rvf;
-	}
-
 
 	/**
 	 *  Returns an instantiation of the IDraw interface. This interface is used to actually draw the chart to an image.
@@ -130,6 +114,14 @@ public abstract class Chart {
 		this.iDrawFacade = d;
 	}
 
+
+	public ShapeDecider getShapeDecider() {
+		return shapeDecider;
+	}
+
+	public void setShapeDecider(ShapeDecider shapeDecider) {
+		this.shapeDecider = shapeDecider;
+	}
 
 	/**
 	 * Creates an actual image of the chart represented by an object of this class. 
