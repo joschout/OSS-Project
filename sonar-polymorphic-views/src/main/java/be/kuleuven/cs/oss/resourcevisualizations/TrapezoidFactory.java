@@ -18,7 +18,7 @@ public class TrapezoidFactory implements ResourceVisualizationFactory {
 			ResourceProperty greenProperty, ResourceProperty blueProperty) {
 		this.leftLineProperty = leftProperty;
 		this.baseLineProperty = baseProperty;
-		this.baseLineProperty = baseProperty;
+		this.rightLineProperty = rightProperty;
 		this.redProperty = redProperty;
 		this.greenProperty = greenProperty;
 		this.blueProperty = blueProperty;

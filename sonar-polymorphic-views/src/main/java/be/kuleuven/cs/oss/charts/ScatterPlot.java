@@ -76,10 +76,10 @@ public class ScatterPlot extends Chart{
 	@Override
 	public BufferedImage draw() {
 		LOG.info("In draw method in ScatterPlot");
-		
+		System.out.println("in draw");
 		calculateAxisOffSet();
 		Log.info("calculated the offset for the axes");
-		
+		System.out.println("axesdrawing worked?");
 		calculateRVSizeExtrema();
 		LOG.info("calculated the initial RV size extrema");
 		
@@ -154,15 +154,17 @@ public class ScatterPlot extends Chart{
 
 
 	private void calculateAxisOffSet(){
-		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(imageFrameSize.getWidth(), imageFrameSize.getHeight());
+		//TODO remove
+		System.out.println(minRVScalingFactor);
+		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(getImageFrameSize().getWidth(), getImageFrameSize().getHeight());
 	}
 
 
 	private void calculateRVSizeExtrema(){
-		minRVHeight= minRVScalingFactor*imageFrameSize.getHeight();
-		maxRVHeight = maxRVScalingFactor*imageFrameSize.getHeight();
-		maxRVWidth = maxRVScalingFactor*imageFrameSize.getWidth();
-		minRVWidth = minRVScalingFactor*imageFrameSize.getWidth();
+		minRVHeight= minRVScalingFactor*getImageFrameSize().getHeight();
+		maxRVHeight = maxRVScalingFactor*getImageFrameSize().getHeight();
+		maxRVWidth = maxRVScalingFactor*getImageFrameSize().getWidth();
+		minRVWidth = minRVScalingFactor*getImageFrameSize().getWidth();
 	}
 
 
@@ -170,11 +172,11 @@ public class ScatterPlot extends Chart{
 		String xname = xMetric.getPropertyName();
 		String yname = yMetric.getPropertyName();
 		
-		d.drawText("" +getMaxResourcePosition().getX(), (int)(imageFrameSize.getWidth()- axisOffset/2), (int)(imageFrameSize.getHeight() - axisOffset/2));
-		d.drawText(xname, (int)(axisOffset + imageFrameSize.getWidth()/2), (int)(imageFrameSize.getHeight() - axisOffset/2));
+		d.drawText("" +getMaxResourcePosition().getX(), (int)(getImageFrameSize().getWidth()- axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
+		d.drawText(xname, (int)(axisOffset + getImageFrameSize().getWidth()/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
 		
 		d.drawText("" +getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
-		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + imageFrameSize.getHeight()/2), -90, 0, 0, 0);
+		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
 	}
 	
 	
@@ -186,11 +188,11 @@ public class ScatterPlot extends Chart{
 	 */
 	private void drawAxises(IDraw d){
 		d.drawArrowRight( (int)axisOffset, 
-						  (int)(imageFrameSize.getHeight() - axisOffset) , 
-						  (int)(imageFrameSize.getWidth() - 2*axisOffset));
+						  (int)(getImageFrameSize().getHeight() - axisOffset) , 
+						  (int)(getImageFrameSize().getWidth() - 2*axisOffset));
 		d.drawArrowUp( (int)axisOffset,
-					   (int)(imageFrameSize.getHeight() - axisOffset),
-					   (int)(imageFrameSize.getHeight() - 2*axisOffset));
+					   (int)(getImageFrameSize().getHeight() - axisOffset),
+					   (int)(getImageFrameSize().getHeight() - 2*axisOffset));
 	}
 
 
@@ -304,7 +306,7 @@ public class ScatterPlot extends Chart{
 	 */
 	private int convertX(double xCoord){
 		LOG.info("xCoord: " + xCoord);
-		return (int) (axisOffset + (imageFrameSize.getWidth()-2*axisOffset)* (xCoord-getMaxResourcePosition().getX())/(getMaxResourcePosition().getX()-getMaxResourcePosition().getX()));	
+		return (int) (axisOffset + (getImageFrameSize().getWidth()-2*axisOffset)* (xCoord-getMaxResourcePosition().getX())/(getMaxResourcePosition().getX()-getMaxResourcePosition().getX()));	
 	}
 
 	/**
@@ -332,7 +334,7 @@ public class ScatterPlot extends Chart{
 	 * @return the y coordinate in the image plane
 	 */
 	private int convertY(double yCoord){
-		return (int) (imageFrameSize.getHeight()-axisOffset + (2*axisOffset-imageFrameSize.getHeight()) *(yCoord-getMaxResourcePosition().getY())/(getMaxResourcePosition().getY()-getMaxResourcePosition().getY()));
+		return (int) (getImageFrameSize().getHeight()-axisOffset + (2*axisOffset-getImageFrameSize().getHeight()) *(yCoord-getMaxResourcePosition().getY())/(getMaxResourcePosition().getY()-getMaxResourcePosition().getY()));
 	}
 	
 	/**
