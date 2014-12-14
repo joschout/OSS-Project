@@ -9,16 +9,17 @@ import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class LineFactoryHandler implements ParameterHandler {
+public class LineFactoryHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(LineFactoryHandler.class);
 
-	private ParameterHandler next;
+	private IHandler<Chart> next;
 
 	@Override
-	public void setNext(ParameterHandler handler) {
+	public void setNext(IHandler<Chart> handler) {
 		this.next = handler;
 	}
 
