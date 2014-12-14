@@ -53,7 +53,9 @@ public class Trapezoid extends ResourceVisualization {
 
 	@Override
 	public void draw(IDraw d) {
-		d.drawTrapezoid(getX(), getY(), getLeftLine(), getBaseLine(), getRightLine(), getColor().getRed(), getColor().getGreen(), getColor().getBlue());
+		d.drawTrapezoid(getX(), getY(),
+				getLeftLine(), getBaseLine(), getRightLine(),
+				getColor().getRed(), getColor().getGreen(), getColor().getBlue());
 	}
 
 }

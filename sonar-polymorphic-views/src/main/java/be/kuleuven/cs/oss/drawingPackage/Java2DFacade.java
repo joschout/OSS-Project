@@ -355,7 +355,19 @@ public class Java2DFacade implements IDraw{
 		g2d.draw(pol);
 		
 	}
-	
+	public void drawTrapezoid(
+			int xCoord, int yCoord,
+			int trap1, int trap2, int trap3,
+			int redFill, int greenFill, int blueFill
+			){
+		LOG.info("DRAWING BOX IN IDRAW IMPL");
+		drawTrapezoid(xCoord, yCoord, 
+				trap1, trap2, trap3,
+				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
+				redFill, greenFill, blueFill,
+				Java2DFacade.DEFAULT_BORDER_WIDTH);
+		
+	}
 	
 	
 	

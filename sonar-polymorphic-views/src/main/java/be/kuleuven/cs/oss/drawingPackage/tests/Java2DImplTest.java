@@ -45,7 +45,7 @@ public class Java2DImplTest {
 		impl.createEmptyImage(400, 100);
 		impl.drawCircle(
 				10, 10, //int xCoord, int yCoord
-				40, 20, //int width, int heigth
+				40, //int width, int heigth
 				0, 255, 255, //int redBorder, int greenBorder, int blueBorder -> cyan
 				255, 127, 0, //redFill, int greenFill, int blueFill -> orange
 				2 // borderWidth

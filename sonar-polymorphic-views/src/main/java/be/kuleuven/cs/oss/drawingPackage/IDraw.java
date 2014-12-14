@@ -133,7 +133,12 @@ public interface IDraw {
 			int redFill, int greenFill, int blueFill,
 			int borderWidth);
 
-
+	public void drawTrapezoid(
+			int xCoord, int yCoord,
+			int trap1, int trap2, int trap3,
+			int redFill, int greenFill, int blueFill
+			);
+	
 	public void drawCircle(
 			int xCoord, int yCoord,
 			int radius,
