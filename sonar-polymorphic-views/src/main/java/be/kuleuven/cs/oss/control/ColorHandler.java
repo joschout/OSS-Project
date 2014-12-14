@@ -49,7 +49,7 @@ public class ColorHandler implements ResourceVisualizationFactoryHandler {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		
 		if(colorValue.matches("r[0-9]{1,3}g[0-9]{1,3}b[0-9]{1,3}")){
-			List<String> rgb = parseRGB(colorValue);
+			List<String> rgb = retrieveValues(colorValue,"[rgb]");
 			
 			for(String rgbString: rgb) {
 				int rgbValue = Integer.parseInt(rgbString);
@@ -58,7 +58,7 @@ public class ColorHandler implements ResourceVisualizationFactoryHandler {
 			}
 		}
 		else if(colorValue.matches("min[0-9]+(\\.[0-9]+)*max[0-9]+(\\.[0-9]+)*key(.)+")) {
-			List<String> gs = parseGrayScale(colorValue);
+			List<String> gs = retrieveValues(colorValue,"[(min)(max)(key)]");
 			
 			String gsString1 = gs.get(0);
 			float gsValue1 = Float.parseFloat(gsString1);
@@ -67,6 +67,9 @@ public class ColorHandler implements ResourceVisualizationFactoryHandler {
 			
 			String gsKey = gs.get(2);
 			Metric gsMetric = sf.findMetric(gsKey);
+			if(gsMetric == null){
+				throw new NoResultException("Grayscale metric not found");
+			}
 			
 			ResourceProperty rp = new ScaledResourceProperty(gsValue1, gsValue2, 255, 0, sf, gsMetric);
 			
@@ -88,26 +91,14 @@ public class ColorHandler implements ResourceVisualizationFactoryHandler {
 	}
 	
 	/**
-	 * Parse the given RGB color
-	 * @param rgb Textual representation of the given RGB color
-	 * @return a list containing the respective integers representing each RGB component
-	 * @throws Exception if the given RGB color cannot be parsed
+	 * Retrieve the color values based on the given color and regular expression
+	 * @param color Textual representation of the given color
+	 * @param regex	Regular expression representing the indices of the color values
+	 * @return a list containing the textual representation of the respective color values that are contained within the given color
 	 */
-	private List<String> parseRGB(String rgb) {
-		List<String> split = Arrays.asList(rgb.split("[rgb]"));
-		
-		return split;
-	}
-
-	/**
-	 * Parse the floats contained in the given gray scale
-	 * @param gs Textual representation of the given gray scale
-	 * @return a list containing the respective floats representing each gray scale component
-	 * @throws Exception if the given gray scale cannot be parsed
-	 */
-	private List<String> parseGrayScale(String gs) {
-		List<String> split = Arrays.asList(gs.split("[(min)(max)(key)]"));
-		
+	private List<String> retrieveValues(String color, String regex) {
+		List<String> split = Arrays.asList(color.split(regex));
+		split.remove(0);
 		return split;
 	}
 	
