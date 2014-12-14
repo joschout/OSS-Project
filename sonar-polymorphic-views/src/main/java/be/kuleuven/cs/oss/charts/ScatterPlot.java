@@ -2,6 +2,7 @@ package be.kuleuven.cs.oss.charts;
 
 import java.awt.image.BufferedImage;
 
+import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,56 +41,26 @@ public class ScatterPlot extends Chart{
 	private double minRVWidth;
 	private static final double minRVScalingFactor = 0.05;
 	private static final double maxRVScalingFactor = 0.15;
-	
-	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
-	
-	
-	
+	private final static Logger LOG = LoggerFactory.getLogger(ScatterPlot.class);
 	
 	public ScatterPlot(){
 		super();
-	}
-	
-	
-	/**
-	 * constructor 
-	 * 
-	 * @param resources: The classes or packages to appear on the plot
-	 * @param rvf: The ResourceVisualisationFactory which makes a ResourceVisualisation for each resource (such as a Box)
-	 * @param sonarF: Inherited. We don't actually need it. Can be used to ask Sonar the values of extra metrics.
-	 * @param propManager: Inherited
-	 * @param width: width of the image frame
-	 * @param height: height of the image frame
-	 */
-	public ScatterPlot(Size imageFrameSize) {
-		super();
-		
-		setImageFrameSize(imageFrameSize);
-		
-		calculateAxisOffSet();
-		calculateRVSizeExtrema();
 		LOG.info("ScatterPlot constructed");
 	}
 	
-	
-	public void calculateAxisOffSet(){
-		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(imageFrameSize.getWidth(), imageFrameSize.getHeight());
+	/**
+	 * constructor 
+	 */
+	public ScatterPlot(Size imageFrameSize) {
+		super();
+		setImageFrameSize(imageFrameSize);
 	}
-	
-	public void calculateRVSizeExtrema(){
-		minRVHeight= minRVScalingFactor*imageFrameSize.getHeight();
-		maxRVHeight = maxRVScalingFactor*imageFrameSize.getHeight();
-		maxRVWidth = maxRVScalingFactor*imageFrameSize.getWidth();
-		minRVWidth = minRVScalingFactor*imageFrameSize.getWidth();
-	}
-	
 	
 	
 	public void setAxisMetrics(ResourceProperty xMetric, ResourceProperty yMetric) {
 		this.xMetric = xMetric;
 		this.yMetric = yMetric;
 	}
-
 
 	/**
 	 * The draw method goes through several steps
@@ -105,6 +76,13 @@ public class ScatterPlot extends Chart{
 	@Override
 	public BufferedImage draw() {
 		LOG.info("In draw method in ScatterPlot");
+		
+		calculateAxisOffSet();
+		Log.info("calculated the offset for the axes");
+		
+		calculateRVSizeExtrema();
+		LOG.info("calculated the initial RV size extrema");
+		
 		//1
 		getIDrawInstantiation().createEmptyImage(imageFrameSize.getWidth(), imageFrameSize.getHeight());
 		LOG.info("empty frame made");
@@ -131,11 +109,9 @@ public class ScatterPlot extends Chart{
 		return imageFrameSize;
 	}
 
-
 	public void setImageFrameSize(Size imageFrameSize) {
 		this.imageFrameSize = imageFrameSize;
 	}
-
 
 	public Position getMaxResourcePosition() {
 		return maxResourcePosition;
@@ -174,6 +150,19 @@ public class ScatterPlot extends Chart{
 
 	public void setMinResourceSize(Size minResourceSize) {
 		this.minResourceSize = minResourceSize;
+	}
+
+
+	private void calculateAxisOffSet(){
+		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(imageFrameSize.getWidth(), imageFrameSize.getHeight());
+	}
+
+
+	private void calculateRVSizeExtrema(){
+		minRVHeight= minRVScalingFactor*imageFrameSize.getHeight();
+		maxRVHeight = maxRVScalingFactor*imageFrameSize.getHeight();
+		maxRVWidth = maxRVScalingFactor*imageFrameSize.getWidth();
+		minRVWidth = minRVScalingFactor*imageFrameSize.getWidth();
 	}
 
 
@@ -281,7 +270,7 @@ public class ScatterPlot extends Chart{
 	}
 	
 	/**
-	 * Let the resource visualisations draw themselves.
+	 * Let the resource visualizations draw themselves.
 	 */
 	private void drawResourceVisualizations(){
 		for(ResourceVisualization rv: getResourceVisualizations()){
