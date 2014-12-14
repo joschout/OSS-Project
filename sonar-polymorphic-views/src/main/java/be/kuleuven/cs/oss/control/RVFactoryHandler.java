@@ -9,11 +9,11 @@ import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class RVFactoryHandler implements ParameterHandler {
+public class RVFactoryHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(RVFactoryHandler.class);
 
-	private ParameterHandler next;
+	private IHandler<Chart> next;
 	
 	private SonarFacade sf;
 	
@@ -22,7 +22,7 @@ public class RVFactoryHandler implements ParameterHandler {
 	}
 
 	@Override
-	public void setNext(ParameterHandler handler) {
+	public void setNext(IHandler<Chart> handler) {
 		this.next = handler;
 	}
 
@@ -42,7 +42,7 @@ public class RVFactoryHandler implements ParameterHandler {
 	}
 
 	private void startProcess(ResourceVisualizationFactory rvf, ChartParameters params) {
-		ResourceVisualizationFactoryProcessor processor = new ResourceVisualizationFactoryProcessor();
+		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
 		
 		processor.addHandler(new BoxDimensionHandler(sf));
 		processor.addHandler(new ColorHandler(sf));

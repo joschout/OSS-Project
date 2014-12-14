@@ -13,11 +13,11 @@ import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class AxisMetricHandler implements ParameterHandler {
+public class AxisMetricHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(AxisMetricHandler.class);
 
-	private ParameterHandler next;
+	private IHandler<Chart> next;
 
 	private String keyX = "xmetric";
 	private String keyY = "ymetric";
@@ -29,7 +29,7 @@ public class AxisMetricHandler implements ParameterHandler {
 	}
 
 	@Override
-	public void setNext(ParameterHandler handler) {
+	public void setNext(IHandler<Chart> handler) {
 		this.next = handler;
 	}
 

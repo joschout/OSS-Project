@@ -16,13 +16,13 @@ import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class SizeHandler implements ParameterHandler {
+public class SizeHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(SizeHandler.class);
 
 	private static final Size DEFAULT_SIZE = new Size(800,600);
 
-	private ParameterHandler next;
+	private IHandler<Chart> next;
 
 	private String key = "size";
 
@@ -33,7 +33,7 @@ public class SizeHandler implements ParameterHandler {
 	}
 
 	@Override
-	public void setNext(ParameterHandler handler) {
+	public void setNext(IHandler<Chart> handler) {
 		this.next = handler;
 	}
 
