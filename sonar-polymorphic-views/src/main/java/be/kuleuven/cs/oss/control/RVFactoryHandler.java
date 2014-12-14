@@ -27,10 +27,6 @@ public class RVFactoryHandler implements ParameterHandler {
 	}
 
 	
-	/**
-	 * Create a new line factory (currently, only straight lines are supported)
-	 * @return a new line factory
-	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		ResourceVisualizationFactory factory = new BoxFactory();

@@ -11,6 +11,7 @@ import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class BoxDimensionHandler implements ResourceVisualizationFactoryHandler {
@@ -56,11 +57,15 @@ public class BoxDimensionHandler implements ResourceVisualizationFactoryHandler 
 	private ResourceProperty createBoxDimensionRP(String dimension, ChartParameters params){
 		String dimensionValue = retrieveValue(dimension, params);
 		ResourceProperty rp;
-		if(dimensionValue.matches("[0-9]")){
+		if(dimensionValue.matches("[0-9]+")){
 			rp = new ConstantResourceProperty(Integer.parseInt(dimensionValue));
 		}
 		else{
-			rp = new SonarResourceProperty(sf, sf.findMetric(dimensionValue));
+			Metric metric = sf.findMetric(dimensionValue);
+			if(metric == null){
+				throw new NoResultException("metric not found");
+			}
+			rp = new SonarResourceProperty(sf, metric);
 		}
 
 		return rp;

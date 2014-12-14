@@ -10,6 +10,7 @@ import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
+import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class AxisMetricHandler implements ParameterHandler {
@@ -51,9 +52,13 @@ public class AxisMetricHandler implements ParameterHandler {
 
 
 	private ResourceProperty createAxisMetricProperty(String axis, ChartParameters params){
-		String aMetric = retrieveValue(axis, params);
-
-		SonarResourceProperty prop = new SonarResourceProperty(sf,sf.findMetric(aMetric));
+		String metricValue = retrieveValue(axis, params);
+		
+		Metric metric = sf.findMetric(metricValue);
+		if(metric == null){
+			throw new NoResultException("Metric not found");
+		}
+		SonarResourceProperty prop = new SonarResourceProperty(sf,sf.findMetric(metricValue));
 		
 		return prop;
 	}
