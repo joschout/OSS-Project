@@ -9,4 +9,5 @@ public interface IHandler<M> {
 	
 	//handle request
 	public abstract void handleRequest(M mutableObject, ChartParameters params);
+	
 }

@@ -25,10 +25,8 @@ public class ParentParameter {
 		}
 		
 		Resource resource = null;
-		try {
-			resource = sf.findResource(parent);
-		}
-		catch(Exception e){
+		resource = sf.findResource(parent);
+		if(resource == null){
 			LOG.info("retrieve parent failed");
 			throw new NoResultException("Parent not valid");
 		}

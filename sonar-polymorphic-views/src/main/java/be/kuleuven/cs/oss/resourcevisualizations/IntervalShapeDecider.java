@@ -5,13 +5,13 @@ import java.util.TreeMap;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
-public class IntervalDecider implements ShapeDecider {
+public class IntervalShapeDecider implements ShapeDecider {
 	
 	private TreeMap<Double, ResourceVisualizationFactory>  boundaryToFactoryMap;
 	private ResourceProperty resourceProperty;
 
 
-	public IntervalDecider(TreeMap<Double, ResourceVisualizationFactory> boundaryToFactoryMapping, ResourceProperty resourceProperty){
+	public IntervalShapeDecider(TreeMap<Double, ResourceVisualizationFactory> boundaryToFactoryMapping, ResourceProperty resourceProperty){
 		setBoundaryToFactoryMap(boundaryToFactoryMapping);
 		setResourceProperty(resourceProperty);
 	}
