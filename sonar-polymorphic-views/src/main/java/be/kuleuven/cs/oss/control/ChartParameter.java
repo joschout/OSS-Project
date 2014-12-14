@@ -43,6 +43,7 @@ public class ChartParameter {
 			return new SystemComplexity();
 		}
 		
+		throw new NoResultException("No chart created");
 		
 	}
 

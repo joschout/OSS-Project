@@ -58,7 +58,7 @@ public class SizeHandler implements ParameterHandler {
 			size = DEFAULT_SIZE;
 		}
 
-		((ScatterPlot) chart).setSize(size);
+		((ScatterPlot) chart).setImageFrameSize(size);;
 		
 		if(next != null) {
 			next.handleRequest(chart, params);
