@@ -21,36 +21,40 @@ public class Trapezoid extends ResourceVisualization {
 		this.rightLine = rightLine;
 	}
 	
-
 	public int getBaseLine() {
 		return baseLine;
 	}
-
 
 	public void setBaseLine(int baseLine) {
 		this.baseLine = baseLine;
 	}
 
-
 	public int getLeftLine() {
 		return leftLine;
 	}
-
 
 	public void setLeftLine(int leftLine) {
 		this.leftLine = leftLine;
 	}
 
-
 	public int getRightLine() {
 		return rightLine;
 	}
 
-
 	public void setRightLine(int rightLine) {
 		this.rightLine = rightLine;
 	}
-
+	
+	public void setSize(Size nsize){
+		super.setSize(nsize);
+		setBaseLine(nsize.getWidth());	
+		if (getLeftLine() >= getRightLine()){
+			int newRight = getRightLine()/getLeftLine()*nsize.getHeight();
+			setRightLine(newRight);
+			setLeftLine(nsize.getHeight());
+		}
+	}
+	
 	@Override
 	public void draw(IDraw d) {
 		d.drawTrapezoid(getX(), getY(),
