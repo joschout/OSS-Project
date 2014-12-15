@@ -4,7 +4,7 @@ import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class ScaledResourceProperty implements ResourceProperty {
+public class ScaledResourceProperty extends ResourcePropertyDecorator {
 	
 	private float minScale;
 	private float maxScale;
@@ -12,18 +12,14 @@ public class ScaledResourceProperty implements ResourceProperty {
 	private int minValue;
 	private int maxValue;
 	
-	private SonarFacade f;
-	private Metric m;
-	
-	public ScaledResourceProperty(float minScale, float maxScale, int minValue, int maxValue, SonarFacade f, Metric m) {
+	public ScaledResourceProperty(ResourceProperty rpToBeDecorated, float minScale, float maxScale, int minValue, int maxValue) {
+		super(rpToBeDecorated);
 		this.minScale = minScale;
 		this.maxScale = maxScale;
 		
 		this.minValue = minValue;
 		this.maxValue = maxValue;
-		
-		this.f = f;
-		this.m = m;
+
 	}
 	
 	/**
@@ -34,7 +30,7 @@ public class ScaledResourceProperty implements ResourceProperty {
 	 */
 	@Override
 	public Double getValue(Resource r) {
-		Double measure = f.findMeasure(r, m).getValue();
+		Double measure = super.getValue(r);
 		double value;
 		if (measure >= maxScale) value = maxValue;
 		else if(measure <= minScale) value = minValue;
@@ -43,10 +39,4 @@ public class ScaledResourceProperty implements ResourceProperty {
 		}
 		return value;		
 	}
-
-	@Override
-	public String getPropertyName() {
-		return m.getName();
-	}
-
 }
