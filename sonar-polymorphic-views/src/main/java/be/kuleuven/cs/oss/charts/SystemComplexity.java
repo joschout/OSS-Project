@@ -25,13 +25,12 @@ public class SystemComplexity extends Chart {
 	
 	public SystemComplexity() {
 		super();
-		
-		this.inheritanceTree = makeTree();
 	}
+	
 
 	
 
-	private TreeNode makeTree() {
+	public void makeTree() {
 		LOG.info("Started making a Tree in SysCom");
 		List<Resource> parentResources = new ArrayList<Resource>();
 		
@@ -59,12 +58,14 @@ public class SystemComplexity extends Chart {
 		treeNode.setRootNode();
 		
 		LOG.info("Ended making a Tree in SysCom");
-		return treeNode;
+		
+		this.inheritanceTree =  treeNode;
 	}
 
 
 	@Override
 	public BufferedImage draw() {
+		makeTree();
 		SystemComplexityDrawing sysComDraw = new SystemComplexityDrawing(getIDrawInstantiation(), lf);
 		TreeNodeRV treeNodeRV = new TreeNodeRV(getRvf(), inheritanceTree);
 		BufferedImage out = sysComDraw.drawTreeRV(treeNodeRV);

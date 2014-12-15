@@ -116,6 +116,7 @@ public class Java2DFacade implements IDraw{
 			){
 		LOG.info("DRAWING BOX IN IDRAW IMPL");
 		System.out.println(width + " " + heigth);
+		System.out.println(xCoord + " " + yCoord);
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
 				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,

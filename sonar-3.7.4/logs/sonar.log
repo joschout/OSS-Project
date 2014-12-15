@@ -1,0 +1,792 @@
+STATUS | wrapper  | 2014/11/10 12:21:12 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/10 12:21:12 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/10 12:21:13 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/10 12:21:13 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/10 12:21:13 | 
+INFO   | jvm 1    | 2014/11/10 12:21:15 | 2014-11-10 12:21:15.064:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.10 12:21:20 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:20 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.11.10 12:21:20 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\data
+2014.11.10 12:21:20 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.11.10 12:21:20 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.11.10 12:21:21 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS
+2014.11.10 12:21:21 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy
+2014.11.10 12:21:21 INFO  org.sonar.INFO  Install plugins...
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:22 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 12:21:23 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 12:21:23 INFO  org.sonar.INFO  Install plugins done: 1376 ms
+2014.11.10 12:21:23 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.10 12:21:23 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.11.10 12:21:23 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/10 12:21:27 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/10 12:21:27 | gem install jruby-openssl for full support.
+2014.11.10 12:21:34 INFO  o.s.s.d.m.DatabaseMigrator  Create database
+2014.11.10 12:21:35 INFO  org.sonar.INFO  Start components...
+2014.11.10 12:21:35 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.10 12:21:38 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.10 12:21:38 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.10 12:21:39 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.10 12:21:39 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.11.10 12:21:40 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.11.10 12:21:41 INFO  org.sonar.INFO  Deploy GWT plugins done: 2057 ms
+2014.11.10 12:21:41 INFO  org.sonar.INFO  Load metrics...
+2014.11.10 12:21:42 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.10 12:21:42 INFO  org.sonar.INFO  Load metrics done: 1616 ms
+2014.11.10 12:21:42 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.10 12:21:44 INFO  org.sonar.INFO  Register rules [pmd/java] done: 1243 ms
+2014.11.10 12:21:44 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.10 12:21:44 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 42 ms
+2014.11.10 12:21:44 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.10 12:21:44 INFO  org.sonar.INFO  Register rules [squid/java] done: 336 ms
+2014.11.10 12:21:44 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.10 12:21:46 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 2424 ms
+2014.11.10 12:21:46 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.10 12:21:48 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 1427 ms
+2014.11.10 12:21:48 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.10 12:21:48 INFO  org.sonar.INFO  Register rules [common-java/java] done: 9 ms
+2014.11.10 12:21:48 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.10 12:21:48 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.10 12:21:50 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way
+2014.11.10 12:21:50 INFO  o.s.s.s.RegisterNewProfiles  Register java profile: Sonar way with Findbugs
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewProfiles  Set default java profile: Sonar way
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 2771 ms
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: Projects
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filter: My favourites
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 31 ms
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Dashboard
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Home
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Hotspots
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: Issues
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboard: TimeMachine
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 131 ms
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterPermissionTemplates  Set default permission template: default_template
+2014.11.10 12:21:51 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 25 ms
+2014.11.10 12:21:51 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.10 12:21:51 INFO  org.sonar.INFO  Start components done: 16842 ms
+INFO   | jvm 1    | 2014/11/10 12:21:52 | 2014-11-10 12:21:52.004:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server
+INFO   | jvm 1    | 2014/11/10 12:21:52 | 2014-11-10 12:21:52.334:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/11/10 17:29:53 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/11/10 17:29:53 | Launching a JVM...
+INFO   | jvm 1    | 2014/11/10 17:29:54 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/11/10 17:29:54 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/11/10 17:29:54 | 
+INFO   | jvm 1    | 2014/11/10 17:29:54 | 2014-11-10 17:29:54.300:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.11.10 17:29:57 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:00 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.11.10 17:30:00 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\data
+2014.11.10 17:30:00 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.11.10 17:30:00 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.11.10 17:30:01 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS
+2014.11.10 17:30:01 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy
+2014.11.10 17:30:01 INFO  org.sonar.INFO  Install plugins...
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.11.10 17:30:02 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.11.10 17:30:02 INFO  org.sonar.INFO  Install plugins done: 1214 ms
+2014.11.10 17:30:02 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.11.10 17:30:03 INFO  org.sonar.INFO  Start components...
+2014.11.10 17:30:03 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.11.10 17:30:04 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.11.10 17:30:04 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.11.10 17:30:05 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.11.10 17:30:05 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.11.10 17:30:05 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.11.10 17:30:05 INFO  org.sonar.INFO  Deploy GWT plugins done: 833 ms
+2014.11.10 17:30:05 INFO  org.sonar.INFO  Load metrics...
+2014.11.10 17:30:06 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Load metrics done: 316 ms
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [pmd/java] done: 357 ms
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 13 ms
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [squid/java] done: 79 ms
+2014.11.10 17:30:06 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.11.10 17:30:07 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 657 ms
+2014.11.10 17:30:07 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.11.10 17:30:07 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 380 ms
+2014.11.10 17:30:07 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.11.10 17:30:07 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
+2014.11.10 17:30:07 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.11.10 17:30:07 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.11.10 17:30:09 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1235 ms
+2014.11.10 17:30:09 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.11.10 17:30:09 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.11.10 17:30:10 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.11.10 17:30:10 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
+2014.11.10 17:30:10 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.11.10 17:30:10 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 13 ms
+2014.11.10 17:30:10 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.11.10 17:30:10 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 3 ms
+2014.11.10 17:30:10 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.11.10 17:30:10 INFO  org.sonar.INFO  Start components done: 7220 ms
+2014.11.10 17:30:10 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.11.10 17:30:10 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/11/10 17:30:17 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/11/10 17:30:17 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/11/10 17:30:26 | 2014-11-10 17:30:26.851:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server
+INFO   | jvm 1    | 2014/11/10 17:30:27 | 2014-11-10 17:30:27.020:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/12/15 11:23:05 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/12/15 11:23:05 | Launching a JVM...
+INFO   | jvm 1    | 2014/12/15 11:23:06 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/12/15 11:23:06 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/12/15 11:23:06 | 
+INFO   | jvm 1    | 2014/12/15 11:23:07 | 2014-12-15 11:23:07.554:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.12.15 11:23:12 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:15 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.12.15 11:23:15 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\data
+2014.12.15 11:23:15 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.12.15 11:23:15 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.12.15 11:23:16 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS
+2014.12.15 11:23:16 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy
+2014.12.15 11:23:16 INFO  org.sonar.INFO  Install plugins...
+2014.12.15 11:23:16 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 11:23:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 11:23:17 INFO  org.sonar.INFO  Install plugins done: 1515 ms
+2014.12.15 11:23:18 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.12.15 11:23:18 INFO  org.sonar.INFO  Start components...
+2014.12.15 11:23:18 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.12.15 11:23:21 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.12.15 11:23:21 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.12.15 11:23:21 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.12.15 11:23:21 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.12.15 11:23:22 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.12.15 11:23:22 INFO  org.sonar.INFO  Deploy GWT plugins done: 672 ms
+2014.12.15 11:23:22 INFO  org.sonar.INFO  Load metrics...
+2014.12.15 11:23:23 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Load metrics done: 657 ms
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [pmd/java] done: 468 ms
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 16 ms
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [squid/java] done: 78 ms
+2014.12.15 11:23:23 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.12.15 11:23:24 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 547 ms
+2014.12.15 11:23:24 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.12.15 11:23:24 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 328 ms
+2014.12.15 11:23:24 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.12.15 11:23:24 INFO  org.sonar.INFO  Register rules [common-java/java] done: 0 ms
+2014.12.15 11:23:24 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.12.15 11:23:24 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.12.15 11:23:25 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 922 ms
+2014.12.15 11:23:25 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.12.15 11:23:25 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.12.15 11:23:26 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.12.15 11:23:26 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 15 ms
+2014.12.15 11:23:26 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.12.15 11:23:26 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 16 ms
+2014.12.15 11:23:26 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.12.15 11:23:26 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 0 ms
+2014.12.15 11:23:26 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.12.15 11:23:26 INFO  org.sonar.INFO  Start components done: 8813 ms
+2014.12.15 11:23:27 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.12.15 11:23:27 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/12/15 11:23:34 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/12/15 11:23:34 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/12/15 11:23:47 | 2014-12-15 11:23:47.882:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server
+INFO   | jvm 1    | 2014/12/15 11:23:48 | 2014-12-15 11:23:48.335:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/12/15 18:12:57 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/12/15 18:12:57 | Launching a JVM...
+INFO   | jvm 1    | 2014/12/15 18:12:58 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/12/15 18:12:58 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/12/15 18:12:58 | 
+INFO   | jvm 1    | 2014/12/15 18:12:58 | 2014-12-15 18:12:58.556:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.12.15 18:13:00 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:02 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.12.15 18:13:02 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\data
+2014.12.15 18:13:02 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.12.15 18:13:02 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.12.15 18:13:03 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS
+2014.12.15 18:13:03 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy
+2014.12.15 18:13:03 INFO  org.sonar.INFO  Install plugins...
+2014.12.15 18:13:03 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:13:04 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:13:04 INFO  org.sonar.INFO  Install plugins done: 969 ms
+2014.12.15 18:13:04 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.12.15 18:13:04 INFO  org.sonar.INFO  Start components...
+2014.12.15 18:13:04 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.12.15 18:13:05 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.12.15 18:13:05 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.12.15 18:13:05 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.12.15 18:13:05 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.12.15 18:13:06 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\sonar-3.7.4 OSS\war\sonar-server\deploy\gwt
+2014.12.15 18:13:06 INFO  org.sonar.INFO  Deploy GWT plugins done: 625 ms
+2014.12.15 18:13:06 INFO  org.sonar.INFO  Load metrics...
+2014.12.15 18:13:06 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.12.15 18:13:06 INFO  org.sonar.INFO  Load metrics done: 234 ms
+2014.12.15 18:13:06 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [pmd/java] done: 312 ms
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 16 ms
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [squid/java] done: 63 ms
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 609 ms
+2014.12.15 18:13:07 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.12.15 18:13:08 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 328 ms
+2014.12.15 18:13:08 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.12.15 18:13:08 INFO  org.sonar.INFO  Register rules [common-java/java] done: 0 ms
+2014.12.15 18:13:08 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.12.15 18:13:08 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 779 ms
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 0 ms
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 0 ms
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.12.15 18:13:09 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 0 ms
+2014.12.15 18:13:09 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.12.15 18:13:09 INFO  org.sonar.INFO  Start components done: 4453 ms
+2014.12.15 18:13:09 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.12.15 18:13:09 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/12/15 18:13:12 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/12/15 18:13:12 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/12/15 18:13:16 | 2014-12-15 18:13:16.727:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/sonar-3.7.4%20OSS/war/sonar-server
+INFO   | jvm 1    | 2014/12/15 18:13:16 | 2014-12-15 18:13:16.852:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/12/15 18:15:10 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/12/15 18:15:10 | Launching a JVM...
+INFO   | jvm 1    | 2014/12/15 18:15:10 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/12/15 18:15:10 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/12/15 18:15:10 | 
+INFO   | jvm 1    | 2014/12/15 18:15:11 | 2014-12-15 18:15:11.269:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.12.15 18:15:13 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:17 INFO  o.s.s.d.EmbeddedDatabase  Starting embedded database on port 9092 with url jdbc:h2:tcp://localhost:9092/sonar
+2014.12.15 18:15:17 INFO  o.s.s.d.EmbeddedDatabase  Embedded database started. Data stored in: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\data
+2014.12.15 18:15:17 WARN  o.s.c.p.DefaultDatabase  H2 database should be used for evaluation purpose only
+2014.12.15 18:15:17 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:h2:tcp://localhost:9092/sonar
+2014.12.15 18:15:18 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.12.15 18:15:18 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.12.15 18:15:18 INFO  org.sonar.INFO  Install plugins...
+2014.12.15 18:15:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:15:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:15:19 INFO  org.sonar.INFO  Install plugins done: 1389 ms
+2014.12.15 18:15:19 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.12.15 18:15:19 INFO  org.sonar.INFO  Start components...
+2014.12.15 18:15:19 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.12.15 18:15:20 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.12.15 18:15:20 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Deploy GWT plugins done: 555 ms
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Load metrics...
+2014.12.15 18:15:21 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Load metrics done: 237 ms
+2014.12.15 18:15:21 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [pmd/java] done: 367 ms
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 11 ms
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [squid/java] done: 81 ms
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 584 ms
+2014.12.15 18:15:22 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.12.15 18:15:23 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 347 ms
+2014.12.15 18:15:23 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.12.15 18:15:23 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
+2014.12.15 18:15:23 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.12.15 18:15:23 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 869 ms
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 12 ms
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.12.15 18:15:24 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 1 ms
+2014.12.15 18:15:24 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.12.15 18:15:24 INFO  org.sonar.INFO  Start components done: 4721 ms
+2014.12.15 18:15:24 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.12.15 18:15:24 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/12/15 18:15:29 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/12/15 18:15:29 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/12/15 18:15:37 | 2014-12-15 18:15:37.716:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/12/15 18:15:37 | 2014-12-15 18:15:37.907:INFO:oejs.AbstractConnector:Started SelectChannelConnector@0.0.0.0:9000
+STATUS | wrapper  | 2014/12/15 18:19:13 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/12/15 18:19:14 | Launching a JVM...
+INFO   | jvm 1    | 2014/12/15 18:19:14 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/12/15 18:19:14 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/12/15 18:19:14 | 
+INFO   | jvm 1    | 2014/12/15 18:19:14 | 2014-12-15 18:19:14.447:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.12.15 18:19:16 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:16 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.12.15 18:19:16 ERROR o.s.c.p.Database  Can not connect to database. Please check connectivity and settings (see the properties prefixed by 'sonar.jdbc.').
+org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Access denied for user 'sonar'@'localhost' (using password: YES))
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1549) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.createDataSource(BasicDataSource.java:1388) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.getConnection(BasicDataSource.java:1044) ~[commons-dbcp-1.4.jar:1.4]
+	at org.sonar.core.persistence.DefaultDatabase.checkConnection(DefaultDatabase.java:144) [sonar-core-3.7.4.jar:na]
+	at org.sonar.core.persistence.DefaultDatabase.start(DefaultDatabase.java:73) [sonar-core-3.7.4.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_20]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_20]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_20]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_20]
+	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.invokeMethod(ReflectionLifecycleStrategy.java:110) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.lifecycle.ReflectionLifecycleStrategy.start(ReflectionLifecycleStrategy.java:89) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.behaviors.Stored.start(Stored.java:110) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1015) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1008) [picocontainer-2.14.3.jar:na]
+	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:766) [picocontainer-2.14.3.jar:na]
+	at org.sonar.api.platform.ComponentContainer.startComponents(ComponentContainer.java:91) [sonar-plugin-api-3.7.4.jar:na]
+	at org.sonar.server.platform.Platform.startDatabaseConnectors(Platform.java:251) [classes/:na]
+	at org.sonar.server.platform.Platform.init(Platform.java:189) [classes/:na]
+	at org.sonar.server.platform.PlatformLifecycleListener.contextInitialized(PlatformLifecycleListener.java:33) [classes/:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.7.4.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:48) [sonar-application-3.7.4.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_20]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_20]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_20]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_20]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
+Caused by: java.sql.SQLException: Access denied for user 'sonar'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1078) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:925) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1704) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1250) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2483) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2516) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2301) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:834) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.24.jar:na]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_20]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_20]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_20]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408) ~[na:1.8.0_20]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:416) ~[mysql-connector-java-5.1.24.jar:na]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:317) ~[mysql-connector-java-5.1.24.jar:na]
+	at org.apache.commons.dbcp.DriverConnectionFactory.createConnection(DriverConnectionFactory.java:38) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556) ~[commons-dbcp-1.4.jar:1.4]
+	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545) ~[commons-dbcp-1.4.jar:1.4]
+	... 40 common frames omitted
+2014.12.15 18:19:16 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.12.15 18:19:16 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.12.15 18:19:16 INFO  org.sonar.INFO  Install plugins...
+2014.12.15 18:19:16 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:16 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:16 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:19:17 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:19:17 INFO  org.sonar.INFO  Install plugins done: 640 ms
+2014.12.15 18:19:17 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.12.15 18:19:17 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.12.15 18:19:17 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/12/15 18:19:20 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/12/15 18:19:20 | gem install jruby-openssl for full support.
+2014.12.15 18:19:24 INFO  jruby.rack  An exception happened during JRuby-Rack startup
+no connection available
+--- System
+jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+Time: Mon Dec 15 18:19:24 +0100 2014
+Server: jetty/7.6.11.v20130520
+jruby.home: file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home
+
+--- Context Init Parameters:
+jruby.compat.version = 1.8
+jruby.max.runtimes = 1
+jruby.min.runtimes = 1
+jruby.rack.logging = slf4j
+public.root = /
+rails.env = production
+
+--- Backtrace
+ActiveRecord::ConnectionNotEstablished: no connection available
+  set_native_database_types at arjdbc/jdbc/RubyJdbcConnection.java:517
+                 initialize at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61
+                 initialize at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31
+            jdbc_connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6
+                       send at org/jruby/RubyKernel.java:2109
+             new_connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223
+    checkout_new_connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245
+                   checkout at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188
+                       loop at org/jruby/RubyKernel.java:1439
+                   checkout at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184
+            mon_synchronize at file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191
+                   checkout at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183
+                 connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98
+        retrieve_connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326
+        retrieve_connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123
+                 connection at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115
+                 initialize at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440
+                         up at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401
+                    migrate at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383
+          upgrade_and_start at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:62
+            automatic_setup at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:74
+                     (root) at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:213
+                       load at org/jruby/RubyKernel.java:1087
+           load_environment at C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:23
+           load_environment at file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65
+                     (root) at <script>:1
+
+--- RubyGems
+Gem.dir: C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems
+Gem.path:
+C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems
+Activated gems:
+  rake-0.9.2.2
+  activesupport-2.3.15
+  activerecord-2.3.15
+  rack-1.1.3
+  actionpack-2.3.15
+  actionmailer-2.3.15
+  activeresource-2.3.15
+  rails-2.3.15
+  color-tools-1.3.0
+  i18n-0.4.2
+  json-jruby-1.2.3-universal-java-1.6
+  activerecord-jdbc-adapter-1.1.3
+  fastercsv-1.4.0
+
+--- Bundler
+undefined method `bundle_path' for Bundler:Module
+
+--- JRuby-Rack Config
+compat_version = RUBY1_8
+default_logger = org.jruby.rack.logging.StandardOutLogger@19e29b2c
+err = java.io.PrintStream@58b4a701
+filter_adds_html = true
+filter_verifies_resource = false
+ignore_environment = false
+initial_memory_buffer_size = 
+initial_runtimes = 1
+jms_connection_factory = 
+jms_jndi_properties = 
+logger = org.jruby.rack.logging.Slf4jLogger@70e9dee0
+logger_class_name = slf4j
+logger_name = jruby.rack
+maximum_memory_buffer_size = 
+maximum_runtimes = 1
+num_initializer_threads = 
+out = java.io.PrintStream@4bb7c1b0
+rackup = 
+rackup_path = 
+rewindable = true
+runtime_arguments = 
+runtime_timeout_seconds = 
+serial_initialization = false
+servlet_context = ServletContext@o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+
+2014.12.15 18:19:24 ERROR jruby.rack  unable to create shared application instance
+org.jruby.rack.RackInitializationException: no connection available
+	from arjdbc/jdbc/RubyJdbcConnection.java:517:in `set_native_database_types'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61:in `initialize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31:in `initialize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6:in `jdbc_connection'
+	from org/jruby/RubyKernel.java:2109:in `send'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+	from org/jruby/RubyKernel.java:1439:in `loop'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+	from file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191:in `mon_synchronize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440:in `initialize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401:in `up'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383:in `migrate'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:62:in `upgrade_and_start'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:74:in `automatic_setup'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:213:in `(root)'
+	from org/jruby/RubyKernel.java:1087:in `load'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:23:in `load_environment'
+	from file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65:in `load_environment'
+	from <script>:1:in `(root)'
+
+	at org.jruby.rack.DefaultRackApplicationFactory$4.init(DefaultRackApplicationFactory.java:231) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.DefaultRackApplicationFactory.getApplication(DefaultRackApplicationFactory.java:58) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.SharedRackApplicationFactory.init(SharedRackApplicationFactory.java:33) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.RackServletContextListener.contextInitialized(RackServletContextListener.java:48) [jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.7.4.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:48) [sonar-application-3.7.4.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_20]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_20]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_20]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_20]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
+org.jruby.exceptions.RaiseException: (ConnectionNotEstablished) no connection available
+	at arjdbc.jdbc.RubyJdbcConnection.set_native_database_types(arjdbc/jdbc/RubyJdbcConnection.java:517) ~[na:na]
+	at JdbcConnection.initialize(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61) ~[na:na]
+	at JdbcAdapter.initialize(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31) ~[na:na]
+	at (Anonymous).jdbc_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6) ~[na:na]
+	at org.jruby.RubyKernel.send(org/jruby/RubyKernel.java:2109) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.new_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223) ~[na:na]
+	at ConnectionPool.checkout_new_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245) ~[na:na]
+	at ConnectionPool.checkout(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188) ~[na:na]
+	at org.jruby.RubyKernel.loop(org/jruby/RubyKernel.java:1439) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.checkout(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184) ~[na:na]
+	at MonitorMixin.mon_synchronize(file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191) ~[na:na]
+	at ConnectionPool.checkout(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183) ~[na:na]
+	at ConnectionPool.connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98) ~[na:na]
+	at ConnectionHandler.retrieve_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326) ~[na:na]
+	at (Anonymous).retrieve_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123) ~[na:na]
+	at (Anonymous).connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115) ~[na:na]
+	at Migrator.initialize(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440) ~[na:na]
+	at (Anonymous).up(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401) ~[na:na]
+	at (Anonymous).migrate(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383) ~[na:na]
+	at (Anonymous).upgrade_and_start(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:62) ~[na:na]
+	at (Anonymous).automatic_setup(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:74) ~[na:na]
+	at (Anonymous).(root)(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:213) ~[na:na]
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1087) ~[jruby-complete-1.6.8.jar:na]
+	at Rails2Environment.load_environment(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:23) ~[na:na]
+	at (Anonymous).load_environment(file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65) ~[na:na]
+	at (Anonymous).(root)(<script>:1) ~[na:na]
+2014.12.15 18:19:24 ERROR jruby.rack  Error: application initialization failed
+org.jruby.rack.RackInitializationException: no connection available
+	from arjdbc/jdbc/RubyJdbcConnection.java:517:in `set_native_database_types'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61:in `initialize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31:in `initialize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6:in `jdbc_connection'
+	from org/jruby/RubyKernel.java:2109:in `send'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+	from org/jruby/RubyKernel.java:1439:in `loop'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+	from file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191:in `mon_synchronize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440:in `initialize'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401:in `up'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383:in `migrate'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:62:in `upgrade_and_start'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:74:in `automatic_setup'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:213:in `(root)'
+	from org/jruby/RubyKernel.java:1087:in `load'
+	from C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:23:in `load_environment'
+	from file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65:in `load_environment'
+	from <script>:1:in `(root)'
+
+	at org.jruby.rack.DefaultRackApplicationFactory$4.init(DefaultRackApplicationFactory.java:231) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.DefaultRackApplicationFactory.getApplication(DefaultRackApplicationFactory.java:58) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.SharedRackApplicationFactory.init(SharedRackApplicationFactory.java:33) ~[jruby-rack-1.1.10.jar:na]
+	at org.jruby.rack.RackServletContextListener.contextInitialized(RackServletContextListener.java:48) ~[jruby-rack-1.1.10.jar:na]
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:746) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:238) [jetty-servlet-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1240) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:689) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:482) [jetty-webapp-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:281) [jetty-server-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-7.6.11.v20130520.jar:7.6.11.v20130520]
+	at org.sonar.application.JettyEmbedder.start(JettyEmbedder.java:67) [sonar-application-3.7.4.jar:na]
+	at org.sonar.application.StartServer.main(StartServer.java:48) [sonar-application-3.7.4.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_20]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_20]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_20]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_20]
+	at org.tanukisoftware.wrapper.WrapperSimpleApp.run(WrapperSimpleApp.java:240) [wrapper-3.2.3.jar:3.2.3]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_20]
+org.jruby.exceptions.RaiseException: (ConnectionNotEstablished) no connection available
+	at arjdbc.jdbc.RubyJdbcConnection.set_native_database_types(arjdbc/jdbc/RubyJdbcConnection.java:517) ~[na:na]
+	at JdbcConnection.initialize(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection.rb:61) ~[na:na]
+	at JdbcAdapter.initialize(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/adapter.rb:31) ~[na:na]
+	at (Anonymous).jdbc_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-jdbc-adapter-1.1.3/lib/arjdbc/jdbc/connection_methods.rb:6) ~[na:na]
+	at org.jruby.RubyKernel.send(org/jruby/RubyKernel.java:2109) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.new_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:223) ~[na:na]
+	at ConnectionPool.checkout_new_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:245) ~[na:na]
+	at ConnectionPool.checkout(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:188) ~[na:na]
+	at org.jruby.RubyKernel.loop(org/jruby/RubyKernel.java:1439) ~[jruby-complete-1.6.8.jar:na]
+	at ConnectionPool.checkout(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:184) ~[na:na]
+	at MonitorMixin.mon_synchronize(file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-complete-1.6.8.jar!/META-INF/jruby.home/lib/ruby/1.8/monitor.rb:191) ~[na:na]
+	at ConnectionPool.checkout(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:183) ~[na:na]
+	at ConnectionPool.connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:98) ~[na:na]
+	at ConnectionHandler.retrieve_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:326) ~[na:na]
+	at (Anonymous).retrieve_connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:123) ~[na:na]
+	at (Anonymous).connection(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/connection_adapters/abstract/connection_specification.rb:115) ~[na:na]
+	at Migrator.initialize(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:440) ~[na:na]
+	at (Anonymous).up(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:401) ~[na:na]
+	at (Anonymous).migrate(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/gems/gems/activerecord-2.3.15/lib/active_record/migration.rb:383) ~[na:na]
+	at (Anonymous).upgrade_and_start(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:62) ~[na:na]
+	at (Anonymous).automatic_setup(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/../lib/database_version.rb:74) ~[na:na]
+	at (Anonymous).(root)(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:213) ~[na:na]
+	at org.jruby.RubyKernel.load(org/jruby/RubyKernel.java:1087) ~[jruby-complete-1.6.8.jar:na]
+	at Rails2Environment.load_environment(C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/config/environment.rb:23) ~[na:na]
+	at (Anonymous).load_environment(file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/jruby/rack/rails_booter.rb:65) ~[na:na]
+	at (Anonymous).(root)(<script>:1) ~[na:na]
+INFO   | jvm 1    | 2014/12/15 18:19:24 | 2014-12-15 18:19:24.942:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/12/15 18:19:25 | 2014-12-15 18:19:25.020:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
+STATUS | wrapper  | 2014/12/15 18:21:15 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/12/15 18:21:15 | Launching a JVM...
+INFO   | jvm 1    | 2014/12/15 18:21:15 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/12/15 18:21:15 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/12/15 18:21:15 | 
+INFO   | jvm 1    | 2014/12/15 18:21:16 | 2014-12-15 18:21:16.110:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.12.15 18:21:17 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:17 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.12.15 18:21:18 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.12.15 18:21:18 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.12.15 18:21:18 INFO  org.sonar.INFO  Install plugins...
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:18 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.15 18:21:19 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.15 18:21:19 INFO  org.sonar.INFO  Install plugins done: 622 ms
+2014.12.15 18:21:19 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.12.15 18:21:19 INFO  org.sonar.INFO  Start components...
+2014.12.15 18:21:19 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.12.15 18:21:20 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.12.15 18:21:20 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.12.15 18:21:20 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.12.15 18:21:20 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.12.15 18:21:20 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Deploy GWT plugins done: 572 ms
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Load metrics...
+2014.12.15 18:21:21 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Load metrics done: 276 ms
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Register rules [pmd/java] done: 308 ms
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 17 ms
+2014.12.15 18:21:21 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.12.15 18:21:22 INFO  org.sonar.INFO  Register rules [squid/java] done: 78 ms
+2014.12.15 18:21:22 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.12.15 18:21:22 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 630 ms
+2014.12.15 18:21:22 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.12.15 18:21:23 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 365 ms
+2014.12.15 18:21:23 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.12.15 18:21:23 INFO  org.sonar.INFO  Register rules [common-java/java] done: 2 ms
+2014.12.15 18:21:23 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.12.15 18:21:23 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1036 ms
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 3 ms
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 10 ms
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.12.15 18:21:24 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 2 ms
+2014.12.15 18:21:24 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.12.15 18:21:24 INFO  org.sonar.INFO  Start components done: 5119 ms
+2014.12.15 18:21:24 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.12.15 18:21:24 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/12/15 18:21:28 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/12/15 18:21:28 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/12/15 18:21:32 | 2014-12-15 18:21:32.979:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/12/15 18:21:33 | 2014-12-15 18:21:33.090:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
