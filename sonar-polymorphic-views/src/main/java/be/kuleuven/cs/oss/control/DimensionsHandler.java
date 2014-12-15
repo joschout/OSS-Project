@@ -1,5 +1,7 @@
 package be.kuleuven.cs.oss.control;
 
+import java.util.NoSuchElementException;
+
 import javax.persistence.NoResultException;
 
 import org.slf4j.Logger;
@@ -21,7 +23,12 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);
 
 	private IHandler<ResourceVisualizationFactory> next;
+
 	
+	//private static final ConstantResourceProperty DEFAULT_WIDTH = new ConstantResourceProperty(20);
+	//private static final ConstantResourceProperty DEFAULT_HEIGHT = new ConstantResourceProperty(20);
+	//TODO: defaults
+
 	SonarFacade sf;
 
 	public DimensionsHandler(SonarFacade sf) {
@@ -68,7 +75,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 		else{
 			Metric metric = sf.findMetric(dimensionValue);
 			if(metric == null){
-				throw new NoResultException("metric not found");
+				throw new NoSuchElementException("metric not found");
 			}
 			rp = new SonarResourceProperty(sf, metric);
 		}
@@ -85,7 +92,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 		String result = params.getValue(key);
 		
 		if(result.equals("")){
-			LOG.info("retrieve value failed");
+			LOG.info("retrieve value failed, setting defaults");
 			throw new NoResultException("value not retrieved");
 		}
 		

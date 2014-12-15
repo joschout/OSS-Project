@@ -17,7 +17,7 @@ import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 public class SystemComplexity extends Chart {
 	
-	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
+	private final static Logger LOG = LoggerFactory.getLogger(SystemComplexity.class);
 	
 	private TreeNode inheritanceTree;
 	private LineFactory lf;
@@ -25,17 +25,19 @@ public class SystemComplexity extends Chart {
 	
 	public SystemComplexity() {
 		super();
-		
-		this.inheritanceTree = makeTree();
 	}
+	
 
 	
 
-	private TreeNode makeTree() {
+	public void makeTree() {
 		LOG.info("Started making a Tree in SysCom");
 		List<Resource> parentResources = new ArrayList<Resource>();
 		
-		for(Resource resource: getResources()) {
+		List<Resource> resources = getResources();
+		System.out.println(resources);
+		
+		for(Resource resource: resources) {
 			boolean parentResource = true;
 			List<Dependency> dependencies = getSonarFacade().findIncomingDependencies(resource);
 			
@@ -56,12 +58,14 @@ public class SystemComplexity extends Chart {
 		treeNode.setRootNode();
 		
 		LOG.info("Ended making a Tree in SysCom");
-		return treeNode;
+		
+		this.inheritanceTree =  treeNode;
 	}
 
 
 	@Override
 	public BufferedImage draw() {
+		makeTree();
 		SystemComplexityDrawing sysComDraw = new SystemComplexityDrawing(getIDrawInstantiation(), lf);
 		TreeNodeRV treeNodeRV = new TreeNodeRV(getRvf(), inheritanceTree);
 		BufferedImage out = sysComDraw.drawTreeRV(treeNodeRV);

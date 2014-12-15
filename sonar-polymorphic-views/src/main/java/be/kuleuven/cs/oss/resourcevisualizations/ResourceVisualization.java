@@ -1,7 +1,5 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
-import java.awt.image.BufferedImage;
-
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;

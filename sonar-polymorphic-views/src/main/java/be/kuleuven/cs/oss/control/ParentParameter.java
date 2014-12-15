@@ -13,7 +13,7 @@ public class ParentParameter {
 	
 	private String key = "parent";
 	
-	private final static Logger LOG = LoggerFactory.getLogger(ChartParameter.class);
+	private final static Logger LOG = LoggerFactory.getLogger(ParentParameter.class);
 
 	
 	public Resource getParentResource(SonarFacade sf, ChartParameters params) {

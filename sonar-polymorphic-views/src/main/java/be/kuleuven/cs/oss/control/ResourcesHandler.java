@@ -28,6 +28,7 @@ public class ResourcesHandler implements IHandler<Chart> {
 
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
+
 		ParentParameter parentParam = new ParentParameter();
 		Resource parent = parentParam.getParentResource(sf, params);
 
@@ -36,7 +37,7 @@ public class ResourcesHandler implements IHandler<Chart> {
 
 		List<Resource> resources = null;
 
-		
+
 		if(resourceType.equals(resourceType1)) {
 			resources = sf.findClasses(parent);
 		}

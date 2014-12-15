@@ -32,7 +32,7 @@ public class PolymorphicViewsChart implements Chart {
 	public BufferedImage generateImage(ChartParameters params){
 		LOG.info("PolymorphicViewsChart generateImage() called!");
 		try{
-			Controller c = new Controller(params,sonar);
+			Controller c = new Controller(params, sonar);
 			be.kuleuven.cs.oss.charts.Chart chart = c.createChart();
 			return chart.draw();
 		}

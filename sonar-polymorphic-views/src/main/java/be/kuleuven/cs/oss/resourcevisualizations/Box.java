@@ -1,16 +1,9 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
-import java.awt.image.BufferedImage;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
-
 
 /**
  * Class representing Box resource visualizations.
@@ -37,7 +30,17 @@ public class Box extends ResourceVisualization{
 
 	}
 
-
+    @Override
+    public boolean equals (Object other) {
+        if ((other == null) || (this.getClass() != other.getClass())) {
+            return false;
+        }
+        Box otherBox = (Box) other;
+        return (this.getPosition().equals(otherBox.getPosition())
+        		&& this.getSize().equals(otherBox.getSize())
+        		&& this.getColor().equals(otherBox.getColor())
+        		&& this.getName().equals(otherBox.getName()));
+    }
 	
 	
 }

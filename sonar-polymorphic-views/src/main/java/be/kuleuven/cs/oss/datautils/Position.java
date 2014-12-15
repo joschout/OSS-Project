@@ -7,15 +7,15 @@ package be.kuleuven.cs.oss.datautils;
  */
 
 public class Position {
-	
+
 	private int x;
 	private int y;
-	
+
 	public Position(int x, int y){
 		this.x = x;
 		this.y = y;
 	}
-	
+
 	public int getX() {
 		return x;
 	}
@@ -23,8 +23,8 @@ public class Position {
 	public int getY() {
 		return y;
 	}
-	
-    public void setX(int x) {
+
+	public void setX(int x) {
 		this.x = x;
 	}
 
@@ -33,15 +33,30 @@ public class Position {
 	}
 
 	/**
-     * @param   other
-     * @return  result == ((other != null) && (getClass() == other.getClass()) && (getX() == (Position other).getX()) && (getY() == (Position other).getY())
-     */
-    @Override
-    public boolean equals (Object other) {
-        if ((other == null) || (this.getClass() != other.getClass())) {
-            return false;
-        }
-        Position otherPosition = (Position) other;
-        return ((this.getX() == otherPosition.getX()) && (this.getY() == otherPosition.getY()));
-    }
+	 * @param   other
+	 * @return  result == ((other != null) && (getClass() == other.getClass()) && (getX() == (Position other).getX()) && (getY() == (Position other).getY())
+	 */
+	@Override
+	public boolean equals (Object other) {
+		if ((other == null) || (this.getClass() != other.getClass())) {
+			return false;
+		}
+		Position otherPosition = (Position) other;
+		return ((this.getX() == otherPosition.getX()) && (this.getY() == otherPosition.getY()));
+	}
+
+	@Override
+	public String toString(){
+		return "Position ("+ getX() +", " + getY() +")";
+	}
+
+	@Override
+	public int hashCode(){
+		int hash = 17;
+		hash = ((hash + getX()) << 5) - (hash + getX());
+		hash = ((hash + getY()) << 5) - (hash + getY());
+		return hash;
+
+	}
+
 }

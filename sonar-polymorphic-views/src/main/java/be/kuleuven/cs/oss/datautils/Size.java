@@ -21,7 +21,7 @@ public class Size {
 	
 	
 	public void setWidth(int w) throws IllegalArgumentException{
-		if(w <= 0) 
+		if(w < 0) 
 			throw new IllegalArgumentException("Width of a size cannot be less than or equal to zero");
 		this.width = w;
 	}
@@ -31,7 +31,7 @@ public class Size {
 	}
 	
 	public void setHeight(int h) throws IllegalArgumentException{
-		if(h <= 0) 
+		if(h < 0) 
 			throw new IllegalArgumentException("Height of a size cannot be less than or equal to zero");
 		this.height = h;
 	}
@@ -48,4 +48,20 @@ public class Size {
         Size otherSize = (Size) other;
         return ((this.getWidth() == otherSize.getWidth()) && (this.getHeight() == otherSize.getHeight()));
     }
+    
+    
+    @Override
+    public String toString(){
+    	return "Size with width " + getWidth() + " and height " + getHeight();
+    }
+    
+    @Override
+    public int hashCode(){
+    	   int hash = 17;
+           hash = ((hash + getWidth()) << 5) - (hash + getWidth());
+           hash = ((hash + getHeight()) << 5) - (hash + getHeight());
+           return hash;
+    }
+    
+    
 }
