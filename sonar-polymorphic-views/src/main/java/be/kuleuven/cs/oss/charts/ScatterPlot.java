@@ -277,6 +277,8 @@ public class ScatterPlot extends Chart{
 	 */
 	private void drawResourceVisualizations(){
 		for(ResourceVisualization rv: getResourceVisualizations()){
+			//DIT MQG STRQKS ZEG
+			LOG.info("xCoord: " + rv.getX());
 			rv.draw(getIDrawInstantiation());
 		}
 	}
@@ -306,7 +308,7 @@ public class ScatterPlot extends Chart{
 	 * @return the x coordinate in the image plane
 	 */
 	private int convertX(double xCoord){
-		LOG.info("xCoord: " + xCoord);
+		//LOG.info("xCoord: " + xCoord);
 		return (int) (axisOffset + (getImageFrameSize().getWidth()-2*axisOffset)* (xCoord-getMaxResourcePosition().getX())/(getMaxResourcePosition().getX()-getMaxResourcePosition().getX()));	
 	}
 
