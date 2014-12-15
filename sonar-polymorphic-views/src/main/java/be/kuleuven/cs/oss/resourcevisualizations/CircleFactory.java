@@ -14,13 +14,9 @@ public class CircleFactory implements ResourceVisualizationFactory {
 	private ResourceProperty greenProperty;
 	private ResourceProperty blueProperty;
 	
-	public CircleFactory( ResourceProperty radiusProperty, ResourceProperty redProperty,
-			ResourceProperty greenProperty, ResourceProperty blueProperty) {
-		this.radiusProperty = radiusProperty;
-		this.redProperty = redProperty;
-		this.greenProperty = greenProperty;
-		this.blueProperty = blueProperty;
+	public CircleFactory( ) {
 	}
+	
 	
 	@Override
 	public ResourceVisualization create(Resource resource) {
@@ -30,6 +26,38 @@ public class CircleFactory implements ResourceVisualizationFactory {
 		Color color = new Color(redProperty.getValue(resource).intValue(), greenProperty.getValue(resource).intValue(), blueProperty.getValue(resource).intValue());
 		Circle circle = new Circle(position, radius, color, resource.getName());
 		return circle;
+	}
+
+	public ResourceProperty getRadiusProperty() {
+		return radiusProperty;
+	}
+
+	public void setRadiusProperty(ResourceProperty radiusProperty) {
+		this.radiusProperty = radiusProperty;
+	}
+
+	public ResourceProperty getRedProperty() {
+		return redProperty;
+	}
+
+	public void setRedProperty(ResourceProperty redProperty) {
+		this.redProperty = redProperty;
+	}
+
+	public ResourceProperty getGreenProperty() {
+		return greenProperty;
+	}
+
+	public void setGreenProperty(ResourceProperty greenProperty) {
+		this.greenProperty = greenProperty;
+	}
+
+	public ResourceProperty getBlueProperty() {
+		return blueProperty;
+	}
+
+	public void setBlueProperty(ResourceProperty blueProperty) {
+		this.blueProperty = blueProperty;
 	}
 
 }

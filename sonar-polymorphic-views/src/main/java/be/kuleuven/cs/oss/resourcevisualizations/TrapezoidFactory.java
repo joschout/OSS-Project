@@ -10,18 +10,13 @@ public class TrapezoidFactory implements ResourceVisualizationFactory {
 	private ResourceProperty leftLineProperty;
 	private ResourceProperty baseLineProperty;
 	private ResourceProperty rightLineProperty;
-	ResourceProperty redProperty;
+	private ResourceProperty redProperty;
 	private ResourceProperty greenProperty;
 	private ResourceProperty blueProperty;
 	
-	public TrapezoidFactory( ResourceProperty leftProperty, ResourceProperty baseProperty, ResourceProperty rightProperty,ResourceProperty redProperty,
-			ResourceProperty greenProperty, ResourceProperty blueProperty) {
-		this.leftLineProperty = leftProperty;
-		this.baseLineProperty = baseProperty;
-		this.rightLineProperty = rightProperty;
-		this.redProperty = redProperty;
-		this.greenProperty = greenProperty;
-		this.blueProperty = blueProperty;
+	
+	public TrapezoidFactory( ) {
+		
 	}
 
 	@Override
@@ -33,5 +28,53 @@ public class TrapezoidFactory implements ResourceVisualizationFactory {
 		Color color = new Color(redProperty.getValue(resource).intValue(), greenProperty.getValue(resource).intValue(), blueProperty.getValue(resource).intValue());
 		Trapezoid trapezoid = new Trapezoid(position, leftLine, baseLine, rightLine, color, resource.getName());
 		return trapezoid;
+	}
+	
+	public ResourceProperty getLeftLineProperty() {
+		return leftLineProperty;
+	}
+
+	public void setLeftLineProperty(ResourceProperty leftLineProperty) {
+		this.leftLineProperty = leftLineProperty;
+	}
+
+	public ResourceProperty getBaseLineProperty() {
+		return baseLineProperty;
+	}
+
+	public void setBaseLineProperty(ResourceProperty baseLineProperty) {
+		this.baseLineProperty = baseLineProperty;
+	}
+
+	public ResourceProperty getRightLineProperty() {
+		return rightLineProperty;
+	}
+
+	public void setRightLineProperty(ResourceProperty rightLineProperty) {
+		this.rightLineProperty = rightLineProperty;
+	}
+
+	public ResourceProperty getRedProperty() {
+		return redProperty;
+	}
+
+	public void setRedProperty(ResourceProperty redProperty) {
+		this.redProperty = redProperty;
+	}
+
+	public ResourceProperty getGreenProperty() {
+		return greenProperty;
+	}
+
+	public void setGreenProperty(ResourceProperty greenProperty) {
+		this.greenProperty = greenProperty;
+	}
+
+	public ResourceProperty getBlueProperty() {
+		return blueProperty;
+	}
+
+	public void setBlueProperty(ResourceProperty blueProperty) {
+		this.blueProperty = blueProperty;
 	}
 }
