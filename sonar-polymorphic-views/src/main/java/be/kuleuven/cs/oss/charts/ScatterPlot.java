@@ -203,7 +203,8 @@ public class ScatterPlot extends Chart{
 	 */
 	private void createResourceVisualizations(){
 		for(Resource resource: getResources()){
-			ResourceVisualization rv = getShapeDecider().create(resource);
+			ResourceVisualization rv = getRvf().create(resource);
+			//ResourceVisualization rv = getShapeDecider().create(resource);
 			//These will be the values of the properties that govern the position of the box. To be rescaled!
 			Position metricsPosition = new Position(xMetric.getValue(resource).intValue(), yMetric.getValue(resource).intValue());
 			rv.setPosition(metricsPosition);

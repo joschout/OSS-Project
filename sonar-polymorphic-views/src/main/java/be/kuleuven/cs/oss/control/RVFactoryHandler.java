@@ -33,7 +33,7 @@ public class RVFactoryHandler implements IHandler<Chart> {
 		
 		startProcess(factory, params);
 		
-		chart.setResourceVisualizationFactory(factory);
+		chart.setRvf(factory);
 		
 		if(next != null) {
 			next.handleRequest(chart, params);
