@@ -27,15 +27,17 @@ public class Circle extends ResourceVisualization{
 	public int getDiameter() {
 		return diameter;
 	}
-	
-	public void setDiameter(int diameter) {
+	private void setDiameter(int diameter){
 		this.diameter = diameter;
 	}
-	
+
+
 	public void setSize(Size size){
-		super.setSize(size);
-		setDiameter(size.getWidth());
-			
+		if(getSize() != size){ 
+			super.setSize(size);
+			setDiameter(size.getWidth());
+			}
+
 	}
 
 
