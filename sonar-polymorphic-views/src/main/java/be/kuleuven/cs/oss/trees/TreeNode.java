@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.sonarfacade.Dependency;
 import be.kuleuven.cs.oss.sonarfacade.DependencyType;
 import be.kuleuven.cs.oss.sonarfacade.Resource;

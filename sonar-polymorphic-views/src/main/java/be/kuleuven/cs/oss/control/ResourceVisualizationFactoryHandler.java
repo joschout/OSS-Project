@@ -21,7 +21,7 @@ import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ConstantShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -81,8 +81,8 @@ public class ResourceVisualizationFactoryHandler implements IHandler<Chart>{
 		
 	}
 	
-	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params){
-		ResourceVisualizationFactory factory;
+	private ResourceVisualizationCreator createRVF(String shapeValue, ChartParameters params){
+		ResourceVisualizationCreator factory;
 		String colorValue;
 		
 		if(shapeValue.equals(shapeValueBox)){
@@ -99,7 +99,7 @@ public class ResourceVisualizationFactoryHandler implements IHandler<Chart>{
 		}
 		else throw new IllegalArgumentException("Invalid shape");
 		
-		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
+		Processor<ResourceVisualizationCreator> processor = new Processor<ResourceVisualizationCreator>();
 		processor.addHandler(new DimensionsHandler(sf));
 		processor.addHandler(new ColorHandler(sf,colorValue));
 		processor.startProcess(factory, params);

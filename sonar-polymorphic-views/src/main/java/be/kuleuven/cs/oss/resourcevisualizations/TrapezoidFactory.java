@@ -5,7 +5,7 @@ import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
-public class TrapezoidFactory implements ResourceVisualizationFactory {
+public class TrapezoidFactory implements ResourceVisualizationCreator {
 
 	private ResourceProperty leftLineProperty;
 	private ResourceProperty baseLineProperty;

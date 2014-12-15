@@ -7,7 +7,7 @@ import java.util.List;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -31,7 +31,7 @@ public abstract class Chart {
 	private SonarFacade sonarF;
 	private IDraw iDrawFacade;
 	
-	private ResourceVisualizationFactory rvf;
+	private ResourceVisualizationCreator rvf;
 
 	private ShapeDecider shapeDecider;
 
@@ -126,11 +126,11 @@ public abstract class Chart {
 		this.shapeDecider = shapeDecider;
 	}
 	
-	public ResourceVisualizationFactory getRvf() {
+	public ResourceVisualizationCreator getRvf() {
 		return rvf;
 	}
 
-	public void setRvf(ResourceVisualizationFactory rvf) {
+	public void setRvf(ResourceVisualizationCreator rvf) {
 		this.rvf = rvf;
 	}
 

@@ -22,7 +22,7 @@ import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
@@ -69,7 +69,7 @@ public class Controller {
 	 * Create a new visualization factory (currently, only boxes are supported)
 	 * @return a new visualization factory
 	 */
-	private ResourceVisualizationFactory createRVFactory(){
+	private ResourceVisualizationCreator createRVFactory(){
 		LOG.info("create RVF");
 		return new BoxFactory();
 	}
@@ -245,7 +245,7 @@ public class Controller {
 	public Chart createChart() throws Exception{
 		try{
 			List<Resource> resources = retrieveResources();
-			ResourceVisualizationFactory rvf = createRVFactory();
+			ResourceVisualizationCreator rvf = createRVFactory();
 			createCommonResourceProperties();
 			switch(getChartType()){
 			case "scatter": 

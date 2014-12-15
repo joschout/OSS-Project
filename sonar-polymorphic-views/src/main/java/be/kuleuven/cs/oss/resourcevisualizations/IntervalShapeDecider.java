@@ -5,9 +5,9 @@ import java.util.TreeMap;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
-public class IntervalShapeDecider implements ShapeDecider {
+public class IntervalShapeDecider implements ResourceVisualizationCreator {
 	
-	private TreeMap<Double, ResourceVisualizationFactory>  boundaryToFactoryMap;
+	private TreeMap<Double, ResourceVisualizationCreator>  boundaryToFactoryMap;
 	private ResourceProperty resourceProperty;
 
 	public ResourceProperty getResourceProperty() {
@@ -18,16 +18,16 @@ public class IntervalShapeDecider implements ShapeDecider {
 		this.resourceProperty = resourceProperty;
 	}
 
-	public TreeMap<Double, ResourceVisualizationFactory> getBoundaryToFactoryMap() {
+	public TreeMap<Double, ResourceVisualizationCreator> getBoundaryToFactoryMap() {
 		return boundaryToFactoryMap;
 	}
 
 	public void setBoundaryToFactoryMap(
-			TreeMap<Double, ResourceVisualizationFactory> boundaryToFactoryMap) {
+			TreeMap<Double, ResourceVisualizationCreator> boundaryToFactoryMap) {
 		this.boundaryToFactoryMap = boundaryToFactoryMap;
 	}
 	
-	public void addBoundaryWithFactory(double b, ResourceVisualizationFactory rvf){
+	public void addBoundaryWithFactory(double b, ResourceVisualizationCreator rvf){
 		this.boundaryToFactoryMap.put(b, rvf);
 	}
 
@@ -37,8 +37,26 @@ public class IntervalShapeDecider implements ShapeDecider {
 		if(!getBoundaryToFactoryMap().containsKey(keyValue)){
 			keyValue = getBoundaryToFactoryMap().higherKey(keyValue);
 		}
-		ResourceVisualizationFactory factory = getBoundaryToFactoryMap().get(keyValue);
+		ResourceVisualizationCreator factory = getBoundaryToFactoryMap().get(keyValue);
 		return factory.create(res);
+	}
+
+	@Override
+	public void setRedProperty(ResourceProperty redProperty) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setGreenProperty(ResourceProperty redProperty) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setBlueProperty(ResourceProperty redProperty) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

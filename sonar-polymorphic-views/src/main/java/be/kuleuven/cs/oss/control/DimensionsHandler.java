@@ -70,7 +70,13 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	 * @throws Exception if the creation of the resource property fails
 	 */
 	private ResourceProperty createDimensionRP(String dimension, ChartParameters params){
-		String dimensionValue = retrieveValue(dimension, params);
+		String dimensionValue;
+		try{
+			dimensionValue = retrieveValue(dimension, params);
+		}
+		catch(NoResultException e){
+			dimensionValue = 
+		}
 		ResourceProperty rp;
 		if(dimensionValue.matches("[0-9]+")){
 			rp = new ConstantResourceProperty(Integer.parseInt(dimensionValue));
@@ -92,17 +98,6 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValue(String key, ChartParameters params) {
-		String result = params.getValue(key);
-		
-		if(result.equals("")){
-			LOG.info("retrieve value failed, setting defaults");
-			throw new NoResultException("value not retrieved");
-		}
-		
-		return result;
-	}
-	
-	private String retrieveValueWithDefault(String key, ChartParameters params, int def) {
 		String result = params.getValue(key);
 		
 		if(result.equals("")){
