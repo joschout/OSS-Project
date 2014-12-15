@@ -26,11 +26,21 @@ public class BoxFactoryTest {
 		.thenReturn((double) 6)
 		.thenReturn((double) 7)
 		.thenReturn((double) 8)
-		.thenReturn((double) 9);
+		.thenReturn((double) 9)
+		.thenReturn((double) 10)
+		.thenReturn((double) 11)
+		.thenReturn((double) 12)
+		.thenReturn((double) 13)
+		.thenReturn((double) 14);
 		
 		BoxFactory bf = mock(BoxFactory.class);
 		when(bf.create(any(Resource.class))).thenCallRealMethod();
 		when(bf.getWidthProperty()).thenReturn(rp);
+		when(bf.getHeightProperty()).thenReturn(rp);
+		when(bf.getRedProperty()).thenReturn(rp);
+		when(bf.getGreenProperty()).thenReturn(rp);
+		when(bf.getBlueProperty()).thenReturn(rp);
+		
 		
 		Resource res = mock(Resource.class);
 		when(res.getName()).thenReturn("SweetBabyJesus");
@@ -38,6 +48,7 @@ public class BoxFactoryTest {
 		Position pos = new Position(0,0);
 		Size size = new Size (5,6);
 		Color color = new Color(7,8,9);
+		System.out.println("bla");
 		Box box = new Box(pos, size, color,"SweetBabyJesus");
 		System.out.println(box.getX() + " - box 1 - " + box.getWidth() );
 		//geraakt hier niet in omdat die geen resource heeft?
