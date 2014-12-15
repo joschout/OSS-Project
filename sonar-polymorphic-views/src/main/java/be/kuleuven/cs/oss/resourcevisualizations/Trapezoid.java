@@ -48,9 +48,19 @@ public class Trapezoid extends ResourceVisualization {
 	public void setSize(Size nsize){
 		super.setSize(nsize);
 		setBaseLine(nsize.getWidth());	
-		if (getLeftLine() >= getRightLine()){
+		if (getLeftLine() >= getRightLine() && getLeftLine() != 0){
 			int newRight = getRightLine()/getLeftLine()*nsize.getHeight();
 			setRightLine(newRight);
+			setLeftLine(nsize.getHeight());
+		}
+		else if (getRightLine() > getLeftLine() && getRightLine() != 0 ){
+			int newLeft = getLeftLine()/getRightLine()*nsize.getHeight();
+			setLeftLine(newLeft);
+			setRightLine(nsize.getHeight());
+		}
+		
+		else {
+			setRightLine(nsize.getHeight());
 			setLeftLine(nsize.getHeight());
 		}
 	}

@@ -30,6 +30,7 @@ public class BoxFactoryTest {
 		
 		BoxFactory bf = mock(BoxFactory.class);
 		when(bf.create(any(Resource.class))).thenCallRealMethod();
+		when(bf.getWidthProperty()).thenReturn(rp);
 		
 		Resource res = mock(Resource.class);
 		when(res.getName()).thenReturn("SweetBabyJesus");
