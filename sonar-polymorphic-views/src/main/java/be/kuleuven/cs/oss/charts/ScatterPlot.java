@@ -77,27 +77,21 @@ public class ScatterPlot extends Chart{
 	public BufferedImage draw() {
 		
 		LOG.info("In draw method in ScatterPlot");
-		System.out.println("in draw");
+		
 		
 		calculateAxisOffSet();
 		Log.info("calculated the offset for the axes");
-		System.out.println("axesdrawing worked?");
+
 		
 		calculateRVSizeExtrema();
 		LOG.info("calculated the initial RV size extrema");
-		System.out.println("calcualteRVSizeExt worked?");
 		
 		//1
 		getIDrawInstantiation().createEmptyImage(getImageFrameSize().getWidth(), getImageFrameSize().getHeight());
 		LOG.info("empty frame made");
 		//2
-		
-		System.out.println("axisoffset = " + axisOffset);
 		drawAxises(getIDrawInstantiation());
 		LOG.info("Axes drawn on frame");
-		
-		System.out.println("0:");
-		System.out.println(getMaxResourcePosition().getX());
 		
 		//4
 		createResourceVisualizations();
@@ -164,8 +158,6 @@ public class ScatterPlot extends Chart{
 
 
 	private void calculateAxisOffSet(){
-		//TODO remove
-		System.out.println("minRVScalingFactor = " +minRVScalingFactor);
 		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(getImageFrameSize().getWidth(), getImageFrameSize().getHeight());
 	}
 
@@ -252,8 +244,6 @@ public class ScatterPlot extends Chart{
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
 			double height = rv.getHeight();
-			System.out.println(xCoord + " " + yCoord + " " + width + " " + height);
-			System.out.println("maxResourcePosx = " + getMaxResourcePosition().getX());
 			if(xCoord > getMaxResourcePosition().getX() ){
 				getMaxResourcePosition().setX((int)xCoord);
 			}
@@ -278,11 +268,8 @@ public class ScatterPlot extends Chart{
 				getMinResourceSize().setWidth((int)width);
 			}	
 			if(height <= getMinResourceSize().getHeight()){
-				System.out.println("in height if ");
 				getMinResourceSize().setHeight((int)height);
-			}	
-			System.out.println("another resource done!");
-		
+			}			
 		}
 	}
 	
