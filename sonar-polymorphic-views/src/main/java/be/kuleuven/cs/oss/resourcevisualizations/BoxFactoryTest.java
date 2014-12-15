@@ -29,6 +29,7 @@ public class BoxFactoryTest {
 		.thenReturn((double) 9);
 		
 		BoxFactory bf = mock(BoxFactory.class);
+		when(bf.create(any(Resource.class))).thenCallRealMethod();
 		
 		Resource res = mock(Resource.class);
 		when(res.getName()).thenReturn("SweetBabyJesus");

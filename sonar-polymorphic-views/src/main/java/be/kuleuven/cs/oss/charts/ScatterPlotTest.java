@@ -16,6 +16,7 @@ import org.junit.Test;
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
+import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.Box;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
@@ -24,6 +25,9 @@ public class ScatterPlotTest {
 
 	@Test
 	public void rescaleTest() {
+		
+
+		
 		ScatterPlot sp = mock(ScatterPlot.class);
 		
 		List<ResourceVisualization> RVList = new ArrayList<ResourceVisualization>();
@@ -40,6 +44,8 @@ public class ScatterPlotTest {
 		List<be.kuleuven.cs.oss.sonarfacade.Resource> reslist = new ArrayList<be.kuleuven.cs.oss.sonarfacade.Resource>();
 		System.out.println("reslist is empty: "+ reslist.isEmpty());
 		
+		Java2DFacade java2d = new Java2DFacade();
+		when(sp.getIDrawInstantiation()).thenReturn(java2d);
 		when(sp.getImageFrameSize()).thenReturn(new Size(100,100));
 		when(sp.getResources()).thenReturn(reslist);  //for each over empty list does nothing
 		when(sp.getResourceVisualizations()).thenReturn(RVList);
@@ -48,6 +54,7 @@ public class ScatterPlotTest {
 		when(rp.getPropertyName()).thenReturn("x axis").thenReturn("y axis");
 		System.out.println("hier is ie");
 		//die geraakt hier niet in :o
+		when(sp.draw()).thenCallRealMethod();
 		BufferedImage bi = sp.draw();
 
 		try {
