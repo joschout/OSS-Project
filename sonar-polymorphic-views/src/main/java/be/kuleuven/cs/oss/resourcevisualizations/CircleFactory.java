@@ -22,9 +22,9 @@ public class CircleFactory implements ResourceVisualizationFactory {
 	public ResourceVisualization create(Resource resource) {
 
 		Position position = new Position(0, 0);
-		int radius = radiusProperty.getValue(resource).intValue();
-		Color color = new Color(redProperty.getValue(resource).intValue(), greenProperty.getValue(resource).intValue(), blueProperty.getValue(resource).intValue());
-		Circle circle = new Circle(position, radius, color, resource.getName());
+		int diameter = getRadiusProperty().getValue(resource).intValue();
+		Color color = new Color(getRedProperty().getValue(resource).intValue(), getGreenProperty().getValue(resource).intValue(), getBlueProperty().getValue(resource).intValue());
+		Circle circle = new Circle(position, diameter, color, resource.getName());
 		return circle;
 	}
 

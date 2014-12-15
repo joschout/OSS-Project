@@ -45,12 +45,12 @@ public class BoxFactoryTest {
 		Resource res = mock(Resource.class);
 		when(res.getName()).thenReturn("SweetBabyJesus");
 		
-		Position pos = new Position(0,0);
+		Position position = new Position(0,0);
 		Size size = new Size (5,6);
 		Color color = new Color(7,8,9);
 
 		
-		Box box = new Box(pos, size, color,"SweetBabyJesus");
+		Box box = new Box(position, size, color,"SweetBabyJesus");
 		Box box2 = (Box) bf.create(res);
 		
 		
