@@ -252,6 +252,7 @@ public class ScatterPlot extends Chart{
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
 			double height = rv.getHeight();
+			System.out.println(xCoord + " " + yCoord + " " + width + " " + height);
 			System.out.println("maxResourcePosx = " + getMaxResourcePosition().getX());
 			if(xCoord > getMaxResourcePosition().getX() ){
 				getMaxResourcePosition().setX((int)xCoord);
@@ -260,25 +261,28 @@ public class ScatterPlot extends Chart{
 				getMaxResourcePosition().setY((int)yCoord);
 			}			
 			if(width > getMaxResourceSize().getWidth()){
-				width = ((int)width);
+				getMaxResourceSize().setWidth ((int)width);
 			}	
 			if(height > getMaxResourceSize().getHeight()){
-				height = ((int)height);
+				getMaxResourceSize().setHeight ((int)height);
 			}
 			
 			
-			if(xCoord < getMinResourcePosition().getX()){
+			if(xCoord <= getMinResourcePosition().getX()){
 				getMinResourcePosition().setX((int)xCoord);
 			}
-			if(yCoord < getMinResourcePosition().getY()){
+			if(yCoord <= getMinResourcePosition().getY()){
 				getMinResourcePosition().setY((int)yCoord);
 			}			
-			if(width < getMinResourceSize().getWidth()){
+			if(width <= getMinResourceSize().getWidth()){
 				getMinResourceSize().setWidth((int)width);
 			}	
-			if(height < getMinResourceSize().getHeight()){
+			if(height <= getMinResourceSize().getHeight()){
+				System.out.println("in height if ");
 				getMinResourceSize().setHeight((int)height);
 			}	
+			System.out.println("another resource done!");
+		
 		}
 	}
 	
