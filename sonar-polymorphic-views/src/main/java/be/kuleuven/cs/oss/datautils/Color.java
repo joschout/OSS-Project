@@ -54,4 +54,14 @@ public class Color {
 		this.b = b;
 	}
 
+    @Override
+    public boolean equals (Object other) {
+        if ((other == null) || (this.getClass() != other.getClass())) {
+            return false;
+        }
+        Color otherColor = (Color) other;
+        return ((this.getRed() == otherColor.getRed()) 
+        		&& (this.getBlue() == otherColor.getBlue())
+        		&& (this.getGreen() == otherColor.getGreen()));
+    }
 }

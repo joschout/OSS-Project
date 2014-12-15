@@ -48,13 +48,26 @@ public class BoxFactoryTest {
 		Position pos = new Position(0,0);
 		Size size = new Size (5,6);
 		Color color = new Color(7,8,9);
-		System.out.println("bla");
+
+		
 		Box box = new Box(pos, size, color,"SweetBabyJesus");
-		System.out.println(box.getX() + " - box 1 - " + box.getWidth() );
-		//geraakt hier niet in omdat die geen resource heeft?
 		Box box2 = (Box) bf.create(res);
-		System.out.println(box2.getX() + " - box 2 - " + box2.getWidth());
-		assertEquals(box, box2);
+		
+		
+		System.out.println("box1 x: " +box.getX() + ", box2 x: " + box2.getX() );
+		System.out.println("box1 y: " +box.getY() + ", box2 y: " + box2.getY() );
+		System.out.println("box1 width: " +box.getWidth() + ", box2 width: " + box2.getWidth() );
+		System.out.println("box1 height: " +box.getHeight() + ", box2 height: " + box2.getHeight());
+		System.out.println("box1 rgb red: " +box.getColor().getRed() + ", box2 rgb red: " + box2.getColor().getRed());
+		System.out.println("box1 rgb blue: " +box.getColor().getBlue() + ", box2 rgb blue: " + box2.getColor().getBlue());
+		System.out.println("box1 rgb green: " +box.getColor().getGreen() + ", box2 rgb height: " + box2.getColor().getGreen());
+		System.out.println("box1 name: " +box.getName() + ", box2 name: " + box2.getName() );
+		
+		assertEquals(box.getPosition(), box2.getPosition());
+		assertEquals(box.getSize(), box2.getSize());
+		assertEquals(box.getColor(), box2.getColor());
+		assertEquals(box.getName(), box2.getName());
+		
 	}
 
 }

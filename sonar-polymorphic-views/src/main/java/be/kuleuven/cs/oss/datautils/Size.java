@@ -48,4 +48,20 @@ public class Size {
         Size otherSize = (Size) other;
         return ((this.getWidth() == otherSize.getWidth()) && (this.getHeight() == otherSize.getHeight()));
     }
+    
+    
+    @Override
+    public String toString(){
+    	return "Size with width " + getWidth() + " and height " + getHeight();
+    }
+    
+    @Override
+    public int hashCode(){
+    	   int hash = 17;
+           hash = ((hash + getWidth()) << 5) - (hash + getWidth());
+           hash = ((hash + getHeight()) << 5) - (hash + getHeight());
+           return hash;
+    }
+    
+    
 }
