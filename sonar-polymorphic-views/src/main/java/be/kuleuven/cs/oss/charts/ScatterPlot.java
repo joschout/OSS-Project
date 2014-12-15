@@ -79,11 +79,9 @@ public class ScatterPlot extends Chart{
 		
 		LOG.info("In draw method in ScatterPlot");
 		
-		
 		calculateAxisOffSet();
 		Log.info("calculated the offset for the axes");
 
-		
 		calculateRVSizeExtrema();
 		LOG.info("calculated the initial RV size extrema");
 		
@@ -93,7 +91,6 @@ public class ScatterPlot extends Chart{
 		//2
 		drawAxises(getIDrawInstantiation());
 		LOG.info("Axes drawn on frame");
-		
 		//4
 		createResourceVisualizations();
 		LOG.info("RVs created");

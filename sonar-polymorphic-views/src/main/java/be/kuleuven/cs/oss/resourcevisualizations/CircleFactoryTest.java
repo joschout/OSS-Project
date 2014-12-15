@@ -34,7 +34,7 @@ public class CircleFactoryTest {
 		
 		CircleFactory cf = mock(CircleFactory.class);
 		when(cf.create(any(Resource.class))).thenCallRealMethod();
-		when(cf.getRadiusProperty()).thenReturn(rp);
+		when(cf.getDiameterProperty()).thenReturn(rp);
 		when(cf.getRedProperty()).thenReturn(rp);
 		when(cf.getGreenProperty()).thenReturn(rp);
 		when(cf.getBlueProperty()).thenReturn(rp);
