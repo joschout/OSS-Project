@@ -24,20 +24,38 @@ public class BoxFactory implements ResourceVisualizationFactory {
 	private ResourceProperty blueProperty;
 	
 	
-	 
-	
 
-	public BoxFactory(ResourceProperty widthProperty,
-			ResourceProperty heightProperty, ResourceProperty redProperty,
-			ResourceProperty greenProperty, ResourceProperty blueProperty) {
+	public BoxFactory() {
+		
+	}
+
+	public void setWidthProperty(ResourceProperty widthProperty) {
 		this.widthProperty = widthProperty;
-		this.heightProperty = heightProperty;
-		this.redProperty = redProperty;
-		this.greenProperty = greenProperty;
-		this.blueProperty = blueProperty;
 	}
 
 
+
+	public void setHeightProperty(ResourceProperty heightProperty) {
+		this.heightProperty = heightProperty;
+	}
+
+
+
+	public void setRedProperty(ResourceProperty redProperty) {
+		this.redProperty = redProperty;
+	}
+
+
+
+	public void setGreenProperty(ResourceProperty greenProperty) {
+		this.greenProperty = greenProperty;
+	}
+
+
+
+	public void setBlueProperty(ResourceProperty blueProperty) {
+		this.blueProperty = blueProperty;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -45,12 +63,11 @@ public class BoxFactory implements ResourceVisualizationFactory {
 	 */
 	@Override
 	public ResourceVisualization create(Resource res) {
-		
+		System.out.println("RV create");
 		Position position = new Position(0, 0);
 		Size size = new Size( widthProperty.getValue(res).intValue(), heightProperty.getValue(res).intValue());
 		Color color = new Color(redProperty.getValue(res).intValue(), greenProperty.getValue(res).intValue(), blueProperty.getValue(res).intValue());
 		Box box = new Box(position, size, color, res.getName());
-		
 		return box;
 	}
 

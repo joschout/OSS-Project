@@ -3,12 +3,12 @@ package be.kuleuven.cs.oss.charts;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
-import be.kuleuven.cs.oss.drawingPackage.Java2DImpl;
+import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -26,14 +26,12 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public abstract class Chart {
 
-	
-	protected List<ResourceVisualization> rvs;
-	protected List<Resource> resources;
-	protected ResourceVisualizationFactory rvf;
-	protected SonarFacade sonarF;
-	protected IDraw iDrawImpl;
-	
-	
+	private List<ResourceVisualization> rvs;
+	private List<Resource> resources;
+	private SonarFacade sonarF;
+	private IDraw iDrawFacade;
+	private ShapeDecider shapeDecider;
+
 	//TODO LineFactory has to be one of the arguments
 	/**
 	 *  Constructs an instantiation of a chart.
@@ -51,16 +49,20 @@ public abstract class Chart {
 	 * @param SonarFacade sonarF: a facade to the sonar database
 	 * @param ResourcePropertiesManager propManager: manages the properties of each resource
 	 */
-	public Chart(List<Resource> resources, ResourceVisualizationFactory rvf, SonarFacade sonarF) {
-		this.resources = resources;
-		this.rvf = rvf;
-		this.sonarF = sonarF;
-		setIDrawInstantiation(new Java2DImpl());
+	public Chart() {
+		setIDrawInstantiation(new Java2DFacade());
 		this.rvs = new ArrayList<ResourceVisualization>();
-
-	
 	}
-	
+
+	public SonarFacade getSonarFacade() {
+		return sonarF;
+	}
+
+	public void setSonarFacade(SonarFacade sonarF) {
+		this.sonarF = sonarF;
+	}
+
+
 	/**
 	 * Returns a list of visualizations for the resources of the graph
 	 * 
@@ -79,7 +81,7 @@ public abstract class Chart {
 		this.rvs = rvs;
 	}
 
-	
+
 	/**
 	 * Returns a list of the resources this chart visualizes
 	 */
@@ -96,29 +98,12 @@ public abstract class Chart {
 		this.resources = resources;
 	}
 
-	/**
-	 * 
-	 * Returns the ResourceVisualizationFactory used to create ResourceVisualizations
-	 */
-	public ResourceVisualizationFactory getResourceVisualizationFactory() {
-		return rvf;
-	}
 
-	/**
-	 *  Sets the ResourceVisualizationFactory used to visualize resources
-	 *  
-	 * @param rvf: the factory used to created visualizations of resources
-	 */
-	public void setResourceVisualizationFactory(ResourceVisualizationFactory rvf) {
-		this.rvf = rvf;
-	}
-
-	
 	/**
 	 *  Returns an instantiation of the IDraw interface. This interface is used to actually draw the chart to an image.
 	 */
 	public IDraw getIDrawInstantiation() {
-		return iDrawImpl;
+		return iDrawFacade;
 	}
 
 	/**
@@ -126,10 +111,18 @@ public abstract class Chart {
 	 * @param d: the instantiation of the IDraw interface that will be used to draw the image of the chart object.
 	 */
 	public void setIDrawInstantiation(IDraw d) {
-		this.iDrawImpl = d;
+		this.iDrawFacade = d;
 	}
-	
-	
+
+
+	public ShapeDecider getShapeDecider() {
+		return shapeDecider;
+	}
+
+	public void setShapeDecider(ShapeDecider shapeDecider) {
+		this.shapeDecider = shapeDecider;
+	}
+
 	/**
 	 * Creates an actual image of the chart represented by an object of this class. 
 	 * Returns this image as a BufferedImage.
@@ -137,8 +130,8 @@ public abstract class Chart {
 	 * @return BufferedImage: returns a drawing of the actual image represented by this chart object
 	 */
 	public abstract BufferedImage draw();
-	
-	
+
+
 }
-	
-	
+
+
