@@ -102,8 +102,8 @@ public class Java2DFacade implements IDraw{
 	}
 	/**
 	 * 
-	 * @param xCoord
-	 * @param yCoord
+	 * @param xCoord: the x-coordinate of the center of the box
+	 * @param yCoord: the y-coordinate of the center of the box
 	 * @param width
 	 * @param heigth
 	 * @param redFill
@@ -124,7 +124,10 @@ public class Java2DFacade implements IDraw{
 		
 	}
 	
-	
+	/**
+	 * @param xCoord: the x-coordinate of the center of the box
+	 * @param yCoord: the y-coordinate of the center of the box
+	 */
 	@Override
 	public void drawBox(
 			int xCoord, int yCoord,
@@ -135,7 +138,18 @@ public class Java2DFacade implements IDraw{
 			) {
 		
 		Graphics2D g2d = getBufferedImage().createGraphics();
-		Rectangle2D rect = new Rectangle2D.Double(xCoord, yCoord, width, heigth);
+		
+		/*
+		 * public Rectangle2D.Double(double x, double y, double w,double h)
+		 *	Constructs and initializes a Rectangle2D from the specified double coordinates.
+		 *  Parameters:
+		 *  x - the X coordinate of the upper-left corner of the newly constructed Rectangle2D
+		 *  y - the Y coordinate of the upper-left corner of the newly constructed Rectangle2D
+		 *  w - the width of the newly constructed Rectangle2D
+		 *  h - the height of the newly constructed Rectangle2D
+		 * 
+		 */
+		Rectangle2D rect = new Rectangle2D.Double(xCoord - width/2, yCoord - heigth/2, width, heigth);
 		
 		g2d.setColor(new Color(redFill, greenFill, blueFill));
 		g2d.fill(rect);
@@ -148,7 +162,10 @@ public class Java2DFacade implements IDraw{
 		
 	}
 
-	//xcoor and ycoord are the upper left corner of the bounding box
+	/**
+	 * @param xCoord: the x-coordinate of the center of the ellipse
+	 * @param yCoord: the y-coordinate of the center of the ellipse
+	 */
 	@Override
 	public void drawEllipse(
 			int xCoord, int yCoord,
@@ -159,7 +176,7 @@ public class Java2DFacade implements IDraw{
 			) {
 		
 		Graphics2D g2d = getBufferedImage().createGraphics();
-		Ellipse2D ellipse = new Ellipse2D.Double(xCoord, yCoord, width, heigth);
+		Ellipse2D ellipse = new Ellipse2D.Double(xCoord - width/2 , yCoord- heigth/2, width, heigth);
 		
 		g2d.setColor(new Color(redFill, greenFill, blueFill));
 		g2d.fill(ellipse);
@@ -172,20 +189,20 @@ public class Java2DFacade implements IDraw{
 	
 	public void drawCircle(
 			int xCoord, int yCoord,
-			int radius,
+			int diameter,
 			int redBorder, int greenBorder, int blueBorder,
 			int redFill, int greenFill, int blueFill,
 			int borderWidth){
-		drawEllipse(xCoord, yCoord, radius, radius, redBorder, greenBorder, blueBorder, redFill, greenFill, blueFill, borderWidth);
+		drawEllipse(xCoord, yCoord, diameter, diameter, redBorder, greenBorder, blueBorder, redFill, greenFill, blueFill, borderWidth);
 	}
 
 	@Override
 	public void drawCircle(
 			int xCoord, int yCoord,
-			int radius,
+			int diameter,
 			int redFill, int greenFill, int blueFill
 			) {
-		drawCircle(xCoord, yCoord, radius, Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
+		drawCircle(xCoord, yCoord, diameter, Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
 				redFill, greenFill, blueFill,
 				Java2DFacade.DEFAULT_BORDER_WIDTH);
 	}
@@ -323,6 +340,13 @@ public class Java2DFacade implements IDraw{
 				lineEndX + lineLength , lineEndY+ DEFAULT_TRIANGLE_BASE/2);
 	}
 	
+	/**
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the trapezoid
+	 * 					relative to the width and the highest of the two sides
+	 * @param yCoord: the y-coordinate of the center of the trapezoid
+	 * 					relative to the width and the highest of the two sides
+	 */
 	public void drawTrapezoid(	
 			int xCoord, int yCoord,
 			int trap1, int trap2, int trap3,
@@ -335,16 +359,16 @@ public class Java2DFacade implements IDraw{
 		
 		
 		//begin linksonderhoek en draai tegen de klok in
-		xArray[0] = xCoord;
-		xArray[1] = xCoord + trap2;
-		xArray[2] = xCoord + trap2;
-		xArray[3] = xCoord;
+		xArray[0] = xCoord - trap2/2;
+		xArray[1] = xCoord + trap2/2;
+		xArray[2] = xCoord + trap2/2;
+		xArray[3] = xCoord - trap2/2;
 		
 		int[] yArray = new int[4];
-		yArray[0] = yCoord;
-		yArray[1] = yCoord;
-		yArray[2] = yCoord + trap3;
-		yArray[3] = yCoord + trap1;
+		yArray[0] = yCoord + trap1/2;
+		yArray[1] = yCoord + trap1/2;
+		yArray[2] = yCoord + trap1/2 - trap3;
+		yArray[3] = yCoord - trap1/2;
 		Polygon pol = new Polygon( xArray, yArray, 4);
 				
 		g2d.setColor(new Color(redFill, greenFill, blueFill));
