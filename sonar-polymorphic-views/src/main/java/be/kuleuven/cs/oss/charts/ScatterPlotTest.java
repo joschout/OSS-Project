@@ -25,11 +25,9 @@ public class ScatterPlotTest {
 
 	@Test
 	public void rescaleTest() {
+		// TODO op een of andere manier maxresourcesize en pos setten als class variable	
 		
-
-		
-		ScatterPlot sp = mock(ScatterPlot.class);
-		
+		//SET UP
 		List<ResourceVisualization> RVList = new ArrayList<ResourceVisualization>();
 
 		Box box1 = new Box(new Position(10,10), new Size(10,10), new Color(10,10,10), "Sweet");
@@ -40,21 +38,30 @@ public class ScatterPlotTest {
 		RVList.add(box3);
 		Box box4 = new Box(new Position(1000,100), new Size(100,10), new Color(150,150,150), "Nipples");
 		RVList.add(box4);
-
+		
 		List<be.kuleuven.cs.oss.sonarfacade.Resource> reslist = new ArrayList<be.kuleuven.cs.oss.sonarfacade.Resource>();
-		System.out.println("reslist is empty: "+ reslist.isEmpty());
 		
 		Java2DFacade java2d = new Java2DFacade();
+		
+		//MOCK CLASSES
+		ScatterPlot sp = mock(ScatterPlot.class);
+		ResourceProperty rp = mock(ResourceProperty.class);
+		
+		
+		//METHODS SCATTERPLOT
 		when(sp.getIDrawInstantiation()).thenReturn(java2d);
 		when(sp.getImageFrameSize()).thenReturn(new Size(100,100));
 		when(sp.getResources()).thenReturn(reslist);  //for each over empty list does nothing
 		when(sp.getResourceVisualizations()).thenReturn(RVList);
-
-		ResourceProperty rp = mock(ResourceProperty.class);
-		when(rp.getPropertyName()).thenReturn("x axis").thenReturn("y axis");
-		System.out.println("hier is ie");
-		//die geraakt hier niet in :o
 		when(sp.draw()).thenCallRealMethod();
+		
+		
+		//METHODS RESOURCE PORPERTY
+		when(rp.getPropertyName()).thenReturn("x axis").thenReturn("y axis");
+		
+		
+		
+		//EXECUTION
 		BufferedImage bi = sp.draw();
 
 		try {
