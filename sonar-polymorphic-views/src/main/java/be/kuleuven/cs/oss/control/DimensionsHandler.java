@@ -25,10 +25,13 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	private IHandler<ResourceVisualizationFactory> next;
 
 	
-	//private static final ConstantResourceProperty DEFAULT_WIDTH = new ConstantResourceProperty(20);
-	//private static final ConstantResourceProperty DEFAULT_HEIGHT = new ConstantResourceProperty(20);
-	//TODO: defaults
-
+	private static final ConstantResourceProperty DEFAULT_BOXWIDTH = new ConstantResourceProperty(20);
+	private static final ConstantResourceProperty DEFAULT_BOXHEIGHT = new ConstantResourceProperty(20);
+	private static final ConstantResourceProperty DEFAULT_CIRCLEDIAM = new ConstantResourceProperty(20);
+	private static final ConstantResourceProperty DEFAULT_TRAPSIDE1 = new ConstantResourceProperty(20);
+	private static final ConstantResourceProperty DEFAULT_TRAPSIDE2 = new ConstantResourceProperty(20);
+	private static final ConstantResourceProperty DEFAULT_TRAPSIDE3 = new ConstantResourceProperty(20);
+	
 	SonarFacade sf;
 
 	public DimensionsHandler(SonarFacade sf) {
@@ -98,6 +101,16 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 		
 		return result;
 	}
-
+	
+	private String retrieveValueWithDefault(String key, ChartParameters params, int def) {
+		String result = params.getValue(key);
+		
+		if(result.equals("")){
+			LOG.info("retrieve value failed, setting defaults");
+			throw new NoResultException("value not retrieved");
+		}
+		
+		return result;
+	}
 
 }
