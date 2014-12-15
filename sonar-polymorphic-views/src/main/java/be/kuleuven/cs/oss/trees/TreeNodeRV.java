@@ -30,7 +30,7 @@ public class TreeNodeRV {
 	private int maxRight;
 	private int level = 0;
 	
-	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
+	private final static Logger LOG = LoggerFactory.getLogger(TreeNodeRV.class);
 
 	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode) {
 		this.rvf = rvf;

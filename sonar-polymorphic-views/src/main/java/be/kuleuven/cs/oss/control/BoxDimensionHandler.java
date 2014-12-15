@@ -1,5 +1,7 @@
 package be.kuleuven.cs.oss.control;
 
+import java.util.NoSuchElementException;
+
 import javax.persistence.NoResultException;
 
 import org.slf4j.Logger;
@@ -22,6 +24,10 @@ public class BoxDimensionHandler implements IHandler<ResourceVisualizationFactor
 
 	private String keyWidth = "boxwidth";
 	private String keyHeight = "boxheight";
+	
+	private static final ConstantResourceProperty DEFAULT_WIDTH = new ConstantResourceProperty(20);
+	private static final ConstantResourceProperty DEFAULT_HEIGHT = new ConstantResourceProperty(20);
+
 
 
 	SonarFacade sf;
@@ -37,8 +43,20 @@ public class BoxDimensionHandler implements IHandler<ResourceVisualizationFactor
 
 	@Override
 	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
-		ResourceProperty widthProperty = createBoxDimensionRP(keyWidth, params);
-		ResourceProperty heightProperty = createBoxDimensionRP(keyHeight, params);
+		ResourceProperty widthProperty;
+		try {
+			widthProperty = createBoxDimensionRP(keyWidth, params);
+		}
+		catch(NoResultException e) {
+			widthProperty = DEFAULT_WIDTH;
+		}
+		ResourceProperty heightProperty;
+		try {
+			heightProperty = createBoxDimensionRP(keyHeight, params);
+		}
+		catch(NoResultException e) {
+			heightProperty = DEFAULT_HEIGHT;
+		}
 		
 		((BoxFactory) rvf).setWidthProperty(widthProperty);
 		((BoxFactory) rvf).setHeightProperty(heightProperty);
@@ -63,7 +81,7 @@ public class BoxDimensionHandler implements IHandler<ResourceVisualizationFactor
 		else{
 			Metric metric = sf.findMetric(dimensionValue);
 			if(metric == null){
-				throw new NoResultException("metric not found");
+				throw new NoSuchElementException("metric not found");
 			}
 			rp = new SonarResourceProperty(sf, metric);
 		}
@@ -80,7 +98,7 @@ public class BoxDimensionHandler implements IHandler<ResourceVisualizationFactor
 		String result = params.getValue(key);
 		
 		if(result.equals("")){
-			LOG.info("retrieve value failed");
+			LOG.info("retrieve value failed, setting defaults");
 			throw new NoResultException("value not retrieved");
 		}
 		
