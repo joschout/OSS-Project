@@ -21,7 +21,7 @@ public class Size {
 	
 	
 	public void setWidth(int w) throws IllegalArgumentException{
-		if(w <= 0) 
+		if(w < 0) 
 			throw new IllegalArgumentException("Width of a size cannot be less than or equal to zero");
 		this.width = w;
 	}
@@ -31,7 +31,7 @@ public class Size {
 	}
 	
 	public void setHeight(int h) throws IllegalArgumentException{
-		if(h <= 0) 
+		if(h < 0) 
 			throw new IllegalArgumentException("Height of a size cannot be less than or equal to zero");
 		this.height = h;
 	}
