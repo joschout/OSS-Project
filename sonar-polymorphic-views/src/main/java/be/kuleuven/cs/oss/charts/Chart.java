@@ -30,6 +30,9 @@ public abstract class Chart {
 	private List<Resource> resources;
 	private SonarFacade sonarF;
 	private IDraw iDrawFacade;
+	
+	private ResourceVisualizationFactory rvf;
+
 	private ShapeDecider shapeDecider;
 
 	//TODO LineFactory has to be one of the arguments
@@ -121,6 +124,14 @@ public abstract class Chart {
 
 	public void setShapeDecider(ShapeDecider shapeDecider) {
 		this.shapeDecider = shapeDecider;
+	}
+	
+	public ResourceVisualizationFactory getRvf() {
+		return rvf;
+	}
+
+	public void setRvf(ResourceVisualizationFactory rvf) {
+		this.rvf = rvf;
 	}
 
 	/**

@@ -36,7 +36,9 @@ public abstract class RVFactoryHandler implements IHandler<ShapeDecider> {
 	public void handleRequest(ShapeDecider sd, ChartParameters params) {
 		ResourceVisualizationFactory rvf = createRvf();
 		
-		startProcess(rvf, params);
+		startProcess(factory, params);
+		
+		chart.setRvf(factory);
 		
 		if(ConstantShapeDecider.class.isInstance(sd)){
 			sd.setResourceVisualizationFactory(rvf);
