@@ -25,9 +25,9 @@ import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class ShapeHandler implements IHandler<Chart>{
+public class ResourceVisualizationFactoryHandler implements IHandler<Chart>{
 
-	private final static Logger LOG = LoggerFactory.getLogger(RVFactoryHandler.class);
+	private final static Logger LOG = LoggerFactory.getLogger(ResourceVisualizationFactoryHandler.class);
 
 	private IHandler<Chart> next;
 	
@@ -36,10 +36,6 @@ public class ShapeHandler implements IHandler<Chart>{
 	private String shapeValueBox = "box";
 	private String shapeValueCircle = "circle";
 	private String shapeValueTrap = "trap";
-	
-	private String[] dimensionValuesBox = new String[]{"boxwidth","boxheight"};
-	private String[] dimensionValuesCircle = new String[]{"circlediam"};
-	private String[] dimensionValuesTrap = new String[]{"trapside1","trapside2","trapside3"};
 	
 	private String colorValueBox = "boxcolor";
 	private String colorValueCircle = "circlecolor";
@@ -51,7 +47,7 @@ public class ShapeHandler implements IHandler<Chart>{
 	
 	private SonarFacade sf;
 	
-	public ShapeHandler(SonarFacade sf) {
+	public ResourceVisualizationFactoryHandler(SonarFacade sf) {
 		this.sf = sf;
 	}
 
@@ -68,12 +64,12 @@ public class ShapeHandler implements IHandler<Chart>{
 		if(shapeValue.equals(shapeValueMetric)){
 			IntervalShapeDecider sd = new IntervalShapeDecider();
 			sd.setResourceProperty(new SonarResourceProperty(sf,sf.findMetric(retrieveValue(metricKey, params))));
-			sd = loopShapes(sd,params);
+			addFactories(sd,params);
 			chart.setShapeDecider(sd);
 		}
 		else{
 			ConstantShapeDecider sd = new ConstantShapeDecider();
-			sd.setResourceVisualizationFactory(createRVF(shapeValue));
+			sd.setResourceVisualizationFactory(createRVF(shapeValue,params));
 			chart.setShapeDecider(sd);
 		}
 				
@@ -83,46 +79,33 @@ public class ShapeHandler implements IHandler<Chart>{
 		
 	}
 	
-	private void startProcess(ResourceVisualizationFactory rvf, ChartParameters params) {
-		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
-		
-		processor.addHandler(new DimensionsHandler(sf));
-		processor.addHandler(new ColorHandler(sf));
-		
-		processor.startProcess(rvf, params);
-		
-	}
-	
-	private ResourceVisualizationFactory createRVF(String shapeValue){
+	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params){
 		ResourceVisualizationFactory factory;
-		
-		String[] dimensionValues;
 		String colorValue;
 		
 		if(shapeValue.equals(shapeValueBox)){
 			factory = new BoxFactory();
-			dimensionValues = dimensionValuesBox;
 			colorValue = colorValueBox;
 		}
 		else if(shapeValue.equals(shapeValueCircle)){
 			factory = new CircleFactory();
-			dimensionValues = dimensionValuesCircle;
 			colorValue = colorValueCircle;
 		}
 		else if(shapeValue.equals(shapeValueTrap)){
 			factory = new TrapezoidFactory();
-			dimensionValues = dimensionValuesTrap;
 			colorValue = colorValueTrap;
 		}
 		else throw new IllegalArgumentException("Invalid shape");
 		
 		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
-
+		processor.addHandler(new DimensionsHandler(sf));
+		processor.addHandler(new ColorHandler(sf,colorValue));
+		processor.startProcess(factory, params);
 		
 		return factory;
 	}
 	
-	private IntervalShapeDecider loopShapes(IntervalShapeDecider sd, ChartParameters params) {	
+	private void addFactories(IntervalShapeDecider sd, ChartParameters params) {	
 		String order = retrieveValue(orderKey, params);
 		String split = retrieveValue(boundKey, params);
 		
@@ -133,12 +116,10 @@ public class ShapeHandler implements IHandler<Chart>{
 		
 		if(shapes.size() == boundaries.size()){
 			for(String shape : shapes){
-				sd.addBoundaryWithFactory(boundaries.get(shapes.indexOf(shape)),createRVF(shape));
+				sd.addBoundaryWithFactory(boundaries.get(shapes.indexOf(shape)),createRVF(shape,params));
 			}
 		}
 		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
-		
-		return sd;
 	}
 	
 	private String retrieveValue(String key, ChartParameters params) {

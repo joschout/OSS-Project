@@ -10,7 +10,9 @@ import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -19,17 +21,11 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);
 
 	private IHandler<ResourceVisualizationFactory> next;
-
-	private String keyWidth = "boxwidth";
-	private String keyHeight = "boxheight";
 	
-	private String[] dimensions;
-
 	SonarFacade sf;
 
-	public DimensionsHandler(SonarFacade sf, String[] dimensions) {
+	public DimensionsHandler(SonarFacade sf) {
 		this.sf = sf;
-		this.dimensions = dimensions;
 	}
 
 	@Override
@@ -39,16 +35,23 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 
 	@Override
 	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
-		ResourceProperty widthProperty = createBoxDimensionRP(keyWidth, params);
-		ResourceProperty heightProperty = createBoxDimensionRP(keyHeight, params);
-		
-		((BoxFactory) rvf).setWidthProperty(widthProperty);
-		((BoxFactory) rvf).setHeightProperty(heightProperty);
-		
+		if(BoxFactory.class.isInstance(rvf)){
+			((BoxFactory) rvf).setWidthProperty(createDimensionRP("boxwidth",params));
+			((BoxFactory) rvf).setHeightProperty(createDimensionRP("boxheight",params));
+		}
+		else if(CircleFactory.class.isInstance(rvf)){
+			((CircleFactory) rvf).setDiameterProperty(createDimensionRP("circlediam",params));
+		}
+		else if(TrapezoidFactory.class.isInstance(rvf)){
+			((TrapezoidFactory) rvf).setLeftLineProperty(createDimensionRP("trapside1",params));
+			((TrapezoidFactory) rvf).setBaseLineProperty(createDimensionRP("trapside2",params));
+			((TrapezoidFactory) rvf).setRightLineProperty(createDimensionRP("trapside3",params));
+		}
+		else throw new IllegalArgumentException("RVF could not be cast to specific factory");
+
 		if(next != null) {
 			next.handleRequest(rvf, params);
 		}
-
 	}
 
 	/**
@@ -56,7 +59,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	 * @param dimension The given box dimension (currently, only boxwidth and boxheight are supported)
 	 * @throws Exception if the creation of the resource property fails
 	 */
-	private ResourceProperty createBoxDimensionRP(String dimension, ChartParameters params){
+	private ResourceProperty createDimensionRP(String dimension, ChartParameters params){
 		String dimensionValue = retrieveValue(dimension, params);
 		ResourceProperty rp;
 		if(dimensionValue.matches("[0-9]+")){

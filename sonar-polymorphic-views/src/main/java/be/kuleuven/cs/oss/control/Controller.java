@@ -38,7 +38,7 @@ public class Controller {
 		Processor<Chart> processor = new Processor<Chart>();
 		
 		processor.addHandler(new ResourcesHandler(sf));
-		processor.addHandler(new ShapeHandler(sf));
+		processor.addHandler(new ResourceVisualizationFactoryHandler(sf));
 		processor.addHandler(new AxisMetricHandler(sf));
 		processor.addHandler(new SizeHandler(sf));
 		processor.addHandler(new LineFactoryHandler());
