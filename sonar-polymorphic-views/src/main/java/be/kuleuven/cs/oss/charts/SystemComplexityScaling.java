@@ -12,7 +12,7 @@ import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 public class SystemComplexityScaling {
 	
-	private final static Logger LOG = LoggerFactory.getLogger(PolymorphicViewsChart.class);
+	private final static Logger LOG = LoggerFactory.getLogger(SystemComplexityScaling.class);
 	
 	private TreeNodeRV treeNodeRV;
 	private List<ResourceVisualization> rvs;
@@ -41,12 +41,18 @@ public class SystemComplexityScaling {
 			heights.add(rv.getWidth());
 		}
 		double sd = standardDeviation(heights);
+
 		double mean = mean(heights);
 		
 		//sample = factor*sd +mean => (sample - mean)/sd = amount of sigmas away from mean
 		//calculate the amount of sigma's a width of an RV is from the mean and scale accordingly
 		
 		for(ResourceVisualization rv : rvs){
+			if(sd==0){
+				rv.getSize().setHeight(STANDARD_HEIGHT);
+				continue;
+			}
+			
 			double z = (rv.getHeight() - mean)/sd;
 			
 			if(z>=0){
@@ -73,6 +79,11 @@ public class SystemComplexityScaling {
 		//calculate the amount of sigma's a width of an RV is from the mean and scale accordingly
 		
 		for(ResourceVisualization rv : rvs){
+			if(sd==0){
+				rv.getSize().setHeight(STANDARD_WIDTH);
+				continue;
+			}
+			
 			double z = (rv.getWidth() - mean)/sd;
 			
 			if(z>=0){

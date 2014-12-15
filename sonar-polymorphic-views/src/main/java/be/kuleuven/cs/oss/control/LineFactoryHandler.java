@@ -31,6 +31,7 @@ public class LineFactoryHandler implements IHandler<Chart> {
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		if (!(chart instanceof SystemComplexity)) {
+			next.handleRequest(chart, params);
 			return;
 		}
 		

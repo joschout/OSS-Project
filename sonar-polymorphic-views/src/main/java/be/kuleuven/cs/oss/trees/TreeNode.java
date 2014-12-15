@@ -51,8 +51,13 @@ public class TreeNode {
 	}
 
 	private void createChildren() {
+		System.out.println(resource.getKey());
 		List<Dependency> dependencies = sonarF.findOutgoingDependencies(resource);
 		List<Resource> foundChildResources = new ArrayList<Resource>();
+		
+
+		
+		System.out.println("BOOEOEOEOEOEOEOEO" + dependencies.toString());
 		
 		for(Dependency dependency: dependencies) {
 			

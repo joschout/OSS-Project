@@ -13,6 +13,7 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
+import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
@@ -72,7 +73,7 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 					throw new NoResultException("Grayscale metric not found");
 				}
 
-				ResourceProperty rp = new ScaledResourceProperty(gsValue1, gsValue2, 255, 0, sf, gsMetric);
+				ResourceProperty rp = new ScaledResourceProperty(new SonarResourceProperty(sf, gsMetric), gsValue1, gsValue2, 255, 0);
 
 				for(int i=0;i<3;++i){
 					result.add(rp);

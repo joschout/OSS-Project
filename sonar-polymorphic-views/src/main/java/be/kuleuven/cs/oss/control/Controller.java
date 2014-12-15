@@ -50,6 +50,7 @@ public class Controller {
 	private Chart getChartType(ChartParameters params) {
 		ChartParameter chartHandler = new ChartParameter(params);
 		Chart chart = chartHandler.getChart();
+		
 		return chart;
 	}
 	

@@ -31,6 +31,7 @@ public class ChartParameter {
 	
 	public Chart getChart() {
 		String result = params.getValue(key, DEFAULT_CHART_TYPE, false);
+
 		if(result.equals("")){
 			LOG.info("retrieve value with default failed");
 			throw new NoResultException("value with default not retrieved");
@@ -40,7 +41,9 @@ public class ChartParameter {
 			return new ScatterPlot();
 		}
 		if(result.equals(chartType2)) {
-			return new SystemComplexity();
+			SystemComplexity syscomp = new SystemComplexity();
+			System.out.println(syscomp);
+			return syscomp;
 		}
 		
 		throw new NoResultException("No chart created");
