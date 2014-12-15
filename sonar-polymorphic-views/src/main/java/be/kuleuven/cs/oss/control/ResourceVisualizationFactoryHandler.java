@@ -17,11 +17,13 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ConstantShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
+import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
