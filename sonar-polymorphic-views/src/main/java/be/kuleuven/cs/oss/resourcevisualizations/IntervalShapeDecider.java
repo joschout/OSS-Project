@@ -10,12 +10,6 @@ public class IntervalShapeDecider implements ShapeDecider {
 	private TreeMap<Double, ResourceVisualizationFactory>  boundaryToFactoryMap;
 	private ResourceProperty resourceProperty;
 
-
-	public IntervalShapeDecider(TreeMap<Double, ResourceVisualizationFactory> boundaryToFactoryMapping, ResourceProperty resourceProperty){
-		setBoundaryToFactoryMap(boundaryToFactoryMapping);
-		setResourceProperty(resourceProperty);
-	}
-
 	public ResourceProperty getResourceProperty() {
 		return resourceProperty;
 	}
@@ -31,6 +25,10 @@ public class IntervalShapeDecider implements ShapeDecider {
 	public void setBoundaryToFactoryMap(
 			TreeMap<Double, ResourceVisualizationFactory> boundaryToFactoryMap) {
 		this.boundaryToFactoryMap = boundaryToFactoryMap;
+	}
+	
+	public void addBoundaryWithFactory(double b, ResourceVisualizationFactory rvf){
+		this.boundaryToFactoryMap.put(b, rvf);
 	}
 
 	@Override

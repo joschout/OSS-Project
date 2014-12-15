@@ -14,7 +14,7 @@ import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public abstract class RVFactoryHandler implements IHandler<ShapeDecider> {
+public class RVFactoryHandler implements IHandler<ShapeDecider> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(RVFactoryHandler.class);
 
@@ -22,8 +22,13 @@ public abstract class RVFactoryHandler implements IHandler<ShapeDecider> {
 	
 	private SonarFacade sf;
 	
-	public RVFactoryHandler(SonarFacade sf) {
+	private String shape;
+	private int bound;
+	
+	public RVFactoryHandler(SonarFacade sf, String shape, int bound) {
 		this.sf = sf;
+		this.shape = shape;
+		this.bound = bound;
 	}
 
 	@Override
@@ -54,12 +59,12 @@ public abstract class RVFactoryHandler implements IHandler<ShapeDecider> {
 		
 	}
 	
-	public abstract ResourceVisualizationFactory createRvf();
+	public ResourceVisualizationFactory createRvf();
 
 	private void startProcess(ResourceVisualizationFactory rvf, ChartParameters params) {
 		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
 		
-		processor.addHandler(new BoxDimensionHandler(sf));
+		processor.addHandler(new DimensionsHandler(sf));
 		processor.addHandler(new ColorHandler(sf));
 		
 		processor.startProcess(rvf, params);

@@ -1,5 +1,11 @@
 package be.kuleuven.cs.oss.control;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import javax.persistence.NoResultException;
@@ -9,11 +15,14 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
+import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ConstantShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
+import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ShapeHandler implements IHandler<Chart>{
@@ -22,7 +31,23 @@ public class ShapeHandler implements IHandler<Chart>{
 
 	private IHandler<Chart> next;
 	
-	private String key = "shape";
+	private String shapeKey = "shape";
+	private String shapeValueMetric = "metric";
+	private String shapeValueBox = "box";
+	private String shapeValueCircle = "circle";
+	private String shapeValueTrap = "trap";
+	
+	private String[] dimensionValuesBox = new String[]{"boxwidth","boxheight"};
+	private String[] dimensionValuesCircle = new String[]{"circlediam"};
+	private String[] dimensionValuesTrap = new String[]{"trapside1","trapside2","trapside3"};
+	
+	private String colorValueBox = "boxcolor";
+	private String colorValueCircle = "circlecolor";
+	private String colorValueTrap = "trapcolor";
+	
+	private String metricKey = "shapemetric";
+	private String orderKey = "shapeMetricOrder";
+	private String boundKey = "shapeMetricSplit";
 	
 	private SonarFacade sf;
 	
@@ -38,42 +63,82 @@ public class ShapeHandler implements IHandler<Chart>{
 	
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
-		ShapeDecider sd;
+		String shapeValue = retrieveValue(shapeKey, params);
 		
-		if(retrieveValue(key, params).equals("metric")){
-			sd = new IntervalShapeDecider();
-			startProcessForMetricShape(sd,params);
+		if(shapeValue.equals(shapeValueMetric)){
+			IntervalShapeDecider sd = new IntervalShapeDecider();
+			sd.setResourceProperty(new SonarResourceProperty(sf,sf.findMetric(retrieveValue(metricKey, params))));
+			sd = loopShapes(sd,params);
+			chart.setShapeDecider(sd);
 		}
 		else{
-			sd = new ConstantShapeDecider();
-			startProcessForConstantShape(sd,params);
+			ConstantShapeDecider sd = new ConstantShapeDecider();
+			sd.setResourceVisualizationFactory(createRVF(shapeValue));
+			chart.setShapeDecider(sd);
 		}
-		
-		chart.setShapeDecider(sd);
-		
+				
 		if(next != null) {
 			next.handleRequest(chart, params);
 		}
 		
 	}
-
-	private void startProcessForConstantShape(ShapeDecider sd, ChartParameters params) {
-		Processor<ShapeDecider> processor = new Processor<ShapeDecider>();
-		//TODO: idee: map van shapes (als strings) met bijhorende intervals maken, alsook getter, in ShapeDecider (nadeel: redundant)
-		//TODO: ander idee: interface van IHandler generischer maken -> Chartparameters kan dan vervangen worden door combo
+	
+	private void startProcess(ResourceVisualizationFactory rvf, ChartParameters params) {
+		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
 		
-		switch(retrieveValue(key,params)){
-		case "box": 
-		}
-		processor.addHandler(new RVFactoryHandler(sf));
-
-		processor.startProcess(sd, params);
+		processor.addHandler(new DimensionsHandler(sf));
+		processor.addHandler(new ColorHandler(sf));
+		
+		processor.startProcess(rvf, params);
 		
 	}
 	
-	private void startProcessForMetricShape(ShapeDecider sd, ChartParameters params) {	
-		TreeMap<Double,ResourceVisualizationFactory> map = new TreeMap<Double,ResourceVisualizationFactory>();
+	private ResourceVisualizationFactory createRVF(String shapeValue){
+		ResourceVisualizationFactory factory;
 		
+		String[] dimensionValues;
+		String colorValue;
+		
+		if(shapeValue.equals(shapeValueBox)){
+			factory = new BoxFactory();
+			dimensionValues = dimensionValuesBox;
+			colorValue = colorValueBox;
+		}
+		else if(shapeValue.equals(shapeValueCircle)){
+			factory = new CircleFactory();
+			dimensionValues = dimensionValuesCircle;
+			colorValue = colorValueCircle;
+		}
+		else if(shapeValue.equals(shapeValueTrap)){
+			factory = new TrapezoidFactory();
+			dimensionValues = dimensionValuesTrap;
+			colorValue = colorValueTrap;
+		}
+		else throw new IllegalArgumentException("Invalid shape");
+		
+		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
+
+		
+		return factory;
+	}
+	
+	private IntervalShapeDecider loopShapes(IntervalShapeDecider sd, ChartParameters params) {	
+		String order = retrieveValue(orderKey, params);
+		String split = retrieveValue(boundKey, params);
+		
+		List<String> shapes = parseStringList(order,"-");
+		
+		List<Integer> boundaries = parseStringListToIntList(parseStringList(split,"x"));
+		boundaries.add(Integer.MAX_VALUE);
+		
+		if(shapes.size() == boundaries.size()){
+			for(String shape : shapes){
+				sd.addBoundaryWithFactory(boundaries.get(shapes.indexOf(shape)),createRVF(shape));
+			}
+		}
+		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
+		
+		return sd;
 	}
 	
 	private String retrieveValue(String key, ChartParameters params) {
@@ -85,6 +150,19 @@ public class ShapeHandler implements IHandler<Chart>{
 		}
 		
 		return result;
+	}
+	
+	private List<Integer> parseStringListToIntList(List<String> toParse){
+		List<Integer> result = new ArrayList<Integer>();
+		for(String str : toParse){
+			result.add(Integer.parseInt(str));
+		}
+		return result;
+	}
+	
+	private List<String> parseStringList(String total,String splitter){
+		String[] split = total.split(splitter);
+		return Arrays.asList(split);
 	}
 
 }

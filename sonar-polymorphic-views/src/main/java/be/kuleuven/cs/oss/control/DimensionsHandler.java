@@ -14,20 +14,22 @@ import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class BoxDimensionHandler implements IHandler<ResourceVisualizationFactory> {
+public class DimensionsHandler implements IHandler<ResourceVisualizationFactory> {
 
-	private final static Logger LOG = LoggerFactory.getLogger(BoxDimensionHandler.class);
+	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);
 
 	private IHandler<ResourceVisualizationFactory> next;
 
 	private String keyWidth = "boxwidth";
 	private String keyHeight = "boxheight";
-
+	
+	private String[] dimensions;
 
 	SonarFacade sf;
 
-	public BoxDimensionHandler(SonarFacade sf) {
+	public DimensionsHandler(SonarFacade sf, String[] dimensions) {
 		this.sf = sf;
+		this.dimensions = dimensions;
 	}
 
 	@Override

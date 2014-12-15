@@ -7,13 +7,7 @@ public class ConstantShapeDecider implements ShapeDecider {
 
 	private ResourceVisualizationFactory resourceVisualizationFactory;
 	private ResourceProperty resourceProperty;
-	
-	public ConstantShapeDecider(ResourceVisualizationFactory factory, ResourceProperty resourceProperty){
-		setResourceProperty(resourceProperty);
-		setResourceVisualizationFactory(factory);
-	}
-	
-	
+		
 	public ResourceVisualizationFactory getResourceVisualizationFactory() {
 		return resourceVisualizationFactory;
 	}
