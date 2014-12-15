@@ -1,6 +1,6 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,5 +28,23 @@ public class ResourceVisualisationTest {
 		assertTrue(circle.getDiameter()==10);
 		
 	}
+	
+	@Test
+	public void trapezoidChangeSize1(){
+		trapezoid.setSize(new Size(10, 18));
+		assertTrue(trapezoid.getBaseLine() == 10);
+		assertTrue(trapezoid.getRightLine() == 18);
+		assertTrue(trapezoid.getLeftLine() == 9);
+	}
+	
+	@Test
+	public void trapezoidChangeSize2(){
+		trapezoid2.setSize(new Size(0, 20));
+		assertTrue(trapezoid2.getBaseLine() == 0);
+		assertTrue(trapezoid2.getRightLine() == 16);
+		assertTrue(trapezoid2.getLeftLine() == 20);
+	}
+	
+	
 
 }
