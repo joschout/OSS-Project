@@ -7,7 +7,7 @@ import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
 public class Trapezoid extends ResourceVisualization {
 
-	private static final int TEXT_OFFSET = 1;
+	//private static final int TEXT_OFFSET = 1;
 	private int baseLine;
 	private int leftLine;
 	private int rightLine;
@@ -72,4 +72,20 @@ public class Trapezoid extends ResourceVisualization {
 				getColor().getRed(), getColor().getGreen(), getColor().getBlue());
 	}
 
+    @Override
+    public boolean equals (Object other) {
+        if ((other == null) || (this.getClass() != other.getClass())) {
+            return false;
+        }
+        Trapezoid otherTrapezoid = (Trapezoid) other;
+        return (this.getPosition().equals(otherTrapezoid.getPosition())
+        		&& this.getSize().equals(otherTrapezoid.getSize())
+        		&& this.getColor().equals(otherTrapezoid.getColor())
+        		&& this.getName().equals(otherTrapezoid.getName())
+        		&& (this.getBaseLine() == otherTrapezoid.getBaseLine())
+        		&& (this.getLeftLine() == otherTrapezoid.getLeftLine())
+        		&& (this.getRightLine() == otherTrapezoid.getRightLine()));
+    }
+	
+	
 }

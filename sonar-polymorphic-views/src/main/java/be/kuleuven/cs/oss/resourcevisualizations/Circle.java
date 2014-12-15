@@ -40,6 +40,19 @@ public class Circle extends ResourceVisualization{
 
 	}
 
+    @Override
+    public boolean equals (Object other) {
+        if ((other == null) || (this.getClass() != other.getClass())) {
+            return false;
+        }
+        Circle otherCircle = (Circle) other;
+        return (this.getPosition().equals(otherCircle.getPosition())
+        		&& this.getSize().equals(otherCircle.getSize())
+        		&& this.getColor().equals(otherCircle.getColor())
+        		&& this.getName().equals(otherCircle.getName())
+        		&& (this.getDiameter() == otherCircle.getDiameter()));
+    }
+	
 
 
 }

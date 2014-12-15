@@ -60,14 +60,10 @@ public class BoxFactoryTest {
 		System.out.println("box1 height: " +box.getHeight() + ", box2 height: " + box2.getHeight());
 		System.out.println("box1 rgb red: " +box.getColor().getRed() + ", box2 rgb red: " + box2.getColor().getRed());
 		System.out.println("box1 rgb blue: " +box.getColor().getBlue() + ", box2 rgb blue: " + box2.getColor().getBlue());
-		System.out.println("box1 rgb green: " +box.getColor().getGreen() + ", box2 rgb height: " + box2.getColor().getGreen());
+		System.out.println("box1 rgb green: " +box.getColor().getGreen() + ", box2 rgb green: " + box2.getColor().getGreen());
 		System.out.println("box1 name: " +box.getName() + ", box2 name: " + box2.getName() );
 		
-		assertEquals(box.getPosition(), box2.getPosition());
-		assertEquals(box.getSize(), box2.getSize());
-		assertEquals(box.getColor(), box2.getColor());
-		assertEquals(box.getName(), box2.getName());
-		
+		assertEquals(box, box2);		
 	}
 
 }

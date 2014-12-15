@@ -22,10 +22,10 @@ public class TrapezoidFactory implements ResourceVisualizationFactory {
 	@Override
 	public ResourceVisualization create(Resource resource) {
 		Position position = new Position(0,0);
-		int leftLine = leftLineProperty.getValue(resource).intValue();
-		int baseLine = baseLineProperty.getValue(resource).intValue();
-		int rightLine = rightLineProperty.getValue(resource).intValue();
-		Color color = new Color(redProperty.getValue(resource).intValue(), greenProperty.getValue(resource).intValue(), blueProperty.getValue(resource).intValue());
+		int leftLine = getLeftLineProperty().getValue(resource).intValue();
+		int baseLine = getBaseLineProperty().getValue(resource).intValue();
+		int rightLine = getRightLineProperty().getValue(resource).intValue();
+		Color color = new Color(getRedProperty().getValue(resource).intValue(), getGreenProperty().getValue(resource).intValue(), getBlueProperty().getValue(resource).intValue());
 		Trapezoid trapezoid = new Trapezoid(position, leftLine, baseLine, rightLine, color, resource.getName());
 		return trapezoid;
 	}

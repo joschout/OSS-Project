@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
-import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
@@ -58,7 +57,7 @@ public class CircleFactoryTest {
 		System.out.println("circle1 height: " +circle.getHeight() + ", circle2 height: " + circle2.getHeight());
 		System.out.println("circle1 rgb red: " +circle.getColor().getRed() + ", circle2 rgb red: " + circle2.getColor().getRed());
 		System.out.println("circle1 rgb blue: " +circle.getColor().getBlue() + ", circle2 rgb blue: " + circle2.getColor().getBlue());
-		System.out.println("circle1 rgb green: " +circle.getColor().getGreen() + ", circle2 rgb height: " + circle2.getColor().getGreen());
+		System.out.println("circle1 rgb green: " +circle.getColor().getGreen() + ", circle2 rgb green: " + circle2.getColor().getGreen());
 		System.out.println("circle1 name: " +circle.getName() + ", circle2 name: " + circle2.getName() );
 		
 		assertEquals(circle.getPosition(), circle2.getPosition());
