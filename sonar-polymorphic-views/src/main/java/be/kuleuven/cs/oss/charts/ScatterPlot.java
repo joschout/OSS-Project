@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.util.Collections;
 import java.util.Comparator;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import org.jfree.util.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -101,7 +103,7 @@ public class ScatterPlot extends Chart{
 		convertPosition();
 
 		//5
-		rescaleResourceVisualizations();
+		//rescaleResourceVisualizations();
 		LOG.info("RVs scaled");
 
 		//6
@@ -146,7 +148,9 @@ public class ScatterPlot extends Chart{
 	 */
 	private void createResourceVisualizations(){
 		for(Resource resource: getResources()){
+			System.out.println("in  create for ");
 			ResourceVisualization rv = getRvf().create(resource);
+			System.out.println(rv.getName());
 			//ResourceVisualization rv = getShapeDecider().create(resource);
 			//These will be the values of the properties that govern the position of the box. To be rescaled!
 			Position metricsPosition = new Position(xMetric.getValue(resource).intValue(), yMetric.getValue(resource).intValue());
@@ -190,14 +194,13 @@ public class ScatterPlot extends Chart{
 		}	
 	}
 
-	private void rescaleResourceVisualization(){}
 	/**
 	 * For each property, find the maximum and minimum value of all the resources.
 	 */
 	private void setExtremeValues(){	
-
+	
 		for(ResourceVisualization rv : getResourceVisualizations()){	
-
+	
 			double xCoord = rv.getX();
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
@@ -216,8 +219,8 @@ public class ScatterPlot extends Chart{
 			if(height > getMaxResourceSize().getHeight()){
 				getMaxResourceSize().setHeight ((int)height);
 			}
-
-
+	
+	
 			if(xCoord <= getMinResourcePosition().getX()){
 				getMinResourcePosition().setX((int)xCoord);
 			}
@@ -232,6 +235,7 @@ public class ScatterPlot extends Chart{
 			}			
 		}
 	}
+
 
 	/**
 	 * Let the resource visualizations draw themselves.
@@ -351,7 +355,6 @@ public class ScatterPlot extends Chart{
 	 */
 	private int convertX(double xCoord){
 
-		LOG.info("xCoord: " + xCoord);
 		return (int) (axisOffset + (getImageFrameSize().getWidth()-2*axisOffset)* (xCoord-getMinResourcePosition().getX())/(getMaxResourcePosition().getX()-getMinResourcePosition().getX()));	
 	}
 

@@ -48,11 +48,9 @@ public class TreeNodeRV {
 
 	private void createChildren() {
 		TreeMap<String, TreeNode> nodeChildren = treeNode.getChildren();
-		LOG.info("Children: " + nodeChildren.toString());
 		
 		for(Map.Entry<String, TreeNode> entry : nodeChildren.entrySet()) {
 			TreeNode treeNode = entry.getValue();
-			LOG.info(entry.getKey());
 
 			TreeNodeRV child = new TreeNodeRV(rvf, treeNode);
 			child.setLevel(this.level + 1);
@@ -72,7 +70,6 @@ public class TreeNodeRV {
 			Connection connection = new Connection(rvChild, rv);
 			connections.add(connection);
 		}	
-		System.out.println("Connections for " + this.toString() + " " + connections.toString());
 	}
 
 
@@ -140,7 +137,7 @@ public class TreeNodeRV {
 		}
 		else {
 			//System.out.println("MAXRIGHT: " + maxRight + " " + rv.getWidth());
-			this.maxRight = maxRight + rv.getWidth() + X_OFFSET;
+			this.maxRight = maxRight + rv.getWidth();
 		}
 		
 		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){			
@@ -150,10 +147,11 @@ public class TreeNodeRV {
 				this.maxRight = childMaxRight;
 			}			
 		}
+		this.maxRight += X_OFFSET;
 		
-			if(!isRoot()){
-				calculateXPositionRv();
-			}
+		if(!isRoot()){
+			calculateXPositionRv();
+		}
 		return this;
 		
 	}
@@ -168,10 +166,8 @@ public class TreeNodeRV {
 			x = (xFirstChild + xLastChild) / 2;
 		}
 		else {
-			x = this.maxRight;
+			x = this.maxRight - rv.getWidth()/2;
 		}
-		
-		System.out.println("X IS: " + x);
 		
 		Position position = new Position(x, 0);
 		rv.setPosition(position);

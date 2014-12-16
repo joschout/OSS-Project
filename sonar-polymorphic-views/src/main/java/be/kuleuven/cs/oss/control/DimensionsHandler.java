@@ -32,6 +32,10 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	
 	SonarFacade sf;
 
+	/**
+	 * Creates a new dimensionhandler based on the given sonarfacade
+	 * @param sf an instance of SonarFacade
+	 */
 	public DimensionsHandler(SonarFacade sf) {
 		this.sf = sf;
 	}
@@ -41,8 +45,12 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 		this.next = handler;
 	}
 
+	/**
+	 * Creates the dimension properties for the given resourcevisualization factory, depending on the type of factory (currently only box, circle and trap are supported) and sets them in this factory
+	 * @throws IllegalArgumentException if the factory cannot be cast to a specific type of factory
+	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) throws IllegalArgumentException{
 		if(BoxFactory.class.isInstance(rvf)){
 			((BoxFactory) rvf).setWidthProperty(createDimensionRP("boxwidth",params,DEFAULT_BOXWIDTH));
 			((BoxFactory) rvf).setHeightProperty(createDimensionRP("boxheight",params,DEFAULT_BOXHEIGHT));
@@ -63,19 +71,21 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	}
 
 	/**
-	 * Create a new resource property for the given box dimension and add it to the resource property manager
-	 * @param dimension The given box dimension (currently, only boxwidth and boxheight are supported)
-	 * @throws Exception if the creation of the resource property fails
+	 * Creates a new dimension property that is defined by the given dimension key
+	 * @param key the given key for the dimension property
+	 * @param params an instance of Chartparameters
+	 * @param def the default property to be set in case the given key is not a valid one
+	 * @return the resource property that is defined by the given dimension key if that key is valid, else return the given default resource property
 	 */
-	private ResourceProperty createDimensionRP(String dimension, ChartParameters params, ResourceProperty def){
+	private ResourceProperty createDimensionRP(String key, ChartParameters params, ResourceProperty def){
 		String dimensionValue;
 		ResourceProperty rp;
 		
 		try{
-			dimensionValue = retrieveValue(dimension, params);
+			dimensionValue = retrieveValue(key, params);
 		}
 		catch(NoResultException e){
-			LOG.info("setting default "+dimension);
+			LOG.info("setting default "+key);
 			return def;
 		}
 		

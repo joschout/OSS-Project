@@ -50,7 +50,6 @@ public class SystemComplexity extends Chart {
 			}
 		}
 			
-		LOG.info("PARENTRESOURCES: " + parentResources.toString());
 		TreeNode treeNode = new TreeNode(parentResources, getSonarFacade());
 		treeNode.setRootNode();
 		
