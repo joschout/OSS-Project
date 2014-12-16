@@ -114,9 +114,6 @@ public class Java2DFacade implements IDraw{
 			int width, int heigth,
 			int redFill, int greenFill, int blueFill
 			){
-		LOG.info("DRAWING BOX IN IDRAW IMPL");
-		System.out.println(width + " " + heigth);
-		System.out.println(xCoord + " " + yCoord);
 		drawBox(xCoord, yCoord, 
 				width, heigth, 
 				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
@@ -386,7 +383,6 @@ public class Java2DFacade implements IDraw{
 			int trap1, int trap2, int trap3,
 			int redFill, int greenFill, int blueFill
 			){
-		LOG.info("DRAWING BOX IN IDRAW IMPL");
 		drawTrapezoid(xCoord, yCoord, 
 				trap1, trap2, trap3,
 				Java2DFacade.DEFAULT_BLACK_R, Java2DFacade.DEFAULT_BLACK_G, Java2DFacade.DEFAULT_BLACK_B,
