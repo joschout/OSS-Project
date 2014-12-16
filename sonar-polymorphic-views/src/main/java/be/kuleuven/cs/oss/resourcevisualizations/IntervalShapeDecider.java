@@ -6,8 +6,8 @@ import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 public class IntervalShapeDecider implements ResourceVisualizationCreator {
-	
-	private TreeMap<Double, ResourceVisualizationCreator>  boundaryToFactoryMap;
+	//TODO Change these to Factories
+	private TreeMap<Double, ResourceVisualizationCreator>  boundaryToFactoryMap = new TreeMap<Double, ResourceVisualizationCreator>();
 	private ResourceProperty resourceProperty;
 
 	public ResourceProperty getResourceProperty() {
