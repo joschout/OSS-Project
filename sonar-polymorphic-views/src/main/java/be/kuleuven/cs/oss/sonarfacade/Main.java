@@ -14,7 +14,7 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 public class Main {
 
 	//"ck=polymorphic&resources=classes&boxheight=complexity&boxwidth=10&parent=java:chess&type=scatter&xmetric=lines&ymetric=comment_lines&boxcolor=min20.3max1000.28keylines";
-	private static String queryString = "ck=polymorphic&resources=classes&parent=sonar:chartplugin&type=syscomp&shape=box";
+	private static String queryString = "ck=polymorphic&resources=classes&parent=sonar:chartplugin&type=syscomp&shape=box&boxheight=comment_lines&boxwidth=lines";
 
 	public static void main(String[] args) throws IOException {
 		WebServiceSonarFacade wssf = new WebServiceSonarFacade();

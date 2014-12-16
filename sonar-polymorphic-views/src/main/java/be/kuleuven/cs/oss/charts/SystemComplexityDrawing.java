@@ -44,7 +44,7 @@ public class SystemComplexityDrawing {
 		System.out.println(maxHeights.toString());
 		tree.updateYPositions(maxHeights);
 		
-		drawInterface.createEmptyImage(5000, 250);
+		drawInterface.createEmptyImage(5000, 1000);
 		
 		
 		for(ResourceVisualization rv: rvs) {
