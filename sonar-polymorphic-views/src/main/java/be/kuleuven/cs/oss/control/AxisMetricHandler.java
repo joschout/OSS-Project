@@ -24,6 +24,10 @@ public class AxisMetricHandler implements IHandler<Chart> {
 
 	SonarFacade sf;
 
+	/**
+	 * Creates a new handler for the axis metrics with the given sonar facade
+	 * @param sf an instance of SonarFacade
+	 */
 	public AxisMetricHandler(SonarFacade sf) {
 		this.sf = sf;
 	}
@@ -32,7 +36,10 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	public void setNext(IHandler<Chart> handler) {
 		this.next = handler;
 	}
-
+	
+	/**
+	 * Creates the axis metric properties and sets them in the given chart if this chart is a scatterplot
+	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		if (!(chart instanceof ScatterPlot)) {
@@ -53,7 +60,12 @@ public class AxisMetricHandler implements IHandler<Chart> {
 
 	}
 
-
+	/**
+	 * Creates a resource property for the given axis
+	 * @param axis the axis for which a resource property has to be returned
+	 * @param params the map of chartparameters from 
+	 * @return
+	 */
 	private ResourceProperty createAxisMetricProperty(String axis, ChartParameters params){
 		String metricValue = retrieveValue(axis, params);
 		
