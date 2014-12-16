@@ -19,11 +19,11 @@ public class ScatterPlot extends Chart{
 	//Image frame properties
 	private double axisOffset; 
 	private Size imageFrameSize; 
-	
+
 	//ResourceProperties specific for this chart
 	private ResourceProperty xMetric;
 	private ResourceProperty yMetric;
-	
+
 	//global maxvalues over all resources
 	private Position maxResourcePosition = new Position(0, 0);
 	private Size maxResourceSize = new Size(0,0);
@@ -32,7 +32,7 @@ public class ScatterPlot extends Chart{
 	//made protected for test
 	private Position minResourcePosition = new Position(Integer.MAX_VALUE, Integer.MAX_VALUE);
 	private Size minResourceSize = new Size(Integer.MAX_VALUE,Integer.MAX_VALUE);
-	
+
 	//the values for the dimensions of the smallest and largest box in the plot
 	//each value is calculated by multiplying the width or height of the frame with the factors
 	private double minRVHeight;
@@ -42,12 +42,12 @@ public class ScatterPlot extends Chart{
 	private static final double minRVScalingFactor = 0.05;
 	private static final double maxRVScalingFactor = 0.15;
 	private final static Logger LOG = LoggerFactory.getLogger(ScatterPlot.class);
-	
+
 	public ScatterPlot(){
 		super();
 		LOG.info("ScatterPlot constructed");
 	}
-	
+
 	/**
 	 * constructor 
 	 */
@@ -55,8 +55,8 @@ public class ScatterPlot extends Chart{
 		super();
 		setImageFrameSize(imageFrameSize);
 	}
-	
-	
+
+
 	public void setAxisMetrics(ResourceProperty xMetric, ResourceProperty yMetric) {
 		this.xMetric = xMetric;
 		this.yMetric = yMetric;
@@ -75,15 +75,15 @@ public class ScatterPlot extends Chart{
 	 */
 	@Override
 	public BufferedImage draw() {
-		
+
 		LOG.info("In draw method in ScatterPlot");
-		
+
 		calculateAxisOffSet();
 		Log.info("calculated the offset for the axes");
 
 		calculateRVSizeExtrema();
 		LOG.info("calculated the initial RV size extrema");
-		
+
 		//1
 		getIDrawInstantiation().createEmptyImage(getImageFrameSize().getWidth(), getImageFrameSize().getHeight());
 		LOG.info("empty frame made");
@@ -92,17 +92,22 @@ public class ScatterPlot extends Chart{
 		LOG.info("Axes drawn on frame");
 		//4
 		createResourceVisualizations();
- 	LOG.info("RVs created");
+		LOG.info("RVs created");
+
+		setExtremeValues();	
+
+		convertPosition();
 		//5
 		rescaleResourceVisualizations();
 		LOG.info("RVs scaled");
+
 		//6
 		drawResourceVisualizations();
 		LOG.info("RVs drawn");
 		//7
 		drawAxesLabels(getIDrawInstantiation());
 		LOG.info("Axes's labels drawn");
-		
+
 		return getIDrawInstantiation().getBufferedImage();
 	}
 
@@ -125,11 +130,11 @@ public class ScatterPlot extends Chart{
 	 */
 	private void drawAxises(IDraw d){
 		d.drawArrowRight( (int)axisOffset, 
-						  (int)(getImageFrameSize().getHeight() - axisOffset) , 
-						  (int)(getImageFrameSize().getWidth() - 2*axisOffset));
+				(int)(getImageFrameSize().getHeight() - axisOffset) , 
+				(int)(getImageFrameSize().getWidth() - 2*axisOffset));
 		d.drawArrowUp( (int)axisOffset,
-					   (int)(getImageFrameSize().getHeight() - axisOffset),
-					   (int)(getImageFrameSize().getHeight() - 2*axisOffset));
+				(int)(getImageFrameSize().getHeight() - axisOffset),
+				(int)(getImageFrameSize().getHeight() - 2*axisOffset));
 	}
 
 	/**
@@ -148,39 +153,46 @@ public class ScatterPlot extends Chart{
 	}
 
 	/**
+	 * 
+	 */
+	private void convertPosition(){
+
+		for (ResourceVisualization rv : this.getResourceVisualizations()){	
+			rv.setPosition(new Position(convertX(rv.getX()), convertY(rv.getY())));
+		}
+	}
+
+
+
+	/**
 	 * Using interpolation, the resource visualization gets new values in order to fit in the image.
 	 * If the min and max value for a property are the same, it means that this metric has the default value. It doesn't need rescaling then.
 	 */
 	private void rescaleResourceVisualizations(){
-		System.out.println("in rescale");
-		setExtremeValues();	
-		for (ResourceVisualization rv : this.getResourceVisualizations()){
-			System.out.println("getX to convert" + rv.getX());
-			rv.setPosition(new Position(convertX(rv.getX()), convertY(rv.getY())));
-			System.out.println("getMinResourceSizewidtt" + getMinResourceSize().getWidth());
-			
+
+		for (ResourceVisualization rv : this.getResourceVisualizations()){	
 			int widthpx = getMinResourceSize().getWidth();
 			int heightpx = getMinResourceSize().getHeight();
-			
-			//if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
-			//	System.out.println("in if");
+
+			if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
+				//	System.out.println("in if");
 				widthpx = convertWidth(rv.getWidth());
-				System.out.println("widthpx = " + widthpx);
-			//}
-			//if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
+			}
+			if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
 				heightpx = convertHeight(rv.getHeight());
-			//}
+			}
 			rv.setSize(new Size(widthpx, heightpx));
 		}	
 	}
 
+	private void rescaleResourceVisualization(){}
 	/**
 	 * For each property, find the maximum and minimum value of all the resources.
 	 */
 	private void setExtremeValues(){	
-		
+
 		for(ResourceVisualization rv : getResourceVisualizations()){	
-			
+
 			double xCoord = rv.getX();
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
@@ -199,8 +211,8 @@ public class ScatterPlot extends Chart{
 			if(height > getMaxResourceSize().getHeight()){
 				getMaxResourceSize().setHeight ((int)height);
 			}
-			
-			
+
+
 			if(xCoord <= getMinResourcePosition().getX()){
 				getMinResourcePosition().setX((int)xCoord);
 			}
@@ -230,10 +242,10 @@ public class ScatterPlot extends Chart{
 	private void drawAxesLabels(IDraw d){
 		String xname = xMetric.getPropertyName();
 		String yname = yMetric.getPropertyName();
-		
+
 		d.drawText("" +getMaxResourcePosition().getX(), (int)(getImageFrameSize().getWidth()- axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
 		d.drawText(xname, (int)(axisOffset + getImageFrameSize().getWidth()/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
-		
+
 		d.drawText("" +getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
 		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
 	}
@@ -342,7 +354,7 @@ public class ScatterPlot extends Chart{
 	private int convertY(double yCoord){
 		return (int) (getImageFrameSize().getHeight()-axisOffset + (2*axisOffset-getImageFrameSize().getHeight()) *(yCoord-getMinResourcePosition().getY())/(getMaxResourcePosition().getY()-getMinResourcePosition().getY()));
 	}
-	
+
 	/**
 	 * Using interpolation, let the width of a resource visualisation be between the minimum and maximum width for a resource visualisation, 
 	 * proportionally to the minimum and maximum value for the metric represented by the width. 
