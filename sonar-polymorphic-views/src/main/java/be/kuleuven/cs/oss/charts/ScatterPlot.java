@@ -92,7 +92,7 @@ public class ScatterPlot extends Chart{
 		LOG.info("Axes drawn on frame");
 		//4
 		createResourceVisualizations();
- 	LOG.info("RVs created");
+		LOG.info("RVs created");
 		//5
 		rescaleResourceVisualizations();
 		LOG.info("RVs scaled");
@@ -162,14 +162,14 @@ public class ScatterPlot extends Chart{
 			int widthpx = getMinResourceSize().getWidth();
 			int heightpx = getMinResourceSize().getHeight();
 			
-			//if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
+			if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
 			//	System.out.println("in if");
 				widthpx = convertWidth(rv.getWidth());
 				System.out.println("widthpx = " + widthpx);
-			//}
-			//if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
+			}
+			if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
 				heightpx = convertHeight(rv.getHeight());
-			//}
+			}
 			rv.setSize(new Size(widthpx, heightpx));
 		}	
 	}
