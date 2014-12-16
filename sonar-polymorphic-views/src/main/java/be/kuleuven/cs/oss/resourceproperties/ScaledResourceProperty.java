@@ -1,5 +1,8 @@
 package be.kuleuven.cs.oss.resourceproperties;
 
+
+import be.kuleuven.cs.oss.sonarfacade.Resource;
+
 public class ScaledResourceProperty extends ResourcePropertyDecorator {
 	
 	private float minScale;
