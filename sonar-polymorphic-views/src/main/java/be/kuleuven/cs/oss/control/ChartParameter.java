@@ -22,14 +22,22 @@ public class ChartParameter {
 	private final static Logger LOG = LoggerFactory.getLogger(ChartParameter.class);
 	
 	private ChartParameters params;
-
+	
+	/**
+	 * Creates a new Chartparameter with the given Chartparameters instance
+	 * @param params an instance of Chartparameters
+	 */
 	public ChartParameter(ChartParameters params) {
 		this.params = params;
 	}
 
 	
-	
-	public Chart getChart() {
+	/**
+	 * Creates a new Chart instance based on the value of the chart key in the map of Chartparameters
+	 * @return a Scatterplot instance if the chart value is equal to scatter and a SystemComplexity if the chart value is equal to syscomp
+	 * @throws NoResultException if the creation of a chart failed
+	 */
+	public Chart getChart() throws NoResultException{
 		String result = params.getValue(key, DEFAULT_CHART_TYPE, false);
 
 		if(result.equals("")){

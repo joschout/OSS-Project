@@ -30,6 +30,11 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	SonarFacade sf;
 
+	/**
+	 * Creates a new ColorHandler with the given instance of SonarFacade and a color key
+	 * @param sf a SonarFacade instance
+	 * @param colorKey a String representing the color key
+	 */
 	public ColorHandler(SonarFacade sf, String colorKey) {
 		this.sf = sf;
 		this.key = colorKey;
@@ -40,13 +45,11 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 		this.next = handler;
 	}
 
-
 	/**
-	 * Create new resource properties for the boxcolor and add it to the resource property manager
-	 * @throws Exception if the creation of the resource properties fails
+	 * 
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) throws NoResultException {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		try {
 			String colorValue = retrieveValue(key, params);
