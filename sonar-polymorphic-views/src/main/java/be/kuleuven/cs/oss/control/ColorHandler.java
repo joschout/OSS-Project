@@ -118,7 +118,8 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	/**
 	 * Retrieve a parameter value for the given parameter key
-	 * @param key The given parameter key
+	 * @param key the given parameter key
+	 * @param params the given chartparameters
 	 * @return the retrieved parameter value
 	 * @throws NoResultException if the parameter value for the given key cannot be retrieved
 	 */

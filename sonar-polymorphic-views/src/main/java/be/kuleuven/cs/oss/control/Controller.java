@@ -17,7 +17,7 @@ public class Controller {
 	
 	/**
 	 * Creates a new Controller with the given chartparameters and sonarfacade
-	 * @param p an instance of Chartparameters
+	 * @param p the given chartparameters
 	 * @param sf an instance of SonarFacade
 	 */
 	public Controller(ChartParameters p, SonarFacade sf) {

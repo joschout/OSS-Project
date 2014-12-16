@@ -25,7 +25,7 @@ public class ChartParameter {
 	
 	/**
 	 * Creates a new Chartparameter with the given Chartparameters instance
-	 * @param params an instance of Chartparameters
+	 * @param params the given chartparameters
 	 */
 	public ChartParameter(ChartParameters params) {
 		this.params = params;
