@@ -37,8 +37,8 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	private String colorValueTrap = "trapcolor";
 	
 	private String metricKey = "shapemetric";
-	private String orderKey = "shapeMetricOrder";
-	private String boundKey = "shapeMetricSplit";
+	private String orderKey = "shapemetricorder";
+	private String boundKey = "shapemetricsplit";
 	
 	private SonarFacade sf;
 	
@@ -109,8 +109,8 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		boundaries.add(Integer.MAX_VALUE);
 		
 		if(shapes.size() == boundaries.size()){
-			for(String shape : shapes){
-				sd.addBoundaryWithFactory(boundaries.get(shapes.indexOf(shape)),createRVF(shape,params));
+			for(int i=0;i<shapes.size();++i){
+				sd.addBoundaryWithFactory(boundaries.get(0),createRVF(shapes.get(0),params));
 			}
 		}
 		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
