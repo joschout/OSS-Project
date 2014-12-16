@@ -12,7 +12,7 @@ public class StraightLineFactory implements LineFactory {
 	
 	private static final Position DEFAULT_POSITION = new Position(0,0);
 	private static final int DEFAULT_WIDTH = 1;
-	private static final Color DEFAULT_COLOR = new Color(255);
+	private static final Color DEFAULT_COLOR = new Color(0);
 
 	
 

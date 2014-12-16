@@ -35,24 +35,21 @@ public class SystemComplexity extends Chart {
 		List<Resource> parentResources = new ArrayList<Resource>();
 		
 		List<Resource> resources = getResources();
-		System.out.println(resources);
 		
 		for(Resource resource: resources) {
-			boolean parentResource = true;
-			List<Dependency> dependencies = getSonarFacade().findIncomingDependencies(resource);
-			
-			for(Dependency dependency: dependencies) {
-				
-				if(dependency.getType() == DependencyType.EXTENDS) {
-					parentResource = false;
-					break;
+			List<Dependency> extendsDependencies = new ArrayList<Dependency>();
+			List<Dependency> dependencies = getSonarFacade().findOutgoingDependencies(resource);
+			for(Dependency dependency: dependencies) {				
+				if(dependency.getType().equals(DependencyType.EXTENDS)) {
+					extendsDependencies.add(dependency);
 				}
 			}
 			
-			if(parentResource) {
+			if(extendsDependencies.size()==0){
 				parentResources.add(resource);
 			}
 		}
+			
 		LOG.info("PARENTRESOURCES: " + parentResources.toString());
 		TreeNode treeNode = new TreeNode(parentResources, getSonarFacade());
 		treeNode.setRootNode();
