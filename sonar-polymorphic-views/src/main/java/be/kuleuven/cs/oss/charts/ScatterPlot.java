@@ -165,7 +165,23 @@ public class ScatterPlot extends Chart{
 	private void convertPosition(){
 
 		for (ResourceVisualization rv : this.getResourceVisualizations()){	
-			rv.setPosition(new Position(convertX(rv.getX()), convertY(rv.getY())));
+
+			if(getMaxResourcePosition().getX() != getMinResourcePosition().getX()){
+				rv.setPosition(new Position(convertX(rv.getX()), rv.getY()));
+			}
+			else{
+				rv.setPosition(new Position((int)getImageFrameSize().getWidth()/2, rv.getY()));
+			}
+
+			if(getMaxResourcePosition().getY() != getMinResourcePosition().getY()){
+				rv.setPosition(new Position(rv.getX(), convertY(rv.getY())));
+			}
+			else{
+				rv.setPosition(new Position(rv.getX(), (int)getImageFrameSize().getHeight()/2));
+			}
+
+
+
 		}
 	}
 
@@ -183,7 +199,6 @@ public class ScatterPlot extends Chart{
 
 
 			if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
-				//	System.out.println("in if");
 				widthpx = convertWidth(rv.getWidth());
 
 			}
@@ -198,9 +213,9 @@ public class ScatterPlot extends Chart{
 	 * For each property, find the maximum and minimum value of all the resources.
 	 */
 	private void setExtremeValues(){	
-	
+
 		for(ResourceVisualization rv : getResourceVisualizations()){	
-	
+
 			double xCoord = rv.getX();
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
@@ -219,8 +234,8 @@ public class ScatterPlot extends Chart{
 			if(height > getMaxResourceSize().getHeight()){
 				getMaxResourceSize().setHeight ((int)height);
 			}
-	
-	
+
+
 			if(xCoord <= getMinResourcePosition().getX()){
 				getMinResourcePosition().setX((int)xCoord);
 			}
@@ -241,7 +256,7 @@ public class ScatterPlot extends Chart{
 	 * Let the resource visualizations draw themselves.
 	 */
 	private void drawResourceVisualizations(){
-		
+
 		Collections.sort(getResourceVisualizations());
 		for(ResourceVisualization rv: getResourceVisualizations()){
 			rv.draw(getIDrawInstantiation());
@@ -251,13 +266,13 @@ public class ScatterPlot extends Chart{
 	private void drawAxesLabels(IDraw d){
 		String xname = xMetric.getPropertyName();
 		String yname = yMetric.getPropertyName();
-		
+
 		d.drawText("" +getMaxResourcePosition().getX(), (int)(getImageFrameSize().getWidth()- axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
 		d.drawText("" + getMinResourcePosition().getX(), (int) axisOffset,(int)(getImageFrameSize().getHeight() - axisOffset/2) );
 		d.drawText(xname, (int)(axisOffset + getImageFrameSize().getWidth()/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
-	
+
 		d.drawText("" + getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
-		d.drawText("" + getMinResourcePosition().getY(), (int)(axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset), -90, 0,0,0);
+		d.drawText("" + getMinResourcePosition().getY(), (int)(axisOffset/2), (int)(getImageFrameSize().getHeight() - (int)axisOffset), -90, 0,0,0);
 		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
 	}
 
