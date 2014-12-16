@@ -46,16 +46,16 @@ public abstract class Line {
 	public void draw(IDraw d){
 		d.drawStraightLine(getOrigin().getX(), getOrigin().getY(), getDestination().getX(), getDestination().getY(), getColor().getRed(), getColor().getGreen(), getColor().getBlue(), getWidth());
 	}
-	
-	   @Override
-	    public boolean equals (Object other) {
-	        if ((other == null) || (this.getClass() != other.getClass())) {
-	            return false;
-	        }
-	        Line otherLine = (Line) other;
-	        return (this.getOrigin().equals(otherLine.getOrigin())
-	        		&& this.getDestination().equals(otherLine.getDestination())
-	        		&& this.getColor().equals(otherLine.getColor())
-	        		&& (this.getWidth() == otherLine.getWidth()));
-	    }
+
+	@Override
+	public boolean equals (Object other) {
+		if ((other == null) || (this.getClass() != other.getClass())) {
+			return false;
+		}
+		Line otherLine = (Line) other;
+		return (this.getOrigin().equals(otherLine.getOrigin())
+				&& this.getDestination().equals(otherLine.getDestination())
+				&& this.getColor().equals(otherLine.getColor())
+				&& (this.getWidth() == otherLine.getWidth()));
+	}
 }
