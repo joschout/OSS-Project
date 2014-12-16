@@ -5,24 +5,17 @@ import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 
 /**
- * ResourceVisualizationFactory is an interface which should be implemented by all classes, whose instantiations act as factories for a specific kind of ResourceVisualization objects.
+ * An interface that should be implemented by all classes that are able to return a resource visualization when a resource is given
  * 
- * In other words, an instantiation of this class can create ResourceVisualization objects of a specific kind.
- * @author Jonas
+ * @author jeroenreinenbergh
  *
  */
 public interface ResourceVisualizationCreator {
 	
 	/**
-	 * Creates a ResourceVisualization for one specific resource, based on the given input map.
-	 * The map contains the info for one specific resource (e. g. one class)
-	 * and maps Strings onto values (doubles). 
-	 *  -> The Strings are the names of resource properties of the resource
-	 * 		(e.g. xmetric, ymetric, boxwidth, boxheight, colorR, ...)
-	 *  -> the Doubles are the actual values of the resource properties for the resource 
-	 * 
-	 * @param map: maps the names of resource properties for one specific resource to their values
-	 * @return the ResourceVisualization for one specific resource
+	 * Creates a resource visualization that represents the given resource
+	 * @param resource the given resource
+	 * @return the created resource visualization that represents the given resource
 	 */
 	public ResourceVisualization create(Resource resource);
 
