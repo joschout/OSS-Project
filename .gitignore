@@ -18,8 +18,9 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
-sonar-polymorphic-views/**/.classpath
-sonar-polymorphic-views/**/.project
+
+**/.classpath
+**/.project
 .metadata/
 .recommenders/
 sonar-3.7.4/logs/sonar.log

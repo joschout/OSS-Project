@@ -65,7 +65,7 @@ public class Controller {
 	 * @param params the given parameter value retriever
 	 * @return an empty chart of the type that was retrieved from the given parameter value retriever
 	 */
-	private Chart getChartType(ParamValueRetriever params) {
+	protected Chart getChartType(ParamValueRetriever params) {
 		ChartParameter chartHandler = new ChartParameter(params);
 		Chart chart = chartHandler.getChart();
 		
