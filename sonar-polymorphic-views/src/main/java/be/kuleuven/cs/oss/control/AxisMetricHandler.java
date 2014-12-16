@@ -63,10 +63,11 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	/**
 	 * Creates a resource property for the given axis
 	 * @param axis the axis for which a resource property has to be returned
-	 * @param params the map of chartparameters from 
-	 * @return
+	 * @param params the map of chartparameters from which the axis metric has to be retrieved
+	 * @return the resulting resource property for the given axis
+	 * @throws NoResultException if the axis metric cannot be found
 	 */
-	private ResourceProperty createAxisMetricProperty(String axis, ChartParameters params){
+	private ResourceProperty createAxisMetricProperty(String axis, ChartParameters params) throws NoResultException{
 		String metricValue = retrieveValue(axis, params);
 		
 		Metric metric = sf.findMetric(metricValue);
@@ -81,9 +82,11 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	/**
 	 * Retrieve a parameter value for the given parameter key
 	 * @param key The given parameter key
+	 * @param params The map of chartparameters from which the parameter value has to be retrieved
 	 * @return the retrieved parameter value
+	 * @throws NoResultException if the value for the given key cannot be retrieved
 	 */
-	private String retrieveValue(String key, ChartParameters params) {
+	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
 		String result = params.getValue(key);
 
 		if(result.equals("")){

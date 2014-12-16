@@ -1,8 +1,7 @@
 package be.kuleuven.cs.oss.resourceproperties;
 
-import be.kuleuven.cs.oss.sonarfacade.Metric;
+
 import be.kuleuven.cs.oss.sonarfacade.Resource;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScaledResourceProperty extends ResourcePropertyDecorator {
 	
