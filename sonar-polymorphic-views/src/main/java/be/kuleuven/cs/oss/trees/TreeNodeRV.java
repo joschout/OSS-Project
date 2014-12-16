@@ -13,14 +13,14 @@ import be.kuleuven.cs.oss.datautils.Connection;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 public class TreeNodeRV {
 
 	private static final int OFFSET = 5;
 	
-	private ResourceVisualizationFactory rvf;
+	private ResourceVisualizationCreator rvf;
 	private TreeNode treeNode;
 
 	private ResourceVisualization rv = null;
@@ -32,7 +32,7 @@ public class TreeNodeRV {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(TreeNodeRV.class);
 
-	public TreeNodeRV(ResourceVisualizationFactory rvf, TreeNode treeNode) {
+	public TreeNodeRV(ResourceVisualizationCreator rvf, TreeNode treeNode) {
 		this.rvf = rvf;
 		this.treeNode = treeNode;
 		

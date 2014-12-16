@@ -12,7 +12,7 @@ import be.kuleuven.cs.oss.sonarfacade.Resource;
  * @author Jonas
  *
  */
-public interface ResourceVisualizationFactory {
+public interface ResourceVisualizationCreator {
 	
 	/**
 	 * Creates a ResourceVisualization for one specific resource, based on the given input map.

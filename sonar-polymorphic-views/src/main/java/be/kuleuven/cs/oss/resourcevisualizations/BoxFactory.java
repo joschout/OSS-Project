@@ -15,7 +15,7 @@ import be.kuleuven.cs.oss.sonarfacade.Resource;
  * @author Jonas
  *
  */
-public class BoxFactory implements ResourceVisualizationFactory {
+public class BoxFactory implements ResourceVisualizationCreator {
 	
 	private ResourceProperty widthProperty;
 	private ResourceProperty heightProperty;

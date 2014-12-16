@@ -5,7 +5,7 @@ import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
-public class CircleFactory implements ResourceVisualizationFactory {
+public class CircleFactory implements ResourceVisualizationCreator {
 
 	
 	private ResourceProperty diameterProperty;

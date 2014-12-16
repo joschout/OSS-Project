@@ -14,16 +14,30 @@ import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
-import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
+
+
+
+
+//TODO:color enkel in intervalShapeDecider en enkele RVF
+
+
+
+
+
+
+
+
+
+
+public class ColorHandler implements IHandler<ResourceVisualizationCreator> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(ColorHandler.class);
 
-	private IHandler<ResourceVisualizationFactory> next;
+	private IHandler<ResourceVisualizationCreator> next;
 
 	private String key;
 
@@ -37,7 +51,7 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 	}
 
 	@Override
-	public void setNext(IHandler<ResourceVisualizationFactory> handler) {
+	public void setNext(IHandler<ResourceVisualizationCreator> handler) {
 		this.next = handler;
 	}
 
@@ -47,7 +61,7 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 	 * @throws Exception if the creation of the resource properties fails
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationCreator rvf, ChartParameters params) {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		try {
 			String colorValue = retrieveValue(key, params);
@@ -91,9 +105,9 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 			}
 		}
 
-		((BoxFactory) rvf).setRedProperty(result.get(0));
-		((BoxFactory) rvf).setGreenProperty(result.get(1));
-		((BoxFactory) rvf).setBlueProperty(result.get(2));
+		rvf.setRedProperty(result.get(0));
+		rvf.setGreenProperty(result.get(1));
+		rvf.setBlueProperty(result.get(2));
 		
 		if(next != null) {
 			next.handleRequest(rvf, params);

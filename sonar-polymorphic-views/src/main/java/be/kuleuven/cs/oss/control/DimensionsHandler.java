@@ -13,16 +13,16 @@ import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class DimensionsHandler implements IHandler<ResourceVisualizationFactory> {
+public class DimensionsHandler implements IHandler<ResourceVisualizationCreator> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);
 
-	private IHandler<ResourceVisualizationFactory> next;
+	private IHandler<ResourceVisualizationCreator> next;
 
 	
 	private static final ConstantResourceProperty DEFAULT_BOXWIDTH = new ConstantResourceProperty(20);
@@ -39,23 +39,23 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	}
 
 	@Override
-	public void setNext(IHandler<ResourceVisualizationFactory> handler) {
+	public void setNext(IHandler<ResourceVisualizationCreator> handler) {
 		this.next = handler;
 	}
 
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationCreator rvf, ChartParameters params) {
 		if(BoxFactory.class.isInstance(rvf)){
-			((BoxFactory) rvf).setWidthProperty(createDimensionRP("boxwidth",params));
-			((BoxFactory) rvf).setHeightProperty(createDimensionRP("boxheight",params));
+			((BoxFactory) rvf).setWidthProperty(createDimensionRP("boxwidth",params,DEFAULT_BOXWIDTH));
+			((BoxFactory) rvf).setHeightProperty(createDimensionRP("boxheight",params,DEFAULT_BOXHEIGHT));
 		}
 		else if(CircleFactory.class.isInstance(rvf)){
-			((CircleFactory) rvf).setDiameterProperty(createDimensionRP("circlediam",params));
+			((CircleFactory) rvf).setDiameterProperty(createDimensionRP("circlediam",params,DEFAULT_CIRCLEDIAM));
 		}
 		else if(TrapezoidFactory.class.isInstance(rvf)){
-			((TrapezoidFactory) rvf).setLeftLineProperty(createDimensionRP("trapside1",params));
-			((TrapezoidFactory) rvf).setBaseLineProperty(createDimensionRP("trapside2",params));
-			((TrapezoidFactory) rvf).setRightLineProperty(createDimensionRP("trapside3",params));
+			((TrapezoidFactory) rvf).setLeftLineProperty(createDimensionRP("trapside1",params,DEFAULT_TRAPSIDE1));
+			((TrapezoidFactory) rvf).setBaseLineProperty(createDimensionRP("trapside2",params,DEFAULT_TRAPSIDE2));
+			((TrapezoidFactory) rvf).setRightLineProperty(createDimensionRP("trapside3",params,DEFAULT_TRAPSIDE3));
 		}
 		else throw new IllegalArgumentException("RVF could not be cast to specific factory");
 
@@ -69,16 +69,25 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	 * @param dimension The given box dimension (currently, only boxwidth and boxheight are supported)
 	 * @throws Exception if the creation of the resource property fails
 	 */
-	private ResourceProperty createDimensionRP(String dimension, ChartParameters params){
-		String dimensionValue = retrieveValue(dimension, params);
+	private ResourceProperty createDimensionRP(String dimension, ChartParameters params, ResourceProperty def){
+		String dimensionValue;
 		ResourceProperty rp;
+		
+		try{
+			dimensionValue = retrieveValue(dimension, params);
+		}
+		catch(NoResultException e){
+			LOG.info("setting default "+dimension);
+			return def;
+		}
+		
 		if(dimensionValue.matches("[0-9]+")){
 			rp = new ConstantResourceProperty(Integer.parseInt(dimensionValue));
 		}
 		else{
 			Metric metric = sf.findMetric(dimensionValue);
 			if(metric == null){
-				throw new NoSuchElementException("metric not found");
+				throw new NoResultException("metric not found");
 			}
 			rp = new SonarResourceProperty(sf, metric);
 		}
@@ -95,18 +104,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 		String result = params.getValue(key);
 		
 		if(result.equals("")){
-			LOG.info("retrieve value failed, setting defaults");
-			throw new NoResultException("value not retrieved");
-		}
-		
-		return result;
-	}
-	
-	private String retrieveValueWithDefault(String key, ChartParameters params, int def) {
-		String result = params.getValue(key);
-		
-		if(result.equals("")){
-			LOG.info("retrieve value failed, setting defaults");
+			LOG.info("failed to retrieve value for "+key);
 			throw new NoResultException("value not retrieved");
 		}
 		
