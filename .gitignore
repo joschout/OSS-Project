@@ -21,6 +21,7 @@ release.properties
 sonar-3.7.4/war/sonar-server/META-INF/maven/org.codehaus.sonar/sonar-server/.settings/
 sonar-polymorphic-views/**/.classpath
 sonar-polymorphic-views/**/.project
+
 .metadata/
 .recommenders/
 sonar-3.7.4/logs/sonar.log
