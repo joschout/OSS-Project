@@ -240,8 +240,6 @@ public class ScatterPlot extends Chart{
 		
 		Collections.sort(getResourceVisualizations());
 		for(ResourceVisualization rv: getResourceVisualizations()){
-			//DIT MQG STRQKS ZEG
-			LOG.info("xCoord: " + rv.getX());
 			rv.draw(getIDrawInstantiation());
 		}
 	}
