@@ -19,6 +19,7 @@ import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
+import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
@@ -64,14 +65,19 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 
 	/**
 	 * Creates the resource visualization creator and sets it in the given chart
+	 * @throws IllegalArgumentException if the metric for the shape metric key cannot be found
 	 */
 	@Override
-	public void handleRequest(Chart chart, ParamValueRetriever params) {
+	public void handleRequest(Chart chart, ParamValueRetriever params) throws IllegalArgumentException {
 		String shapeValue = params.retrieveValue(shapeKey);
 		
 		if(shapeValue.equals(shapeValueMetric)){
 			IntervalShapeDecider rvc = new IntervalShapeDecider();
-			rvc.setResourceProperty(new SonarResourceProperty(sf,sf.findMetric(params.retrieveValue(metricKey))));
+			Metric metric = sf.findMetric(params.retrieveValue(metricKey));
+			if(metric == null){
+				throw new IllegalArgumentException(metricKey+" metric not found");
+			}
+			rvc.setResourceProperty(new SonarResourceProperty(sf,metric));
 			addFactories(rvc,params);
 			chart.setRvf(rvc);
 		}
@@ -123,8 +129,9 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	 * Adds all resource visualization factories to the given interval shape decider
 	 * @param sd the given interval shape decider
 	 * @param params the given parameter value retriever
+	 * @throws IllegalArgumentException if the shape metric order and shape metric split combination is not valid
 	 */
-	private void addFactories(IntervalShapeDecider sd, ParamValueRetriever params) {	
+	private void addFactories(IntervalShapeDecider sd, ParamValueRetriever params) throws IllegalArgumentException{	
 		String order = params.retrieveValue(orderKey);
 		String split = params.retrieveValue(boundKey);
 		
@@ -132,18 +139,13 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		
 		List<Integer> boundaries = parseStringListToIntList(parseStringList(split,"x"));
 		boundaries.add(Integer.MAX_VALUE);
-		try{
+		
 		if(shapes.size() == boundaries.size()){
 			for(int i=0;i<shapes.size();++i){
 				sd.addBoundaryWithFactory(boundaries.get(i),createRVF(shapes.get(i),params));
 			}
 		}
-		
-		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+		else throw new IllegalArgumentException("Shapemetricorder and shapemetricsplit combination not valid");
 	}
 	
 	/**

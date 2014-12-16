@@ -84,8 +84,9 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	 * @param params the given parameter value retriever
 	 * @param def the default property to be set in case the given key is not a valid one
 	 * @return the resource property that is defined by the given dimension key if that key is valid, else return the given default resource property
+	 * @throws IllegalArgumentException if the metric for the given key cannot be found
 	 */
-	private ResourceProperty createDimensionRP(String key, ParamValueRetriever params, ResourceProperty def){
+	private ResourceProperty createDimensionRP(String key, ParamValueRetriever params, ResourceProperty def) throws IllegalArgumentException{
 		String dimensionValue;
 		ResourceProperty rp;
 		
@@ -103,7 +104,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 		else{
 			Metric metric = sf.findMetric(dimensionValue);
 			if(metric == null){
-				throw new NoResultException("metric not found");
+				throw new IllegalArgumentException(key+" metric not found");
 			}
 			rp = new SonarResourceProperty(sf, metric);
 		}
