@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
-import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
@@ -93,7 +92,7 @@ public class ScatterPlot extends Chart{
 		LOG.info("Axes drawn on frame");
 		//4
 		createResourceVisualizations();
-		LOG.info("RVs created");
+ 	LOG.info("RVs created");
 		//5
 		rescaleResourceVisualizations();
 		LOG.info("RVs scaled");

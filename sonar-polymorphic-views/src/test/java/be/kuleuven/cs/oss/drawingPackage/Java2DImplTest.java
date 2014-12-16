@@ -1,5 +1,5 @@
 
-package be.kuleuven.cs.oss.drawingPackage.tests;
+package be.kuleuven.cs.oss.drawingPackage;
 
 
 import java.awt.image.BufferedImage;
@@ -9,8 +9,6 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
-import be.kuleuven.cs.oss.drawingPackage.Java2DFacade;
 
 public class Java2DImplTest {
 
