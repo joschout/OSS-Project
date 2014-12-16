@@ -2,6 +2,14 @@ package be.kuleuven.cs.oss.control;
 
 import org.sonar.api.charts.ChartParameters;
 
+/**
+ * A class that is responsible for the correct functioning of the chain of responsibility
+ * in which all the handlers perform their request in a predefined order
+ * @param <M> the type of the object to be modified by the handlers along the chain
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class Processor<M> {
 	private IHandler<M> firstHandler;
 	private IHandler<M> prevHandler;

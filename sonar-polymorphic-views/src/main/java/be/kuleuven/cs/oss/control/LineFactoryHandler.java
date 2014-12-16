@@ -11,6 +11,12 @@ import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
 
+/**
+ * A handler for the line factory in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class LineFactoryHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(LineFactoryHandler.class);

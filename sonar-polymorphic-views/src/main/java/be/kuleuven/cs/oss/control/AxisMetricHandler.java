@@ -14,7 +14,7 @@ import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
- * A handler for the axis metrics that modifies 
+ * A handler for the axis metrics in the chart
  * 
  * @author jeroenreinenbergh
  *

@@ -20,6 +20,12 @@ import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the resource visualization creator, which can either be a factory or an interval decider, in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 
 	private final static Logger LOG = LoggerFactory.getLogger(ResourceVisualizationCreatorHandler.class);

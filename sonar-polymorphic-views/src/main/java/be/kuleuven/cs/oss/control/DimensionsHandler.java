@@ -16,6 +16,12 @@ import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the shape dimensions in the resource visualization factory
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class DimensionsHandler implements IHandler<ResourceVisualizationFactory> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);

@@ -18,6 +18,12 @@ import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the color in the resource visualization factory
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(ColorHandler.class);

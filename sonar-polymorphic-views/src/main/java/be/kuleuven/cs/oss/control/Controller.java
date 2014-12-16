@@ -7,6 +7,12 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A class that is responsible for the conversion of the raw chart parameters to the internal data representation and the subsequent return of the resulting chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class Controller {
 
 	private final static Logger LOG = LoggerFactory.getLogger(Controller.class);
@@ -58,7 +64,7 @@ public class Controller {
 	 * @param params the given chartparameters
 	 * @return an empty chart of the type that was specified in the given chartparameters
 	 */
-	private Chart getChartType(ChartParameters params) {
+	protected Chart getChartType(ChartParameters params) {
 		ChartParameter chartHandler = new ChartParameter(params);
 		Chart chart = chartHandler.getChart();
 		
