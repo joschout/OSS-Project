@@ -118,7 +118,7 @@ public abstract class ResourceVisualization implements Comparable<ResourceVisual
    	 if(area1 == area2){
             return 0;
             }
-        return area1 < area2 ? -1 : 1;
+        return area1 < area2 ? 1 : -1;
     }
 	
 	
