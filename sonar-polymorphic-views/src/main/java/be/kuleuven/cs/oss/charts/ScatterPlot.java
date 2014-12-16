@@ -1,6 +1,8 @@
 package be.kuleuven.cs.oss.charts;
 
 import java.awt.image.BufferedImage;
+import java.util.Collections;
+import java.util.Comparator;
 
 import org.jfree.util.Log;
 import org.slf4j.Logger;
@@ -235,6 +237,8 @@ public class ScatterPlot extends Chart{
 	 * Let the resource visualizations draw themselves.
 	 */
 	private void drawResourceVisualizations(){
+		
+		Collections.sort(getResourceVisualizations());
 		for(ResourceVisualization rv: getResourceVisualizations()){
 			//DIT MQG STRQKS ZEG
 			LOG.info("xCoord: " + rv.getX());

@@ -1,11 +1,14 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
-public abstract class ResourceVisualization {
+public abstract class ResourceVisualization implements Comparable<ResourceVisualization>{
 	
 	private Position p;
 	private Size size;
@@ -105,8 +108,18 @@ public abstract class ResourceVisualization {
 		this.name = name;
 
 	}
-		
-
+			
+	@Override
+	public int compareTo(ResourceVisualization rv)
+	{
+		int area1 = this.getSize().getWidth()*this.getSize().getHeight();
+		int area2 = rv.getSize().getWidth()*rv.getSize().getHeight();
+        
+   	 if(area1 == area2){
+            return 0;
+            }
+        return area1 < area2 ? -1 : 1;
+    }
 	
 	
 	public abstract void draw(IDraw d);
