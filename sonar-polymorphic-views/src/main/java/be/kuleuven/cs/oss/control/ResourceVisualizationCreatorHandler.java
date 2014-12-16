@@ -110,7 +110,7 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		try{
 		if(shapes.size() == boundaries.size()){
 			for(int i=0;i<shapes.size();++i){
-				sd.addBoundaryWithFactory(boundaries.get(0),createRVF(shapes.get(0),params));
+				sd.addBoundaryWithFactory(boundaries.get(i),createRVF(shapes.get(i),params));
 			}
 		}
 		

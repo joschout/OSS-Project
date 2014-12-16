@@ -97,6 +97,7 @@ public class ScatterPlot extends Chart{
 		setExtremeValues();	
 
 		convertPosition();
+
 		//5
 		rescaleResourceVisualizations();
 		LOG.info("RVs scaled");
@@ -174,9 +175,11 @@ public class ScatterPlot extends Chart{
 			int widthpx = getMinResourceSize().getWidth();
 			int heightpx = getMinResourceSize().getHeight();
 
+
 			if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
 				//	System.out.println("in if");
 				widthpx = convertWidth(rv.getWidth());
+
 			}
 			if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
 				heightpx = convertHeight(rv.getHeight());
