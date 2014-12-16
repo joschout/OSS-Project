@@ -25,13 +25,13 @@ public class ScatterPlot extends Chart{
 	private ResourceProperty yMetric;
 	
 	//global maxvalues over all resources
-	protected Position maxResourcePosition = new Position(0, 0);
-	protected Size maxResourceSize = new Size(0,0);
+	private Position maxResourcePosition = new Position(0, 0);
+	private Size maxResourceSize = new Size(0,0);
 
 	//global minvalues over all resources
 	//made protected for test
-	protected Position minResourcePosition = new Position(Integer.MAX_VALUE, Integer.MAX_VALUE);
-	protected Size minResourceSize = new Size(Integer.MAX_VALUE,Integer.MAX_VALUE);
+	private Position minResourcePosition = new Position(Integer.MAX_VALUE, Integer.MAX_VALUE);
+	private Size minResourceSize = new Size(Integer.MAX_VALUE,Integer.MAX_VALUE);
 	
 	//the values for the dimensions of the smallest and largest box in the plot
 	//each value is calculated by multiplying the width or height of the frame with the factors
@@ -158,16 +158,18 @@ public class ScatterPlot extends Chart{
 			System.out.println("getX to convert" + rv.getX());
 			rv.setPosition(new Position(convertX(rv.getX()), convertY(rv.getY())));
 			System.out.println("getMinResourceSizewidtt" + getMinResourceSize().getWidth());
+			
 			int widthpx = getMinResourceSize().getWidth();
 			int heightpx = getMinResourceSize().getHeight();
-			if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
-				System.out.println("in if");
+			
+			//if(getMinResourceSize().getWidth() != getMaxResourceSize().getWidth()){
+			//	System.out.println("in if");
 				widthpx = convertWidth(rv.getWidth());
 				System.out.println("widthpx = " + widthpx);
-			}
-			if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
+			//}
+			//if(getMinResourceSize().getHeight() != getMaxResourceSize().getHeight()){
 				heightpx = convertHeight(rv.getHeight());
-			}
+			//}
 			rv.setSize(new Size(widthpx, heightpx));
 		}	
 	}
