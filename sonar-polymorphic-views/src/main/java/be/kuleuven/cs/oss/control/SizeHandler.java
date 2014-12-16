@@ -92,7 +92,7 @@ public class SizeHandler implements IHandler<Chart> {
 		String result = params.getValue(key);
 
 		if(result.equals("")){
-			LOG.info("retrieve value failed");
+			LOG.info("retrieve value failed, setting defaults");
 			throw new NoResultException("value not retrieved");
 		}
 

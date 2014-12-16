@@ -39,9 +39,9 @@ public class AxisMetricHandler implements IHandler<Chart> {
 			next.handleRequest(chart, params);
 			return;
 		}
-
 		ResourceProperty xProperty = createAxisMetricProperty(keyX, params);
 		ResourceProperty yProperty = createAxisMetricProperty(keyY, params);
+		
 		
 		((ScatterPlot) chart).setAxisMetrics(xProperty, yProperty);
 		

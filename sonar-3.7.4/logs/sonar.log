@@ -834,3 +834,72 @@ undefined method `map' for nil:NilClass
 	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/adapter/rails.rb:39:in `call'
 	file:/C:/Users/Habba/Documents/School/DSS/OUR PLUGIN TESTING FOLDER/sonar-3.7.4/war/sonar-server/WEB-INF/lib/jruby-rack-1.1.10.jar!/rack/handler/servlet.rb:22:in `call'
 
+STATUS | wrapper  | 2014/12/16 10:15:05 | --> Wrapper Started as Console
+STATUS | wrapper  | 2014/12/16 10:15:06 | Launching a JVM...
+INFO   | jvm 1    | 2014/12/16 10:15:06 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2014/12/16 10:15:06 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2014/12/16 10:15:06 | 
+INFO   | jvm 1    | 2014/12/16 10:15:06 | 2014-12-16 10:15:06.823:INFO:oejs.Server:jetty-7.6.11.v20130520
+2014.12.16 10:15:10 INFO  o.s.s.p.ServerImpl  SonarQube Server / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:10 INFO  o.s.c.p.Database  Create JDBC datasource for jdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+2014.12.16 10:15:10 INFO  o.s.s.p.DefaultServerFileSystem  SonarQube home: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4
+2014.12.16 10:15:10 INFO  o.s.s.p.DefaultServerFileSystem  Deploy dir: C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy
+2014.12.16 10:15:11 INFO  org.sonar.INFO  Install plugins...
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Email notifications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin PMD / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Database Cleaner / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin JaCoCo / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Surefire / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Squid for Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Core / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:11 INFO  o.s.s.p.PluginDeployer  Deploy plugin Findbugs / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Java / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Maven Batch Plugin / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Duplications / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Design / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin English Pack / 3.7.4 / d25bc0e2a151ba7374f72ce7b1e7ee547ccb8a9f
+2014.12.16 10:15:12 INFO  o.s.s.p.PluginDeployer  Deploy plugin Checkstyle / 1.3 / 4d7d78e9340e39f53bbf202ed16d1253e6507c36
+2014.12.16 10:15:12 INFO  org.sonar.INFO  Install plugins done: 1328 ms
+2014.12.16 10:15:12 INFO  o.s.s.p.ApplicationDeployer  Deploy Ruby on Rails applications
+2014.12.16 10:15:12 INFO  org.sonar.INFO  Start components...
+2014.12.16 10:15:12 INFO  o.s.j.s.AbstractDatabaseConnector  Initializing Hibernate
+2014.12.16 10:15:14 INFO  o.s.s.p.UpdateCenterClient  Update center: http://update.sonarsource.org/update-center.properties (no proxy)
+2014.12.16 10:15:14 INFO  o.s.s.n.NotificationService  Notification service started (delay 60 sec.)
+2014.12.16 10:15:15 INFO  org.sonar.INFO  Deploy GWT plugins...
+2014.12.16 10:15:15 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.libraries.LibrariesPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.12.16 10:15:15 INFO  org.sonar.INFO  Deploy org.sonar.plugins.design.ui.page.DesignPage to C:\Users\Habba\Documents\School\DSS\OUR PLUGIN TESTING FOLDER\sonar-3.7.4\war\sonar-server\deploy\gwt
+2014.12.16 10:15:15 INFO  org.sonar.INFO  Deploy GWT plugins done: 672 ms
+2014.12.16 10:15:15 INFO  org.sonar.INFO  Load metrics...
+2014.12.16 10:15:16 INFO  o.s.s.s.RegisterMetrics  cleaning alert thresholds...
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Load metrics done: 297 ms
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [pmd/java]...
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [pmd/java] done: 329 ms
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java]...
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [pmd-unit-tests/java] done: 0 ms
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [squid/java]...
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [squid/java] done: 109 ms
+2014.12.16 10:15:16 INFO  org.sonar.INFO  Register rules [findbugs/java]...
+2014.12.16 10:15:17 INFO  org.sonar.INFO  Register rules [findbugs/java] done: 641 ms
+2014.12.16 10:15:17 INFO  org.sonar.INFO  Register rules [checkstyle/java]...
+2014.12.16 10:15:17 INFO  org.sonar.INFO  Register rules [checkstyle/java] done: 359 ms
+2014.12.16 10:15:17 INFO  org.sonar.INFO  Register rules [common-java/java]...
+2014.12.16 10:15:17 INFO  org.sonar.INFO  Register rules [common-java/java] done: 16 ms
+2014.12.16 10:15:17 INFO  o.s.s.s.RegisterRules  Removing deprecated rules
+2014.12.16 10:15:17 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles...
+2014.12.16 10:15:18 INFO  o.s.s.s.RegisterNewProfiles  Register Quality Profiles done: 1000 ms
+2014.12.16 10:15:18 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models...
+2014.12.16 10:15:18 INFO  o.s.s.s.RegisterQualityModels  Register Quality Models done: 0 ms
+2014.12.16 10:15:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters...
+2014.12.16 10:15:18 INFO  o.s.s.s.RegisterNewMeasureFilters  Register measure filters done: 0 ms
+2014.12.16 10:15:18 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards...
+2014.12.16 10:15:19 INFO  o.s.s.s.RegisterNewDashboards  Register dashboards done: 63 ms
+2014.12.16 10:15:19 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates...
+2014.12.16 10:15:19 INFO  o.s.s.s.RegisterPermissionTemplates  Register permission templates done: 0 ms
+2014.12.16 10:15:19 INFO  o.s.s.s.RenameDeprecatedPropertyKeys  Rename deprecated property keys
+2014.12.16 10:15:19 INFO  org.sonar.INFO  Start components done: 6548 ms
+2014.12.16 10:15:19 INFO  jruby.rack  jruby 1.6.8 (ruby-1.8.7-p357) (2012-09-18 1772b40) (Java HotSpot(TM) 64-Bit Server VM 1.8.0_20) [Windows 8.1-amd64-java]
+2014.12.16 10:15:19 INFO  jruby.rack  using a shared (threadsafe!) runtime
+INFO   | jvm 1    | 2014/12/16 10:15:23 | JRuby limited openssl loaded. http://jruby.org/openssl
+INFO   | jvm 1    | 2014/12/16 10:15:23 | gem install jruby-openssl for full support.
+INFO   | jvm 1    | 2014/12/16 10:15:31 | 2014-12-16 10:15:31.105:INFO:oejsh.ContextHandler:started o.e.j.w.WebAppContext{/,file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server/},file:/C:/Users/Habba/Documents/School/DSS/OUR%20PLUGIN%20TESTING%20FOLDER/sonar-3.7.4/war/sonar-server
+INFO   | jvm 1    | 2014/12/16 10:15:31 | 2014-12-16 10:15:31.261:INFO:oejs.AbstractConnector:Started SelectChannelConnector@localhost:9000
