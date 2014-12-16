@@ -46,7 +46,9 @@ public class SizeHandler implements IHandler<Chart> {
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		if (!(chart instanceof ScatterPlot)) {
-			next.handleRequest(chart, params);
+			if(next != null){
+				next.handleRequest(chart, params);
+			}
 			return;
 		}
 
@@ -92,7 +94,7 @@ public class SizeHandler implements IHandler<Chart> {
 		String result = params.getValue(key);
 
 		if(result.equals("")){
-			LOG.info("retrieve value failed");
+			LOG.info("retrieve value failed, setting defaults");
 			throw new NoResultException("value not retrieved");
 		}
 

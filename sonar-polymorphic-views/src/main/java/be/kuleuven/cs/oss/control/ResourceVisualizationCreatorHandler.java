@@ -16,6 +16,7 @@ import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -36,8 +37,8 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	private String colorValueTrap = "trapcolor";
 	
 	private String metricKey = "shapemetric";
-	private String orderKey = "shapeMetricOrder";
-	private String boundKey = "shapeMetricSplit";
+	private String orderKey = "shapemetricorder";
+	private String boundKey = "shapemetricsplit";
 	
 	private SonarFacade sf;
 	
@@ -62,8 +63,8 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 			chart.setRvf(rvc);
 		}
 		else{
-			ResourceVisualizationCreator sd = createRVC(shapeValue,params);
-			chart.setRvf(sd);
+			ResourceVisualizationFactory rvf = createRVF(shapeValue,params);
+			chart.setRvf(rvf);
 		}
 				
 		if(next != null) {
@@ -72,8 +73,8 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		
 	}
 	
-	private ResourceVisualizationCreator createRVC(String shapeValue, ChartParameters params){
-		ResourceVisualizationCreator factory;
+	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params){
+		ResourceVisualizationFactory factory;
 		String colorValue;
 		
 		if(shapeValue.equals(shapeValueBox)){
@@ -90,7 +91,7 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		}
 		else throw new IllegalArgumentException("Invalid shape");
 		
-		Processor<ResourceVisualizationCreator> processor = new Processor<ResourceVisualizationCreator>();
+		Processor<ResourceVisualizationFactory> processor = new Processor<ResourceVisualizationFactory>();
 		processor.addHandler(new DimensionsHandler(sf));
 		processor.addHandler(new ColorHandler(sf,colorValue));
 		processor.startProcess(factory, params);
@@ -106,13 +107,18 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		
 		List<Integer> boundaries = parseStringListToIntList(parseStringList(split,"x"));
 		boundaries.add(Integer.MAX_VALUE);
-		
+		try{
 		if(shapes.size() == boundaries.size()){
-			for(String shape : shapes){
-				sd.addBoundaryWithFactory(boundaries.get(shapes.indexOf(shape)),createRVC(shape,params));
+			for(int i=0;i<shapes.size();++i){
+				sd.addBoundaryWithFactory(boundaries.get(i),createRVF(shapes.get(i),params));
 			}
 		}
+		
 		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	private String retrieveValue(String key, ChartParameters params) {

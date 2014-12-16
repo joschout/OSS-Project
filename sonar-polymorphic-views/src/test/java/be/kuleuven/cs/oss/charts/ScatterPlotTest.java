@@ -12,6 +12,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 import org.junit.Test;
+import org.mockito.Mock;
 
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
@@ -25,7 +26,9 @@ public class ScatterPlotTest {
 
 	@Test
 	public void rescaleTest() {
-		// TODO op een of andere manier maxresourcesize en pos setten als class variable	
+		
+		// TODO op een of andere manier maxresourcesize en pos setten als class variable
+		// dan zou draw van scatterplot half getest zijn
 		
 		//SET UP
 		List<ResourceVisualization> RVList = new ArrayList<ResourceVisualization>();
@@ -42,6 +45,9 @@ public class ScatterPlotTest {
 		List<be.kuleuven.cs.oss.sonarfacade.Resource> reslist = new ArrayList<be.kuleuven.cs.oss.sonarfacade.Resource>();
 		
 		Java2DFacade java2d = new Java2DFacade();
+		
+		//@Mock private Position maxResourcePosition = new Position(0, 0);
+		//@Mock private Size maxResourceSize = new Size(0,0);
 		
 		//MOCK CLASSES
 		ScatterPlot sp = mock(ScatterPlot.class);

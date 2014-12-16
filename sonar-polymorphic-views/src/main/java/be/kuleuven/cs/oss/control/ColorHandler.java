@@ -14,30 +14,15 @@ import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-
-
-
-
-//TODO:color enkel in intervalShapeDecider en enkele RVF
-
-
-
-
-
-
-
-
-
-
-public class ColorHandler implements IHandler<ResourceVisualizationCreator> {
+public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(ColorHandler.class);
 
-	private IHandler<ResourceVisualizationCreator> next;
+	private IHandler<ResourceVisualizationFactory> next;
 
 	private String key;
 
@@ -45,23 +30,26 @@ public class ColorHandler implements IHandler<ResourceVisualizationCreator> {
 
 	SonarFacade sf;
 
+	/**
+	 * Creates a new ColorHandler with the given instance of SonarFacade and a color key
+	 * @param sf a SonarFacade instance
+	 * @param colorKey a String representing the color key
+	 */
 	public ColorHandler(SonarFacade sf, String colorKey) {
 		this.sf = sf;
 		this.key = colorKey;
 	}
 
 	@Override
-	public void setNext(IHandler<ResourceVisualizationCreator> handler) {
+	public void setNext(IHandler<ResourceVisualizationFactory> handler) {
 		this.next = handler;
 	}
 
-
 	/**
-	 * Create new resource properties for the boxcolor and add it to the resource property manager
-	 * @throws Exception if the creation of the resource properties fails
+	 * 
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationCreator rvf, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) throws NoResultException {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		try {
 			String colorValue = retrieveValue(key, params);
