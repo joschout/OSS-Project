@@ -72,9 +72,9 @@ public class ScatterPlotTest2 {
 		try {
 
 			//JONAS 
-			//File outputfile = new File("D:\\eclipse\\workspace OSS\\OSS-Project\\sonar-polymorphic-views\\src\\test\\java\\be\\kuleuven\\cs\\oss\\charts\\scattertest.png");
+			File outputfile = new File("D:\\eclipse\\workspace OSS\\OSS-Project\\sonar-polymorphic-views\\src\\test\\java\\be\\kuleuven\\cs\\oss\\charts\\scattertest.png");
 			//ELINE
-			File outputfile = new File("C:\\Users\\eline vanermen\\Documents\\Github\\OSS-Project\\sonar-polymorphic-views\\src\\test\\java\\be\\kuleuven\\cs\\oss\\charts\\scattertest.png");
+//			File outputfile = new File("C:\\Users\\eline vanermen\\Documents\\Github\\OSS-Project\\sonar-polymorphic-views\\src\\test\\java\\be\\kuleuven\\cs\\oss\\charts\\scattertest.png");
 			ImageIO.write(bi, "png", outputfile);
 		} catch (IOException e) {
 
