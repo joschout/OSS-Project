@@ -30,7 +30,7 @@ public class ChartParameter {
 	private ParamValueRetriever params;
 	
 	/**
-	 * Creates a new Chartparameter with the given ParamValueRetriever instance
+	 * Creates a new parameter value retriever with the given ParamValueRetriever instance
 	 * @param params the given parameter value retriever
 	 */
 	public ChartParameter(ParamValueRetriever params) {
@@ -41,9 +41,9 @@ public class ChartParameter {
 	/**
 	 * Creates a new Chart instance based on the value of the chart key
 	 * @return a Scatterplot instance if the chart value is equal to scatter and a SystemComplexity if the chart value is equal to syscomp
-	 * @throws NoResultException if the creation of a chart failed
+	 * @throws IllegalArgumentException if the creation of a chart failed
 	 */
-	public Chart getChart() throws NoResultException{
+	public Chart getChart() throws IllegalArgumentException {
 		String result = params.retrieveValue(key, DEFAULT_CHART_TYPE);
 		
 		if(result.equals(chartType1)) {
@@ -55,7 +55,7 @@ public class ChartParameter {
 			return syscomp;
 		}
 		
-		throw new NoResultException("No chart created");
+		throw new IllegalArgumentException(key+" not valid, creating chart failed");
 		
 	}
 

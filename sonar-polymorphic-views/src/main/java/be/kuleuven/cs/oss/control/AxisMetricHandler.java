@@ -4,7 +4,6 @@ import javax.persistence.NoResultException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
@@ -72,14 +71,14 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	 * @param axis the axis for which a resource property has to be returned
 	 * @param params the given parameter value retriever from which the axis metric has to be retrieved
 	 * @return the resulting resource property for the given axis
-	 * @throws NoResultException if the axis metric cannot be found
+	 * @throws IllegalArgumentException if the axis metric cannot be found
 	 */
-	private ResourceProperty createAxisMetricProperty(String axis, ParamValueRetriever params) throws NoResultException{
+	private ResourceProperty createAxisMetricProperty(String axis, ParamValueRetriever params) throws IllegalArgumentException{
 		String metricValue = params.retrieveValue(axis);
 		
 		Metric metric = sf.findMetric(metricValue);
 		if(metric == null){
-			throw new NoResultException("Metric not found");
+			throw new IllegalArgumentException("Metric not found");
 		}
 		SonarResourceProperty prop = new SonarResourceProperty(sf,sf.findMetric(metricValue));
 		

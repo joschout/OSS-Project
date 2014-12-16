@@ -26,7 +26,7 @@ public class ParamValueRetriever {
 		String result = this.chartParams.getValue(key);
 
 		if(result.equals("")){
-			LOG.info("retrieve value failed");
+			LOG.info("retrieving "+key+" value failed");
 			throw new NoResultException("value not retrieved");
 		}
 

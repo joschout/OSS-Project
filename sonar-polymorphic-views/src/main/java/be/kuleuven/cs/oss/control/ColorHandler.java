@@ -54,10 +54,10 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	/**
 	 * Creates the color properties and sets them in the given resource visualization factory. If the color key cannot be recognized, the properties are set to default (white).
-	 * @throws IllegalArgumentException if the given color value cannot be recognized
+	 * @throws IllegalArgumentException if the given color value is not valid
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ParamValueRetriever params) throws NoResultException {
+	public void handleRequest(ResourceVisualizationFactory rvf, ParamValueRetriever params) throws IllegalArgumentException {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		try {
 			String colorValue = params.retrieveValue(key);
@@ -92,10 +92,10 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 			}
 
-			else throw new IllegalArgumentException("Color not recognized");
+			else throw new IllegalArgumentException(key+" not valid");
 		}
 		catch(NoResultException e) {
-			LOG.info("retrieve color value failed, setting defaults");
+			LOG.info("setting defaults for "+key);
 			for(int i=0;i<3;++i){
 				result.add(DEFAULT_COLOR);
 			}

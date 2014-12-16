@@ -39,7 +39,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	SonarFacade sf;
 
 	/**
-	 * Creates a new dimensionhandler based on the given sonarfacade
+	 * Creates a new dimensionshandler based on the given sonarfacade
 	 * @param sf an instance of SonarFacade
 	 */
 	public DimensionsHandler(SonarFacade sf) {
@@ -55,10 +55,10 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	 * Creates the dimension properties for the given resourcevisualization factory,
 	 * depending on the type of factory (currently only box, circle and trap are supported)
 	 * and sets them in this factory
-	 * @throws IllegalArgumentException if the factory cannot be cast to a specific type of factory
+	 * @throws ClassCastException if the factory cannot be cast to a specific type of factory
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ParamValueRetriever params) throws IllegalArgumentException{
+	public void handleRequest(ResourceVisualizationFactory rvf, ParamValueRetriever params) throws ClassCastException{
 		if(BoxFactory.class.isInstance(rvf)){
 			((BoxFactory) rvf).setWidthProperty(createDimensionRP("boxwidth",params,DEFAULT_BOXWIDTH));
 			((BoxFactory) rvf).setHeightProperty(createDimensionRP("boxheight",params,DEFAULT_BOXHEIGHT));
@@ -71,7 +71,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 			((TrapezoidFactory) rvf).setBaseLineProperty(createDimensionRP("trapside2",params,DEFAULT_TRAPSIDE2));
 			((TrapezoidFactory) rvf).setRightLineProperty(createDimensionRP("trapside3",params,DEFAULT_TRAPSIDE3));
 		}
-		else throw new IllegalArgumentException("RVF could not be cast to specific factory");
+		else throw new ClassCastException("RVF could not be cast to specific factory");
 
 		if(next != null) {
 			next.handleRequest(rvf, params);
