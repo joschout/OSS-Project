@@ -5,12 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
-import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
-import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class LineFactoryHandler implements IHandler<Chart> {
 
