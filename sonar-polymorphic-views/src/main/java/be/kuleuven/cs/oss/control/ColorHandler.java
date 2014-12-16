@@ -18,6 +18,21 @@ import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+
+
+
+
+//TODO:color enkel in intervalShapeDecider en enkele RVF
+
+
+
+
+
+
+
+
+
+
 public class ColorHandler implements IHandler<ResourceVisualizationCreator> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(ColorHandler.class);
