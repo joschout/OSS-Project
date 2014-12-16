@@ -1,7 +1,5 @@
 package be.kuleuven.cs.oss.control;
 
-import java.util.NoSuchElementException;
-
 import javax.persistence.NoResultException;
 
 import org.slf4j.Logger;
@@ -13,16 +11,16 @@ import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
+import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
-public class DimensionsHandler implements IHandler<ResourceVisualizationCreator> {
+public class DimensionsHandler implements IHandler<ResourceVisualizationFactory> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);
 
-	private IHandler<ResourceVisualizationCreator> next;
+	private IHandler<ResourceVisualizationFactory> next;
 
 	
 	private static final ConstantResourceProperty DEFAULT_BOXWIDTH = new ConstantResourceProperty(20);
@@ -39,12 +37,12 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationCreator>
 	}
 
 	@Override
-	public void setNext(IHandler<ResourceVisualizationCreator> handler) {
+	public void setNext(IHandler<ResourceVisualizationFactory> handler) {
 		this.next = handler;
 	}
 
 	@Override
-	public void handleRequest(ResourceVisualizationCreator rvf, ChartParameters params) {
+	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) {
 		if(BoxFactory.class.isInstance(rvf)){
 			((BoxFactory) rvf).setWidthProperty(createDimensionRP("boxwidth",params,DEFAULT_BOXWIDTH));
 			((BoxFactory) rvf).setHeightProperty(createDimensionRP("boxheight",params,DEFAULT_BOXHEIGHT));

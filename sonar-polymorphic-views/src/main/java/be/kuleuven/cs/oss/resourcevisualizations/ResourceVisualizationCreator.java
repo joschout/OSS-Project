@@ -1,7 +1,6 @@
 package be.kuleuven.cs.oss.resourcevisualizations;
 
 
-import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 
@@ -26,11 +25,5 @@ public interface ResourceVisualizationCreator {
 	 * @return the ResourceVisualization for one specific resource
 	 */
 	public ResourceVisualization create(Resource resource);
-	
-	public void setRedProperty(ResourceProperty redProperty);
-	
-	public void setGreenProperty(ResourceProperty redProperty);
-	
-	public void setBlueProperty(ResourceProperty redProperty);
 
 }
