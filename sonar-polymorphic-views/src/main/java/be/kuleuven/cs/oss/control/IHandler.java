@@ -2,6 +2,13 @@ package be.kuleuven.cs.oss.control;
 
 import org.sonar.api.charts.ChartParameters;
 
+/**
+ * An interface that is to be implemented by all handlers that want to modify an object of type M
+ * @param <M> the type of the object to be modified along the chain
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public interface IHandler<M> {
 	
 	/**

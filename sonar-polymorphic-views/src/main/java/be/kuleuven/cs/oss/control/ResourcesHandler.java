@@ -8,6 +8,12 @@ import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for all the resources in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ResourcesHandler implements IHandler<Chart> {
 	
 	private IHandler<Chart> next;
