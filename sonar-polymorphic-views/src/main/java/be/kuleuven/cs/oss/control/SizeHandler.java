@@ -46,7 +46,9 @@ public class SizeHandler implements IHandler<Chart> {
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		if (!(chart instanceof ScatterPlot)) {
-			next.handleRequest(chart, params);
+			if(next != null){
+				next.handleRequest(chart, params);
+			}
 			return;
 		}
 
