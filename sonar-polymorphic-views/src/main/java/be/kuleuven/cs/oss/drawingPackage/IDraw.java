@@ -1,6 +1,3 @@
-/**
- * 
- */
 package be.kuleuven.cs.oss.drawingPackage;
 
 import java.awt.image.BufferedImage;
@@ -13,8 +10,14 @@ import java.awt.image.BufferedImage;
  */
 public interface IDraw {
 
+	/**
+	 * Gets the BufferedImage the Java2DFacade has drawn up until know.
+	 */
 	public BufferedImage getBufferedImage();
 
+	/**
+	 *  Sets the BufferedImage the Java2DFacade contains with the given BufferedImage
+	 */
 	public void setBufferedImage(BufferedImage im) ;
 
 	/**
@@ -26,32 +29,54 @@ public interface IDraw {
 	public void createEmptyImage(int width, int height);
 
 	/**
-	 * 
-	 * @param xCoord
-	 * @param yCoord
-	 * @param width
-	 * @param heigth
+	 * Draws a box on the BufferedImage in memory. 
+	 * The parameters xCoord, yCoord, width and height are expressed in pixels.
+	 * This method draws the box with a black outline of a default width and a white fill
+	 * @param xCoord: the x-coordinate of the center of the box 
+	 * @param yCoord: the y-coordinate of the center of the box
+	 * @param width: the width of the box
+	 * @param heigth: the height of the box
 	 */
 	public void drawBox(int xCoord, int yCoord,
 			int width, int heigth
 			);
 
 	/**
+	 * Draws a box on the BufferedImage in memory. 
+	 * The parameters xCoord, yCoord, width and height are expressed in pixels.
+	 * The color arguments specify the RGB-color which will be used to fill the box.
 	 * 
-	 * @param xCoord
-	 * @param yCoord
-	 * @param width
-	 * @param heigth
-	 * @param redFill
-	 * @param greenFill
-	 * @param blueFill
+	 * @param xCoord: the x-coordinate of the center of the box
+	 * @param yCoord: the y-coordinate of the center of the box
+	 * @param width: the width of the box
+	 * @param heigth: the height of the box
+	 * @param redFill: the red channel of the RGB-color of the fill of the box
+	 * @param greenFill: the green channel of the RGB-color of the fill of the box
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the box
 	 */
 	public void drawBox(int xCoord, int yCoord,
 			int width, int heigth,
 			int redFill, int greenFill, int blueFill
 			);
 
-
+	/**
+	 * Draws a box on the BufferedImage in memory. 
+	 * The parameters xCoord, yCoord, width and height are expressed in pixels.
+	 * The color arguments specify the RGB-colors: one for the line that borders the box,
+	 * the other for the fill of the box.
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the box
+	 * @param yCoord: the y-coordinate of the center of the box
+	 * @param width: the width of the box
+	 * @param heigth: the height of the box
+	 * @param redBorder: the red channel of the RGB-color of the border of the box
+	 * @param greenBorder: the green channel of the RGB-color of the border of the box
+	 * @param blueBorder: the blue channel of the RGB-color of the border of the box
+	 * @param redFill: the red channel of the RGB-color of the fill of the box
+	 * @param greenFill: the green channel of the RGB-color of the fill of the box
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the box
+	 * @param borderWidth: the width of the border around the box
+	 */
 	public void drawBox(
 			int xCoord, int yCoord,
 			int width, int heigth,
@@ -60,7 +85,24 @@ public interface IDraw {
 			int borderWidth
 			);
 
-
+	/**
+	 * Draws a ellipse on the BufferedImage in memory. 
+	 * The parameters xCoord, yCoord, width and height are expressed in pixels.
+	 * The color arguments specify the RGB-colors: one for the line that borders the ellipse,
+	 * the other for the fill of the ellipse.
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the ellipse
+	 * @param yCoord: the y-coordinate of the center of the ellipse
+	 * @param width: the width of the ellipse
+	 * @param heigth: the height of the ellipse
+	 * @param redBorder: the red channel of the RGB-color of the border of the ellipse
+	 * @param greenBorder: the green channel of the RGB-color of the border of the ellipse
+	 * @param blueBorder: the blue channel of the RGB-color of the border of the ellipse
+	 * @param redFill: the red channel of the RGB-color of the fill of the ellipse
+	 * @param greenFill: the green channel of the RGB-color of the fill of the ellipse
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the ellipse
+	 * @param borderWidth: the width of the border around the ellipse
+	 */
 	public void drawEllipse(
 			int xCoord, int yCoord,
 			int width, int heigth, 
@@ -69,36 +111,109 @@ public interface IDraw {
 			int borderWidth
 			) ;
 
+	/**
+	 * Draws a text on the BufferedImage in memory.
+	 * Draws the text in black and parallel to the horizontal image sides
+	 * 
+	 * @param textToDraw: the text the method draws on the image
+	 * @param xCoord: the x-coordinate of the middlepoint of the underside of the text
+	 * @param yCoord: the y-coordinate of the middlepoint of the underside of the text
+	 */
 	public void drawText(
 			String textToDraw,
 			int xCoord, int yCoord
 			);
 
 
+	/**
+	 * Draws a text on the BufferedImage in memory.
+	 * 
+	 * @param textToDraw: the text the method draws on the image
+	 * @param xCoord: the x-coordinate of the middlepoint of the underside of the text
+	 * @param yCoord: the y-coordinate of the middlepoint of the underside of the text
+	 * @param orientationAngleInDegrees: the orientation of the text in degrees 
+	 * @param red: the red channel of the RGB-color used for the text color
+	 * @param green: the green channel of the RGB-color used for the text color
+ 	 * @param blue: the blue channel of the RGB-color used for the text color
+	 */
 	public void drawText(
 			String textToDraw,
 			int xCoord, int yCoord,
 			int orientationAngleInDegrees,
 			int red, int green, int blue);
 
+	/**
+	 * Draws a straight line segment on the BufferedImage in memory
+	 * 
+	 * @param x1 the x-coordinate of the first endpoint
+	 * @param y1 the y-coordinate of the first endpoint
+	 * @param x2 the x-coordinate of the second endpoint
+	 * @param y2 the y-coordinate of the second endpoint
+	 * 
+	 */
 	public void drawStraightLine(
 			int x1, int y1,
 			int x2, int y2 
 			);
 
 
+	/**
+	 * Draws a straight line segment on the BufferedImage in memory
+	 * 
+	 * @param x1 the x-coordinate of the first endpoint
+	 * @param y1 the y-coordinate of the first endpoint
+	 * @param x2 the x-coordinate of the second endpoint
+	 * @param y2 the y-coordinate of the second endpoint
+	 * @param red the red channel of the RGB-color used for the line color
+	 * @param green the green channel of the RGB-color used for the line color
+	 * @param blue the blue channel of the RGB-color used for the line color
+	 * @param width the line width
+	 * 
+	 */
 	public void drawStraightLine(
 			int x1, int y1,
 			int x2, int y2, 
 			int red, int green, int blue, 
 			int width);
 
+	/**
+	 * Draws a triangle on the BufferedImage in memory.
+	 * A triangle is defined by three vertices.
+	 * The triangle' sides are drawn in black.
+	 * The triangle is also filled in black.
+	 * 
+	 * @param x1 the x-coordinate of the first vertex
+	 * @param y1 the y-coordinate of the first vertex
+	 * @param x2 the x-coordinate of the second vertex
+	 * @param y2 the y-coordinate of the second vertex
+     * @param x3 the x-coordinate of the third vertex
+	 * @param y3 the y-coordinate of the third vertex
+	 */
 	public void drawTriangle(int x1, int y1,
 			int x2, int y2,
 			int x3, int y3
 			);
 
 
+	/**
+	 * Draws a triangle on the BufferedImage in memory.
+	 * A triangle is defined by three vertices.
+	 * 
+	 * 
+	 * @param x1 the x-coordinate of the first vertex
+	 * @param y1 the y-coordinate of the first vertex
+	 * @param x2 the x-coordinate of the second vertex
+	 * @param y2 the y-coordinate of the second vertex
+     * @param x3 the x-coordinate of the third vertex
+	 * @param y3 the y-coordinate of the third vertex
+	 * @param redBorder: the red channel of the RGB-color of the border of the triangle
+	 * @param greenBorder: the green channel of the RGB-color of the border of the triangle
+	 * @param blueBorder: the blue channel of the RGB-color of the border of the triangle
+	 * @param redFill: the red channel of the RGB-color of the fill of the triangle
+	 * @param greenFill: the green channel of the RGB-color of the fill of the triangle
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the triangle
+	 * @param borderWidth: the width of the border around the triangle
+	 */
 	public void drawTriangle(
 			int x1, int y1,
 			int x2, int y2,
@@ -109,23 +224,60 @@ public interface IDraw {
 			);
 
 	/**
-	 * PRECONDITION: the x-values should be equal
+	 * Draws an arrow parallel to the vertical sides of the image,
+	 *  with its point pointing upwards.
+	 *  An arrow consists of a straight line segment and a triangle.
+	 * The line segment is defined by a vertex and its length,
+	 *  since its orientation is parallel with the vertical edges of the image.
+	 * The triangle is attached to the other vertex.
 	 * 
-	 * @param lineEndArrowX
-	 * @param lineEndArrowY
-	 * @param lineEndX
-	 * @param lineEndY
+	 * @param lineEndX the x-coordinate of the vertex not attached to the triangle
+	 * @param lineEndY the y-coordinate of the vertex not attached to the triangle
+	 * @param lineLenght the length of the line
 	 */
 	public void drawArrowUp(
 			int lineEndX, int lineEndY,
 			int lineLength
 			);
 
+	/**
+	 * Draws an arrow parallel to the horizontal sides of the image,
+	 *  with its point pointing to the right.
+	 *  An arrow consists of a straight line segment and a triangle.
+	 * The line segment is defined by a vertex and its length,
+	 *  since its orientation is parallel with the horizontal edges of the image.
+	 * The triangle is attached to the other vertex.
+	 * 
+	 * @param lineEndX the x-coordinate of the vertex not attached to the triangle
+	 * @param lineEndY the y-coordinate of the vertex not attached to the triangle
+	 * @param lineLenght the length of the line
+	 */
 	public void drawArrowRight(
 			int lineEndX, int lineEndY,
 			int lineLength
 			);
 
+	/**
+	 * Trapezoid on the BufferedImage in memory.
+	 * The trapezoid has a base line parallel to the horizontal edges of the image.
+	 * Its two lower vertices have right angles. 
+	 * The trapezoid is defined by the lengths of its left, lower and right edge. 
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the trapezoid
+	 * 					relative to the width and the highest of the two sides
+	 * @param yCoord: the y-coordinate of the center of the trapezoid
+	 * 					relative to the width and the highest of the two sides
+	 * @param trap1: the left edge of the trapezoid
+	 * @param trap2: the lower edge of the trapezoid
+	 * @param trap3: the right edge of the trapezoid
+	 * @param redBorder: the red channel of the RGB-color of the border of the trapezoid
+	 * @param greenBorder: the green channel of the RGB-color of the border of the trapezoid
+	 * @param blueBorder: the blue channel of the RGB-color of the border of the trapezoid
+	 * @param redFill: the red channel of the RGB-color of the fill of the trapezoid
+	 * @param greenFill: the green channel of the RGB-color of the fill of the trapezoid
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the trapezoid
+	 * @param borderWidth: the width of the border around the trapezoid
+	 */
 	public void drawTrapezoid(	
 			int xCoord, int yCoord,
 			int trap1, int trap2, int trap3,
@@ -133,22 +285,70 @@ public interface IDraw {
 			int redFill, int greenFill, int blueFill,
 			int borderWidth);
 
+	/**
+	 * Trapezoid on the BufferedImage in memory.
+	 * The trapezoid has a base line parallel to the horizontal edges of the image.
+	 * Its two lower vertices have right angles. 
+	 * The trapezoid is defined by the lengths of its left, lower and right edge. 
+	 * The trapezoid is drawn with a black border and the default border width.
+	 * 
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the trapezoid
+	 * 					relative to the width and the highest of the two sides
+	 * @param yCoord: the y-coordinate of the center of the trapezoid
+	 * 					relative to the width and the highest of the two sides
+	 * @param trap1: the left edge of the trapezoid
+	 * @param trap2: the lower edge of the trapezoid
+	 * @param trap3: the right edge of the trapezoid
+	 * @param redFill: the red channel of the RGB-color of the fill of the trapezoid
+	 * @param greenFill: the green channel of the RGB-color of the fill of the trapezoid
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the trapezoid
+	 */
 	public void drawTrapezoid(
 			int xCoord, int yCoord,
 			int trap1, int trap2, int trap3,
 			int redFill, int greenFill, int blueFill
 			);
 	
+	/**
+	 * Draws a circle on the BufferedImage in memory. 
+	 * The parameters xCoord, yCoord, width and height are expressed in pixels.
+	 * The color arguments specify the RGB-colors: one for the line that borders the circle,
+	 * the other for the fill of the circle.
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the circle
+	 * @param yCoord: the y-coordinate of the center of the circle
+	 * @param diameter: the diameter of the circle
+	 * @param redBorder: the red channel of the RGB-color of the border of the circle
+	 * @param greenBorder: the green channel of the RGB-color of the border of the circle
+	 * @param blueBorder: the blue channel of the RGB-color of the border of the circle
+	 * @param redFill: the red channel of the RGB-color of the fill of the circle
+	 * @param greenFill: the green channel of the RGB-color of the fill of the circle
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the circle
+	 * @param borderWidth: the width of the border around the circle
+	 */
 	public void drawCircle(
 			int xCoord, int yCoord,
-			int radius,
+			int diameter,
 			int redBorder, int greenBorder, int blueBorder,
 			int redFill, int greenFill, int blueFill,
 			int borderWidth);
 	
+	/**
+	 * Draws a circle on the BufferedImage in memory. 
+	 * The parameters xCoord, yCoord, width and height are expressed in pixels.
+	 * The color arguments specify the RGB-color which will be used to fill the circle.
+	 * 
+	 * @param xCoord: the x-coordinate of the center of the circle
+	 * @param yCoord: the y-coordinate of the center of the circle
+	 * @param diameter: the diameter of the circle
+	 * @param redFill: the red channel of the RGB-color of the fill of the circle
+	 * @param greenFill: the green channel of the RGB-color of the fill of the circle
+	 * @param blueFill: the blue channel of the RGB-color of the fill of the circle
+	 */
 	public void drawCircle(
 			int xCoord, int yCoord,
-			int radius ,
+			int diameter ,
 			int redFill, int greenFill, int blueFill
 			) ;
 	
