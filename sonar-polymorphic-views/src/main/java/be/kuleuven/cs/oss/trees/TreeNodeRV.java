@@ -18,8 +18,8 @@ import be.kuleuven.cs.oss.sonarfacade.Resource;
 
 public class TreeNodeRV {
 
-	private static final int OFFSET = 5;
-	
+	private static final int X_OFFSET = 50;
+	private static final int Y_OFFSET = 50;
 	private ResourceVisualizationCreator rvf;
 	private TreeNode treeNode;
 
@@ -37,12 +37,12 @@ public class TreeNodeRV {
 		this.treeNode = treeNode;
 		
 		makeRv();
-		LOG.info("MADE RV OF NODE");
+		//LOG.info("MADE RV OF NODE");
 		createChildren();
 		//LOG.info("CHILDREN: " + this.children.toString());
-		LOG.info("MADE CHILDREN");
+		//LOG.info("MADE CHILDREN");
 		createConnections();
-		LOG.info("MADE CONNECTIONS");
+		//LOG.info("MADE CONNECTIONS");
 		
 	}
 
@@ -59,40 +59,9 @@ public class TreeNodeRV {
 			//maxRight = maxRight + child.getMaxRight() + OFFSET; // Hier moet geen maxRight ook nog eens bij denk ik
 			this.children.put(entry.getKey(), child); //Add the child to the internal children list
 		}
-	
-		
-		//The position will have to be determined after all the scaling of the resources has been done.
-		
-		
-//		if(children.size() == 0) {
-//			maxRight = maxRight + rv.getWidth(); //BOX moet in ints en max moet er denk weer niet bij
-//		}
-//		
-//		calculateXPositionRv();
-		
-
 	}
 
-	private void calculateXPositionRv() {
-		int x = 0;
-		
-		if(children.firstEntry() != null) {
-			int xFirstChild = children.firstEntry().getValue().getRv().getPosition().getX();
-			int xLastChild = children.lastEntry().getValue().getRv().getPosition().getX();
-			
-			x = (xFirstChild + xLastChild) / 2;
-		}
-		else {
-			x = this.maxRight;
-		}
-		
-		System.out.println("X IS: " + x);
-		
-		Position position = new Position(x, 0);
-		rv.setPosition(position);
-		
-	}
-	
+
 	private void createConnections() {
 		
 		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()) {
@@ -100,7 +69,7 @@ public class TreeNodeRV {
 
 			ResourceVisualization rvChild = treeNodeRV.getRv();
 			
-			Connection connection = new Connection(rv, rvChild);
+			Connection connection = new Connection(rvChild, rv);
 			connections.add(connection);
 		}	
 		System.out.println("Connections for " + this.toString() + " " + connections.toString());
@@ -151,6 +120,18 @@ public class TreeNodeRV {
 		return connections;
 	}
 	
+	public boolean isRoot(){
+		return treeNode.isRoot();
+	}
+	
+	public void setLevel(int level){
+		this.level = level;
+	}
+	
+	public int getLevel(){
+		return this.level;
+	}
+	
 	public TreeNodeRV updateXPosition(int maxRight){
 
 		if (isRoot()) {
@@ -158,8 +139,8 @@ public class TreeNodeRV {
 			
 		}
 		else {
-			System.out.println("MAXRIGHT: " + maxRight + " " + rv.getWidth());
-			this.maxRight = maxRight + rv.getWidth() + OFFSET;
+			//System.out.println("MAXRIGHT: " + maxRight + " " + rv.getWidth());
+			this.maxRight = maxRight + rv.getWidth() + X_OFFSET;
 		}
 		
 		for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){			
@@ -177,17 +158,28 @@ public class TreeNodeRV {
 		
 	}
 	
-	public boolean isRoot(){
-		return treeNode.isRoot();
+	private void calculateXPositionRv() {
+		int x = 0;
+		
+		if(children.firstEntry() != null) {
+			int xFirstChild = children.firstEntry().getValue().getRv().getPosition().getX();
+			int xLastChild = children.lastEntry().getValue().getRv().getPosition().getX();
+			
+			x = (xFirstChild + xLastChild) / 2;
+		}
+		else {
+			x = this.maxRight;
+		}
+		
+		System.out.println("X IS: " + x);
+		
+		Position position = new Position(x, 0);
+		rv.setPosition(position);
+		
 	}
 	
-	public void setLevel(int level){
-		this.level = level;
-	}
 	
-	public int getLevel(){
-		return this.level;
-	}
+
 	
 	public Map<Integer, Integer> getMaxHeightPerLevel(Map<Integer, Integer> currentMaxHeights){
 		int level = getLevel();
@@ -224,9 +216,8 @@ public class TreeNodeRV {
 			for(Map.Entry<String, TreeNodeRV> entry : children.entrySet()){
 				ResourceVisualization childRV = entry.getValue().getRv();
 				
-				int y = 0 + childRV.getHeight()/2;
+				int y = Y_OFFSET + childRV.getHeight()/2;
 				childRV.getPosition().setY(y);
-				System.out.println("Y IS: " + y);
 				entry.getValue().updateYPositions(maxHeights);
 			}
 		}
@@ -249,7 +240,7 @@ public class TreeNodeRV {
 		
 		int maxHeight = maxHeights.get(level);
 		Position position = childRV.getPosition();
-		int y = rv.getPosition().getY() - rv.getHeight()/2 + maxHeight + OFFSET + childRV.getHeight()/2;
+		int y = rv.getPosition().getY() - rv.getHeight()/2 + maxHeight + Y_OFFSET + childRV.getHeight()/2;
 		
 		position.setY(y);
 		return position;

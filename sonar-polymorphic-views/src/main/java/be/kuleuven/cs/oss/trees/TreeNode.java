@@ -51,22 +51,28 @@ public class TreeNode {
 	}
 
 	private void createChildren() {
-		System.out.println(resource.getKey());
-		List<Dependency> dependencies = sonarF.findOutgoingDependencies(resource);
+		System.out.println(resource.getName());
+		List<Dependency> dependencies = sonarF.findIncomingDependencies(resource);
 		List<Resource> foundChildResources = new ArrayList<Resource>();
-		
 
+		List<Dependency> extendsDependencies = new ArrayList<Dependency>();
 		
-		System.out.println("BOOEOEOEOEOEOEOEO" + dependencies.toString());
-		
-		for(Dependency dependency: dependencies) {
-			
-			if(dependency.getType() == DependencyType.EXTENDS) {
-				String toResourceKey = dependency.getToResourceKey();
-				Resource resource = sonarF.findResource(toResourceKey);
-				foundChildResources.add(resource);
+		for(Dependency dependency: dependencies) {				
+			if(dependency.getType().equals(DependencyType.EXTENDS)) {
+				extendsDependencies.add(dependency);
 			}
 		}
+		
+		System.out.println(extendsDependencies.toString());
+		
+		for(Dependency extendsDependency: extendsDependencies) {
+			String fromResourceKey = extendsDependency.getFromResourceKey();
+			Resource resource = sonarF.findResource(fromResourceKey);
+			foundChildResources.add(resource);
+			
+		}
+		
+		System.out.println("BOOEOEOEOEOEOEOEO" + foundChildResources.toString());
 		
 		for(Resource resource: foundChildResources) {
 			String name = resource.getName();

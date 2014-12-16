@@ -10,11 +10,22 @@ import be.kuleuven.cs.oss.datautils.Position;
  */
 public class StraightLineFactory implements LineFactory {
 	
-	private static final Position DEFAULT_POSITION = new Position(0,0);
-	private static final int DEFAULT_WIDTH = 1;
-	private static final Color DEFAULT_COLOR = new Color(255);
+	private Position DEFAULT_POSITION;
+	private int DEFAULT_WIDTH;
+	private Color DEFAULT_COLOR;
 
-	
+	public void setDEFAULT_POSITION(Position dEFAULT_POSITION) {
+		DEFAULT_POSITION = dEFAULT_POSITION;
+	}
+
+	public void setDEFAULT_WIDTH(int dEFAULT_WIDTH) {
+		DEFAULT_WIDTH = dEFAULT_WIDTH;
+	}
+
+	public void setDEFAULT_COLOR(Color dEFAULT_COLOR) {
+		DEFAULT_COLOR = dEFAULT_COLOR;
+	}
+
 
 	@Override
 	public StraightLine create() {
