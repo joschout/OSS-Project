@@ -8,6 +8,12 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A resource type parameter wrapper that is able to return all the resources based on the chart parameters
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ResourceTypeParameter {
 	
 	private static final String DEFAULT_RESOURCE_TYPE = "classes";
@@ -16,15 +22,19 @@ public class ResourceTypeParameter {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(ChartParameter.class);
 
-	
-	public String getResourceType(SonarFacade sf, ChartParameters params) {
+	/**
+	 * Retrieves the resource type
+	 * @param sf an intstance of SonarFacade
+	 * @param params the given chartparameters
+	 * @return the value for the resource type key in the given chartparameters
+	 * @throws NoResultException if the value for the resource type key cannot be retrieved
+	 */
+	public String getResourceType(SonarFacade sf, ChartParameters params) throws NoResultException{
 		String result = params.getValue(key, DEFAULT_RESOURCE_TYPE, false);
 		if(result.equals("")){
 			LOG.info("retrieve value with default failed");
 			throw new NoResultException("value with default not retrieved");
 		}
 		return result;
-		
 	}
-	
 }

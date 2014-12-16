@@ -23,3 +23,5 @@ sonar-polymorphic-views/**/.project
 .metadata/
 .recommenders/
 sonar-3.7.4/logs/sonar.log
+
+*.png

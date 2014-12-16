@@ -18,6 +18,12 @@ import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the color in the resource visualization factory
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(ColorHandler.class);
@@ -118,7 +124,8 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	/**
 	 * Retrieve a parameter value for the given parameter key
-	 * @param key The given parameter key
+	 * @param key the given parameter key
+	 * @param params the given chartparameters
 	 * @return the retrieved parameter value
 	 * @throws NoResultException if the parameter value for the given key cannot be retrieved
 	 */

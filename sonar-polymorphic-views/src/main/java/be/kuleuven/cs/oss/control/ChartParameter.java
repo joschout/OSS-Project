@@ -10,6 +10,12 @@ import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 
+/**
+ * A chart parameter wrapper that is able to return the right chart based on the chart parameters
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ChartParameter {
 	
 	private static final String DEFAULT_CHART_TYPE = "scatter";
@@ -25,7 +31,7 @@ public class ChartParameter {
 	
 	/**
 	 * Creates a new Chartparameter with the given Chartparameters instance
-	 * @param params an instance of Chartparameters
+	 * @param params the given chartparameters
 	 */
 	public ChartParameter(ChartParameters params) {
 		this.params = params;

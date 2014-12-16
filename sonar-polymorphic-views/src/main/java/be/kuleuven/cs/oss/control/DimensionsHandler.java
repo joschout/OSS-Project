@@ -16,6 +16,12 @@ import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the shape dimensions in the resource visualization factory
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class DimensionsHandler implements IHandler<ResourceVisualizationFactory> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(DimensionsHandler.class);
@@ -73,7 +79,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 	/**
 	 * Creates a new dimension property that is defined by the given dimension key
 	 * @param key the given key for the dimension property
-	 * @param params an instance of Chartparameters
+	 * @param params the given chartparameters
 	 * @param def the default property to be set in case the given key is not a valid one
 	 * @return the resource property that is defined by the given dimension key if that key is valid, else return the given default resource property
 	 */
@@ -105,7 +111,7 @@ public class DimensionsHandler implements IHandler<ResourceVisualizationFactory>
 
 	/**
 	 * Retrieve a parameter value for the given parameter key
-	 * @param key The given parameter key
+	 * @param key the given parameter key
 	 * @return the retrieved parameter value
 	 */
 	private String retrieveValue(String key, ChartParameters params) {

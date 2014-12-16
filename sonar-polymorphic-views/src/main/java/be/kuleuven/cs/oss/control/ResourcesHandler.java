@@ -8,6 +8,12 @@ import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for all the resources in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ResourcesHandler implements IHandler<Chart> {
 	
 	private IHandler<Chart> next;
@@ -17,6 +23,10 @@ public class ResourcesHandler implements IHandler<Chart> {
 
 	SonarFacade sf;
 
+	/**
+	 * Creates a new resources handler based on the given SonarFacade instance
+	 * @param sf the given SonarFacade instance
+	 */
 	public ResourcesHandler(SonarFacade sf) {
 		this.sf = sf;
 	}
@@ -26,8 +36,12 @@ public class ResourcesHandler implements IHandler<Chart> {
 		this.next = handler;
 	}
 
+	/**
+	 * Finds all the requested resources, depending on the resource type key (currently only packages and classes are supported) and sets them in the given chart
+	 * @throws IllegalArgumentException if the resource type value is not valid
+	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
+	public void handleRequest(Chart chart, ChartParameters params) throws IllegalArgumentException {
 
 		ParentParameter parentParam = new ParentParameter();
 		Resource parent = parentParam.getParentResource(sf, params);
@@ -45,7 +59,7 @@ public class ResourcesHandler implements IHandler<Chart> {
 			resources = sf.findPackages(parent);
 		}
 		if(resources == null) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Invalid resource type");
 		}
 		
 		chart.setResources(resources);

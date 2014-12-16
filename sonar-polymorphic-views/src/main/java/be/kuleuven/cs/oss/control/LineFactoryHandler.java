@@ -11,6 +11,12 @@ import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
 
+/**
+ * A handler for the line factory in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class LineFactoryHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(LineFactoryHandler.class);
@@ -26,10 +32,8 @@ public class LineFactoryHandler implements IHandler<Chart> {
 		this.next = handler;
 	}
 
-	
 	/**
-	 * Create a new line factory (currently, only straight lines are supported)
-	 * @return a new line factory
+	 * Creates the line factory and sets it in the given chart if this chart is a system complexity view
 	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
@@ -42,9 +46,9 @@ public class LineFactoryHandler implements IHandler<Chart> {
 		
 		LineFactory factory = new StraightLineFactory();
 		
-		((StraightLineFactory) factory).setDEFAULT_POSITION(DEFAULT_POSITION);
-		((StraightLineFactory) factory).setDEFAULT_WIDTH(DEFAULT_WIDTH);
-		((StraightLineFactory) factory).setDEFAULT_COLOR(DEFAULT_COLOR);
+		factory.setDefaultPosition(DEFAULT_POSITION);
+		factory.setDefaultWidth(DEFAULT_WIDTH);
+		factory.setDefaultColor(DEFAULT_COLOR);
 		
 		((SystemComplexity) chart).setLineFactory(factory);
 		

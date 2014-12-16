@@ -5,10 +5,20 @@ import java.util.TreeMap;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
+/**
+ * A shape decider that is responsible for assigning different factories to different intervals
+ * and passing through the created resource visualizations
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class IntervalShapeDecider implements ResourceVisualizationCreator {
 	private TreeMap<Double, ResourceVisualizationFactory>  boundaryToFactoryMap;
 	private ResourceProperty resourceProperty;
 
+	/**
+	 * Creates a new interval shape decider
+	 */
 	public IntervalShapeDecider(){
 		this.boundaryToFactoryMap = new TreeMap<Double, ResourceVisualizationFactory>();
 	}
@@ -25,6 +35,11 @@ public class IntervalShapeDecider implements ResourceVisualizationCreator {
 		return boundaryToFactoryMap;
 	}
 	
+	/**
+	 * Adds a boundary and corresponding resource visualization factory to the interval shape decider
+	 * @param b the given boundary
+	 * @param rvf the corresponding resource visualization factory
+	 */
 	public void addBoundaryWithFactory(double b, ResourceVisualizationFactory rvf){
 		this.boundaryToFactoryMap.put(b, rvf);
 	}
@@ -35,7 +50,7 @@ public class IntervalShapeDecider implements ResourceVisualizationCreator {
 		if(!getBoundaryToFactoryMap().containsKey(keyValue)){
 			keyValue = getBoundaryToFactoryMap().higherKey(keyValue);
 		}
-		ResourceVisualizationCreator factory = getBoundaryToFactoryMap().get(keyValue);
+		ResourceVisualizationFactory factory = getBoundaryToFactoryMap().get(keyValue);
 		return factory.create(res);
 	}
 

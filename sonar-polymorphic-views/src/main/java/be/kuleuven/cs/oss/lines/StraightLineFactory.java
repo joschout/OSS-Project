@@ -4,6 +4,7 @@ import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
 /**
+ * A factory that creates straight lines
  * 
  * @author jeroenreinenbergh
  *
@@ -14,18 +15,17 @@ public class StraightLineFactory implements LineFactory {
 	private int DEFAULT_WIDTH;
 	private Color DEFAULT_COLOR;
 
-	public void setDEFAULT_POSITION(Position dEFAULT_POSITION) {
-		DEFAULT_POSITION = dEFAULT_POSITION;
+	public void setDefaultPosition(Position def) {
+		DEFAULT_POSITION = def;
 	}
 
-	public void setDEFAULT_WIDTH(int dEFAULT_WIDTH) {
-		DEFAULT_WIDTH = dEFAULT_WIDTH;
+	public void setDefaultWidth(int def) {
+		DEFAULT_WIDTH = def;
 	}
 
-	public void setDEFAULT_COLOR(Color dEFAULT_COLOR) {
-		DEFAULT_COLOR = dEFAULT_COLOR;
+	public void setDefaultColor(Color def) {
+		DEFAULT_COLOR = def;
 	}
-
 
 	@Override
 	public StraightLine create() {
