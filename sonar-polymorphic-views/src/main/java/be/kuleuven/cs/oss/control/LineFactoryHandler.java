@@ -6,12 +6,18 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
+import be.kuleuven.cs.oss.datautils.Color;
+import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
 
 public class LineFactoryHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(LineFactoryHandler.class);
+	
+	private static final Position DEFAULT_POSITION = new Position(0,0);
+	private static final int DEFAULT_WIDTH = 1;
+	private static final Color DEFAULT_COLOR = new Color(0);
 
 	private IHandler<Chart> next;
 
@@ -35,6 +41,10 @@ public class LineFactoryHandler implements IHandler<Chart> {
 		}
 		
 		LineFactory factory = new StraightLineFactory();
+		
+		((StraightLineFactory) factory).setDEFAULT_POSITION(DEFAULT_POSITION);
+		((StraightLineFactory) factory).setDEFAULT_WIDTH(DEFAULT_WIDTH);
+		((StraightLineFactory) factory).setDEFAULT_COLOR(DEFAULT_COLOR);
 		
 		((SystemComplexity) chart).setLineFactory(factory);
 		
