@@ -32,8 +32,7 @@ public class ScatterPlot extends Chart{
 	private Position maxResourcePosition = new Position(0, 0);
 	private Size maxResourceSize = new Size(0,0);
 
-	//global minvalues over all resources
-	//made protected for test
+	//global minvalues over all resource
 	private Position minResourcePosition = new Position(Integer.MAX_VALUE, Integer.MAX_VALUE);
 	private Size minResourceSize = new Size(Integer.MAX_VALUE,Integer.MAX_VALUE);
 
@@ -43,7 +42,7 @@ public class ScatterPlot extends Chart{
 	private double maxRVHeight;
 	private double maxRVWidth;
 	private double minRVWidth;
-	private static final double minRVScalingFactor = 0.05;
+	private static final double minRVScalingFactor = 0.01;
 	private static final double maxRVScalingFactor = 0.15;
 	private final static Logger LOG = LoggerFactory.getLogger(ScatterPlot.class);
 
@@ -53,14 +52,18 @@ public class ScatterPlot extends Chart{
 	}
 
 	/**
-	 * constructor 
+	 * The imageFrameSize is the size for the image in pixels, given by the user.
 	 */
 	public ScatterPlot(Size imageFrameSize) {
 		super();
 		setImageFrameSize(imageFrameSize);
 	}
 
-
+	/**
+	 * The Scatterplot needs (beside the width, height and color properties) a property for the x and y- coordinates of it's resources.
+	 * @param xMetric : the resourceProperty for the x-coordinate of the resource
+	 * @param yMetric : the resourceProperty for the y-coordinate of the resource
+	 */
 	public void setAxisMetrics(ResourceProperty xMetric, ResourceProperty yMetric) {
 		this.xMetric = xMetric;
 		this.yMetric = yMetric;
@@ -68,48 +71,49 @@ public class ScatterPlot extends Chart{
 
 	/**
 	 * The draw method goes through several steps
-	 * 1. create an empty image
-	 * 2. draw the axes on the image
-	 * 3. based on the size of the image, calculate a default resource visualisation size (e.g.boxwidth and boxheight)
-	 * 4. create the resource visualisations (such as boxes)
-	 * 5. modify/scale the values of resource visualisations in order to make the resource visualisation ready to be drawn
-	 * 		(the values are now expressed in pixels)
-	 * 6. draw the resource visualisations
+	 * 
+	 * 1. calculate the space between the image border and the axes, based on the imageSize.
+	 * 2. calculate the maximum and minimum size a RV can be in the final image, based on the imageSize.
+	 * 3. create an empty image
+	 * 4. draw the axes on the image
+	 * 5. create for each resource the resource visualization
+	 * 6. find the extreme values for each property (needed for interpolation)
+	 * 7. convert the coordinates of the resources from their axes-coordinates to the image pixel-coordinates
+	 * 8. Rescale the width and height using interpolation between the previously calculated RVSizeExtrema
+	 * 9. draw the ResourceVisualizations
+	 * 10. draw the names of the x and y properties as the axes labels
 	 * @return the buffered image of the plot
 	 */
 	@Override
 	public BufferedImage draw() {
-
-		LOG.info("In draw method in ScatterPlot");
-
+		//1
 		calculateAxisOffSet();
-		Log.info("calculated the offset for the axes");
-
+		LOG.info("calculated the offset for the axes");
+		//2
 		calculateRVSizeExtrema();
 		LOG.info("calculated the initial RV size extrema");
-
-		//1
+		//3
 		getIDrawInstantiation().createEmptyImage(getImageFrameSize().getWidth(), getImageFrameSize().getHeight());
 		LOG.info("empty frame made");
-		//2
+		//4
 		drawAxises(getIDrawInstantiation());
 		LOG.info("Axes drawn on frame");
-		//4
+		//5
 		createResourceVisualizations();
 		LOG.info("RVs created");
-
-		setExtremeValues();	
-
-		convertPosition();
-
-		//5
-		//rescaleResourceVisualizations();
-		LOG.info("RVs scaled");
-
 		//6
+		setExtremeValues();	
+		LOG.info("Extreme values set");
+		//7
+		convertPosition();
+		LOG.info("positions converted to pixelcoordinates");
+		//8
+		rescaleResourceVisualizations();
+		LOG.info("RVs scaled");
+		//9
 		drawResourceVisualizations();
 		LOG.info("RVs drawn");
-		//7
+		//10
 		drawAxesLabels(getIDrawInstantiation());
 		LOG.info("Axes's labels drawn");
 
@@ -120,6 +124,7 @@ public class ScatterPlot extends Chart{
 		this.axisOffset = (minRVScalingFactor+maxRVScalingFactor)/2*Math.min(getImageFrameSize().getWidth(), getImageFrameSize().getHeight());
 	}
 
+	
 	private void calculateRVSizeExtrema(){
 		minRVHeight= minRVScalingFactor*getImageFrameSize().getHeight();
 		maxRVHeight = maxRVScalingFactor*getImageFrameSize().getHeight();
@@ -148,9 +153,7 @@ public class ScatterPlot extends Chart{
 	 */
 	private void createResourceVisualizations(){
 		for(Resource resource: getResources()){
-			System.out.println("in  create for ");
 			ResourceVisualization rv = getRvf().create(resource);
-			System.out.println(rv.getName());
 			//ResourceVisualization rv = getShapeDecider().create(resource);
 			//These will be the values of the properties that govern the position of the box. To be rescaled!
 			Position metricsPosition = new Position(xMetric.getValue(resource).intValue(), yMetric.getValue(resource).intValue());
@@ -160,7 +163,7 @@ public class ScatterPlot extends Chart{
 	}
 
 	/**
-	 * 
+	 * when the rv's all have the same value, they're placed in the center of the image
 	 */
 	private void convertPosition(){
 
@@ -179,9 +182,6 @@ public class ScatterPlot extends Chart{
 			else{
 				rv.setPosition(new Position(rv.getX(), (int)getImageFrameSize().getHeight()/2));
 			}
-
-
-
 		}
 	}
 
@@ -189,7 +189,7 @@ public class ScatterPlot extends Chart{
 
 	/**
 	 * Using interpolation, the resource visualization gets new values in order to fit in the image.
-	 * If the min and max value for a property are the same, it means that this metric has the default value. It doesn't need rescaling then.
+	 * If the min and max value for a property are the same, its size isn't changed.
 	 */
 	private void rescaleResourceVisualizations(){
 
@@ -220,8 +220,7 @@ public class ScatterPlot extends Chart{
 			double yCoord = rv.getY();
 			double width = rv.getWidth();
 			double height = rv.getHeight();
-			System.out.println("in for.");
-			System.out.println("maxResourcepos: " + getMaxResourcePosition().getX());
+	
 			if(xCoord > getMaxResourcePosition().getX() ){
 				getMaxResourcePosition().setX((int)xCoord);
 			}
@@ -267,49 +266,13 @@ public class ScatterPlot extends Chart{
 		String xname = xMetric.getPropertyName();
 		String yname = yMetric.getPropertyName();
 
-//		d.drawText("" +getMaxResourcePosition().getX(), 
-//				(int)(getImageFrameSize().getWidth()- axisOffset/2), 
-//				(int)(getImageFrameSize().getHeight() - axisOffset/2));
-		
-		// max X value
-		d.drawText("" +getMaxResourcePosition().getX(),
-				convertX(getMaxResourcePosition().getX()),
-				convertY(getMinResourcePosition().getY()) + (int)(axisOffset/2));
-		// min X value
-		d.drawText("" +getMinResourcePosition().getX(),
-				convertX(getMinResourcePosition().getX()),
-				convertY(getMinResourcePosition().getY()) + (int)(axisOffset/2));
-		
-//		d.drawText(xname, 
-//				(int)(axisOffset + getImageFrameSize().getWidth()/2), 
-//				(int)(getImageFrameSize().getHeight() - axisOffset/2));
-		// x axis name
-		d.drawText(xname,
-				convertX((getMaxResourcePosition().getX() - getMinResourcePosition().getX())/2),
-				convertY(getMinResourcePosition().getY()) + (int)(axisOffset/2));
-		
-//		d.drawText("" +getMaxResourcePosition().getY(),
-//				(int)(axisOffset/2),
-//				(int)axisOffset,
-//				-90, 0, 0, 0);
-		// max Y value
-		d.drawText("" +getMaxResourcePosition().getY(),
-				convertX(getMinResourcePosition().getX()) -(int)(axisOffset/2), 
-				convertY(getMaxResourcePosition().getY()),
-				-90, 0, 0, 0);
-		// min Y value
-		d.drawText("" +getMinResourcePosition().getY(),
-				convertX(getMinResourcePosition().getX()) -(int)(axisOffset/2), 
-				convertY(getMinResourcePosition().getY()),
-				-90, 0, 0, 0);
-		
-//		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
-		// y axis name
-		d.drawText(yname, 
-				convertX(getMinResourcePosition().getX()) -(int)(axisOffset/2),
-				convertY((getMaxResourcePosition().getY()+getMinResourcePosition().getY())/2),
-				-90, 0, 0, 0);
+		d.drawText("" +getMaxResourcePosition().getX(), (int)(getImageFrameSize().getWidth()- axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
+		d.drawText("" + getMinResourcePosition().getX(), (int) axisOffset,(int)(getImageFrameSize().getHeight() - axisOffset/2) );
+		d.drawText(xname, (int)(axisOffset + getImageFrameSize().getWidth()/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
 
+		d.drawText("" + getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
+		d.drawText("" + getMinResourcePosition().getY(), (int)(axisOffset/2), (int)(getImageFrameSize().getHeight() - (int)axisOffset), -90, 0,0,0);
+		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
 	}
 
 	public Size getImageFrameSize() {

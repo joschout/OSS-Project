@@ -1,6 +1,5 @@
 package be.kuleuven.cs.oss.control;
 
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,10 +11,15 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
-import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the size in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class SizeHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(SizeHandler.class);

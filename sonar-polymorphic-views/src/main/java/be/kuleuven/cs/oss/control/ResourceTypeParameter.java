@@ -8,6 +8,12 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A resource type parameter wrapper that is able to return all the resources based on the chart parameters
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ResourceTypeParameter {
 	
 	private static final String DEFAULT_RESOURCE_TYPE = "classes";

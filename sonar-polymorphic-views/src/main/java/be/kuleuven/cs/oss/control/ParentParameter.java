@@ -9,6 +9,12 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A parent parameter wrapper that is able to return the parent resource based on the chart parameters
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class ParentParameter {
 	
 	private String key = "parent";

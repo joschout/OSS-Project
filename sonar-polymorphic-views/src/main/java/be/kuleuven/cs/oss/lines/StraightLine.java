@@ -3,6 +3,12 @@ package be.kuleuven.cs.oss.lines;
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
+/**
+ * A straight line
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class StraightLine extends Line{
 
 	/**

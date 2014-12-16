@@ -4,7 +4,7 @@ import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 
 /**
- * A factory that creates lines
+ * An interface that should be implemented by all classes that create lines
  * 
  * @author jeroenreinenbergh
  *

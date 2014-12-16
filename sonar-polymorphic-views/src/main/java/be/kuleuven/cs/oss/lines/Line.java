@@ -4,6 +4,13 @@ import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.drawingPackage.IDraw;
 
+
+/**
+ * An abstract class that should be extended by all classes that represent some kind of line
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public abstract class Line {
 
 	private final Position origin;

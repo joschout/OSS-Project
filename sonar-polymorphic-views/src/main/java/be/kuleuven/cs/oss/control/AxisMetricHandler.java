@@ -13,6 +13,12 @@ import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
+/**
+ * A handler for the axis metrics in the chart
+ * 
+ * @author jeroenreinenbergh
+ *
+ */
 public class AxisMetricHandler implements IHandler<Chart> {
 
 	private final static Logger LOG = LoggerFactory.getLogger(AxisMetricHandler.class);
