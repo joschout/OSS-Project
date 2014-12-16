@@ -28,6 +28,10 @@ public class SizeHandler implements IHandler<Chart> {
 
 	SonarFacade sf;
 
+	/**
+	 * Creates a new sizehandler with the given SonarFacade instance
+	 * @param sf an instance of SonarFacade
+	 */
 	public SizeHandler(SonarFacade sf) {
 		this.sf = sf;
 	}
@@ -37,11 +41,8 @@ public class SizeHandler implements IHandler<Chart> {
 		this.next = handler;
 	}
 
-
 	/**
-	 * Retrieve the requested size of the chart
-	 * @return a list containing both dimensions of the size
-	 * @throws Exception if the size cannot be found
+	 * Creates the size and sets it in the given chart if that chart is a scatterplot
 	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
@@ -61,7 +62,7 @@ public class SizeHandler implements IHandler<Chart> {
 			size = DEFAULT_SIZE;
 		}
 
-		((ScatterPlot) chart).setImageFrameSize(size);;
+		((ScatterPlot) chart).setImageFrameSize(size);
 		
 		if(next != null) {
 			next.handleRequest(chart, params);
@@ -70,12 +71,12 @@ public class SizeHandler implements IHandler<Chart> {
 	}
 
 	/**
-	 * Parse the given size
-	 * @param s Textual representation of the given size
+	 * Parses the given size
+	 * @param s textual representation of the given size
 	 * @return a list containing both dimensions of the size
-	 * @throws Exception if the size cannot be parsed
+	 * @throws NumberFormatException if the size cannot be parsed
 	 */
-	private Size parseSize(String s) {
+	private Size parseSize(String s) throws NumberFormatException{
 		List<String> split = Arrays.asList(s.split("x"));
 		int height = Integer.parseInt(split.get(0));
 		int width = Integer.parseInt(split.get(1));
@@ -87,14 +88,15 @@ public class SizeHandler implements IHandler<Chart> {
 
 	/**
 	 * Retrieve a parameter value for the given parameter key
-	 * @param key The given parameter key
+	 * @param key the given parameter key
 	 * @return the retrieved parameter value
+	 * @throws NoResultException if the value cannot be retrieved
 	 */
-	private String retrieveValue(String key, ChartParameters params) {
+	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
 		String result = params.getValue(key);
 
 		if(result.equals("")){
-			LOG.info("retrieve value failed, setting defaults");
+			LOG.info("retrieve value failed");
 			throw new NoResultException("value not retrieved");
 		}
 

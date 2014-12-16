@@ -42,6 +42,10 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	
 	private SonarFacade sf;
 	
+	/**
+	 * Creates a new ResourceVisualizationCreatorHandler with the given SonarFacade instance
+	 * @param sf an instance of SonarFacade
+	 */
 	public ResourceVisualizationCreatorHandler(SonarFacade sf) {
 		this.sf = sf;
 	}
@@ -51,7 +55,9 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		this.next = handler;
 	}
 
-	
+	/**
+	 * Creates the resource visualization creator and sets it in the given chart
+	 */
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		String shapeValue = retrieveValue(shapeKey, params);
@@ -73,7 +79,14 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		
 	}
 	
-	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params){
+	/**
+	 * Creates a fully modified resource visualization factory that is defined by the given shape value and chartparameters
+	 * @param shapeValue the given value of the shape key
+	 * @param params the given chartparameters
+	 * @return the fully modified resource visualization factory that is defined by the given shape value and chartparameters
+	 * @throws IllegalArgumentException if the given shape value is invalid
+	 */
+	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params) throws IllegalArgumentException{
 		ResourceVisualizationFactory factory;
 		String colorValue;
 		
@@ -99,6 +112,11 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		return factory;
 	}
 	
+	/**
+	 * Adds all resource visualization factories to the given interval shape decider
+	 * @param sd the given interval shape decider
+	 * @param params the given chartparameters
+	 */
 	private void addFactories(IntervalShapeDecider sd, ChartParameters params) {	
 		String order = retrieveValue(orderKey, params);
 		String split = retrieveValue(boundKey, params);
@@ -121,7 +139,14 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		}
 	}
 	
-	private String retrieveValue(String key, ChartParameters params) {
+	/**
+	 * Retrieves the value for the given key
+	 * @param key the given key
+	 * @param params the given chartparameters to search in
+	 * @return the retrieved value for the given key
+	 * @throws NoResultException if the value cannot be retrieved
+	 */
+	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
 		String result = params.getValue(key);
 		
 		if(result.equals("")){
@@ -132,6 +157,11 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		return result;
 	}
 	
+	/**
+	 * Parses the given list of strings to a list of integers
+	 * @param toParse the given list of strings
+	 * @return the parsed list of integers
+	 */
 	private List<Integer> parseStringListToIntList(List<String> toParse){
 		List<Integer> result = new ArrayList<Integer>();
 		for(String str : toParse){
@@ -140,6 +170,12 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		return result;
 	}
 	
+	/**
+	 * Splits the given string into a list of strings based on the given split sequence
+	 * @param total the string to split
+	 * @param splitter the sequence to split on
+	 * @return a list containing the splitted strings
+	 */
 	private List<String> parseStringList(String total,String splitter){
 		String[] split = total.split(splitter);
 		return Arrays.asList(split);
