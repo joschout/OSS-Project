@@ -16,6 +16,8 @@ import be.kuleuven.cs.oss.trees.TreeNodeRV;
 
 
 public class SystemComplexityDrawing {
+	
+	private static final int OFFSET = 50;
 
 	private final static Logger LOG = LoggerFactory.getLogger(SystemComplexityDrawing.class);
 
@@ -43,10 +45,23 @@ public class SystemComplexityDrawing {
 
 			Map<Integer, Integer> maxHeights = tree.getMaxHeightPerLevel(new HashMap<Integer, Integer>());
 
-			System.out.println(maxHeights.toString());
 			tree.updateYPositions(maxHeights);
-
-			drawInterface.createEmptyImage(5000, 250);
+			
+			int imageX = 0;
+			int imageY = 0;
+			for(ResourceVisualization rv: rvs) {
+				int tempX = rv.getX() + rv.getWidth()/2;
+				int tempY = rv.getY() + rv.getHeight()/2;
+				
+				if(tempX > imageX) {
+					imageX = tempX;
+				}
+				if(tempY > imageY) {
+					imageY = tempY;
+				}
+			}
+			
+			drawInterface.createEmptyImage(imageX + OFFSET, imageY + OFFSET);
 
 
 			for(ResourceVisualization rv: rvs) {
