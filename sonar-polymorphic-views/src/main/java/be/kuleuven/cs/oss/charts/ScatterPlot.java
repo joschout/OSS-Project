@@ -253,12 +253,11 @@ public class ScatterPlot extends Chart{
 		String yname = yMetric.getPropertyName();
 		
 		d.drawText("" +getMaxResourcePosition().getX(), (int)(getImageFrameSize().getWidth()- axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
-		d.drawText("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESTt",convertX(0), convertY(0));
-		d.drawText("" + getMinResourcePosition().getX(), convertX(0), convertY(-axisOffset/2));
+		d.drawText("" + getMinResourcePosition().getX(), (int) axisOffset,(int)(getImageFrameSize().getHeight() - axisOffset/2) );
 		d.drawText(xname, (int)(axisOffset + getImageFrameSize().getWidth()/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
 	
-		d.drawText("" +getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
-		d.drawText("" +getMinResourcePosition().getY(), convertX(-axisOffset/2), convertY(0));
+		d.drawText("" + getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
+		d.drawText("" + getMinResourcePosition().getY(), (int)(axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset), -90, 0,0,0);
 		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
 	}
 
