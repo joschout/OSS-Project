@@ -58,7 +58,7 @@ public class Controller {
 	 * @param params the given chartparameters
 	 * @return an empty chart of the type that was specified in the given chartparameters
 	 */
-	private Chart getChartType(ChartParameters params) {
+	protected Chart getChartType(ChartParameters params) {
 		ChartParameter chartHandler = new ChartParameter(params);
 		Chart chart = chartHandler.getChart();
 		
