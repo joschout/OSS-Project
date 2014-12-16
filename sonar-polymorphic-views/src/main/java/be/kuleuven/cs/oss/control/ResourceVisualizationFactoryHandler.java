@@ -2,11 +2,7 @@ package be.kuleuven.cs.oss.control;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 import javax.persistence.NoResultException;
 
@@ -20,11 +16,8 @@ import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.ConstantShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
-import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualization;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
-import be.kuleuven.cs.oss.resourcevisualizations.ShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
-import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ResourceVisualizationFactoryHandler implements IHandler<Chart>{
