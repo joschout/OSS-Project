@@ -31,8 +31,8 @@ public class CircleFactory implements ResourceVisualizationFactory {
 		return diameterProperty;
 	}
 
-	public void setDiameterProperty(ResourceProperty radiusProperty) {
-		this.diameterProperty = radiusProperty;
+	public void setDiameterProperty(ResourceProperty diameterProperty) {
+		this.diameterProperty = diameterProperty;
 	}
 
 	public ResourceProperty getRedProperty() {
