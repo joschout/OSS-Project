@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import be.kuleuven.cs.oss.datautils.Color;
 import be.kuleuven.cs.oss.datautils.Position;
-import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 
