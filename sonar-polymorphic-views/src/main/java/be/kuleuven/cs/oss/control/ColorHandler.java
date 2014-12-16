@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
@@ -56,10 +57,10 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 	 * @throws IllegalArgumentException if the given color value cannot be recognized
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) throws NoResultException {
+	public void handleRequest(ResourceVisualizationFactory rvf, ParamValueRetriever params) throws NoResultException {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		try {
-			String colorValue = retrieveValue(key, params);
+			String colorValue = params.retrieveValue(key);
 			if(colorValue.matches("r[0-9]{1,3}g[0-9]{1,3}b[0-9]{1,3}")){
 				List<String> rgb = retrieveValues(colorValue,"[rgb]");
 				for(String rgbString: rgb) {
@@ -121,24 +122,5 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 		split = split.subList(1, split.size());
 		return split;
 	}
-
-	/**
-	 * Retrieve a parameter value for the given parameter key
-	 * @param key the given parameter key
-	 * @param params the given chartparameters
-	 * @return the retrieved parameter value
-	 * @throws NoResultException if the parameter value for the given key cannot be retrieved
-	 */
-	private String retrieveValue(String key, ChartParameters params) {
-		String result = params.getValue(key);
-
-		if(result.equals("")){
-			throw new NoResultException("value not retrieved");
-		}
-
-		return result;
-	}
-
-
 
 }

@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
@@ -65,12 +66,12 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	 * Creates the resource visualization creator and sets it in the given chart
 	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
-		String shapeValue = retrieveValue(shapeKey, params);
+	public void handleRequest(Chart chart, ParamValueRetriever params) {
+		String shapeValue = params.retrieveValue(shapeKey);
 		
 		if(shapeValue.equals(shapeValueMetric)){
 			IntervalShapeDecider rvc = new IntervalShapeDecider();
-			rvc.setResourceProperty(new SonarResourceProperty(sf,sf.findMetric(retrieveValue(metricKey, params))));
+			rvc.setResourceProperty(new SonarResourceProperty(sf,sf.findMetric(params.retrieveValue(metricKey))));
 			addFactories(rvc,params);
 			chart.setRvf(rvc);
 		}
@@ -86,13 +87,13 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	}
 	
 	/**
-	 * Creates a fully modified resource visualization factory that is defined by the given shape value and chartparameters
+	 * Creates a fully modified resource visualization factory that is defined by the given shape value and parameter value retriever
 	 * @param shapeValue the given value of the shape key
-	 * @param params the given chartparameters
-	 * @return the fully modified resource visualization factory that is defined by the given shape value and chartparameters
+	 * @param params the given parameter value retriever
+	 * @return the fully modified resource visualization factory that is defined by the given shape value and parameter value retriever
 	 * @throws IllegalArgumentException if the given shape value is invalid
 	 */
-	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params) throws IllegalArgumentException{
+	private ResourceVisualizationFactory createRVF(String shapeValue, ParamValueRetriever params) throws IllegalArgumentException{
 		ResourceVisualizationFactory factory;
 		String colorValue;
 		
@@ -121,11 +122,11 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	/**
 	 * Adds all resource visualization factories to the given interval shape decider
 	 * @param sd the given interval shape decider
-	 * @param params the given chartparameters
+	 * @param params the given parameter value retriever
 	 */
-	private void addFactories(IntervalShapeDecider sd, ChartParameters params) {	
-		String order = retrieveValue(orderKey, params);
-		String split = retrieveValue(boundKey, params);
+	private void addFactories(IntervalShapeDecider sd, ParamValueRetriever params) {	
+		String order = params.retrieveValue(orderKey);
+		String split = params.retrieveValue(boundKey);
 		
 		List<String> shapes = parseStringList(order,"-");
 		
@@ -143,24 +144,6 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		catch(Exception e){
 			e.printStackTrace();
 		}
-	}
-	
-	/**
-	 * Retrieves the value for the given key
-	 * @param key the given key
-	 * @param params the given chartparameters to search in
-	 * @return the retrieved value for the given key
-	 * @throws NoResultException if the value cannot be retrieved
-	 */
-	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
-		String result = params.getValue(key);
-		
-		if(result.equals("")){
-			LOG.info("retrieve value failed");
-			throw new NoResultException("value not retrieved");
-		}
-		
-		return result;
 	}
 	
 	/**

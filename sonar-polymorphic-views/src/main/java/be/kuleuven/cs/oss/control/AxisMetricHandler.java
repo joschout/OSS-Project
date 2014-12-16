@@ -8,6 +8,7 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.sonarfacade.Metric;
@@ -47,7 +48,7 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	 * Creates the axis metric properties and sets them in the given chart if this chart is a scatterplot
 	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
+	public void handleRequest(Chart chart, ParamValueRetriever params) {
 		if (!(chart instanceof ScatterPlot)) {
 			if(next != null){
 				next.handleRequest(chart, params);
@@ -69,12 +70,12 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	/**
 	 * Creates a resource property for the given axis
 	 * @param axis the axis for which a resource property has to be returned
-	 * @param params the given chartparameters from which the axis metric has to be retrieved
+	 * @param params the given parameter value retriever from which the axis metric has to be retrieved
 	 * @return the resulting resource property for the given axis
 	 * @throws NoResultException if the axis metric cannot be found
 	 */
-	private ResourceProperty createAxisMetricProperty(String axis, ChartParameters params) throws NoResultException{
-		String metricValue = retrieveValue(axis, params);
+	private ResourceProperty createAxisMetricProperty(String axis, ParamValueRetriever params) throws NoResultException{
+		String metricValue = params.retrieveValue(axis);
 		
 		Metric metric = sf.findMetric(metricValue);
 		if(metric == null){
@@ -84,24 +85,5 @@ public class AxisMetricHandler implements IHandler<Chart> {
 		
 		return prop;
 	}
-
-	/**
-	 * Retrieve a parameter value for the given parameter key
-	 * @param key the given parameter key
-	 * @param params the given chartparameters from which the parameter value has to be retrieved
-	 * @return the retrieved parameter value
-	 * @throws NoResultException if the value for the given key cannot be retrieved
-	 */
-	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
-		String result = params.getValue(key);
-
-		if(result.equals("")){
-			LOG.info("retrieve value failed");
-			throw new NoResultException("value not retrieved");
-		}
-
-		return result;
-	}
-
 
 }

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -24,18 +25,13 @@ public class ParentParameter {
 	/**
 	 * Retrieves the parent resource
 	 * @param sf an instance of SonarFacade
-	 * @param params the given chartparameters
+	 * @param params the given parameter value retriever
 	 * @return the requested parent resource
 	 * @throws NoResultException if the value for the parent key cannot be found
 	 * @throws IllegalArgumentException if the value for the parent key is not valid
 	 */
-	public Resource getParentResource(SonarFacade sf, ChartParameters params) throws NoResultException,IllegalArgumentException{
-		String parent = params.getValue(key);
-		
-		if(parent.equals("")){
-			LOG.info("retrieve value failed");
-			throw new NoResultException("value not retrieved");
-		}
+	public Resource getParentResource(SonarFacade sf, ParamValueRetriever params) throws NoResultException,IllegalArgumentException{
+		String parent = params.retrieveValue(key);
 		
 		Resource resource = null;
 		resource = sf.findResource(parent);

@@ -5,6 +5,7 @@ import java.util.List;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.sonarfacade.Resource;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -37,11 +38,12 @@ public class ResourcesHandler implements IHandler<Chart> {
 	}
 
 	/**
-	 * Finds all the requested resources, depending on the resource type key (currently only packages and classes are supported) and sets them in the given chart
+	 * Finds all the requested resources, depending on the resource type key (currently only packages and classes are supported)
+	 * and sets them in the given chart
 	 * @throws IllegalArgumentException if the resource type value is not valid
 	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) throws IllegalArgumentException {
+	public void handleRequest(Chart chart, ParamValueRetriever params) throws IllegalArgumentException {
 
 		ParentParameter parentParam = new ParentParameter();
 		Resource parent = parentParam.getParentResource(sf, params);
