@@ -1,4 +1,4 @@
-package be.kuleuven.cs.oss.drawingPackage.tests;
+package be.kuleuven.cs.oss.drawingPackage;
 
 import static org.junit.Assert.*;
 
