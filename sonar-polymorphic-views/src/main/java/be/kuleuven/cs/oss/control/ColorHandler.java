@@ -46,7 +46,8 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 	}
 
 	/**
-	 * 
+	 * Creates the color properties and sets them in the given resource visualization factory. If the color key cannot be recognized, the properties are set to default (white).
+	 * @throws IllegalArgumentException if the given color value cannot be recognized
 	 */
 	@Override
 	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) throws NoResultException {
@@ -84,7 +85,7 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 			}
 
-			else throw new NoResultException("Color not recognized");
+			else throw new IllegalArgumentException("Color not recognized");
 		}
 		catch(NoResultException e) {
 			LOG.info("retrieve color value failed, setting defaults");
@@ -117,8 +118,10 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	/**
 	 * Retrieve a parameter value for the given parameter key
-	 * @param key The given parameter key
+	 * @param key the given parameter key
+	 * @param params the given chartparameters
 	 * @return the retrieved parameter value
+	 * @throws NoResultException if the parameter value for the given key cannot be retrieved
 	 */
 	private String retrieveValue(String key, ChartParameters params) {
 		String result = params.getValue(key);

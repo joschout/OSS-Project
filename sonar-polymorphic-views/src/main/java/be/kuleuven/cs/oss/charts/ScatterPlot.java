@@ -189,7 +189,7 @@ public class ScatterPlot extends Chart{
 
 	/**
 	 * Using interpolation, the resource visualization gets new values in order to fit in the image.
-	 * If the min and max value for a property are the same, the rv gets a size given by the user.
+	 * If the min and max value for a property are the same, its size isn't changed.
 	 */
 	private void rescaleResourceVisualizations(){
 

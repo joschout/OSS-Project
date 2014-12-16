@@ -63,7 +63,7 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	/**
 	 * Creates a resource property for the given axis
 	 * @param axis the axis for which a resource property has to be returned
-	 * @param params the map of chartparameters from which the axis metric has to be retrieved
+	 * @param params the given chartparameters from which the axis metric has to be retrieved
 	 * @return the resulting resource property for the given axis
 	 * @throws NoResultException if the axis metric cannot be found
 	 */
@@ -81,8 +81,8 @@ public class AxisMetricHandler implements IHandler<Chart> {
 
 	/**
 	 * Retrieve a parameter value for the given parameter key
-	 * @param key The given parameter key
-	 * @param params The map of chartparameters from which the parameter value has to be retrieved
+	 * @param key the given parameter key
+	 * @param params the given chartparameters from which the parameter value has to be retrieved
 	 * @return the retrieved parameter value
 	 * @throws NoResultException if the value for the given key cannot be retrieved
 	 */

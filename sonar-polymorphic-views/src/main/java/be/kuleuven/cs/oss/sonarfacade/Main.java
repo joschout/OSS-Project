@@ -14,11 +14,10 @@ import be.kuleuven.cs.oss.polymorphicviews.plugin.PolymorphicViewsChart;
 public class Main {
 
 	//"ck=polymorphic&resources=classes&boxheight=complexity&boxwidth=10&parent=java:chess&type=scatter&xmetric=lines&ymetric=comment_lines&boxcolor=min20.3max1000.28keylines";
-	private static String queryString = "ck=polymorphic&resources=classes&parent=sonar:chartplugin&type=syscomp&shape=metric&shapemetricorder=trap-circle-box&shapemetric=lines&shapemetricsplit=100x200&trapside1=lines&trapside2=functions";
+	private static String queryString = "ck=polymorphic&resources=classes&parent=sonar:chartplugin&type=sgfgr&shape=metric&shapemetricorder=circle-trap-box&xmetric=lines&ymetric=comment_lines&shapemetric=lines&shapemetricsplit=100x300&boxcolor=r255g0b255&circlecolor=min20.3max1000.28keylines&trapcolor=r0g255b255&boxwidth=lines";
 
 	public static void main(String[] args) throws IOException {
 		WebServiceSonarFacade wssf = new WebServiceSonarFacade();
-		System.out.println(wssf.findMetrics().toString());
 		PolymorphicViewsChart pvc = new PolymorphicViewsChart(wssf);
 
 		BufferedImage image = pvc.generateImage(new ChartParameters(queryString));

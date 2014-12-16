@@ -15,8 +15,15 @@ public class ParentParameter {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(ParentParameter.class);
 
-	
-	public Resource getParentResource(SonarFacade sf, ChartParameters params) {
+	/**
+	 * Retrieves the parent resource
+	 * @param sf an instance of SonarFacade
+	 * @param params the given chartparameters
+	 * @return the requested parent resource
+	 * @throws NoResultException if the value for the parent key cannot be found
+	 * @throws IllegalArgumentException if the value for the parent key is not valid
+	 */
+	public Resource getParentResource(SonarFacade sf, ChartParameters params) throws NoResultException,IllegalArgumentException{
 		String parent = params.getValue(key);
 		
 		if(parent.equals("")){
@@ -28,7 +35,7 @@ public class ParentParameter {
 		resource = sf.findResource(parent);
 		if(resource == null){
 			LOG.info("retrieve parent failed");
-			throw new NoResultException("Parent not valid");
+			throw new IllegalArgumentException("Parent not valid");
 		}
 		return resource;
 		
