@@ -43,12 +43,14 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	@Override
 	public void handleRequest(Chart chart, ChartParameters params) {
 		if (!(chart instanceof ScatterPlot)) {
-			next.handleRequest(chart, params);
+			if(next != null){
+				next.handleRequest(chart, params);
+			}
 			return;
 		}
-
 		ResourceProperty xProperty = createAxisMetricProperty(keyX, params);
 		ResourceProperty yProperty = createAxisMetricProperty(keyY, params);
+		
 		
 		((ScatterPlot) chart).setAxisMetrics(xProperty, yProperty);
 		

@@ -107,13 +107,18 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 		
 		List<Integer> boundaries = parseStringListToIntList(parseStringList(split,"x"));
 		boundaries.add(Integer.MAX_VALUE);
-		
+		try{
 		if(shapes.size() == boundaries.size()){
 			for(int i=0;i<shapes.size();++i){
 				sd.addBoundaryWithFactory(boundaries.get(0),createRVF(shapes.get(0),params));
 			}
 		}
+		
 		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	private String retrieveValue(String key, ChartParameters params) {
