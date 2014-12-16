@@ -5,6 +5,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.Matchers.any;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -18,7 +19,7 @@ import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 public class ScenarioControllerTest {
 
-	private static String queryString = "ck=polymorphic&type=scatter&parent=sonar:chartplugin&resources=classes&shape=metric&shapemetricorder=circle-trap-box&xmetric=lines&ymetric=comment_lines&shapemetric=lines&shapemetricsplit=100x300&boxcolor=r255g0b255&circlecolor=min20.3max1000.28keylines&trapcolor=r0g255b255&boxwidth=lines";
+	private static String queryString = "ck=polymorphic&type=scatter&parent=sonar:chartplugin&resources=classes&shape=metric&shapecircle&xmetric=lines&ymetric=comment_lines&circlecolor=min20.3max1000.28keylines";
 	
 	private static final String DEFAULT_RESOURCE_TYPE = "classes";
 	
@@ -35,7 +36,11 @@ public class ScenarioControllerTest {
 	
 	@Before
 	public void setUp() {
-		List<Resource> resources;
+		Resource res = mock(Resource.class);
+		List<Resource> resources = new ArrayList<Resource>();
+		for(int i=1; i<5; i++){
+			resources.add(res);
+		}
 		
 		when(sf.findResource(any(String.class))).thenReturn(parentResource);
 		when(sf.findClasses(parentResource)).thenReturn(resources);
@@ -49,21 +54,27 @@ public class ScenarioControllerTest {
 		
 		Controller controller = new Controller(params, sf);
 		
+		//CHARTPARAMETER
 		Chart chart = controller.getChartType(params);
 		assertTrue(chart instanceof ScatterPlot);
 		
 		chart.setSonarFacade(sf);
 		
+		//PARENTPARAMETER
 		String parent = params.getValue(key1);
 		assertTrue(parent.equals("sonar:chartplugin"));
 		
-		String result = params.getValue(key2, DEFAULT_RESOURCE_TYPE, false);
-		assertTrue(result.equals(DEFAULT_RESOURCE_TYPE));
+		//RESOURCETYPEPARAMETER
+		String resourceType = params.getValue(key2, DEFAULT_RESOURCE_TYPE, false);
+		assertTrue(resourceType.equals(DEFAULT_RESOURCE_TYPE));
 		
+		//RESOURCESPARAMETER
 		List<Resource> resources = sf.findClasses(parentResource);
+		assertTrue(resources.size() == 4);
 		
-		//ResourcesHandler  = new ResourcesHandler(sf);
-		//resourceHandler.handleRequest(chart, params);
+		chart.setResources(resources);
+		
+		
 		
 		
 		
