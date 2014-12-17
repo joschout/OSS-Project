@@ -266,14 +266,50 @@ public class ScatterPlot extends Chart{
 		String xname = xMetric.getPropertyName();
 		String yname = yMetric.getPropertyName();
 
-		d.drawText("" +getMaxResourcePosition().getX(), (int)(getImageFrameSize().getWidth()- axisOffset/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
-		d.drawText("" + getMinResourcePosition().getX(), (int) axisOffset,(int)(getImageFrameSize().getHeight() - axisOffset/2) );
-		d.drawText(xname, (int)(axisOffset + getImageFrameSize().getWidth()/2), (int)(getImageFrameSize().getHeight() - axisOffset/2));
-
-		d.drawText("" + getMaxResourcePosition().getY(), (int)(axisOffset/2), (int)axisOffset, -90, 0, 0, 0);
-		d.drawText("" + getMinResourcePosition().getY(), (int)(axisOffset/2), (int)(getImageFrameSize().getHeight() - (int)axisOffset), -90, 0,0,0);
-		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
+//		d.drawText("" +getMaxResourcePosition().getX(), 
+//				(int)(getImageFrameSize().getWidth()- axisOffset/2), 
+//				(int)(getImageFrameSize().getHeight() - axisOffset/2));
+		
+		// max X value
+		d.drawText("" +getMaxResourcePosition().getX(),
+				convertX(getMaxResourcePosition().getX()),
+				convertY(getMinResourcePosition().getY()) + (int)(axisOffset/2));
+		// min X value
+		d.drawText("" +getMinResourcePosition().getX(),
+				convertX(getMinResourcePosition().getX()),
+				convertY(getMinResourcePosition().getY()) + (int)(axisOffset/2));
+		
+//		d.drawText(xname, 
+//				(int)(axisOffset + getImageFrameSize().getWidth()/2), 
+//				(int)(getImageFrameSize().getHeight() - axisOffset/2));
+		// x axis name
+		d.drawText(xname,
+				convertX((getMaxResourcePosition().getX() - getMinResourcePosition().getX())/2),
+				convertY(getMinResourcePosition().getY()) + (int)(axisOffset/2));
+		
+//		d.drawText("" +getMaxResourcePosition().getY(),
+//				(int)(axisOffset/2),
+//				(int)axisOffset,
+//				-90, 0, 0, 0);
+		// max Y value
+		d.drawText("" +getMaxResourcePosition().getY(),
+				convertX(getMinResourcePosition().getX()) -(int)(axisOffset/2), 
+				convertY(getMaxResourcePosition().getY()),
+				-90, 0, 0, 0);
+		// min Y value
+		d.drawText("" +getMinResourcePosition().getY(),
+				convertX(getMinResourcePosition().getX()) -(int)(axisOffset/2), 
+				convertY(getMinResourcePosition().getY()),
+				-90, 0, 0, 0);
+		
+//		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
+		// y axis name
+		d.drawText(yname, 
+				convertX(getMinResourcePosition().getX()) -(int)(axisOffset/2),
+				convertY((getMaxResourcePosition().getY()+getMinResourcePosition().getY())/2),
+				-90, 0, 0, 0);
 	}
+
 	
 	public ResourceProperty getxMetric() {
 		return xMetric;
