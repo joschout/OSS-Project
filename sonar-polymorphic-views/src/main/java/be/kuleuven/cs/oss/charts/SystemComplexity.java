@@ -22,7 +22,9 @@ public class SystemComplexity extends Chart {
 	private TreeNode inheritanceTree;
 	private LineFactory lf;
 	
-	
+	/**
+	 * {@inheritDoc}
+	 */
 	public SystemComplexity() {
 		super();
 	}
@@ -30,7 +32,7 @@ public class SystemComplexity extends Chart {
 
 	
 
-	public void makeTree() {
+	private void makeTree() {
 		LOG.info("Started making a Tree in SysCom");
 		List<Resource> parentResources = new ArrayList<Resource>();
 		
@@ -51,14 +53,15 @@ public class SystemComplexity extends Chart {
 		}
 			
 		TreeNode treeNode = new TreeNode(parentResources, getSonarFacade());
-		treeNode.setRootNode();
 		
 		LOG.info("Ended making a Tree in SysCom");
 		
 		this.inheritanceTree =  treeNode;
 	}
 
-
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BufferedImage draw() {
 		makeTree();
@@ -68,8 +71,13 @@ public class SystemComplexity extends Chart {
 		return out;
 	}
 
-
-
+	
+	
+	/**
+	 * Sets the Line factory used for drawing the lines between resources. This allows the use of different
+	 * kinds of lines.
+	 * @param LineFactory The linefactory to be used.
+	 */
 	public void setLineFactory(LineFactory factory) {
 		this.lf = factory;
 		
