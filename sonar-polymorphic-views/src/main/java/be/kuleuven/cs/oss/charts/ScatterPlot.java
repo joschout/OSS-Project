@@ -274,6 +274,14 @@ public class ScatterPlot extends Chart{
 		d.drawText("" + getMinResourcePosition().getY(), (int)(axisOffset/2), (int)(getImageFrameSize().getHeight() - (int)axisOffset), -90, 0,0,0);
 		d.drawText(yname, (int)(axisOffset/2) , (int)(axisOffset + getImageFrameSize().getHeight()/2), -90, 0, 0, 0);
 	}
+	
+	public ResourceProperty getxMetric() {
+		return xMetric;
+	}
+
+	public ResourceProperty getyMetric() {
+		return yMetric;
+	}
 
 	public Size getImageFrameSize() {
 		return imageFrameSize;

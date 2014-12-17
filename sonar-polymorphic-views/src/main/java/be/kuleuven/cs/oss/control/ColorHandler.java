@@ -70,9 +70,7 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 				}
 			}
 			else if(colorValue.matches("min[0-9]+(\\.[0-9]+)*max[0-9]+(\\.[0-9]+)*key(.)+")) {
-				System.out.println(colorValue);
 				List<String> gs = retrieveValues(colorValue,"(min|max|key)");
-				System.out.println(gs);
 				String gsString1 = gs.get(0);
 				float gsValue1 = Float.parseFloat(gsString1);
 				String gsString2 = gs.get(1);

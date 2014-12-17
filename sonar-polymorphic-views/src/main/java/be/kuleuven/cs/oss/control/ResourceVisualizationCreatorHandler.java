@@ -77,12 +77,12 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 			if(metric == null){
 				throw new IllegalArgumentException(metricKey+" metric not found");
 			}
-			rvc.setResourceProperty(new SonarResourceProperty(sf,metric));
+			rvc.setResourceProperty(new SonarResourceProperty(sf, metric));
 			addFactories(rvc,params);
 			chart.setRvf(rvc);
 		}
 		else{
-			ResourceVisualizationFactory rvf = createRVF(shapeValue,params);
+			ResourceVisualizationFactory rvf = createRVF(shapeValue, params);
 			chart.setRvf(rvf);
 		}
 				

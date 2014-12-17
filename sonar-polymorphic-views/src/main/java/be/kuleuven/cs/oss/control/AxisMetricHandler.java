@@ -57,7 +57,6 @@ public class AxisMetricHandler implements IHandler<Chart> {
 		ResourceProperty xProperty = createAxisMetricProperty(keyX, params);
 		ResourceProperty yProperty = createAxisMetricProperty(keyY, params);
 		
-		
 		((ScatterPlot) chart).setAxisMetrics(xProperty, yProperty);
 		
 		if(next != null) {
@@ -73,14 +72,14 @@ public class AxisMetricHandler implements IHandler<Chart> {
 	 * @return the resulting resource property for the given axis
 	 * @throws IllegalArgumentException if the metric for the axis key cannot be found
 	 */
-	private ResourceProperty createAxisMetricProperty(String axis, ParamValueRetriever params) throws IllegalArgumentException{
+	protected ResourceProperty createAxisMetricProperty(String axis, ParamValueRetriever params) throws IllegalArgumentException{
 		String metricValue = params.retrieveValue(axis);
 		
 		Metric metric = sf.findMetric(metricValue);
 		if(metric == null){
 			throw new IllegalArgumentException(axis+" metric not found");
 		}
-		SonarResourceProperty prop = new SonarResourceProperty(sf,sf.findMetric(metricValue));
+		SonarResourceProperty prop = new SonarResourceProperty(sf, metric);
 		
 		return prop;
 	}
