@@ -2,6 +2,8 @@ package be.kuleuven.cs.oss.control;
 
 import org.sonar.api.charts.ChartParameters;
 
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
+
 /**
  * A class that is responsible for the correct functioning of the chain of responsibility
  * in which all the handlers perform their request in a predefined order
@@ -33,9 +35,9 @@ public class Processor<M> {
 	/**
 	 * Starts the the process of executing the chain of responsibility
 	 * @param mutableObject the mutable object to be modified along the chain
-	 * @param params the given chartparameters to be used in the process
+	 * @param params the given parameter value retriever to be used in the process
 	 */
-	public void startProcess(M mutableObject, ChartParameters params) {
+	public void startProcess(M mutableObject, ParamValueRetriever params) {
 		firstHandler.handleRequest(mutableObject, params);
 	}
 }

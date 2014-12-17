@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.resourceproperties.ConstantResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ResourceProperty;
 import be.kuleuven.cs.oss.resourceproperties.ScaledResourceProperty;
@@ -53,13 +54,13 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 	/**
 	 * Creates the color properties and sets them in the given resource visualization factory. If the color key cannot be recognized, the properties are set to default (white).
-	 * @throws IllegalArgumentException if the given color value cannot be recognized
+	 * @throws IllegalArgumentException if the given color value is not valid
 	 */
 	@Override
-	public void handleRequest(ResourceVisualizationFactory rvf, ChartParameters params) throws NoResultException {
+	public void handleRequest(ResourceVisualizationFactory rvf, ParamValueRetriever params) throws IllegalArgumentException {
 		List<ResourceProperty> result = new ArrayList<ResourceProperty>();
 		try {
-			String colorValue = retrieveValue(key, params);
+			String colorValue = params.retrieveValue(key);
 			if(colorValue.matches("r[0-9]{1,3}g[0-9]{1,3}b[0-9]{1,3}")){
 				List<String> rgb = retrieveValues(colorValue,"[rgb]");
 				for(String rgbString: rgb) {
@@ -69,9 +70,7 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 				}
 			}
 			else if(colorValue.matches("min[0-9]+(\\.[0-9]+)*max[0-9]+(\\.[0-9]+)*key(.)+")) {
-				System.out.println(colorValue);
 				List<String> gs = retrieveValues(colorValue,"(min|max|key)");
-				System.out.println(gs);
 				String gsString1 = gs.get(0);
 				float gsValue1 = Float.parseFloat(gsString1);
 				String gsString2 = gs.get(1);
@@ -91,10 +90,10 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 
 			}
 
-			else throw new IllegalArgumentException("Color not recognized");
+			else throw new IllegalArgumentException(key+" not valid");
 		}
 		catch(NoResultException e) {
-			LOG.info("retrieve color value failed, setting defaults");
+			LOG.info("setting defaults for "+key);
 			for(int i=0;i<3;++i){
 				result.add(DEFAULT_COLOR);
 			}
@@ -121,24 +120,5 @@ public class ColorHandler implements IHandler<ResourceVisualizationFactory> {
 		split = split.subList(1, split.size());
 		return split;
 	}
-
-	/**
-	 * Retrieve a parameter value for the given parameter key
-	 * @param key the given parameter key
-	 * @param params the given chartparameters
-	 * @return the retrieved parameter value
-	 * @throws NoResultException if the parameter value for the given key cannot be retrieved
-	 */
-	private String retrieveValue(String key, ChartParameters params) {
-		String result = params.getValue(key);
-
-		if(result.equals("")){
-			throw new NoResultException("value not retrieved");
-		}
-
-		return result;
-	}
-
-
 
 }

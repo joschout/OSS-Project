@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.resourceproperties.SonarResourceProperty;
 import be.kuleuven.cs.oss.resourcevisualizations.BoxFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.CircleFactory;
@@ -18,6 +19,7 @@ import be.kuleuven.cs.oss.resourcevisualizations.IntervalShapeDecider;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationCreator;
 import be.kuleuven.cs.oss.resourcevisualizations.ResourceVisualizationFactory;
 import be.kuleuven.cs.oss.resourcevisualizations.TrapezoidFactory;
+import be.kuleuven.cs.oss.sonarfacade.Metric;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
@@ -63,19 +65,24 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 
 	/**
 	 * Creates the resource visualization creator and sets it in the given chart
+	 * @throws IllegalArgumentException if the metric for the shape metric key cannot be found
 	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
-		String shapeValue = retrieveValue(shapeKey, params);
+	public void handleRequest(Chart chart, ParamValueRetriever params) throws IllegalArgumentException {
+		String shapeValue = params.retrieveValue(shapeKey);
 		
 		if(shapeValue.equals(shapeValueMetric)){
 			IntervalShapeDecider rvc = new IntervalShapeDecider();
-			rvc.setResourceProperty(new SonarResourceProperty(sf,sf.findMetric(retrieveValue(metricKey, params))));
+			Metric metric = sf.findMetric(params.retrieveValue(metricKey));
+			if(metric == null){
+				throw new IllegalArgumentException(metricKey+" metric not found");
+			}
+			rvc.setResourceProperty(new SonarResourceProperty(sf, metric));
 			addFactories(rvc,params);
 			chart.setRvf(rvc);
 		}
 		else{
-			ResourceVisualizationFactory rvf = createRVF(shapeValue,params);
+			ResourceVisualizationFactory rvf = createRVF(shapeValue, params);
 			chart.setRvf(rvf);
 		}
 				
@@ -86,13 +93,13 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	}
 	
 	/**
-	 * Creates a fully modified resource visualization factory that is defined by the given shape value and chartparameters
+	 * Creates a fully modified resource visualization factory that is defined by the given shape value and parameter value retriever
 	 * @param shapeValue the given value of the shape key
-	 * @param params the given chartparameters
-	 * @return the fully modified resource visualization factory that is defined by the given shape value and chartparameters
+	 * @param params the given parameter value retriever
+	 * @return the fully modified resource visualization factory that is defined by the given shape value and parameter value retriever
 	 * @throws IllegalArgumentException if the given shape value is invalid
 	 */
-	private ResourceVisualizationFactory createRVF(String shapeValue, ChartParameters params) throws IllegalArgumentException{
+	private ResourceVisualizationFactory createRVF(String shapeValue, ParamValueRetriever params) throws IllegalArgumentException{
 		ResourceVisualizationFactory factory;
 		String colorValue;
 		
@@ -121,46 +128,24 @@ public class ResourceVisualizationCreatorHandler implements IHandler<Chart>{
 	/**
 	 * Adds all resource visualization factories to the given interval shape decider
 	 * @param sd the given interval shape decider
-	 * @param params the given chartparameters
+	 * @param params the given parameter value retriever
+	 * @throws IllegalArgumentException if the shape metric order and shape metric split combination is not valid
 	 */
-	private void addFactories(IntervalShapeDecider sd, ChartParameters params) {	
-		String order = retrieveValue(orderKey, params);
-		String split = retrieveValue(boundKey, params);
+	private void addFactories(IntervalShapeDecider sd, ParamValueRetriever params) throws IllegalArgumentException{	
+		String order = params.retrieveValue(orderKey);
+		String split = params.retrieveValue(boundKey);
 		
 		List<String> shapes = parseStringList(order,"-");
 		
 		List<Integer> boundaries = parseStringListToIntList(parseStringList(split,"x"));
 		boundaries.add(Integer.MAX_VALUE);
-		try{
+		
 		if(shapes.size() == boundaries.size()){
 			for(int i=0;i<shapes.size();++i){
 				sd.addBoundaryWithFactory(boundaries.get(i),createRVF(shapes.get(i),params));
 			}
 		}
-		
-		else throw new IllegalArgumentException("ShapeMetricOrder and ShapeMetricSplit combination not valid");
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Retrieves the value for the given key
-	 * @param key the given key
-	 * @param params the given chartparameters to search in
-	 * @return the retrieved value for the given key
-	 * @throws NoResultException if the value cannot be retrieved
-	 */
-	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
-		String result = params.getValue(key);
-		
-		if(result.equals("")){
-			LOG.info("retrieve value failed");
-			throw new NoResultException("value not retrieved");
-		}
-		
-		return result;
+		else throw new IllegalArgumentException("Shapemetricorder and shapemetricsplit combination not valid");
 	}
 	
 	/**

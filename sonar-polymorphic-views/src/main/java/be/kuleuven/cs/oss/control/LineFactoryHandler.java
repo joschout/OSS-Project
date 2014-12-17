@@ -7,6 +7,7 @@ import org.sonar.api.charts.ChartParameters;
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
 import be.kuleuven.cs.oss.datautils.Color;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.datautils.Position;
 import be.kuleuven.cs.oss.lines.LineFactory;
 import be.kuleuven.cs.oss.lines.StraightLineFactory;
@@ -36,7 +37,7 @@ public class LineFactoryHandler implements IHandler<Chart> {
 	 * Creates the line factory and sets it in the given chart if this chart is a system complexity view
 	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
+	public void handleRequest(Chart chart, ParamValueRetriever params) {
 		if (!(chart instanceof SystemComplexity)) {
 			if(next != null){
 				next.handleRequest(chart, params);

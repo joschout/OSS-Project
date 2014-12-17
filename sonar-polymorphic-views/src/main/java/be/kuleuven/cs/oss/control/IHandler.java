@@ -1,6 +1,6 @@
 package be.kuleuven.cs.oss.control;
 
-import org.sonar.api.charts.ChartParameters;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 
 /**
  * An interface that is to be implemented by all handlers that want to modify an object of type M
@@ -19,11 +19,11 @@ public interface IHandler<M> {
 	public abstract void setNext(IHandler<M> handler);
 	
 	/**
-	 * Modifies the given mutableObject based on the given Chartparameters
+	 * Modifies the given mutable object based on the given parameter value retriever
 	 * @param mutableObject the mutable object to modify
-	 * @param params the given chartparameters
+	 * @param params the given parameter value retriever
 	 */
 	//handle request
-	public abstract void handleRequest(M mutableObject, ChartParameters params);
+	public abstract void handleRequest(M mutableObject, ParamValueRetriever params);
 	
 }

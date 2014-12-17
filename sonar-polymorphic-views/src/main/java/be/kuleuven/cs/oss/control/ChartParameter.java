@@ -4,11 +4,11 @@ import javax.persistence.NoResultException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
 import be.kuleuven.cs.oss.charts.SystemComplexity;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 
 /**
  * A chart parameter wrapper that is able to return the right chart based on the chart parameters
@@ -27,29 +27,24 @@ public class ChartParameter {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(ChartParameter.class);
 	
-	private ChartParameters params;
+	private ParamValueRetriever params;
 	
 	/**
-	 * Creates a new Chartparameter with the given Chartparameters instance
-	 * @param params the given chartparameters
+	 * Creates a new parameter value retriever with the given ParamValueRetriever instance
+	 * @param params the given parameter value retriever
 	 */
-	public ChartParameter(ChartParameters params) {
+	public ChartParameter(ParamValueRetriever params) {
 		this.params = params;
 	}
 
 	
 	/**
-	 * Creates a new Chart instance based on the value of the chart key in the map of Chartparameters
+	 * Creates a new Chart instance based on the value of the chart key
 	 * @return a Scatterplot instance if the chart value is equal to scatter and a SystemComplexity if the chart value is equal to syscomp
-	 * @throws NoResultException if the creation of a chart failed
+	 * @throws IllegalArgumentException if the chart type value is not valid and the subsequent creation of a chart failed
 	 */
-	public Chart getChart() throws NoResultException{
-		String result = params.getValue(key, DEFAULT_CHART_TYPE, false);
-
-		if(result.equals("")){
-			LOG.info("retrieve value with default failed");
-			throw new NoResultException("value with default not retrieved");
-		}
+	public Chart getChart() throws IllegalArgumentException {
+		String result = params.retrieveValue(key, DEFAULT_CHART_TYPE);
 		
 		if(result.equals(chartType1)) {
 			return new ScatterPlot();
@@ -60,7 +55,7 @@ public class ChartParameter {
 			return syscomp;
 		}
 		
-		throw new NoResultException("No chart created");
+		throw new IllegalArgumentException(key+" not valid, creating chart failed");
 		
 	}
 

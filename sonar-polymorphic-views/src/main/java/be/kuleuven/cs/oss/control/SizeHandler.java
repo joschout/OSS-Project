@@ -11,6 +11,7 @@ import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
 import be.kuleuven.cs.oss.charts.ScatterPlot;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.datautils.Size;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
@@ -49,7 +50,7 @@ public class SizeHandler implements IHandler<Chart> {
 	 * Creates the size and sets it in the given chart if that chart is a scatterplot
 	 */
 	@Override
-	public void handleRequest(Chart chart, ChartParameters params) {
+	public void handleRequest(Chart chart, ParamValueRetriever params) {
 		if (!(chart instanceof ScatterPlot)) {
 			if(next != null){
 				next.handleRequest(chart, params);
@@ -59,7 +60,7 @@ public class SizeHandler implements IHandler<Chart> {
 
 		Size size;
 		try {
-			String toParse = retrieveValue(key, params);
+			String toParse = params.retrieveValue(key);
 			size = parseSize(toParse);
 		}
 		catch(NoResultException e) {
@@ -89,23 +90,5 @@ public class SizeHandler implements IHandler<Chart> {
 		return size;
 
 	}
-
-	/**
-	 * Retrieve a parameter value for the given parameter key
-	 * @param key the given parameter key
-	 * @return the retrieved parameter value
-	 * @throws NoResultException if the value cannot be retrieved
-	 */
-	private String retrieveValue(String key, ChartParameters params) throws NoResultException{
-		String result = params.getValue(key);
-
-		if(result.equals("")){
-			LOG.info("retrieve value failed");
-			throw new NoResultException("value not retrieved");
-		}
-
-		return result;
-	}
-
 
 }

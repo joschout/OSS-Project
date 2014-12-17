@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.sonar.api.charts.ChartParameters;
 
 import be.kuleuven.cs.oss.charts.Chart;
+import be.kuleuven.cs.oss.datautils.ParamValueRetriever;
 import be.kuleuven.cs.oss.sonarfacade.SonarFacade;
 
 /**
@@ -17,22 +18,22 @@ public class Controller {
 
 	private final static Logger LOG = LoggerFactory.getLogger(Controller.class);
 
-	private final ChartParameters params;
+	private final ParamValueRetriever params;
 	private final SonarFacade sf;
 	private Chart chart;
 	
 	/**
-	 * Creates a new Controller with the given chartparameters and sonarfacade
-	 * @param p the given chartparameters
+	 * Creates a new Controller with the given parameter value retriever and sonarfacade
+	 * @param p the given parameter value retriever
 	 * @param sf an instance of SonarFacade
 	 */
 	public Controller(ChartParameters p, SonarFacade sf) {
-		this.params = p;
+		this.params = new ParamValueRetriever(p);
 		this.sf = sf;
 	}
 	
 	/**
-	 * Create a new chart based on the available chartparameters
+	 * Create a new chart using the parameter value retriever
 	 * @return a new chart (currently, only scatterplot and system complexity view are supported)
 	 */
 	public Chart createChart() {
@@ -60,11 +61,11 @@ public class Controller {
 	}
 	
 	/**
-	 * Retrieves an empty chart of the type that is defined in the given chartparameters
-	 * @param params the given chartparameters
-	 * @return an empty chart of the type that was specified in the given chartparameters
+	 * Retrieves an empty chart of the type that is retrieved from the given parameter value retriever
+	 * @param params the given parameter value retriever
+	 * @return an empty chart of the type that was retrieved from the given parameter value retriever
 	 */
-	protected Chart getChartType(ChartParameters params) {
+	protected Chart getChartType(ParamValueRetriever params) {
 		ChartParameter chartHandler = new ChartParameter(params);
 		Chart chart = chartHandler.getChart();
 		
