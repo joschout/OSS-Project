@@ -32,6 +32,13 @@ public class TreeNodeRV {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(TreeNodeRV.class);
 
+	/**
+	 * Class that represents trees of resourcevisualizations. 
+	 * 
+	 * @param rvf ResourceVisualizationCreator used to create the visualizations
+	 * @param treeNode TreeNode corresponding to this treenode.
+	 */
+	
 	public TreeNodeRV(ResourceVisualizationCreator rvf, TreeNode treeNode) {
 		this.rvf = rvf;
 		this.treeNode = treeNode;
@@ -82,14 +89,27 @@ public class TreeNodeRV {
 		}
 	}
 	
+	/**
+	 * The maximal right position held in this TreeNodeRV.
+	 * @return int maxRight the maximal right position
+	 */
 	public int getMaxRight() {
 		return maxRight;
 	}
-
+	
+	/**
+	 * Getter for the Resource Visualization of this treenode
+	 * @return ResourceVisualization this node's RV
+	 */
 	public ResourceVisualization getRv() {
 		return rv;
 	}
-
+	
+	/**
+	 * Getter for this treenode's RV and all it's children.
+	 * 
+	 * @return List<ResourceVisualization> list containing this RV and all it's children.
+	 */
 	public List<ResourceVisualization> getAllRvs() {
 		ArrayList<ResourceVisualization> rvs = new ArrayList<ResourceVisualization>();
 		//rv is null if this is the root node
@@ -100,6 +120,10 @@ public class TreeNodeRV {
 		return rvs;
 	}
 	
+	/**
+	 * Returns this nodes connections and the connections of all its children.
+	 * @return List<Connection> list of all connections of this node and its children
+	 */
 	public List<Connection> getAllConnections(){
 		ArrayList<Connection> cons = new ArrayList<Connection>();
 		
@@ -113,22 +137,43 @@ public class TreeNodeRV {
 		return cons;
 	}
 	
+	/**
+	 * Returns all connections of this node
+	 * @return List<Connection> all connections of this node
+	 */
 	public List<Connection> getConnections() {
 		return connections;
 	}
 	
+	/**
+	 * Checker to see if this node is the root
+	 * @return boolean True if it is a root, false if it is not.
+	 */
 	public boolean isRoot(){
 		return treeNode.isRoot();
 	}
 	
+	/**
+	 * Setter for the level this node is at in the hierarchy
+	 * @param level the level to be set.
+	 */
 	public void setLevel(int level){
 		this.level = level;
 	}
 	
+	/**
+	 * getter for the level of this node
+	 * @return int level of this node in the hierarchy
+	 */
 	public int getLevel(){
 		return this.level;
 	}
 	
+	/**
+	 * Method to update all the x positions of the node so that nothing overlaps.
+	 * @param maxRight the current maximal right x position. When first calling this function this should be th place where you want to start the tree
+	 * @return returns the structure with updated x positions
+	 */
 	public TreeNodeRV updateXPosition(int maxRight){
 
 		if (isRoot()) {
@@ -175,7 +220,14 @@ public class TreeNodeRV {
 	}
 	
 	
-
+	
+	/**
+	 * method to calculate the maximum height of the resources in each different level
+	 * returns a map of the level and its corresponding maximum height.
+	 * 
+	 * @param currentMaxHeights
+	 * @return
+	 */
 	
 	public Map<Integer, Integer> getMaxHeightPerLevel(Map<Integer, Integer> currentMaxHeights){
 		int level = getLevel();
